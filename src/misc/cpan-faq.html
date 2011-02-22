@@ -76,7 +76,6 @@ All Rights Reserved.</SMALL>
 <LI><A HREF="#Where_find_Perl_mailing_lists">Where can I find/join/create Perl mailing lists?</A>
 <LI><A HREF="#Where_find_Perl_journals">Where can I find Perl journals/magazines?</A>
 <LI><A HREF="#Where_find_Perl_training">Where can I find Perl courses/training/on-line tutorials?</A>
-<LI><A HREF="#Where_find_CPAN_CD">Where can I find CPAN on a CD-ROM?</A>
 <LI><A HREF="#How_join_mongers">How do I find/join/organise a Perl User Group?</A>
 <LI><A HREF="#What_history_Perl">Where can I find a history of Perl releases or a general history of the Perl community?</A>
 </UL>
@@ -86,8 +85,6 @@ All Rights Reserved.</SMALL>
 <LI><A HREF="#Error_downloading_module">I got an error downloading a module, what should I do?</A>
 <LI><A HREF="#Download_module_corrupt">I downloaded a module/script/file but it was corrupt, what should I do?</A>
 <LI><A HREF="#Help_me_obi_wan">How do I use module Foo::Bar, can you help? (a.k.a. Are you a helpdesk?)</A>
-<LI><A HREF="#VRML_error">When downloading a module a strange VRML viewer started up and I got an error, what should I do?</A>
-<LI><A HREF="#Where_find_GDBM_file">Where can I find the GDBM_File/DB_File module?</A>
 <LI><A HREF="#What_search_down">I'm having trouble with search.cpan.org, whom do I need to contact?</A>
 </UL>
 <HR>
@@ -95,7 +92,6 @@ All Rights Reserved.</SMALL>
 <UL>
 <LI><A HREF="#How_search_CPAN">How do I search CPAN?</A>
 <LI><A HREF="#How_search_module_documentation">How do I search for module/script documentation? (a.k.a. "How do I use ..."?)</A>
-<LI><A HREF="#How_search_really_anything">How do I search for really ANYTHING?</A>
 <LI><A HREF="#How_find_news_item">How do I find Ralph Nader? (a.k.a. We're C-P-A-N not C-S-P-A-N!)</A>
 </UL>
 <HR>
@@ -117,7 +113,6 @@ All Rights Reserved.</SMALL>
 <UL>
 <LI><A HREF="#How_mirror_CPAN">How do I mirror CPAN?</A>
 <LI><A HREF="#What_do_I_need">What do I need to mirror CPAN?</A>
-<LI><A HREF="#How_mirror_NT">I have Windows 2000/NT/98/95, how can I mirror CPAN?</A>
 <LI><A HREF="#Which_site_mirror">Which CPAN site should I mirror?</A>
 <LI><A HREF="#How_register_mirror">How do I register my mirror to make it a public resource?</A>
 </UL>
@@ -691,11 +686,6 @@ to set one up for you if you cannot host it yourself.
 </UL>
 <P>
 <HR>
-<H3><A NAME="Where_find_CPAN_CD">Where can I find CPAN on a CD-ROM?</A></H3>
-<P>
-CPAN (cpan.org) does not produce CD-ROMs, sorry.  Besides, these days one would need a DVD.
-<P>
-<HR>
 <H3><A NAME="How_join_mongers">How do I find/join/organise a Perl User Group?</A></H3>
 <P>
 The Perl User Groups are known as "Perl Mongers" and have active groups all over the world. You can
@@ -763,50 +753,6 @@ itself.
 In addition to the on-line documentation you might try the newsgroup comp.lang.perl.modules for help 
 with a particular module. Also, looking at other code using the same module might prove enlightening.
 <HR>
-<H3><A NAME="VRML_error">When downloading a module a strange VRML viewer started up and I got an error, what should I do?</A></H3>
-<P>
-You saw an error window "VRML Console" saying "Compilation error: Unrecognized header string".  
-The reason the VRML viewer starts is that there is a type of compressed VRML file
-with a .gz extension, using (theoretically) the standard gzip compression.
-The VRML folk used <TT>.gz </TT>as a means of cutting down the download time on 
-the old <TT>wrl</TT> files. Most VRML browsers come with a mini gunzip program. See also the VRML
-<A HREF="http://home.hiwaay.net/~crispen/vrmlworks/faq/faq2.html#q3"> FAQ</A> which also covers this 
-problem.
-<P>
-You can fix this with the following steps;<BR>
-<OL>	
-<LI>Open "My Computer" or Windows NT Explorer.
-<LI>Select the "View" menu.
-<LI>Select "Options".
-<LI>Click the "File Types" tab.
-<LI>Scroll through the "Registered file types" until you reach "WorldView VRMLViewer Object" and select it.
-<LI>Click "Remove".
-<LI>Answer "Yes". (I've never seen these VRML files WorldView claims to be caring about: if you 
-have and you do care, please tell me how to make WorldView stop caring about the <TT>.gz</TT> and
-<TT>application/x-gzip</TT>)
-<LI>Quit and restart your browser for the change to take effect.
-<LI>The next time you try open a file ending in <TT>.gz</TT> Windows will ask you which application to 
-use to open that file.  Scroll down to WinZiP (winzip32), and remember to check the box asking whether
-to always use this application to open this type of file unless, of course, you plan on regularly using
-the VRML viewer.
-</OL>
-<HR>
-<H3><A NAME="Where_find_GDBM_file">Where can I find the GDBM_File/DB_File module?</A></H3>
-<P>
-<B>The GDBM_File module comes standard with Perl 5.</B>
-<P>
-The problem you are most likely to be having is that your system (or the system your binary 
-distribution was built on in the case you are not using the source code distribution but
-instead relying on a prebuilt binary installation kit) does not have the <B>external library</B> 
-called libgdbm, or GNU DBM. The GDBM_File module needs that to be built, installed, and used.
-The library has nothing to do with Perl as such. You can try hunting for it using the standard 
-software repositories for your platform or <A HREF="http://www.gnu.org">http://www.gnu.org/</A>
-<P>
-If you are looking for DB_File, every time it says GDBM think of DB, GDBM_File needs an external 
-library called libdb, or Berkeley DB. You might try 
-<A HREF="http://www.sleepycat.com/">http://www.sleepycat.com</A> who distributes the Berkeley DB 
-source code.
-<HR>
 <H3><A NAME="What_search_down">I'm having trouble with search.cpan.org, whom do I need to contact?</A></H3>
 <P>
 If you are experiencing difficulty using search.cpan.org due to network or server errors, you need to contact
@@ -836,15 +782,6 @@ very hard to misplace your documentation".)
 <LI><A HREF="http://perldoc.perl.org">http://perldoc.perl.org/</A>
 <LI><A HREF="http://search.cpan.org">http://search.cpan.org/</A>
 <LI><A HREF="http://kobesearch.cpan.org/">http://kobesearch.cpan.org/</A>
-</UL>
-<HR>
-<H3><A NAME="How_search_really_anything">How do I search for ANYTHING, really?</A></H3>
-<P>
-<UL>
-<LI><A HREF="http://www.google.com/">http://www.google.com/</A>
-<LI><A HREF="http://www.yahoo.com/">http://www.yahoo.com/</A><BR>
-<LI><A HREF="http://www.altavista.com/">http://www.altavista.com/</A>
-(too many to list)
 </UL>
 <HR>
 <H3><A NAME="How_find_news_item">How do I find Ralph Nader? (a.k.a. We're C-P-A-N not C-S-P-A-N!)</A></H3>
@@ -1119,10 +1056,6 @@ About rsync frequency: once a day is fine and enough; once every hour is far, fa
 </P>
 
 </UL>
-<HR>		
-<H3><A NAME="How_mirror_NT">I have Windows Vista/XP/2000/NT/98/95, how can I mirror CPAN?</A></H3>
-<P>
-By using <A HREF="http://rsync.samba.org/">rsync</A> for <A HREF="http://rsync.samba.org/rsync/nt.html">NT</A>.
 <HR>
 <H3><A NAME="Which_site_mirror">Which CPAN site should I mirror?</A></H3>
 <P>
