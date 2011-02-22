@@ -1,0 +1,27 @@
+CPAN/indices/README
+
+This document describes the indices subdirectories of the CPAN.
+
+The directories contains various index views of CPAN.
+---
+
+  RECENT-ls	the recent (7 days) arrivals to CPAN as seen by find -ls
+  RECENT-print	ditto with find -print (the same file as CPAN/RECENT)
+  du-k.gz	disk usage by directory (du -k)
+  find-ls.gz	find -ls output (*)
+  ls-R.gz	ls -R output
+  ls-ltR	ls -ltR output
+
+---
+
+(*) find-ls format:
+
+inode kB mode nlinks user group bytes mtime:ctime filename
+
+for files and directories, and
+
+inode 0 "l" 1 user group bytes mtime:ctime slinkname targetname
+
+for symbolic links.
+
+# eof

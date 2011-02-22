@@ -1,0 +1,68 @@
+CPAN/ports/README
+
+	You are probably looking for a binary distribution of Perl.
+	If so, go directly to
+
+		http://www.perl.com/CPAN/ports/index.html
+
+	The rest of this file tells is more detail about the
+	contents of this directory (http://www.perl.com/CPAN/ports/)
+	but in principle, the above URL should be all you need.
+
+CONTENTS
+
+	This directory contains ports (or pointers to such) of Perl
+
+	(1) to platforms that the Perl standard source code distribution (S)
+	    does not (yet) support, such as Tandem Guardian.
+
+	(2) to platforms where a C compiler is an exception, not the rule,
+	    like for example the Windows platforms and OS/2.
+
+	(3) some of the directories here are empty and just contain pointers
+	    back to (S).  These are Perl source code archaeology in action:
+	    once upon a time these platforms were not supported in the (S),
+	    but they are now.  Examples include Amiga, BeOS, and MPE/iX.
+
+	(S) Either
+
+		http://www.perl.com/CPAN/src/stable.tar.gz
+
+	   or
+
+		http://www.perl.com/CPAN/src/stable.zip
+
+	Grab that, unpack it, start off by reading the README.
+
+BUILDING PERL FROM SOURCE
+
+	To build from the (S) you will need a full C compiler and
+	some sort of compilation environment ('make' or some similar
+	build tool).  If you have a UNIX-like shell environment
+	(Bourne shell and the usual UNIX utilities like 'tr', 'sed',
+	and so on), so much the better.
+
+	Because Perl's roots are in the UNIX world in general any
+	UNIX platform should be supported in the (S).  If this isn't
+	the case, please send email to perlbug@perl.com and tell in
+	excruciating detail what is your UNIX platform.  For example
+	the output of "uname -a" or similar would be handy.
+
+	Beware: some platforms which the vendors call UNIX do not
+	have a full C compiler -- or if they have a 'bundled' one,
+	it's severely crippled, supplied mainly for compiling the
+	kernel/device drivers.
+
+	Perl requires more than that.
+
+	Such crippled platforms include HP-UX and Solaris.  Either
+	you will have to pay for the full C compiler or find
+	yourself the GNU C compiler (gcc) as a binary distribution.
+	If you don't know where to start, locate the FAQ for your
+	platform.  If you don't know what that is or where to get
+	that, use the search engines.  If you don't know what those
+	are, consult your local information systems support.  If
+	they don't know what all the above means, fire them.
+
+-- 
+cpan@perl.org

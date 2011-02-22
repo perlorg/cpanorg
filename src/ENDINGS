@@ -1,0 +1,108 @@
+CPAN/ENDINGS
+
+---
+
+FUNNY FILE ENDINGS AND WHAT TO DO ABOUT THEM
+
+  The files in the CPAN have all kinds of curious endings (the parts
+  after dots) and one must know what to do about them. The tools you
+  need to run are marked like "this", inside double quotes, in the
+  below list. Because CPAN is not just one place we cannot point
+  you explicitly to the tools for your particular system, you have to
+  locate them for your system, sorry. Try out whether your system
+  already has them installed. If not, ask your local user support
+  and/or search for them via the WWW search engines or the archie.
+
+  In Win32 (95/98/NT/W2K) "WinZip" should be able to unpack the most
+  usual archival and compression formats.
+
+  In MacIntosh StuffIt should work.
+
+  Archives and/or Compressed/Packed
+
+  .tar	Tape ARchive (never mind the 'tape' part, historical reasons,
+	disk will do just fine). Program called "tar" will help,
+	"tar tvf foo.tar" will list the contents, "tar xvf foo.tar"
+	will extract the contents.
+  .gz	compressed with "gzip", "gunzip" (or "gzip -d") to uncompress
+  .bz2  compressed with "bzip2", "bunzip2" (or "bzip2 -d") to uncompress
+  .tgz		.tar.gz in disguise for DOS, see below for "MULTIPLE ENDINGS"
+  .tbz		.tar.bz2 ditto,              ditto
+  .tbz2		.tar.bz2 ditto,              ditto
+  .taz		.tar.gz ditto,               ditto
+  .tgZ		.tar.Z ditto,                ditto
+  .Z	compressed with "compress", "uncompress" to uncompress
+  .uu	UUencoded with "uuencode", "uudecode" to decode
+	(note: the first line of the .uu file tells the name
+         of the un-uuencoded file that will appear when you uudecode)
+  .shar	SHell ARchive: can be extracted in UNIX either with "unshar -c"
+        or "unshar" or "sh".
+  .zip	PCish archive, "unzip -l foo.zip" to list the contents,
+	"unzip -x foo.zip" to extract, "unzip -h" for help.
+  .bin  MacIntoshish archive, StuffIt should work. In UNIX
+	a program called "mcvert" should work.
+  .sit	MacIntoshish archive, StuffIt should work. In UNIX
+	a program called "unsit" should work.
+  .hqx  MacIntoshish archive, StuffIt should work.
+  .zoo  Amigaish/Atarish archive, zoo should work.
+
+  Code and/or Documentation
+
+  .pl	PerL: perl script, any Perl version
+  .pm	Perl Module: Perl 5 onwards code
+  .pod  Plain Old Documentation: perl documentation,
+	quite readable as-is but if needed converters like pod2man,
+	pod2html, exist in the Perl 5 distribution (CPAN/src/5.0/)
+  .xs	Perl eXtenSion code, please see the perlxs documentation
+	coming with the Perl 5 distribution
+  .man	UNIX man(1) manual page format (nroff)
+  .1	ditto
+  .html	HyperText Markup Language: the Web-speak
+  .tex	TeX or LaTeX formatted text
+  .txt	Text
+		
+  Graphics
+
+  .xbm	X11 BitMap, view with e.g. "xv"
+  .gif	Graphics Interchange Format, view with e.g. "xv"
+  .ps	PostScript: you probably have a laser printer that groks this
+	and possibly have a previewer like ghostscript ("gs", "gv") that will
+	display this on screen
+  .dvi	DeVice Independent: TeX portable graphics display format:
+	converters like "dvips" (DVI -> PostScript) and previewers
+        like "xdvi" (X Window DVI) exist.
+
+"BUT I HAVE MULTIPLE ENDINGS..."
+
+  The endings are recursive, work your way down from the right.
+
+  .tar.gz	First "gunzip", then "tar".
+  .tar.bz2	First "bunzip2", then "tar".
+  .tar.Z	First "uncompress", then "tar". Often mangled for
+		DOSish systems as .tgZ, .tgz, or .taz.
+  .uu.gz	First "gunzip", then "uudecode".
+  .shar.gz	First "gunzip", then "unshar".
+
+Note 1:
+
+  The GNU zip, "gunzip", "gzip -d", can uncompress both .gz and .Z
+
+	gunzip bar.gz
+	gunzip foo.Z
+
+  It cannot uncompress .bz2, though.
+
+Note 2:
+
+  The GNU tar, often installed as "gnutar" or "gtar", can use "gunzip" if
+  it can find it, one does not need to first uncompress and then "tar" but
+  can instead do both in one sweep:
+
+	gtar ztvf foo.tar.gz
+
+  will list the contents of the gzipped foo.tar without having foo.tar
+  in the disk.  
+
+-- 
+cpan@perl.org
+
