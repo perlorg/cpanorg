@@ -1,0 +1,1180 @@
+[% page.title = 'The CPAN Frequently Asked Questions' %]
+
+[% page.head = BLOCK %]
+<!-- Copyright Jarkko Hietaniemi jhi@iki.fi 1998-2007 All Rights Reserved
+     You may distribute this document either under the Artistic License
+     (comes with Perl) or the GNU Public License, whichever suits you.
+     The CPAN Logo provided by J.C. Thorpe.
+     You are not allowed to remove or alter these comments.
+-->
+
+<link rev="made" href="mailto:cpan@perl.org">
+<style type="text/css">
+  <!--
+   BODY	{ background:	white  }
+   H1	{ text-align:	center }
+   BLOCKQUOTE
+        { text-align: center;
+          font-style: italic;
+          white-space: pre;    }
+   CITE
+        { text-align: left;    }
+   IMG  { align:        center;
+          border:       0
+        }
+   -->
+</style>
+[% END %]
+
+<CENTER><IMG SRC="../misc/jpg/cpan.jpg" ALIGN=MIDDLE ALT="CPAN"></CENTER>
+<H1>CPAN Frequently Asked Questions</H1>
+<P>
+Here are some answers to the most common questions received by <TT>cpan@perl.org</TT>.
+<P>
+For general information about Perl you should see the <A HREF="http://www.perl.org/">Perl Home Page</A> (<TT>www.perl.org</TT>).
+<P>
+See the Perl FAQ (especially for any Perl programming questions, but also for other resources), 
+available at <A HREF="http://perlfaq.cpan.org">http://perlfaq.cpan.org/</A>.
+<P>
+<SMALL>Copyright Elaine Ashton <TT>&lt;hfb@chaos.wustl.edu&gt;</TT> 
+and Jarkko Hietaniemi <TT>&lt;jhi@iki.fi&gt</TT> 1998-2007
+All Rights Reserved.</SMALL>
+</P>
+<HR>
+<H2>I. - General Questions.</H2>
+<UL>
+<LI><A HREF="#What_is_Perl">What is Perl?</A>
+<LI><A HREF="#What_is_Perl6">What is Perl6?</A>
+<LI><A HREF="#What_is_CPAN">What is the CPAN?</A>
+<LI><A HREF="#What_is_PAUSE">What is PAUSE?</A>
+<LI><A HREF="#How_does_the_CPAN_work">How does the CPAN work?</A>
+<LI><A HREF="#How_does_the_CPAN_multiplexer_work">How does the CPAN multiplexer work?</A>
+</UL>
+<HR>
+<H2>II. - The Quest for Perl source, modules and scripts.</H2>
+<UL>
+<LI><A HREF="#Where_Perl_source_code">Where can I find the current release of the Perl source code?</A>
+<LI><A HREF="#Where_older_Perl">Where can I find older/obsolete versions of Perl or Perl Modules?</A>
+<LI><A HREF="#What_versions_mean">How do I interpret the Perl version numbers?</A>
+<LI><A HREF="#How_install_Perl_source">How do I install Perl from the source code?</A>
+<LI><A HREF="#Where_find_Perl_modules">Where can I find Perl modules?</A>
+<LI><A HREF="#How_install_Perl_modules">How do I install Perl modules?</A>
+<LI><A HREF="#How_installed_modules">How do I find out what modules are already installed on my system?</A>
+<LI><A HREF="#Where_recent_modules">Where can I find the most recently uploaded Perl modules?</A>
+<LI><A HREF="#Where_find_modules_windows">Where can I find Perl modules for Windows?</A>
+<LI><A HREF="#Where_find_binaries">Where can I find Perl binaries/packages or Perl module binaries?</A>
+<LI><A HREF="#How_is_Perl_licensed">How are Perl and the CPAN modules licensed?</A>
+<LI><A HREF="#What_modules_in_Perl_Dist">Does the Perl source distribution include any modules?</A>
+<LI><A HREF="#What_platform_modules">What modules are platform dependent?</A>
+<LI><A HREF="#Where_find_Perl_scripts">Where can I find Perl scripts?</A>
+</UL>
+<HR>
+<H2>III. - RIF [ Reading is Fun-duh-mental ]</H2>
+<UL>
+<LI><A HREF="#Where_find_Perl_FAQs">Where can I find the Perl FAQs?</A>
+<LI><A HREF="#Where_find_Perl_documentation">Where can I find Perl documentation?</A>
+<LI><A HREF="#Where_find_module_documentation">Where can I find Perl module documentation?</A>
+<LI><A HREF="#Where_find_DBI_documentation">Where can I find Perl DBI/DBD/database documentation?</A>
+<LI><A HREF="#Where_find_Perl_mailing_lists">Where can I find/join/create Perl mailing lists?</A>
+<LI><A HREF="#Where_find_Perl_journals">Where can I find Perl journals/magazines?</A>
+<LI><A HREF="#Where_find_Perl_training">Where can I find Perl courses/training/on-line tutorials?</A>
+<LI><A HREF="#Where_find_CPAN_CD">Where can I find CPAN on a CD-ROM?</A>
+<LI><A HREF="#How_join_mongers">How do I find/join/organise a Perl User Group?</A>
+<LI><A HREF="#What_history_Perl">Where can I find a history of Perl releases or a general history of the Perl community?</A>
+</UL>
+<HR>
+<H2>IV. - Danger Will Robinson! Danger! Danger!</H2>
+<UL>
+<LI><A HREF="#Error_downloading_module">I got an error downloading a module, what should I do?</A>
+<LI><A HREF="#Download_module_corrupt">I downloaded a module/script/file but it was corrupt, what should I do?</A>
+<LI><A HREF="#Help_me_obi_wan">How do I use module Foo::Bar, can you help? (a.k.a. Are you a helpdesk?)</A>
+<LI><A HREF="#VRML_error">When downloading a module a strange VRML viewer started up and I got an error, what should I do?</A>
+<LI><A HREF="#Where_find_GDBM_file">Where can I find the GDBM_File/DB_File module?</A>
+<LI><A HREF="#What_search_down">I'm having trouble with search.cpan.org, whom do I need to contact?</A>
+</UL>
+<HR>
+<H2>V. - Searching CPAN, CSPAN and the rest of the known universe.</H2>
+<UL>
+<LI><A HREF="#How_search_CPAN">How do I search CPAN?</A>
+<LI><A HREF="#How_search_module_documentation">How do I search for module/script documentation? (a.k.a. "How do I use ..."?)</A>
+<LI><A HREF="#How_search_really_anything">How do I search for really ANYTHING?</A>
+<LI><A HREF="#How_find_news_item">How do I find Ralph Nader? (a.k.a. We're C-P-A-N not C-S-P-A-N!)</A>
+</UL>
+<HR>
+<H2>VI. - Contributing modules, patches, and bug reports.</H2>
+<UL>
+<LI><A HREF="#How_contribute_modules">How do I contribute modules to CPAN?</A>
+<LI><A HREF="#Does_CPAN_allow_shareware">Does CPAN allow contributions of shareware or code that requests a fee of any kind?</A>
+<LI><A HREF="#How_contribute_scripts">How do I contribute scripts to CPAN?</A>
+<LI><A HREF="#How_contribute_documentation">How do I contribute documentation?</A>
+<LI><A HREF="#How_report_bug_Perl">How do I report/fix a bug in Perl and/or its documentation?</A>
+<LI><A HREF="#How_report_bug_module">How do I report/fix a bug in a module/script?</A>
+<LI><A HREF="#How_maintain_module">How do I go about maintaining a module when the author is unresponsive?</A>
+<LI><A HREF="#How_adopt_module">How do I adopt or take over a module already on CPAN?</A>
+<LI><A HREF="#Where_is_testers">Is there a site for module bug reports/tests?</A>
+<LI><A HREF="#Plans_for_statistics">Does CPAN provide download statistics for authors?</A>
+</UL>
+<HR>
+<H2>VII. - How to mirror CPAN.</H2>
+<UL>
+<LI><A HREF="#How_mirror_CPAN">How do I mirror CPAN?</A>
+<LI><A HREF="#What_do_I_need">What do I need to mirror CPAN?</A>
+<LI><A HREF="#How_mirror_NT">I have Windows 2000/NT/98/95, how can I mirror CPAN?</A>
+<LI><A HREF="#Which_site_mirror">Which CPAN site should I mirror?</A>
+<LI><A HREF="#How_register_mirror">How do I register my mirror to make it a public resource?</A>
+</UL>
+<P>
+<HR>
+<H3><A NAME="What_is_Perl">What is Perl?</A></H3>
+<P>
+From the Perl documentation:
+<P>
+<CITE>
+Perl is a high-level programming language with an eclectic heritage written by Larry Wall and a cast 
+of thousands. It derives from the ubiquitous C programming language and to a lesser extent from sed, 
+awk, the Unix shell, and at least a dozen other tools and languages. Perl's process, file, and text 
+manipulation facilities make it particularly well-suited for tasks involving quick prototyping, system 
+utilities, software tools, system management tasks, database access, graphical programming, networking, 
+and world wide web programming. These strengths make it especially popular with system administrators 
+and CGI script authors, but mathematicians, geneticists, journalists, and even managers also use Perl. 
+Maybe you should, too.
+</CITE>
+<P>
+See also <A HREF="http://www.tpj.com/whatisperl.html">http://www.tpj.com/whatisperl.html</A>
+<P>
+Two good starting points for Perl information are <A HREF="http://www.perl.com/pub">http://www.perl.com/</A>
+and <A HREF="http://www.perl.org/">http://www.perl.org/</A>
+<P>
+<HR>
+<H3><A NAME="What_is_Perl6">What is Perl6?</A></H3>
+<P>
+At The Second O'Reilly Open Source Software Convention, Larry Wall announced Perl6 development would begin 
+in earnest. Perl6 was an oft used term for Chip Salzenberg's project to rewrite Perl in C++ named
+Topaz. However, Topaz should not be confused with the nisus to rewrite Perl while keeping the lessons learned
+from other software, as well as Perl5, in mind.                
+<P>
+If you have a desire to help in the crusade to make Perl a better place then peruse the Perl6 developers page 
+at <A HREF="http://www.perl.org/perl6/">http://www.perl.org/perl6</A> and get involved.
+<P>  
+"We're really serious about reinventing everything that needs reinventing." --Larry Wall
+<HR>
+<H3><A NAME="What_is_CPAN">What is CPAN?</A></H3>
+<P>
+CPAN is the <B>C</B>omprehensive <B>P</B>erl <B>A</B>rchive <B>N</B>etwork, a large collection of
+Perl software and documentation.  You can begin exploring from either
+<A HREF="http://www.cpan.org/">http://www.cpan.org/</A>, 
+<A HREF="http://www.perl.com/CPAN/">http://www.perl.com/CPAN/</A> or any of the mirrors listed at
+<A HREF="http://www.cpan.org/SITES.html">http://www.cpan.org/SITES.html</A>.
+<P>
+Note that CPAN is also the name of a Perl module, CPAN.pm, which is used to download
+and install Perl software from the CPAN archive.  This FAQ covers only a little about 
+the CPAN module and you may find the documentation for it by using <TT> perldoc CPAN </TT> 
+ via the command line or on the web at <A HREF="http://search.cpan.org/dist/CPAN/lib/CPAN.pm">
+ http://search.cpan.org/dist/CPAN/lib/CPAN.pm</A>.
+<HR>
+<H3><A NAME="What_is_PAUSE">What is PAUSE?</A></H3>
+<P>
+ <A HREF="http://pause.cpan.org/">PAUSE</A> is the <B>P</B>erl <B>A</B>uthors <B>U</B>pload 
+<B>SE</B>rver, a registry for Perl module, script and documentation authors to upload their 
+work to the CPAN. CPAN and PAUSE are often used interchangeably but they are distinct from 
+each other. The CPAN.pm documentation explains it rather simply;
+<P>
+<CITE>
+In this discussion CPAN and PAUSE have become equal -- but they are not. PAUSE is authors/, 
+modules/ and scripts/. CPAN is PAUSE plus the clpa/, doc/, misc/, ports/ and src/.
+</CITE>
+<P>
+See the question <A HREF="#How_contribute_modules">'How do I contribute modules?'</A> below if you 
+want to become a registered PAUSE user.
+<HR>
+<H3><A NAME="How_does_the_CPAN_work">How does the CPAN work?</A></H3>
+<P>
+With dark magic, evil-looking sacrificial knives and scantily clad virgins under pale moonlight.
+<P>
+It actually works with the generosity and cooperation of hundreds of developers, over 100
+participating mirrors, funet.fi donating the network bandwidth, storage space and computing
+power, volunteers who help keep everything together and users whose interest in Perl keep 
+the archive alive and growing.
+<P>
+After an author uploads their module to <A HREF="http://pause.cpan.org/">PAUSE</A>, it will be
+mirrored to CPAN once an hour and from there, to the rest of the mirrors around the world. Various
+scripts run on CPAN daily to make sure that mirrors are up and running and that the mirror to PAUSE
+is functional, etc. There are people who advise authors on their choice of name and namespace for
+their modules and a few others who answer questions and investigate issues sent to cpan@perl.org.
+<HR>
+<H3><A NAME="How_does_the_CPAN_multiplexer_work">How does the CPAN multiplexer work?</A></H3>
+<P>
+Not nearly as much dark magic and certainly no virgins, scantily clad or not...er...I mean... 
+<P>
+The CPAN Multiplexer is the creation of Tom Christiansen and it lives at 
+<A HREF="http://www.perl.com/CPAN">http://www.perl.com/CPAN</A> which will present you with a menu 
+of available mirrors and links to the source code if you wish to see how it really works. You may 
+use a trailing slash on the above URL to have it try and direct you to the nearest mirror. The
+multiplexer attempts to map the tail part of the resolved DNS name of the client to the closest 
+possible CPAN site, e.g. An *.ac.uk address will be directed to a mirror in the .uk domain, but 
+an unresolvable numeric address or a *.com will be directed to the perl.com mirror. 
+<HR>
+<H3><A NAME="Where_Perl_source_code">Where can I find the current release of the Perl source code?</A></H3>
+<P>
+<UL>
+<LI><A HREF="http://www.cpan.org/src/">http://www.cpan.org/src/</A> - A detailed list of source code offerings.
+</UL>
+<P>The Perl Mongers have a "Download Perl" button for websites and if you are interested you can find it on their 
+site at <A HREF="http://www.pm.org/web_site_frosting.shtml">http://www.pm.org/web_site_frosting.shtml</A>.
+<HR>
+<H3><A NAME="Where_older_Perl">Where can I find older/obsolete versions of Perl or Perl Modules?</A></H3>
+<P>
+Unless you have A Very Good Reason you shouldn't be installing obsolete versions because they might
+contain bugs, possibly even security bugs.
+<P>
+Good Reasons may include having to support Perl 4 programs, trying to replicate a bug that requires
+an old Perl release, or pure joy of software archaeology. (Are you Perl 1 compliant?)
+<P>
+CPAN does not carry all ancient releases and patchlevels of Perl (because of the bugs we mentioned 
+above and because they would take quite a lot of storage space).  
+<UL>
+<LI><A HREF="http://www.etla.org/retroperl/">http://www.etla.org/retroperl/</A></LI>
+<LI><A HREF="http://mirrors.valueclick.com/perl/really-ancient-perls/">http://mirrors.valueclick.com/perl/really-ancient-perls/</A></LI>
+<LI><A HREF="http://history.perl.org/src/">http://history.perl.org/src/</A></LI>
+<LI><A HREF="http://backpan.perl.org/">http://backpan.perl.org/</A> - for old versions of modules</LI>
+</UL>
+<HR>
+<H3><A NAME="What_versions_mean">How do I interpret the Perl version numbers?</A></H3>
+<P>
+Perl changed the version numbering system with v5.6.0 as was indicated in the release announcement:
+<P>
+<CITE>
+Perl v5.6.0 is a major release that incorporates all maintenance and development changes since the last major 
+release, 5.005.  As you may have noticed, the version numbering has changed.  Releases will henceforth be 
+numbered as revision.version.subversion triples.  Maintenance releases will have an even version component, 
+while the version component for development releases will be odd.  For example, the next maintenance update 
+of Perl 5.6.0 will be v5.6.1, and the development series will begin life at v5.7.0.
+</CITE>
+<P>
+You may also peruse the <TT>perlhist</TT> manpage for a complete list of versions and their release dates.
+<HR>
+<H3><A NAME="How_install_Perl_source">How do I install Perl using the source code?</A></H3>
+<P>
+To build Perl you need a C compilation environment. After downloading the source code and 
+opening it up, you should first read the INSTALL document which will detail how to build
+Perl on most systems. There are a number of README.[platform] for platforms where special
+care is needed in building Perl. As always, reading the documentation is a Good Thing[tm].
+<P>
+Perl can be installed using the standard source code distribution on almost all platforms 
+Perl runs on. This includes all the UNIXes (and good lookalikes, meaning
+POSIX environments like OS/2, Plan 9, QNX, Amiga, MPE/iX, VMS, OS390, Stratus VOS), and 
+Microsoft platforms. The most notable exceptions are (as of 1999-Mar-24);
+<UL>
+<LI> MacOS (1)
+<LI> AS/400 (2)
+<LI> Novell Netware	(2)
+</UL>
+<P>
+For these platforms a binary release may be the easiest path. 
+<OL>
+<LI>The source code to compile MacPerl is available at
+    <A HREF="http://www.cpan.org/ports/mac/">http://www.cpan.org/ports/mac/</A>.
+<LI>The source code for AS/400 and Netware Perls have not been merged to the main Perl source 
+code distribution. If you want to try compiling them yourself, get the sources from 
+<A HREF="http://www.cpan.org/ports/as400/">http://www.cpan.org/ports/As400/</A> or
+<A HREF="http://www.cpan.org/ports/netware/">http://www.cpan.org/ports/netware/</A> and
+then continue at <A HREF="http://www.cpan.org/src/README">http://www.cpan.org/src/README</A>
+</OL>
+<HR>
+<H3><A NAME="Where_find_Perl_modules">Where can I find Perl modules?</A></H3>
+<P>
+<UL>
+<LI><A HREF="http://www.cpan.org/modules/00modlist.long.html">http://www.cpan.org/modules/00modlist.long.html</A>
+<LI><A HREF="http://search.cpan.org/">http://search.cpan.org/</A>
+<LI><A HREF="http://kobesearch.cpan.org/">http://kobesearch.cpan.org/</A>
+</UL>
+<P>
+Due to the ever increasing number of modules on CPAN, the CPAN search engine is possibly a better
+starting point in your quest for code, especially if you already know exactly what you are looking
+for.
+<HR>
+<H3><A NAME="How_install_Perl_modules">How do I install Perl modules?</A></H3>
+<P>
+Installing a new module can be as simple as typing <TT>perl -MCPAN -e 'install Chocolate::Belgian'</TT>. 
+The <A HREF="http://theoryx5.uwinnipeg.ca/CPAN/perl/CPAN.html">CPAN.pm documentation</A> has 
+more complete instructions on how to use this convenient tool.  If you are uncomfortable with 
+having something take that much control over your software installation, or it otherwise doesn't 
+work for you, the <A HREF="http://theoryx5.uwinnipeg.ca/CPAN/perl/pod/perlmodinstall.html">perlmodinstall</A>
+documentation covers module installation for UNIX, Windows and Macintosh in more familiar terms.
+<P>
+Finally, if you're using ActivePerl on Windows, the 
+<A HREF="http://velocity.activestate.com/docs/ActivePerl/faq/ActivePerl-faq2.html">PPM</A>
+(Perl Package Manager) has much of the same functionality as CPAN.pm.
+<HR>
+<H3><A NAME="How_installed_modules">How do I find out what modules are already installed on my system?</A></H3>
+<P>
+<UL>
+<LI><TT>perldoc perllocal</TT>
+<P>
+Each time a module is installed on your system, it appends information like the following to a file called 
+<TT>perllocal.pod</TT> which can be found in <TT>/usr/local/lib/perl5/version number/architecture/</TT> or something
+akin to that. The path for your specific installation is in your @INC which you can divine with <TT>perl -V</TT>.
+<PRE>
+=head2 Wed May 12 13:42:53 1999: C&lt;Module&gt; L&lt;Data::Dumper&gt;
+
+=over 4
+
+=item *
+
+C&lt;installed into: /usr/local/lib/perl5/5.00503&gt;
+
+=item *
+
+C&lt;LINKTYPE: dynamic&gt;
+
+=item *
+
+C&lt;VERSION: 2.101&gt;
+
+=item *
+
+C&lt;EXE_FILES: &gt;
+
+=back
+</PRE>
+Each entry includes the Module name, date and time it was installed, where it was installed, linktype [ static or dynamic ],
+version and executables, if any, included with the module.
+<P>
+<LI>ActivePerl has the PPM utility. 
+<PRE>
+C:\>ppm query
+Archive-Tar   [0.072 ] module for manipulation of tar archives.
+Compress-Zlib [1.03  ] Interface to zlib compression library
+DBI           [1.13  ] Database independent interface for Perl
+GD            [1.25  ] Interface to Gd Graphics Library
+HTML-Parser   [2.23  ] SGML parser class
+MIME-Base64   [2.11  ] Encoding and decoding of base64 strings
+PPM           [1.1.4 ] Perl Package Manager: locate, install, upgrade software
+</PRE>
+<P>
+<LI>The pmtools suite written by Tom Christiansen to help navigate and manage Perl module installations. 
+You can obtain them at <A HREF="http://language.perl.com/misc/pmtools-1.00.tar.gz">http://language.perl.com/misc/pmtools-1.00.tar.gz</A>.
+From the README:
+<PRE>
+This is pmtools -- a suite of small programs to help manage modules.
+The names are totally preliminary, and in fact, so is the code.  We follow
+the "keep it small" notion of many tiny tools each doing one thing well,
+eschewing giant megatools with millions of options.
+</PRE>
+<UL>
+<LI>pmpath - show the module's full path
+<LI>pmvers - get a module version number
+<LI>pmdesc  - get a module description
+<LI>pmall  - get all installed modules pmdesc descriptions 
+<LI>pmdirs    - print the perl module path, newline separated
+<LI>plxload - show what files a given program loads at compile time
+<LI>pmload - show what files a given module loads at compile time
+<LI>pmexp - show a module's exports
+<LI>pminst  - find what's installed
+<LI>pmeth - list a class's methods, recursively
+<LI>pmls  - long list the module path
+<LI>pmcat  - cat the module source through your pager
+<LI>pman - show the module's pod docs
+<LI>pmfunc - show a function source code from a module
+<LI>podgrep - grep in pods of a file
+<LI>pfcat - show pods from perlfunc
+<LI>podtoc - list table of contents of a podpage
+<LI>podpath - show full path of pod file
+<LI>pods - list all standard pods and module pods
+<LI>sitepods - list only pods in site_perl directories
+<LI>basepods - list only normal "man-page" style pods
+<LI>faqpods - list only faq pods
+<LI>modpods - all module pods, including site_perl ones
+<LI>stdpods - list standard pods, not site_perl ones
+</UL>
+</UL>
+<HR>
+<H3><A NAME="Where_recent_modules">Where can I find the most recently uploaded Perl modules?</A></H3>
+<P>
+There are so many new and updated modules that it is hard to keep up with the deluge, but there are ways
+to stay abreast of the tide.
+</P>
+<UL>
+<LI><A HREF="http://search.cpan.org/recent">http://search.cpan.org/recent</A> 
+<LI><A HREF="http://theoryx5.uwinnipeg.ca/mod_perl/cpan-search?request=recent">http://theoryx5.uwinnipeg.ca/mod_perl/cpan-search?request=recent</A> 
+<LI><A HREF="http://use.perl.org/">http://use.perl.org/</A> 
+<LI><A HREF="http://search.cpan.org/recent.rdf">http://search.cpan.org/recent.rdf</A> - an RSS format of /recent 
+</UL>
+<P>Any of these should be good for your daily feed of new modules.</P>
+<HR>
+<H3><A NAME="Where_find_modules_windows">Where can I find Perl modules for Windows?</A></H3>
+<P>
+<A HREF="http://velocity.activestate.com/docs/ActivePerl/faq/ActivePerl-faq2.html">www.activestate.com</A> 
+has a FAQ for their Package Manager or <A HREF="http://www.netaxs.com/~joc/perlwin32.html">http://www.netaxs.com/~joc/perlwin32.html</A>
+which has a nice listing of Win32 resources including modules.
+<HR>
+<H3><A NAME="Where_find_binaries">Where can I find Perl binaries/packages or Perl module binaries?</A></H3>
+<P>
+<A HREF="http://www.cpan.org/ports/index.html">http://www.cpan.org/ports/index.html</A> is a current
+list of Perl binaries that we are aware of at this time. If you have a package for a platform, send
+us a URL. We do not endorse nor guarantee these packages nor do we store them locally on CPAN due
+to the potential size of the archive if we did.
+<P>
+Perl module binaries for use with ActivePerl's PPM can be found at 
+<A HREF="http://www.activestate.com/PPMPackages/">http://www.activestate.com/PPMPackages/</A>.
+<HR>
+<H3><A NAME="How_is_Perl_licensed">How are Perl and the CPAN modules licensed?</A></H3>
+<P>
+Most, though not all, modules on CPAN are licensed under the GNU Public License (GPL)
+or the Artistic license and should be stated in the documentation that
+accompanies the module itself. If the license is not specifically stated
+in the module, you can always write the author to clarify the issue for
+you.
+
+Also, the text of the Artistic license and the GNU Public License are included in
+the root directory of the source distribution. From the 'README' file that
+comes with Perl:
+<P>
+<PRE>
+                       Perl Kit, Version 5.0
+
+                   Copyright 1989-1999, Larry Wall
+                        All rights reserved.
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of either:
+ 
+    a) the GNU General Public License as published by the Free
+    Software Foundation; either version 1, or (at your option) any
+    later version, or
+    b) the "Artistic License" which comes with this Kit.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See either
+the GNU General Public License or the Artistic License for more details.
+
+You should have received a copy of the Artistic License with this
+Kit, in the file named "Artistic".  If not, I'll be glad to provide one.
+
+You should also have received a copy of the GNU General Public License
+along with this program in the file named "Copying". If not, write to the
+Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA
+02111-1307, USA or visit their web page on the internet at
+http://www.gnu.org/copyleft/gpl.html.
+
+For those of you that choose to use the GNU General Public License,
+my interpretation of the GNU General Public License is that no Perl
+script falls under the terms of the GPL unless you explicitly put
+said script under the terms of the GPL yourself.  Furthermore, any
+object code linked with perl does not automatically fall under the
+terms of the GPL, provided such object code only adds definitions
+of subroutines and variables, and does not otherwise impair the
+resulting interpreter from executing any standard Perl script.  I
+consider linking in C subroutines in this manner to be the moral
+equivalent of defining subroutines in the Perl language itself.  You
+may sell such an object file as proprietary provided that you provide  
+or offer to provide the Perl source, as specified by the GNU General
+Public License.  (This is merely an alternate way of specifying input
+to the program.)  You may also sell a binary produced by the dumping of 
+a running Perl script that belongs to you, provided that you provide or
+offer to provide the Perl source as specified by the GPL.  (The
+fact that a Perl interpreter and your code are in the same binary file
+is, in this case, a form of mere aggregation.)  This is my interpretation
+of the GPL.  If you still have concerns or difficulties understanding
+my intent, feel free to contact me.  Of course, the Artistic License
+spells all this out for your protection, so you may prefer to use that.
+</PRE>
+<HR> 
+<H3><A NAME="What_modules_in_Perl_Dist">Does the Perl source include any modules?</A></H3>
+<P>Yes, Perl comes with a number of useful modules and are listed in the perlmodlib pod:
+<UL>
+<LI><A HREF="http://theoryx5.uwinnipeg.ca/CPAN/perl/pod/perlmodlib.html">http://theoryx5.uwinnipeg.ca/CPAN/perl/pod/perlmodlib.html</A>
+<LI><TT>perldoc perlmodlib</TT>
+</UL>
+<HR>
+<H3><A NAME="What_platform_modules">What modules are platform dependent?</A></H3>
+<P> 
+Several implementations of Perl on specific platforms come bundled
+with a collection of platform specific modules.
+
+Additional information is available for:
+
+<H3>IBM OS/2</H3>
+<P>The following modules come with standard Perl.</P>
+<DL>
+<DT><A HREF="http://search.cpan.org/search?mode=module&amp;query=OS2%3A%3ADLL"><TT>OS2::DLL</TT></A></DT>
+<DD>Access to DLLs with REXX calling convention and REXX runtime.</DD>
+
+<DT><A HREF="http://search.cpan.org/search?mode=module&amp;query=OS2%3A%3AExtAttr"><TT>OS2::ExtAttr</TT></A></DT>
+<DD>Access to extended attributes.</DD>
+
+<DT><A HREF="http://search.cpan.org/search?mode=module&amp;query=OS2%3A%3APrfDB"><TT>OS2::PrfDB</TT></A></DT>
+<DD>Access to the OS/2 setting database.</DD>
+
+<DT><A HREF="http://search.cpan.org/search?mode=module&amp;query=OS2%3A%3AProcess"><TT>OS2::Process</TT></A></DT>
+<DD>Constants for \tool{system}(2) call on OS/2.</DD>
+
+<DT><A HREF="http://search.cpan.org/search?mode=module&amp;query=OS2%3A%3AREXX"><TT>OS2::REXX</TT></A></DT>
+<DD>Access to DLLs with REXX calling convention and REXX runtime.</DD>
+</DL>
+<H3>DEC (Open)VMS</H3>
+<P>The following modules come with standard Perl.</P>
+<DL>
+<DT><A HREF="http://search.cpan.org/search?mode=module&amp;query=VMS%3A%3ADCLsym"><TT>VMS::DCLsym</TT></A></DT>
+<DD>Perl extension to manipulate DCL symbols.</DD>
+
+<DT><A HREF="http://search.cpan.org/search?mode=module&amp;query=VMS%3A%3AFilespec"><TT>VMS::Filespec</TT></A></DT>
+<DD>Converts between VMS and Unix file specification syntax.</DD>
+
+<DT><A HREF="http://search.cpan.org/search?mode=module&amp;query=VMS%3A%3AStdio"><TT>VMS::Stdio</TT></A></DT>
+<DD>Standard I/O functions via VMS extensions.</DD>
+
+<DT><A HREF="http://search.cpan.org/search?mode=module&amp;query=VMS%3A%3AXSSymSet"><TT>VMS::XSSymSet</TT></A></DT>
+<DD>Keeps sets of symbol names palatable to the VMS linker. </DD>
+</DL>
+
+<H3>Microsoft Windows (32 bit)</H3>
+<P>The following modules come with <A HREF="http://www.activestate.com/Products/ActivePerl/">ActiveState Perl</A>.</P>
+<DL>
+<DT><A HREF="http://search.cpan.org/search?mode=module&amp;query=Win32%3A%3AChangeNotify"><TT>Win32::ChangeNotify</TT></A></DT>
+<DD>Monitors events related to files and directories.</DD>
+
+<DT><A HREF="http://search.cpan.org/search?mode=module&amp;query=Win32%3A%3AConsole"><TT>Win32::Console</TT></A></DT>
+<DD>Uses Win32 Console and Character Mode Functions.</DD>
+
+<DT><A HREF="http://search.cpan.org/search?mode=module&amp;query=Win32%3A%3AEvent"><TT>Win32::Event</TT></A></DT>
+<DD>Uses Win32 event objects.</DD>
+
+<DT><A HREF="http://search.cpan.org/search?mode=module&amp;query=Win32%3A%3AEventLog"><TT>Win32::EventLog</TT></A></DT>
+<DD>Processes Win32 Event Logs.</DD>
+
+<DT><A HREF="http://search.cpan.org/search?mode=module&amp;query=Win32%3A%3AFile"><TT>Win32::File</TT></A></DT>
+<DD>Manages file attributes.</DD>
+
+<DT><A HREF="http://search.cpan.org/search?mode=module&amp;query=Win32%3A%3AFileSecurity"><TT>Win32::FileSecurity</TT></A></DT>
+<DD>Manages FileSecurity Discretionary Access Control Lists.</DD>
+
+<DT><A HREF="http://search.cpan.org/search?mode=module&amp;query=Win32%3A%3AIPC"><TT>Win32::IPC</TT></A></DT>
+<DD>Loads base class for Win32 synchronization objects.</DD>
+
+<DT><A HREF="http://search.cpan.org/search?mode=module&amp;query=Win32%3A%3AInternet"><TT>Win32::Internet</TT></A></DT>
+<DD>Accesses <TT>WININET.DLL</TT> functions.</DD>
+
+<DT><A HREF="http://search.cpan.org/search?mode=module&amp;query=Win32%3A%3AMutex"><TT>Win32::Mutex</TT></A></DT>
+<DD>Uses Win32 mutex objects.</DD>
+
+<DT><A HREF="http://search.cpan.org/search?mode=module&amp;query=Win32%3A%3ANetAdmin"><TT>Win32::NetAdmin</TT></A></DT>
+<DD>Manages network groups and users.</DD>
+
+<DT><A HREF="http://search.cpan.org/search?mode=module&amp;query=Win32%3A%3ANetResource"><TT>Win32::NetResource</TT></A></DT>
+<DD>Manages network resources.</DD>
+
+<DT><A HREF="http://search.cpan.org/search?mode=module&amp;query=Win32%3A%3AODBC"><TT>Win32::ODBC</TT></A></DT>
+<DD>Uses ODBC Extension for Win32.</DD>
+
+<DT><A HREF="http://search.cpan.org/search?mode=module&amp;query=Win32%3A%3AOLE"><TT>Win32::OLE</TT></A></DT>
+<DD>Uses OLE Automation extensions.</DD>
+
+<DT><A HREF="http://search.cpan.org/search?mode=module&amp;query=Win32%3A%3AOLE%3A%3AConst"><TT>Win32::OLE::Const</TT></A></DT>
+<DD>Extracts constant definitions from TypeLib.</DD>
+
+<DT><A HREF="http://search.cpan.org/search?mode=module&amp;query=Win32%3A%3AOLE%3A%3AEnum"><TT>Win32::OLE::Enum</TT></A></DT>
+<DD>Uses OLE Automation Collection Objects.</DD>
+
+<DT><A HREF="http://search.cpan.org/search?mode=module&amp;query=Win32%3A%3AOLE%3A%3ANLS"><TT>Win32::OLE::NLS</TT></A></DT>
+<DD>Uses OLE National Language Support.</DD>
+
+<DT><A HREF="http://search.cpan.org/search?mode=module&amp;query=Win32%3A%3AOLE%3A%3AVariant"><TT>Win32::OLE::Variant</TT></A></DT>
+<DD>Creates and modifies OLE VARIANT variables.</DD>
+
+<DT><A HREF="http://search.cpan.org/search?mode=module&amp;query=Win32%3A%3APerfLib"><TT>Win32::PerfLib</TT></A></DT>
+<DD>Accesses the Windows NT Performance Counter.</DD>
+
+<DT><A HREF="http://search.cpan.org/search?mode=module&amp;query=Win32%3A%3AProcess"><TT>Win32::Process</TT></A></DT>
+<DD>Creates and manipulates processes.</DD>
+
+<DT><A HREF="http://search.cpan.org/search?mode=module&amp;query=Win32%3A%3ASemaphore"><TT>Win32::Semaphore</TT></A></DT>
+<DD>Uses Win32 semaphore objects.</DD>
+
+<DT><A HREF="http://search.cpan.org/search?mode=module&amp;query=Win32%3A%3AService"><TT>Win32::Service</TT></A></DT>
+<DD>Manages system services.</DD>
+
+<DT><A HREF="http://search.cpan.org/search?mode=module&amp;query=Win32%3A%3ASound"><TT>Win32::Sound</TT></A></DT>
+<DD>Plays with Windows sounds.</DD>
+
+<DT><A HREF="http://search.cpan.org/search?mode=module&amp;query=Win32%3A%3ATieRegistry"><TT>Win32::TieRegistry</TT></A></DT>
+<DD>Mungs the registry.</DD>
+
+<DT><A HREF="http://search.cpan.org/search?mode=module&amp;query=Win32API%3A%3AFile"><TT>Win32API::File</TT></A></DT>
+<DD>Accesses low-level Win32 system API calls for files and directories.</DD>
+
+<DT><A HREF="http://search.cpan.org/search?mode=module&amp;query=Win32API%3A%3ANet"><TT>Win32API::Net</TT></A></DT>
+<DD>Manages Windows NT LanManager accounts.</DD>
+
+<DT><A HREF="http://search.cpan.org/search?mode=module&amp;query=Win32API%3A%3ARegistry"><TT>Win32API::Registry</TT></A></DT>
+<DD>Accesses low-level Win32 system API calls from <TT>WINREG.H</TT>.</DD>
+</DL>
+<HR>
+<H3><A NAME="Where_find_Perl_scripts">Where can I find Perl scripts?</A></H3>
+<UL>
+<LI><A HREF="http://www.cpan.org/scripts/index.html">http://www.cpan.org/scripts/index.html</A> 
+<LI><A HREF="http://www.perlarchive.com/">http://www.perlarchive.com/</A>
+<LI><A HREF="http://freshmeat.net">http://freshmeat.net/</A> 
+<LI>and many, many other places on the net have Perl programs....
+</UL>
+<HR>
+<H3><A NAME="Where_find_Perl_FAQs">Where can I find the Perl FAQs?</A></H3>
+<P>
+The Perl FAQ is included with the Perl source code distribution.
+<P>
+<UL>
+<LI><TT>perldoc perlfaq</TT>
+<LI><A HREF="http://perlfaq.cpan.org/">http://perlfaq.cpan.org/</A>
+</UL>
+<HR>
+<H3><A NAME="Where_find_Perl_documentation">Where can I find Perl documentation?</A></H3>
+<P>
+<UL>
+<LI><A HREF="http://www.cpan.org/doc/index.html">http://www.cpan.org/doc/index.html</A>
+<LI><A HREF="http://perldoc.cpan.org">http://perldoc.cpan.org/</A>
+<LI><TT>perldoc perldoc</TT> to use the documentation included with your Perl distribution.
+<LI><A HREF="http://theoryx5.uwinnipeg.ca/CPAN/perl/pod/perlfaq2/Perl_Books.html">http://theoryx5.uwinnipeg.ca/CPAN/perl/pod/perlfaq2/Perl_Books.html</A> 
+for those who have read all of the free documentation and want something they can read in the loo 
+by candlelight.
+</UL>
+<HR>
+<H3><A NAME="Where_find_module_documentation">Where can I find Perl module documentation?</A></H3>
+<P>
+<UL>
+<LI><A HREF="http://search.cpan.org/">http://search.cpan.org/</A>, 
+<LI><A HREF="http://wait.cpan.org/">http://wait.cpan.org/</A> 
+<LI><TT>perldoc Foo::Bar</TT> if the module is installed locally.
+</UL>
+<HR>
+<H3><A NAME="Where_find_DBI_documentation">Where do I find Perl DBI/DBD/database documentation?</A></H3>
+<P>
+<UL>
+<LI><A HREF="http://www.symbolstone.org/technology/perl/DBI/">http://www.symbolstone.org/technology/perl/DBI/</A> - Alligator Descartes Definitive DBI page.
+<LI><A HREF="http://www.savebaseball.com/mysql/DBD_3.21.X.php3">http://www.savebaseball.com/mysql/DBD_3.21.X.php3</A> - A mySQL Perl DBI/DBD Manual.
+<LI><A HREF="http://theoryx5.uwinnipeg.ca/CPAN/data/DBI/DBI.html">http://theoryx5.uwinnipeg.ca/CPAN/data/DBI/DBI.html</A> - The DBI man page.
+<LI><TT>perldoc DBI</TT> 
+</UL>
+<HR>
+<H3><A NAME="Where_find_Perl_mailing_lists">Where can I find Perl mailing lists?</A></H3>
+<P>
+There are quite a few mailing lists with a broad range of topics. 
+<P>
+<UL>
+<LI><A HREF="http://lists.perl.org/">http://lists.perl.org/</A> 
+<LI><A HREF="http://www.perl.com/pub/language/info/mailing-lists.html">http://www.perl.com/pub/language/info/mailing-lists.html</A>, 
+<LI><A HREF="http://www.perl.org/support/mailing_lists.html">http://www.perl.org/support/mailing_lists.html</A>
+<LI><A HREF="http://www.mail-archive.com/">http://www.mail-archive.com/</A> - browseable web archives of many of 
+the Perl lists. 
+</UL>
+<P>
+Many of the lists are open for general subscription. If you don't see a list that interests 
+you and would like to start your own you may ask <A HREF="mailto:lists@perl.org">lists@perl.org</A> 
+to set one up for you if you cannot host it yourself.
+<HR>
+<H3><A NAME="Where_find_Perl_journals">Where can I find Perl journals/magazines?</A></H3>
+<P>
+<UL>
+<LI><A HREF="http://www.tpj.com/">http://www.tpj.com/</A> - <B>The</B> journal in print for Perl. 
+<LI><A HREF="http://www.perlmonth.com/">http://www.perlmonth.com/</A> - a terrific on-line only journal.
+<LI><A HREF="http://www.unixreview.com/">http://www.unixreview.com/</A> 
+<LI><A HREF="http://www.stonehenge.com/merlyn/WebTechniques/">http://www.stonehenge.com/merlyn/WebTechniques/</A> 
+- Randal Schwartz' Web Techniques Columns.
+<LI><A HREF="http://www.usenix.org/publications/login/login.html">http://www.usenix.org/publications/login/login.html</A> 
+- ;login, the publication of USENIX.
+<LI><A HREF="http://www.samag.com/">http://www.samag.com/</A> - System Admin Magazine has occasional Perl articles.
+</UL>
+<HR>
+<H3><A NAME="Where_find_Perl_training">Where can I find Perl courses/training/on-line tutorials?</A></H3>
+<P>
+<H4>Training</H4>
+<UL>
+<LI><A HREF="http://training.perl.com/"> http://training.perl.com/</A>
+<LI><A HREF="http://www.perl.org/phbs/training.html"> http://www.perl.org/phbs/training.html</A>
+</UL>
+<P>
+<HR>
+<H3><A NAME="Where_find_CPAN_CD">Where can I find CPAN on a CD-ROM?</A></H3>
+<P>
+CPAN (cpan.org) does not produce CD-ROMs, sorry.  Besides, these days one would need a DVD.
+<P>
+<HR>
+<H3><A NAME="How_join_mongers">How do I find/join/organise a Perl User Group?</A></H3>
+<P>
+The Perl User Groups are known as "Perl Mongers" and have active groups all over the world. You can
+find an established group at <A HREF="http://www.pm.org/groups.shtml">http://www.pm.org/groups.shtml</A>
+or start a new group if one isn't near you via <A HREF="http://www.pm.org/start.shtml">http://www.pm.org/start.shtml</A>
+<HR>
+<H3><A NAME="What_history_Perl">Where can I find a history of Perl releases or a general history of the Perl community?</A></H3>
+<P>
+A history of Perl releases can be found in your Perl distribution via <TT> perldoc perlhist </TT> or via 
+the web at <A HREF="http://theoryx5.uwinnipeg.ca/CPAN/perl/pod/perlhist.html">http://theoryx5.uwinnipeg.ca/CPAN/perl/pod/perlhist.html</A>.
+<P>
+A more general history of the Perl community, CPAST, can be found at <A HREF="http://history.perl.org/">http://history.perl.org/</A>.
+<HR>
+<H3><A NAME="Error_downloading_module">I got an error downloading a module, what should I do?</A></H3>
+<P>
+If you feel that you have experienced unreasonable difficulty reaching a particular mirror and wish 
+to inform us of this, please check the points below before contacting us. We do poll mirrors daily 
+to be sure they are on-line and available, but there are times when servers or their networks 
+go down for brief periods of time that we don't always see and have no control over.
+<UL>
+<LI><B>What program were you using to download?</B><BR>A Web browser?<BR> An FTP client?
+<LI><B>Which server were you using?</B><BR>
+Note that many Perl software servers redirect your WWW requests to a site (hopefully) nearer to you.
+For example, the perl.com multiplexer does that so you often aren't downloading from perl.com itself.  
+If you are using a web browser, take a close look at the URL/Location. Also note that we 
+cannot debug your network connectivity and if you have problems connecting to anywhere other than the 
+CPAN master site, ftp.funet.fi, we probably cannot be of service.<BR>
+<P>
+You can try changing the server to <A HREF="http://www.perl.com/CPAN">http://www.perl.com/CPAN</A>,
+(note: NO final slash) and pick a new server. Note that the selection is `sticky' and your browser
+will use that server from then on. Using <A HREF="http://www.perl.com/CPAN/">http://www.perl.com/CPAN/</A> 
+(note the final slash) will use the multiplexer to pick a new mirror for you.
+
+<LI><B>What was the exact error message?</B><BR>
+We are not clairvoyant so please include the exact error message, cut and paste if you must.<BR>
+
+<LI><B>Did you retry later?</B><BR>
+The server might be temporarily busy or be offline and refuse connections for a while. 
+Retry later or try another server.
+</UL>
+<HR>
+<H3><A NAME="Download_module_corrupt">I downloaded a module/script/file but it was corrupt, what should I do?</A></H3>
+<P>
+Many CPAN filenames end in .tar.gz.  Unfortunately some programs mutilate such names 
+(e.g., rename them with _tar.tar) so that unpacking programs don't recognise them and refuse to unpack
+them.  Try saving the file using the .tgz suffix or try changing your web client.  Also, you could 
+try a plain FTP client as almost all the CPAN sites are ftp-reachable.  You can find the full list 
+of mirrors <A HREF="http://www.cpan.org/SITES.html">http://www.cpan.org/SITES.html</A>
+<P>
+If you use FTP remember to download in binary format, not text format.
+<P>
+Please read <A HREF="http://www.cpan.org/ENDINGS">http://www.cpan.org/ENDINGS</A> if you aren't sure
+what the files should be unpacked with and want to know if you are using the right program.
+<P>
+If you still think you have a corrupt file, try downloading the file from another site. If you still
+have no satisfaction, then please let us know the exact file name and URL/FTP site and path.
+<HR>
+<H3><A NAME="Help_me_obi_wan">How do I use module Foo::Bar, can you help? (a.k.a. Are you a helpdesk?)</A></H3>
+<P>
+We at CPAN are not a helpdesk. We may point you towards a plethora of documentation
+to help you in your quest for knowledge but we cannot debug your code or read for you. We exist 
+specifically to answer questions and solve problems relating directly to the functioning of the CPAN 
+itself.
+<P>
+In addition to the on-line documentation you might try the newsgroup comp.lang.perl.modules for help 
+with a particular module. Also, looking at other code using the same module might prove enlightening.
+<HR>
+<H3><A NAME="VRML_error">When downloading a module a strange VRML viewer started up and I got an error, what should I do?</A></H3>
+<P>
+You saw an error window "VRML Console" saying "Compilation error: Unrecognized header string".  
+The reason the VRML viewer starts is that there is a type of compressed VRML file
+with a .gz extension, using (theoretically) the standard gzip compression.
+The VRML folk used <TT>.gz </TT>as a means of cutting down the download time on 
+the old <TT>wrl</TT> files. Most VRML browsers come with a mini gunzip program. See also the VRML
+<A HREF="http://home.hiwaay.net/~crispen/vrmlworks/faq/faq2.html#q3"> FAQ</A> which also covers this 
+problem.
+<P>
+You can fix this with the following steps;<BR>
+<OL>	
+<LI>Open "My Computer" or Windows NT Explorer.
+<LI>Select the "View" menu.
+<LI>Select "Options".
+<LI>Click the "File Types" tab.
+<LI>Scroll through the "Registered file types" until you reach "WorldView VRMLViewer Object" and select it.
+<LI>Click "Remove".
+<LI>Answer "Yes". (I've never seen these VRML files WorldView claims to be caring about: if you 
+have and you do care, please tell me how to make WorldView stop caring about the <TT>.gz</TT> and
+<TT>application/x-gzip</TT>)
+<LI>Quit and restart your browser for the change to take effect.
+<LI>The next time you try open a file ending in <TT>.gz</TT> Windows will ask you which application to 
+use to open that file.  Scroll down to WinZiP (winzip32), and remember to check the box asking whether
+to always use this application to open this type of file unless, of course, you plan on regularly using
+the VRML viewer.
+</OL>
+<HR>
+<H3><A NAME="Where_find_GDBM_file">Where can I find the GDBM_File/DB_File module?</A></H3>
+<P>
+<B>The GDBM_File module comes standard with Perl 5.</B>
+<P>
+The problem you are most likely to be having is that your system (or the system your binary 
+distribution was built on in the case you are not using the source code distribution but
+instead relying on a prebuilt binary installation kit) does not have the <B>external library</B> 
+called libgdbm, or GNU DBM. The GDBM_File module needs that to be built, installed, and used.
+The library has nothing to do with Perl as such. You can try hunting for it using the standard 
+software repositories for your platform or <A HREF="http://www.gnu.org">http://www.gnu.org/</A>
+<P>
+If you are looking for DB_File, every time it says GDBM think of DB, GDBM_File needs an external 
+library called libdb, or Berkeley DB. You might try 
+<A HREF="http://www.sleepycat.com/">http://www.sleepycat.com</A> who distributes the Berkeley DB 
+source code.
+<HR>
+<H3><A NAME="What_search_down">I'm having trouble with search.cpan.org, whom do I need to contact?</A></H3>
+<P>
+If you are experiencing difficulty using search.cpan.org due to network or server errors, you need to contact
+<A HREF="mailto:webmaster@search.cpan.org">webmaster@search.cpan.org</A>. 
+<HR>
+<H3><A NAME="How_search_CPAN">How do I search for anything on CPAN?</A></H3>
+<P>
+By using a CPAN search engine.<BR>
+<P>
+<UL>
+<LI><A HREF="http://perldoc.perl.org">http://perldoc.perl.org/</A>
+<LI><A HREF="http://search.cpan.org/">http://search.cpan.org/</A> - Graham Barr's search engine which can 
+search for modules, distributions or authors in all of CPAN.
+<LI><A HREF="http://kobesearch.cpan.org/">http://kobesearch.cpan.org/</A> - Randy Kobes' search engine that 
+can also search all of CPAN for modules, documentation, etc.
+<LI><A HREF="http://wait.cpan.org/">http://wait.cpan.org/</A> - full text search of pods on  PAUSE.
+</UL>
+<HR>
+<H3><A NAME="How_search_module_documentation"> How do I search for module/script documentation? (also known as "How do I use ..."?)</A></H3>
+<P>
+In general modules and scripts come with their own documentation which should have been installed 
+along with your module/script.  (Thanks to Perl's <TT>pod</TT>-style documentation, "it is 
+very hard to misplace your documentation".)
+<P>
+<UL>
+<LI><TT>perldoc Module::Name</TT>
+<LI><TT>perldoc scriptname</TT>
+<LI><A HREF="http://perldoc.perl.org">http://perldoc.perl.org/</A>
+<LI><A HREF="http://search.cpan.org">http://search.cpan.org/</A>
+<LI><A HREF="http://kobesearch.cpan.org/">http://kobesearch.cpan.org/</A>
+</UL>
+<HR>
+<H3><A NAME="How_search_really_anything">How do I search for ANYTHING, really?</A></H3>
+<P>
+<UL>
+<LI><A HREF="http://www.google.com/">http://www.google.com/</A>
+<LI><A HREF="http://www.yahoo.com/">http://www.yahoo.com/</A><BR>
+<LI><A HREF="http://www.altavista.com/">http://www.altavista.com/</A>
+(too many to list)
+</UL>
+<HR>
+<H3><A NAME="How_find_news_item">How do I find Ralph Nader? (a.k.a. We're C-P-A-N not C-S-P-A-N!)</A></H3>
+<P>
+You dialed the wrong number. The place you are looking for is <A HREF="http://www.cspan.org/">http://www.cspan.org/</A>.
+<HR>
+<H3><A NAME="How_contribute_modules">How do I contribute modules to CPAN?</A></H3>
+<P>
+If you would like to learn more about PAUSE and how to go about contributing your module to CPAN 
+please read the PAUSE FAQ at <A HREF="http://www.cpan.org/modules/04pause.html">
+http://www.cpan.org/modules/04pause.html</A> which will tell you how to go about getting a PAUSE ID 
+and the steps needed to upload your code. Also,<A HREF= "http://theoryx5.uwinnipeg.ca/CPAN/perl/pod/perlmodlib.html">
+<TT>perldoc perlmodlib</TT></A> and <A HREF="http://theoryx5.uwinnipeg.ca/CPAN/perl/pod/perlmod.html">
+<TT>perldoc perlmod</TT></A> are a good introduction to Perl modules.
+<HR>
+<H3><A NAME="Does_CPAN_allow_shareware">Does CPAN allow contributions of shareware or code that requests
+a fee of any kind?</A></H3>
+<P>
+No. Everything on CPAN is free of charge. The reason for this is that CPAN is the product of 
+hundreds of people donating their time and resources for the common good of the Perl community. 
+There are places on the net where one can offer shareware without treading on the generosity of
+others and this is not that place.
+<HR>
+<H3><A NAME="How_contribute_scripts">How do I contribute scripts to CPAN?</A></H3>
+<P>
+CPAN has a scripts repository at <A HREF="http://www.cpan.org/scripts/">http://www.cpan.org/scripts/</A>
+and <A HREF="http://www.cpan.org/scripts/submitting.html">http://www.cpan.org/scripts/submitting.html</A>
+will instruct you on how to go about contributing your scripts.
+<HR>
+<H3><A NAME="How_contribute_documentation">How do I contribute documentation to CPAN?</A></H3>
+<P>
+If the documentation is for a particular module that isn't a core distribution module, then please
+send it to the module author. If the module is a core module the most appropriate place to send 
+doc patches and enhancements is the Perl5Porters mailing list. 
+<HR>
+<H3><A NAME="How_report_bug_Perl">How do I report/fix a bug in Perl and/or its documentation?</A></H3>
+<P>
+Always remember to make your bug reports as detailed as possible.  "Perl doesn't work." is not a 
+bug report.
+<BR>
+Please note that problems concerning modules that are installed separately from the Perl distribution
+(such as Tk) are reported differently.
+<P>
+Here is a checklist from <A HREF="http://theoryx5.uwinnipeg.ca/CPAN/perl/utils/perlbug.html">perlbug</A>,
+a bug reporting tool included in your Perl distribution. It is a bit on the long side, but please read
+it carefully as the better your bug report is, the more likely the issue will be addressed.
+<P><UL>
+<LI><B>What version of Perl you are running?</B>
+<P>
+Try<TT> perl -v </TT>at the command line to find out.
+<P>
+<LI><B>Are you running the latest released version of perl?</B>
+<P>
+Look at <A HREF="http://www.perl.com/pub">http://www.perl.com/</A> to find out.  If it is not the latest
+released version, get that one and see whether your bug has been fixed. Note that bug reports about 
+old versions of Perl, especially those prior to the 5.0 release, are less likely to be incorporated 
+into the source as Perl1 through Perl4 are largely unmaintained.
+<P>
+<LI><B>Are you sure what you have is a bug?</B>
+<P>
+A significant number of the bug reports we get turn out to be documented features in Perl.  Make sure 
+the behavior you are witnessing doesn't fall under that category, by glancing through the 
+<A HREF="http://perldoc.cpan.org">documentation</A> that comes with Perl (we'll admit this is no 
+small task, given the sheer volume of it all, but at least have a look at the sections that seem relevant).
+<P>
+Be aware of the familiar traps that perl programmers of various hues fall into.  See the 
+<A HREF="http://theoryx5.uwinnipeg.ca/CPAN/perl/pod/perltrap.html">perltrap</A> documentation.
+<P>
+Check in <A HREF="http://theoryx5.uwinnipeg.ca/CPAN/perl/pod/perldiag.html">perldiag</A> 
+to see what any Perl error message(s) mean. If message isn't in perldiag, it 
+probably isn't generated by Perl.  Consult your operating system documentation instead.
+<P>
+If you are on a non-UNIX platform check also 
+<A HREF="http://theoryx5.uwinnipeg.ca/CPAN/perl/pod/perlport.html">perlport</A> documentation, some 
+features may not be implemented or work differently.
+<P>
+Try to study the problem under the Perl debugger,if necessary.  See the 
+<A HREF="http://theoryx5.uwinnipeg.ca/CPAN/perl/pod/perldebug.html">perldebug</A> documentation.
+<P>
+<LI><B>Do you have a proper test case?</B>
+<P>
+The easier it is to reproduce your bug, the more likely it will be fixed, because if no one can 
+duplicate the problem, no one can fix it. A good test case has most of these attributes: fewest 
+possible number of lines; few dependencies on external commands, modules, or libraries; runs on 
+most platforms unimpeded; and is self-documenting.
+<P>
+A good test case is almost always a good candidate to be on the perl test suite.  If you have the
+time, consider making your test case so that it will readily fit into the standard test suite.
+<P>
+Remember also to include all the exact error messages, if any.  "Perl complained something" is
+not an exact error message.
+<P>
+If you get a core dump (or equivalent), you may use a debugger (dbx, gdb, etc) to produce a
+stack trace to include in the bug report. NOTE: unless your Perl has been compiled with debug
+info (often -g), the stack trace is likely to be somewhat hard to use because it will most probably 
+contain only the function names and not their arguments.  If possible, recompile your Perl with 
+debug info and reproduce the dump and the stack trace.
+<P>
+<LI><B>Can you describe the bug in plain English?</B>
+<P>
+The easier it is to understand a reproducible bug, the more likely it will be fixed.  
+Anything you can provide by way of insight into the problem helps a great deal.
+In other words, try to analyze the problem (to the extent you can) and report your discoveries.
+<P>
+<LI><B>Can you fix the bug yourself?</B>
+<P>
+A bug report which includes a patch to fix it will almost definitely be fixed.  Use the diff 
+program to generate your patches (diff is being maintained by the GNU folks as part of the 
+diffutils package, so you should be able to get it from any of the GNU software repositories).  
+If you do submit a patch, the cool-dude counter at perlbug@perl.com will register you as a
+savior of the world.  Your patch may be returned with requests for changes, or requests for more
+detailed explanations about your fix.
+<P>
+Here are some clues for creating quality patches:<BR>
+Use the -c or -u switches to the diff program (to create a so-called context or unified diff).  Make
+sure the patch is not reversed (the first argument to diff is typically the original file, the second
+argument your changed file).  Make sure you test your patch by applying it with the patch program
+before you send it on its way.  Try to follow the same style as the code you are trying to patch.
+Make sure your patch really does work (make test, if the thing you're patching supports it).
+<P>
+<LI><B>Can you use perlbug to submit the report?</B>
+<P>
+perlbug will, amongst other things, ensure your report includes crucial information about your 
+version of perl.  If perlbug is unable to mail your report after you have typed it in, you may
+have to compose the message yourself, add the output produced by perlbug -d and email it to
+perlbug@perl.com.  If, for some reason, you cannot run perlbug at all on your system, be sure to
+include the entire output produced by running perl -V (note the uppercase V).
+<P>		
+Whether you use perlbug or send the email manually, please make your Subject line informative.
+"a bug" is not informative.  Neither is "perl crashes" nor "HELP!!!"  These don't help.  
+A compact description of what's wrong is fine.
+<P>
+Having done your bit, please be prepared to wait, to be told the bug is in your code, or even to get
+no reply at all.  The Perl maintainers are busy folks, so if your problem is a small one or if it
+is difficult to understand or already known, they may not respond with a personal reply.  If it is
+important to you that your bug be fixed, do monitor the Changes file in any development
+releases since the time you submitted the bug, and encourage the maintainers with kind words (but
+never any flames!).  Feel free to resend your bug report if the next released version of perl comes
+out and your bug is still present.
+</UL>
+<HR>
+<H3><A NAME="How_report_bug_module">How do I report/fix a bug in a module/script?</A></H3>
+<P>
+Please contact the author of the module/script. The documentation of the module/script should 
+contain a contact address or you can try <TT> CPANID@perl.org </TT> where CPANID is the authors
+CPANID.
+<P>
+Most of the checklist in <A HREF="#How_report_bug_Perl">reporting bugs in Perl</A> above applies 
+for modules as well. Make your bug report as good as possible if you really want the bug fixed.
+If the module is included with the Perl distribution you should also follow the Perl bug reporting
+tips.
+<HR>
+<H3><A NAME="How_maintain_module">How do I go about maintaining a module when the author is unresponsive?</A></H3>
+<P>
+Sometimes a module goes unmaintained for a while  due to the author pursuing other interests, being
+busy, etc. and another person needs changes applied to that module and may become frustrated when 
+their email goes unanswered. CPAN does not mediate or dictate a policy in this situation and rely
+on the respective authors to work out the details. If you treat other authors as you would like
+to be treated in the same situation the manner in which you go about dealing with such problems
+should be obvious. 
+<UL>
+<LI>Be courteous.</LI>
+<LI>Be considerate.</LI>
+<LI>Make an earnest attempt to contact the author.</LI>
+<LI>Give it time. If you need changes made immediately, consider applying your patches to the
+current module, changing the version and requiring that version for your application. Eventually the 
+author will turn up and apply your patches, offer you maintenance of the module or, if the author 
+doesn't respond in a year, you may get maintenance by having interest.</LI>
+<LI>If you need changes in order for another module or application to work, consider making the
+needed changes and bundling the new version with your own distribution and noting the change well 
+in the documentation. Do not upload the new version under the same namespace to CPAN until the
+matter has been resolved with the author or CPAN.</LI>
+</UL>
+<P>
+Simply keep in mind that you are dealing with a person who invested time and care into something. A
+little respect and courtesy go a long way.
+<HR>
+<H3><A NAME="How_adopt_module">How do I adopt or take over a module already on CPAN?</H3>
+<P>
+The easiest way to take over a module is to have the current
+module maintainer either make you a co-maintainer or transfer
+the module to you.
+</P
+<P>
+If you can't reach the author for some reason (e.g. email bounces),
+the PAUSE admins at modules@perl.org can help. The PAUSE admins
+treat each case individually.
+</P>
+<UL>
+<LI>
+Get a login for the Perl Authors Upload Server (PAUSE) if you don't
+already have one: http://pause.perl.org
+</LI>
+<LI>
+Write to modules@perl.org explaining what you did to contact the
+current maintainer. The PAUSE admins will also try to reach the
+maintainer.
+</LI>
+<LI>
+Post a public message in a heavily trafficed site announcing your
+intention to take over the module.  Potential places are
+http://use.perl.org/, http://www.perlmonks.org/, and any appropriate
+mailing lists or web forums.
+</LI>
+<LI>
+Wait a bit. The PAUSE admins don't want to act too quickly in case
+the current maintainer is on holiday. If there's no response to
+private communication or the public post, a PAUSE admin can transfer
+it to you.
+</LI>
+</UL>
+
+<H3><A NAME="Where_is_testers">Is there a site for module bug reports/tests?</A></H3>
+<P>
+Yes, through the diligence of Paul Schinder and a few others, we have <A HREF="http://testers.cpan.org/">
+CPAN Testers</A> which is a collection of test results for modules on a number of different platforms.
+This information is also available when viewing module information on <A HREF="http://search.cpan.org/"> CPAN
+search</A>.
+<P>
+There is also <A HREF="http://bugs.perl.org/">http://bugs.perl.org/</A> where you might search for a
+module bug already reported to P5P. 
+<HR>
+<H3><A NAME="Plans_for_statistics">Does CPAN provide download statistics for authors?</A></H3>
+<P>
+No we don't. <A HREF="http://xxx.lanl.gov/help/faq/statfaq">http://xxx.lanl.gov/help/faq/statfaq</A> sums up 
+our thoughts on the matter quite well.
+<HR>
+<H3><A NAME="How_mirror_CPAN">How do I mirror CPAN?</A></H3>
+<P>
+Either an FTP or rsync client will do. Scantily clad virgins and pale moonlight are optional and are not included
+in the sales price.
+<HR>
+<H3><A NAME="What_do_I_need">What do I need to mirror CPAN?</A></H3>
+<P>
+<UL>
+<LI>"Good" Internet connectivity, e.g. better than a 14.4 modem but not so much as an OC3.
+<LI>Around 1GB of storage space. <A HREF="http://www.cpan.org/indices/du-k.gz">http://www.cpan.org/indices/du-k.gz</A>
+ tells you the current size of the CPAN.
+<LI>An FTP or rsync client.
+<P>
+	<UL>
+	 <LI>For FTP there is a Perl script named mirror (which assumes a command line FTP client):
+	 <BR>
+	<A HREF="http://sunsite.org.uk/packages/mirror/">http://sunsite.org.uk/packages/mirror/</A>
+	<P>
+	<B>The FTP address for the CPAN master site is:</B><BR>
+	<A HREF="ftp://ftp.funet.fi/pub/languages/perl/CPAN/">ftp://ftp.funet.fi/pub/languages/perl/CPAN/</A>
+	<P>
+	<LI>and for rsync:
+	<BR>
+	<A HREF="http://rsync.samba.org/">http://rsync.samba.org/</A>
+	<P>
+	<B>The rsync addresses for the CPAN master site are:</B>
+	<BR>
+	<TT>ftp.funet.fi::CPAN</TT> or <TT>ftp.sedl.org::cpan</TT>
+	<P>
+	Once you have the rsync client installed on your system and the disk space mapped out, you may then
+	add an entry to your crontab [ if using UNIX, AT if using Windows NT ] like the following example:
+	<P>
+	<TT>0 20 * * * /usr/local/bin/rsync -av --delete ftp.funet.fi::CPAN /project/CPAN/</TT>
+	<P>
+	<TT>AT 20:00 /every:M,T,W,Th,F,S,Su "C:\Program Files\Rsync\rsync -av --delete ftp.funet.fi::CPAN /project/CPAN/"</TT>
+	</UL>
+
+<P>Please make sure your rsync uses at least protocol version 30 ;
+   use the command 'rsync --version' to find out.  You can
+   get the latest rsync from 'http://rsync.samba.org/'.
+</P>
+
+<P>
+About rsync frequency: once a day is fine and enough; once every hour is far, far too often.
+</P>
+
+</UL>
+<HR>		
+<H3><A NAME="How_mirror_NT">I have Windows Vista/XP/2000/NT/98/95, how can I mirror CPAN?</A></H3>
+<P>
+By using <A HREF="http://rsync.samba.org/">rsync</A> for <A HREF="http://rsync.samba.org/rsync/nt.html">NT</A>.
+<HR>
+<H3><A NAME="Which_site_mirror">Which CPAN site should I mirror?</A></H3>
+<P>
+The one that gives the best bandwidth (where your mirror finishes quickest) and which is most up-to-date. 
+Most up-to-date is, by definition, the CPAN master site <TT>ftp.funet.fi</TT>. Note that it lives in the 
+GMT+2 timezone so please try not to mirror during working hours: 0600 to 1400 GMT/UTC.  
+If you want to mirror from somewhere else, check the list at 
+<A HREF="http://www.cpan.org/SITES.html">http://www.cpan.org/SITES.html</A>
+<P>	
+Please organize the mirroring with the corresponding FTP maintainer (their email addresses from the file
+<A HREF="http://www.cpan.org/MIRRORED.BY">http://www.cpan.org/MIRRORED.BY</A>) so that you will not 
+overload their site and that your mirror starts just after theirs has finished.
+<P>
+A few tips to keep in mind:
+<UL>
+<LI>For your mirror site to be useful to your users you should mirror daily.
+<LI>You can also provide a HTTP interface in addition to an FTP interface to CPAN if you wish to do so.
+<LI>Consider also giving rsync access to your mirror.  Many people like rsync because it's very bandwidth-friendly. 
+<LI>Remember to tell cpan@perl.org about all the access methods you provide to your mirror: ftp, http, or rsync 
+(or any other methods).
+</UL>
+<HR>
+<H3><A NAME="How_register_mirror">How do I register my mirror to make it a public resource?</A></H3>
+<P>
+If you want to publicize your CPAN mirror (meaning that your mirror is publicly available),
+please fill in the following template which can be found from the top of the file
+<A HREF="http://www.cpan.org/MIRRORED.BY">http://www.cpan.org/MIRRORED.BY</A>:
+<P>
+<PRE>
+hostname.of.the.CPAN.mirroring.site:
+  frequency        = "daily/bidaily/.../weekly"
+  dst_directory    = "the.same.host.name:/CPAN/mirror/directory/"
+  dst_location     = "city, (area?, )country, continent (lon lat)"
+  dst_organisation = "full organisation name"
+  dst_timezone     = "GMT[+-]n"
+  dst_contact      = "email.address.to.contact@for.this.mirror"
+  dst_src          = "from.which.host:/is/this/site/mirroring/from/"
+  dst_notes        = "(optional field) access restrictions, for example?"
+</PRE>
+<P> There are plenty of examples of how to fill in the template file.
+When your template is ready, please send it to cpan@perl.org and you
+will be registered.></P>
+<HR>
+<P>
+<SMALL>Copyright Jarkko Hietaniemi <TT>&lt;jhi@iki.fi&gt;</TT> and
+Elaine Ashton <TT>&lt;hfb@chaos.wustl.edu&gt;</TT> 1998-2007
+All Rights Reserved.</SMALL>
+</P>
+<HR>
+</BODY>
+</HTML>
