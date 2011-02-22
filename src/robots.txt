@@ -1,0 +1,9 @@
+# Hello Robots!
+# Welcome to CPAN.
+
+User-agent: *
+Disallow: /badrobot/
+
+
+
+
