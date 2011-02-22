@@ -2,8 +2,9 @@
 
 This repository is for maintaining the non-source-code, non-archive
 content on cpan.org.  Discussion related to this should be on the
-cpan-workers mailing list:
-http://lists.perl.org/list/cpan-workers.html
+[cpan-workers mailing list][cpan-workers].
+
+[cpan-workers]: http://lists.perl.org/list/cpan-workers.html
 
 ## Rules for editing content:
 
