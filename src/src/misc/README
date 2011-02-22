@@ -1,0 +1,27 @@
+CPAN/src/misc/README
+
+This document describes the src/misc subdirectory of the CPAN.
+
+The directory contains sources possibly relevant to Perl.
+
+---
+
+anlpasswd*	a passwd(1) replacement using Perl
+		(checks passwords proactively using dictionaries and patterns)
+
+db*	 	Berkeley DB sources for use with
+		the Perl 5 database extensions
+
+gdbm*		GNU dbm sources for use with
+		the Perl 5 database extensions
+
+nvi*		new vi with embedded Perl (among other things)
+
+perl-byacc*	Berkeley Yacc that can output grammars in Perl 4
+
+perl5-byacc*	Berkeley Yacc that can output grammars in Perl 5
+
+sfio*		stdio replacement from AT&T.
+		Stackable stream disciplines and other cool stuff.
+
+# eof
