@@ -1,9 +1,10 @@
 
 all: build
 
-update: build
-
 clean: buildclean
+
+update: build
+	rsync -av html/ ../CPAN/
 
 buildclean: rmclean build
 
