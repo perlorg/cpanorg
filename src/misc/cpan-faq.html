@@ -46,7 +46,6 @@ All Rights Reserved.</SMALL>
 <LI><A HREF="#What_is_CPAN">What is the CPAN?</A>
 <LI><A HREF="#What_is_PAUSE">What is PAUSE?</A>
 <LI><A HREF="#How_does_the_CPAN_work">How does the CPAN work?</A>
-<LI><A HREF="#How_does_the_CPAN_multiplexer_work">How does the CPAN multiplexer work?</A>
 </UL>
 <HR>
 <H2>II. - The Quest for Perl source, modules and scripts.</H2>
@@ -81,7 +80,6 @@ All Rights Reserved.</SMALL>
 <HR>
 <H2>IV. - Danger Will Robinson! Danger! Danger!</H2>
 <UL>
-<LI><A HREF="#Error_downloading_module">I got an error downloading a module, what should I do?</A>
 <LI><A HREF="#Download_module_corrupt">I downloaded a module/script/file but it was corrupt, what should I do?</A>
 <LI><A HREF="#Help_me_obi_wan">How do I use module Foo::Bar, can you help? (a.k.a. Are you a helpdesk?)</A>
 <LI><A HREF="#What_search_down">I'm having trouble with search.cpan.org, whom do I need to contact?</A>
@@ -154,8 +152,7 @@ at <A HREF="http://www.perl.org/perl6/">http://www.perl.org/perl6</A> and get in
 <P>
 CPAN is the <B>C</B>omprehensive <B>P</B>erl <B>A</B>rchive <B>N</B>etwork, a large collection of
 Perl software and documentation.  You can begin exploring from either
-<A HREF="http://www.cpan.org/">http://www.cpan.org/</A>, 
-<A HREF="http://www.perl.com/CPAN/">http://www.perl.com/CPAN/</A> or any of the mirrors listed at
+<A HREF="http://www.cpan.org/">http://www.cpan.org/</A> or any of the mirrors listed at
 <A HREF="http://www.cpan.org/SITES.html">http://www.cpan.org/SITES.html</A>.
 <P>
 Note that CPAN is also the name of a Perl module, CPAN.pm, which is used to download
@@ -193,18 +190,6 @@ mirrored to CPAN once an hour and from there, to the rest of the mirrors around 
 scripts run on CPAN daily to make sure that mirrors are up and running and that the mirror to PAUSE
 is functional, etc. There are people who advise authors on their choice of name and namespace for
 their modules and a few others who answer questions and investigate issues sent to cpan@perl.org.
-<HR>
-<H3><A NAME="How_does_the_CPAN_multiplexer_work">How does the CPAN multiplexer work?</A></H3>
-<P>
-Not nearly as much dark magic and certainly no virgins, scantily clad or not...er...I mean... 
-<P>
-The CPAN Multiplexer is the creation of Tom Christiansen and it lives at 
-<A HREF="http://www.perl.com/CPAN">http://www.perl.com/CPAN</A> which will present you with a menu 
-of available mirrors and links to the source code if you wish to see how it really works. You may 
-use a trailing slash on the above URL to have it try and direct you to the nearest mirror. The
-multiplexer attempts to map the tail part of the resolved DNS name of the client to the closest 
-possible CPAN site, e.g. An *.ac.uk address will be directed to a mirror in the .uk domain, but 
-an unresolvable numeric address or a *.com will be directed to the perl.com mirror. 
 <HR>
 <H3><A NAME="Where_Perl_source_code">Where can I find the current release of the Perl source code?</A></H3>
 <P>
@@ -677,34 +662,6 @@ A history of Perl releases can be found in your Perl distribution via <TT> perld
 the web at <A HREF="http://theoryx5.uwinnipeg.ca/CPAN/perl/pod/perlhist.html">http://theoryx5.uwinnipeg.ca/CPAN/perl/pod/perlhist.html</A>.
 <P>
 A more general history of the Perl community, CPAST, can be found at <A HREF="http://history.perl.org/">http://history.perl.org/</A>.
-<HR>
-<H3><A NAME="Error_downloading_module">I got an error downloading a module, what should I do?</A></H3>
-<P>
-If you feel that you have experienced unreasonable difficulty reaching a particular mirror and wish 
-to inform us of this, please check the points below before contacting us. We do poll mirrors daily 
-to be sure they are on-line and available, but there are times when servers or their networks 
-go down for brief periods of time that we don't always see and have no control over.
-<UL>
-<LI><B>What program were you using to download?</B><BR>A Web browser?<BR> An FTP client?
-<LI><B>Which server were you using?</B><BR>
-Note that many Perl software servers redirect your WWW requests to a site (hopefully) nearer to you.
-For example, the perl.com multiplexer does that so you often aren't downloading from perl.com itself.  
-If you are using a web browser, take a close look at the URL/Location. Also note that we 
-cannot debug your network connectivity and if you have problems connecting to anywhere other than the 
-CPAN master site, ftp.funet.fi, we probably cannot be of service.<BR>
-<P>
-You can try changing the server to <A HREF="http://www.perl.com/CPAN">http://www.perl.com/CPAN</A>,
-(note: NO final slash) and pick a new server. Note that the selection is `sticky' and your browser
-will use that server from then on. Using <A HREF="http://www.perl.com/CPAN/">http://www.perl.com/CPAN/</A> 
-(note the final slash) will use the multiplexer to pick a new mirror for you.
-
-<LI><B>What was the exact error message?</B><BR>
-We are not clairvoyant so please include the exact error message, cut and paste if you must.<BR>
-
-<LI><B>Did you retry later?</B><BR>
-The server might be temporarily busy or be offline and refuse connections for a while. 
-Retry later or try another server.
-</UL>
 <HR>
 <H3><A NAME="Download_module_corrupt">I downloaded a module/script/file but it was corrupt, what should I do?</A></H3>
 <P>
