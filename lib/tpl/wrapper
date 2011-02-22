@@ -1,0 +1,11 @@
+[%- content = PROCESS $template;
+
+   #USE Dumper; Dumper.dump_html(page template);
+
+   IF !template.name.search('.html') OR page.style == 'none';
+      content;
+   ELSE;
+      default_style_template = "style/" _ page.style;
+      PROCESS $default_style_template;
+   END;
+%]

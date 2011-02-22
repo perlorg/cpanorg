@@ -1,0 +1,20 @@
+ignore = \.svn
+ignore = ^#
+ignore = ~$
+ignore = .DS_Store
+ignore = \.tt$
+
+depend *=tpl/wrapper,tpl/defaults,style/cpan.html
+
+copy = \.(gif|png|pdf|jpg)$
+
+verbose
+
+recurse
+
+pre_process = tpl/defaults
+process     = tpl/wrapper
+
+src  = ${SRC}
+dest = html
+lib  = lib
