@@ -8,9 +8,10 @@ content on cpan.org.  Discussion related to this should be on the
 
 ## Rules for editing content:
 
-* Don't add new files. Only files already on cpan.org should be added
-(and then to their current location).  Generally email ask@perl.org to
-get new files included here.
+* Don't add new output files. Only files already on cpan.org should be
+added (and then to their current location). Generally email
+ask@perl.org to get new files included here. Making new
+templates/scripts/etc to produce the output files is fine.
 
 * Be conservative in your edits.  While lots of updates are needed,
 this has been around for 15 years and will be for many more. There's
