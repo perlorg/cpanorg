@@ -1017,10 +1017,21 @@ A few tips to keep in mind:
 <H3><A NAME="How_register_mirror">How do I register my mirror to make it a public resource?</A></H3>
 <P>
 If you want to publicize your CPAN mirror (meaning that your mirror is publicly available),
-please fill in the template which can be found near the top of the file
-<A HREF="http://www.cpan.org/MIRRORED.BY">http://www.cpan.org/MIRRORED.BY</A>.
+please fill in the following template which can be found from the top of the file
+<A HREF="http://www.cpan.org/MIRRORED.BY">http://www.cpan.org/MIRRORED.BY</A>:
 <P>
-There are plenty of examples of how to fill in the template file.
+<PRE>
+hostname.of.the.CPAN.mirroring.site:
+  frequency        = "daily/bidaily/.../weekly"
+  dst_directory    = "the.same.host.name:/CPAN/mirror/directory/"
+  dst_location     = "city, (area?, )country, continent (lon lat)"
+  dst_organisation = "full organisation name"
+  dst_timezone     = "GMT[+-]n"
+  dst_contact      = "email.address.to.contact@for.this.mirror"
+  dst_src          = "from.which.host:/is/this/site/mirroring/from/"
+  dst_notes        = "(optional field) access restrictions, for example?"
+</PRE>
+<P> There are plenty of examples of how to fill in the template file.
 When your template is ready, please send it to cpan@perl.org and you
 will be registered.</P>
 <HR>
