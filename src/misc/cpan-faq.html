@@ -24,183 +24,293 @@
 </style>
 [% END %]
 
-<CENTER><IMG SRC="../misc/jpg/cpan.jpg" ALIGN=MIDDLE ALT="CPAN"></CENTER>
-<H1>CPAN Frequently Asked Questions</H1>
-<P>
-Here are some answers to the most common questions received by <TT>cpan@perl.org</TT>.
-</P><P>
-For general information about Perl you should see the <A HREF="http://www.perl.org/">Perl Home Page</A> (<TT>www.perl.org</TT>).
-</P><P>
-See the Perl FAQ (especially for any Perl programming questions, but also for other resources), 
-available at <A HREF="http://perlfaq.cpan.org">http://perlfaq.cpan.org/</A>.
-</P><P>
-<SMALL>Copyright Elaine Ashton <TT>&lt;hfb@chaos.wustl.edu&gt;</TT> 
-and Jarkko Hietaniemi <TT>&lt;jhi@iki.fi&gt</TT> 1998-2007
-All Rights Reserved.</SMALL>
-</P>
-<HR>
-<H2>I. - General Questions.</H2>
-<UL>
-<LI><A HREF="#What_is_Perl">What is Perl?</A>
-<LI><A HREF="#What_is_Perl6">What is Perl6?</A>
-<LI><A HREF="#What_is_CPAN">What is the CPAN?</A>
-<LI><A HREF="#What_is_PAUSE">What is PAUSE?</A>
-<LI><A HREF="#How_does_the_CPAN_work">How does the CPAN work?</A>
-</UL>
-<HR>
-<H2>II. - The Quest for Perl source, modules and scripts.</H2>
-<UL>
-<LI><A HREF="#Where_Perl_source_code">Where can I find the current release of the Perl source code?</A>
-<LI><A HREF="#Where_older_Perl">Where can I find older/obsolete versions of Perl or Perl Modules?</A>
-<LI><A HREF="#What_versions_mean">How do I interpret the Perl version numbers?</A>
-<LI><A HREF="#How_install_Perl_source">How do I install Perl from the source code?</A>
-<LI><A HREF="#Where_find_Perl_modules">Where can I find Perl modules?</A>
-<LI><A HREF="#How_install_Perl_modules">How do I install Perl modules?</A>
-<LI><A HREF="#How_installed_modules">How do I find out what modules are already installed on my system?</A>
-<LI><A HREF="#Where_recent_modules">Where can I find the most recently uploaded Perl modules?</A>
-<LI><A HREF="#Where_find_modules_windows">Where can I find Perl modules for Windows?</A>
-<LI><A HREF="#Where_find_binaries">Where can I find Perl binaries/packages or Perl module binaries?</A>
-<LI><A HREF="#How_is_Perl_licensed">How are Perl and the CPAN modules licensed?</A>
-<LI><A HREF="#What_modules_in_Perl_Dist">Does the Perl source distribution include any modules?</A>
-<LI><A HREF="#What_platform_modules">What modules are platform dependent?</A>
-<LI><A HREF="#Where_find_Perl_scripts">Where can I find Perl scripts?</A>
-</UL>
-<HR>
-<H2>III. - RIF [ Reading is Fun-duh-mental ]</H2>
-<UL>
-<LI><A HREF="#Where_find_Perl_FAQs">Where can I find the Perl FAQs?</A>
-<LI><A HREF="#Where_find_Perl_documentation">Where can I find Perl documentation?</A>
-<LI><A HREF="#Where_find_module_documentation">Where can I find Perl module documentation?</A>
-<LI><A HREF="#Where_find_DBI_documentation">Where can I find Perl DBI/DBD/database documentation?</A>
-<LI><A HREF="#Where_find_Perl_mailing_lists">Where can I find/join/create Perl mailing lists?</A>
-<LI><A HREF="#Where_find_Perl_training">Where can I find Perl courses/training/on-line tutorials?</A>
-<LI><A HREF="#How_join_mongers">How do I find/join/organise a Perl User Group?</A>
-<LI><A HREF="#What_history_Perl">Where can I find a history of Perl releases or a general history of the Perl community?</A>
-</UL>
-<HR>
-<H2>IV. - Danger Will Robinson! Danger! Danger!</H2>
-<UL>
-<LI><A HREF="#Download_module_corrupt">I downloaded a module/script/file but it was corrupt, what should I do?</A>
-<LI><A HREF="#Help_me_obi_wan">How do I use module Foo::Bar, can you help? (a.k.a. Are you a helpdesk?)</A>
-<LI><A HREF="#What_search_down">I'm having trouble with search.cpan.org, whom do I need to contact?</A>
-</UL>
-<HR>
-<H2>V. - Searching CPAN, CSPAN and the rest of the known universe.</H2>
-<UL>
-<LI><A HREF="#How_search_CPAN">How do I search CPAN?</A>
-<LI><A HREF="#How_search_module_documentation">How do I search for module/script documentation? (a.k.a. "How do I use ..."?)</A>
-<LI><A HREF="#How_find_news_item">How do I find Ralph Nader? (a.k.a. We're C-P-A-N not C-S-P-A-N!)</A>
-</UL>
-<HR>
-<H2>VI. - Contributing modules, patches, and bug reports.</H2>
-<UL>
-<LI><A HREF="#How_contribute_modules">How do I contribute modules to CPAN?</A>
-<LI><A HREF="#Does_CPAN_allow_shareware">Does CPAN allow contributions of shareware or code that requests a fee of any kind?</A>
-<LI><A HREF="#How_contribute_scripts">How do I contribute scripts to CPAN?</A>
-<LI><A HREF="#How_contribute_documentation">How do I contribute documentation?</A>
-<LI><A HREF="#How_report_bug_Perl">How do I report/fix a bug in Perl and/or its documentation?</A>
-<LI><A HREF="#How_report_bug_module">How do I report/fix a bug in a module/script?</A>
-<LI><A HREF="#How_maintain_module">How do I go about maintaining a module when the author is unresponsive?</A>
-<LI><A HREF="#How_adopt_module">How do I adopt or take over a module already on CPAN?</A>
-<LI><A HREF="#Where_is_testers">Is there a site for module bug reports/tests?</A>
-<LI><A HREF="#Plans_for_statistics">Does CPAN provide download statistics for authors?</A>
-</UL>
-<HR>
-<H2>VII. - How to mirror CPAN.</H2>
-<UL>
-<LI><A HREF="#How_mirror_CPAN">How do I mirror CPAN?</A>
-<LI><A HREF="#What_do_I_need">What do I need to mirror CPAN?</A>
-<LI><A HREF="#Which_site_mirror">Which CPAN site should I mirror?</A>
-<LI><A HREF="#How_register_mirror">How do I register my mirror to make it a public resource?</A>
-</UL>
-<HR>
-<H3><A NAME="What_is_Perl">What is Perl?</A></H3>
-From the Perl documentation:
-<P>
-<CITE>
-Perl is a high-level programming language with an eclectic heritage written by Larry Wall and a cast 
-of thousands. It derives from the ubiquitous C programming language and to a lesser extent from sed, 
-awk, the Unix shell, and at least a dozen other tools and languages. Perl's process, file, and text 
-manipulation facilities make it particularly well-suited for tasks involving quick prototyping, system 
-utilities, software tools, system management tasks, database access, graphical programming, networking, 
-and world wide web programming. These strengths make it especially popular with system administrators 
-and CGI script authors, but mathematicians, geneticists, journalists, and even managers also use Perl. 
-Maybe you should, too.
-</CITE>
-</P><P>
-See also <A HREF="http://www.tpj.com/whatisperl.html">http://www.tpj.com/whatisperl.html</A>
-</P><P>
-Two good starting points for Perl information are <A HREF="http://www.perl.com/pub">http://www.perl.com/</A>
-and <A HREF="http://www.perl.org/">http://www.perl.org/</A>
-</P><P>
-<HR>
-<H3><A NAME="What_is_Perl6">What is Perl6?</A></H3>
-</P><P>
-At The Second O'Reilly Open Source Software Convention, Larry Wall announced Perl6 development would begin 
-in earnest. Perl6 was an oft used term for Chip Salzenberg's project to rewrite Perl in C++ named
-Topaz. However, Topaz should not be confused with the nisus to rewrite Perl while keeping the lessons learned
-from other software, as well as Perl5, in mind.                
-</P><P>
-If you have a desire to help in the crusade to make Perl a better place then peruse the Perl6 developers page 
-at <A HREF="http://www.perl.org/perl6/">http://www.perl.org/perl6</A> and get involved.
-<P>  
-"We're really serious about reinventing everything that needs reinventing." --Larry Wall
-<HR>
-<H3><A NAME="What_is_CPAN">What is CPAN?</A></H3>
-</P><P>
-CPAN is the <B>C</B>omprehensive <B>P</B>erl <B>A</B>rchive <B>N</B>etwork, a large collection of
-Perl software and documentation.  You can begin exploring from either
-<A HREF="http://www.cpan.org/">http://www.cpan.org/</A> or any of the mirrors listed at
-<A HREF="http://www.cpan.org/SITES.html">http://www.cpan.org/SITES.html</A>.
-</P><P>
-Note that CPAN is also the name of a Perl module, CPAN.pm, which is used to download
-and install Perl software from the CPAN archive.  This FAQ covers only a little about 
-the CPAN module and you may find the documentation for it by using <TT> perldoc CPAN </TT> 
- via the command line or on the web at <A HREF="http://search.cpan.org/dist/CPAN/lib/CPAN.pm">
- http://search.cpan.org/dist/CPAN/lib/CPAN.pm</A>.
-</P>
-<HR>
-<H3><A NAME="What_is_PAUSE">What is PAUSE?</A></H3>
-<P>
- <A HREF="http://pause.cpan.org/">PAUSE</A> is the <B>P</B>erl <B>A</B>uthors <B>U</B>pload 
-<B>SE</B>rver, a registry for Perl module, script and documentation authors to upload their 
-work to the CPAN. CPAN and PAUSE are often used interchangeably but they are distinct from 
-each other. The CPAN.pm documentation explains it rather simply;
-</P><P>
-<CITE>
-In this discussion CPAN and PAUSE have become equal -- but they are not. PAUSE is authors/, 
-modules/ and scripts/. CPAN is PAUSE plus the clpa/, doc/, misc/, ports/ and src/.
-</CITE>
-</P><P>
-See the question <A HREF="#How_contribute_modules">'How do I contribute modules?'</A> below if you 
-want to become a registered PAUSE user.
-</P><HR>
-<H3><A NAME="How_does_the_CPAN_work">How does the CPAN work?</A></H3>
-<P>
-With dark magic, evil-looking sacrificial knives and scantily clad virgins under pale moonlight.
-</P><P>
-It actually works with the generosity and cooperation of hundreds of developers, over 100
-participating mirrors, funet.fi donating the network bandwidth, storage space and computing
-power, volunteers who help keep everything together and users whose interest in Perl keep 
-the archive alive and growing.
-</P><P>
-After an author uploads their module to <A HREF="http://pause.cpan.org/">PAUSE</A>, it will be
-mirrored to CPAN once an hour and from there, to the rest of the mirrors around the world. Various
-scripts run on CPAN daily to make sure that mirrors are up and running and that the mirror to PAUSE
-is functional, etc. There are people who advise authors on their choice of name and namespace for
-their modules and a few others who answer questions and investigate issues sent to cpan@perl.org.
-</P>
-<HR>
-<H3><A NAME="Where_Perl_source_code">Where can I find the current release of the Perl source code?</A></H3>
-<P>
-<UL>
-<LI><A HREF="http://www.cpan.org/src/">http://www.cpan.org/src/</A> - A detailed list of source code offerings.
-</UL>
-</P>
-<P>The Perl Mongers have a "Download Perl" button for websites and if you are interested you can find it on their 
-site at <A HREF="http://www.pm.org/web_site_frosting.shtml">http://www.pm.org/web_site_frosting.shtml</A>.
-</P>
-<HR>
+<center>
+    <img src="../misc/jpg/cpan.jpg" align="middle" alt="CPAN">
+</center>
+<h1>
+    CPAN Frequently Asked Questions
+</h1>
+<p>
+    Here are some answers to the most common questions received by <tt>cpan@perl.org</tt>.
+</p>
+<p>
+    For general information about Perl you should see the <a href="http://www.perl.org/">Perl Home Page</a> (<tt>www.perl.org</tt>).
+</p>
+<p>
+    See the Perl FAQ (especially for any Perl programming questions, but also for other resources), available at <a href="http://perlfaq.cpan.org">http://perlfaq.cpan.org/</a>.
+</p>
+<p>
+    <small>Copyright Elaine Ashton <tt>&lt;hfb@chaos.wustl.edu&gt;</tt> and Jarkko Hietaniemi <tt>&lt;jhi@iki.fi&gt;</tt> 1998-2007 All Rights Reserved.</small>
+</p>
+
+<hr>
+<h2>
+    I. - General Questions.
+</h2>
+<ul>
+    <li>
+        <a href="#What_is_Perl">What is Perl?</a>
+    </li>
+    <li>
+        <a href="#What_is_Perl6">What is Perl6?</a>
+    </li>
+    <li>
+        <a href="#What_is_CPAN">What is the CPAN?</a>
+    </li>
+    <li>
+        <a href="#What_is_PAUSE">What is PAUSE?</a>
+    </li>
+    <li>
+        <a href="#How_does_the_CPAN_work">How does the CPAN work?</a>
+    </li>
+</ul>
+<hr>
+<h2>
+    II. - The Quest for Perl source, modules and scripts.
+</h2>
+<ul>
+    <li>
+        <a href="#Where_Perl_source_code">Where can I find the current release of the Perl source code?</a>
+    </li>
+    <li>
+        <a href="#Where_older_Perl">Where can I find older/obsolete versions of Perl or Perl Modules?</a>
+    </li>
+    <li>
+        <a href="#What_versions_mean">How do I interpret the Perl version numbers?</a>
+    </li>
+    <li>
+        <a href="#How_install_Perl_source">How do I install Perl from the source code?</a>
+    </li>
+    <li>
+        <a href="#Where_find_Perl_modules">Where can I find Perl modules?</a>
+    </li>
+    <li>
+        <a href="#How_install_Perl_modules">How do I install Perl modules?</a>
+    </li>
+    <li>
+        <a href="#How_installed_modules">How do I find out what modules are already installed on my system?</a>
+    </li>
+    <li>
+        <a href="#Where_recent_modules">Where can I find the most recently uploaded Perl modules?</a>
+    </li>
+    <li>
+        <a href="#Where_find_modules_windows">Where can I find Perl modules for Windows?</a>
+    </li>
+    <li>
+        <a href="#Where_find_binaries">Where can I find Perl binaries/packages or Perl module binaries?</a>
+    </li>
+    <li>
+        <a href="#How_is_Perl_licensed">How are Perl and the CPAN modules licensed?</a>
+    </li>
+    <li>
+        <a href="#What_modules_in_Perl_Dist">Does the Perl source distribution include any modules?</a>
+    </li>
+    <li>
+        <a href="#What_platform_modules">What modules are platform dependent?</a>
+    </li>
+    <li>
+        <a href="#Where_find_Perl_scripts">Where can I find Perl scripts?</a>
+    </li>
+</ul>
+<hr>
+<h2>
+    III. - RIF [ Reading is Fun-duh-mental ]
+</h2>
+<ul>
+    <li>
+        <a href="#Where_find_Perl_FAQs">Where can I find the Perl FAQs?</a>
+    </li>
+    <li>
+        <a href="#Where_find_Perl_documentation">Where can I find Perl documentation?</a>
+    </li>
+    <li>
+        <a href="#Where_find_module_documentation">Where can I find Perl module documentation?</a>
+    </li>
+    <li>
+        <a href="#Where_find_DBI_documentation">Where can I find Perl DBI/DBD/database documentation?</a>
+    </li>
+    <li>
+        <a href="#Where_find_Perl_mailing_lists">Where can I find/join/create Perl mailing lists?</a>
+    </li>
+    <li>
+        <a href="#Where_find_Perl_training">Where can I find Perl courses/training/on-line tutorials?</a>
+    </li>
+    <li>
+        <a href="#How_join_mongers">How do I find/join/organise a Perl User Group?</a>
+    </li>
+    <li>
+        <a href="#What_history_Perl">Where can I find a history of Perl releases or a general history of the Perl community?</a>
+    </li>
+</ul>
+<hr>
+<h2>
+    IV. - Danger Will Robinson! Danger! Danger!
+</h2>
+<ul>
+    <li>
+        <a href="#Download_module_corrupt">I downloaded a module/script/file but it was corrupt, what should I do?</a>
+    </li>
+    <li>
+        <a href="#Help_me_obi_wan">How do I use module Foo::Bar, can you help? (a.k.a. Are you a helpdesk?)</a>
+    </li>
+    <li>
+        <a href="#What_search_down">I'm having trouble with search.cpan.org, whom do I need to contact?</a>
+    </li>
+</ul>
+<hr>
+<h2>
+    V. - Searching CPAN, CSPAN and the rest of the known universe.
+</h2>
+<ul>
+    <li>
+        <a href="#How_search_CPAN">How do I search CPAN?</a>
+    </li>
+    <li>
+        <a href="#How_search_module_documentation">How do I search for module/script documentation? (a.k.a. "How do I use ..."?)</a>
+    </li>
+    <li>
+        <a href="#How_find_news_item">How do I find Ralph Nader? (a.k.a. We're C-P-A-N not C-S-P-A-N!)</a>
+    </li>
+</ul>
+<hr>
+<h2>
+    VI. - Contributing modules, patches, and bug reports.
+</h2>
+<ul>
+    <li>
+        <a href="#How_contribute_modules">How do I contribute modules to CPAN?</a>
+    </li>
+    <li>
+        <a href="#Does_CPAN_allow_shareware">Does CPAN allow contributions of shareware or code that requests a fee of any kind?</a>
+    </li>
+    <li>
+        <a href="#How_contribute_scripts">How do I contribute scripts to CPAN?</a>
+    </li>
+    <li>
+        <a href="#How_contribute_documentation">How do I contribute documentation?</a>
+    </li>
+    <li>
+        <a href="#How_report_bug_Perl">How do I report/fix a bug in Perl and/or its documentation?</a>
+    </li>
+    <li>
+        <a href="#How_report_bug_module">How do I report/fix a bug in a module/script?</a>
+    </li>
+    <li>
+        <a href="#How_maintain_module">How do I go about maintaining a module when the author is unresponsive?</a>
+    </li>
+    <li>
+        <a href="#How_adopt_module">How do I adopt or take over a module already on CPAN?</a>
+    </li>
+    <li>
+        <a href="#Where_is_testers">Is there a site for module bug reports/tests?</a>
+    </li>
+    <li>
+        <a href="#Plans_for_statistics">Does CPAN provide download statistics for authors?</a>
+    </li>
+</ul>
+<hr>
+<h2>
+    VII. - How to mirror CPAN.
+</h2>
+<ul>
+    <li>
+        <a href="#How_mirror_CPAN">How do I mirror CPAN?</a>
+    </li>
+    <li>
+        <a href="#What_do_I_need">What do I need to mirror CPAN?</a>
+    </li>
+    <li>
+        <a href="#Which_site_mirror">Which CPAN site should I mirror?</a>
+    </li>
+    <li>
+        <a href="#How_register_mirror">How do I register my mirror to make it a public resource?</a>
+    </li>
+</ul>
+
+<hr>
+<h3>
+    <a name="What_is_Perl" id="What_is_Perl">What is Perl?</a>
+</h3>
+<p>
+    From the Perl documentation:
+</p>
+<p>
+    <cite>Perl is a high-level programming language with an eclectic heritage written by Larry Wall and a cast of thousands. It derives from the ubiquitous C programming language and to a lesser extent from sed, awk, the Unix shell, and at least a dozen other tools and languages. Perl's process, file, and text manipulation facilities make it particularly well-suited for tasks involving quick prototyping, system utilities, software tools, system management tasks, database access, graphical programming, networking, and world wide web programming. These strengths make it especially popular with system administrators and CGI script authors, but mathematicians, geneticists, journalists, and even managers also use Perl. Maybe you should, too.</cite>
+</p>
+<p>
+    See also <a href="http://www.tpj.com/whatisperl.html">http://www.tpj.com/whatisperl.html</a>
+</p>
+<p>
+    Two good starting points for Perl information are <a href="http://www.perl.com/pub">http://www.perl.com/</a> and <a href="http://www.perl.org/">http://www.perl.org/</a>
+</p>
+<hr>
+<h3>
+    <a name="What_is_Perl6" id="What_is_Perl6">What is Perl6?</a>
+</h3>
+<p>
+    At The Second O'Reilly Open Source Software Convention, Larry Wall announced Perl6 development would begin in earnest. Perl6 was an oft used term for Chip Salzenberg's project to rewrite Perl in C++ named Topaz. However, Topaz should not be confused with the nisus to rewrite Perl while keeping the lessons learned from other software, as well as Perl5, in mind.
+</p>
+<p>
+    If you have a desire to help in the crusade to make Perl a better place then peruse the Perl6 developers page at <a href="http://www.perl.org/perl6/">http://www.perl.org/perl6</a> and get involved.
+</p>
+<p>
+    "We're really serious about reinventing everything that needs reinventing." --Larry Wall
+</p>
+<hr>
+    
+    
+<h3>
+    <a name="What_is_CPAN" id="What_is_CPAN">What is CPAN?</a>
+</h3>
+<p>
+    CPAN is the <b>C</b>omprehensive <b>P</b>erl <b>A</b>rchive <b>N</b>etwork, a large collection of Perl software and documentation. You can begin exploring from either <a href="http://www.cpan.org/">http://www.cpan.org/</a> or any of the mirrors listed at <a href="http://www.cpan.org/SITES.html">http://www.cpan.org/SITES.html</a>.
+</p>
+<p>
+    Note that CPAN is also the name of a Perl module, CPAN.pm, which is used to download and install Perl software from the CPAN archive. This FAQ covers only a little about the CPAN module and you may find the documentation for it by using <tt>perldoc CPAN</tt> via the command line or on the web at <a href="http://search.cpan.org/dist/CPAN/lib/CPAN.pm">http://search.cpan.org/dist/CPAN/lib/CPAN.pm</a>.
+</p>
+<hr>
+<h3>
+    <a name="What_is_PAUSE" id="What_is_PAUSE">What is PAUSE?</a>
+</h3>
+<p>
+    <a href="http://pause.cpan.org/">PAUSE</a> is the <b>P</b>erl <b>A</b>uthors <b>U</b>pload <b>SE</b>rver, a registry for Perl module, script and documentation authors to upload their work to the CPAN. CPAN and PAUSE are often used interchangeably but they are distinct from each other. The CPAN.pm documentation explains it rather simply;
+</p>
+<p>
+    <cite>In this discussion CPAN and PAUSE have become equal -- but they are not. PAUSE is authors/, modules/ and scripts/. CPAN is PAUSE plus the clpa/, doc/, misc/, ports/ and src/.</cite>
+</p>
+<p>
+    See the question <a href="#How_contribute_modules">'How do I contribute modules?'</a> below if you want to become a registered PAUSE user.
+</p>
+<hr>
+
+<h3>
+    <a name="How_does_the_CPAN_work" id="How_does_the_CPAN_work">How does the CPAN work?</a>
+</h3>
+<p>
+    With dark magic, evil-looking sacrificial knives and scantily clad virgins under pale moonlight.
+</p>
+<p>
+    It actually works with the generosity and cooperation of hundreds of developers, over 100 participating mirrors, funet.fi donating the network bandwidth, storage space and computing power, volunteers who help keep everything together and users whose interest in Perl keep the archive alive and growing.
+</p>
+<p>
+    After an author uploads their module to <a href="http://pause.cpan.org/">PAUSE</a>, it will be mirrored to CPAN once an hour and from there, to the rest of the mirrors around the world. Various scripts run on CPAN daily to make sure that mirrors are up and running and that the mirror to PAUSE is functional, etc. There are people who advise authors on their choice of name and namespace for their modules and a few others who answer questions and investigate issues sent to cpan@perl.org.
+</p>
+<hr>
+    
+<h3>
+    <a name="Where_Perl_source_code" id="Where_Perl_source_code">Where can I find the current release of the Perl source code?</a>
+</h3>
+<ul>
+    <li>
+        <a href="http://www.cpan.org/src/">http://www.cpan.org/src/</a> - A detailed list of source code offerings.
+    </li>
+</ul>
+<p>
+    The Perl Mongers have a "Download Perl" button for websites and if you are interested you can find it on their site at <a href="http://www.pm.org/web_site_frosting.shtml">http://www.pm.org/web_site_frosting.shtml</a>.
+</p>
+<hr>
+
+    
 <H3><A NAME="Where_older_Perl">Where can I find older/obsolete versions of Perl or Perl Modules?</A></H3>
 <P>
 Unless you have A Very Good Reason you shouldn't be installing obsolete versions because they might
