@@ -947,14 +947,22 @@ our thoughts on the matter quite well.
 <HR>
 <H3><A NAME="How_mirror_CPAN">How do I mirror CPAN?</A></H3>
 <P>
-Either an FTP or rsync client will do.
+You can mirror with an FTP client, but it's highly highly recommended that you use rsync.
 <HR>
 <H3><A NAME="What_do_I_need">What do I need to mirror CPAN?</A></H3>
 <P>
 <UL>
-<LI>"Good" Internet connectivity, e.g. better than a 14.4 modem but not so much as an OC3.
-<LI>Around 1GB of storage space. <A HREF="http://www.cpan.org/indices/du-k.gz">http://www.cpan.org/indices/du-k.gz</A>
+
+<LI>"Good" internet connectivity; if you are on a slow connection and
+won't offer the CPAN mirror for others to use, you might be better off
+just downloading what you need on demand or make
+a <a href="http://search.cpan.org/dist/CPAN-Mini/">Mini CPAN</a>
+mirror.
+
+<LI>Around 10GB of storage
+ space. <A HREF="http://www.cpan.org/indices/du-k.gz">http://www.cpan.org/indices/du-k.gz</A>
  tells you the current size of the CPAN.
+
 <LI>An FTP or rsync client.
 <P>
 	<UL>
