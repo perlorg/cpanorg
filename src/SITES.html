@@ -1,0 +1,179 @@
+[% 
+page.title = 'CPAN Sites';
+page.head = BLOCK %]
+<!-- Copyright Jarkko Hietaniemi jhi@iki.fi 2001-2010, Ask Bjørn Hansen ask@perl.org 2011
+       All Rights Reserved -->
+<!-- You may distribute this document either under the Artistic License
+     (comes with Perl) or the GNU Public License, whichever suits you.  -->
+<style type="text/css">
+  <!--
+body{
+  background:white;
+  margin-left:2%;
+  margin-right:2%;
+}
+
+h1{
+  text-align:center;
+}
+
+img     {
+  align:        center;
+  border:       0; 
+}
+
+.left{
+  text-align:left;
+  float:none; 
+}
+
+.center{
+  text-align:center;
+  float:none;
+}
+
+.right{
+  text-align:right;
+  float:none;
+}
+   -->
+</style>
+[% END %]
+
+<table>
+ <tr>
+  <td>
+   <div class="center">
+    <img src="misc/jpg/cpan.jpg"
+         alt="[CPAN Logo]" height="77" width="250"/>
+   </div>
+  </td>
+</table>
+<H1>SITES</H1>
+
+<HR>
+
+<H2>Network</H2>
+
+<P> Welcome to the CPAN, the Comprehensive Perl Archive Network.
+This document describes the CPAN itself, the Mirror Network.</P>
+
+<P> The master CPAN site is hosted by FUNET, the Finnish University NETwork
+(Espoo, Finland, Europe).</P>
+
+<p>Select the site nearest to you from the list
+below, <B>'Registered CPAN sites</B>' or from our <A HREF="http://mirror.cpan.org/">
+mirror database</A> to get the best response time and bandwidth.
+</p>
+
+<P>The list of the <A HREF="#register">registered</A> CPAN sites follows.
+Please note that the sorting order is alphabetical on fields:</P>
+<PRE>
+
+Continent
+   |
+   |-->Country
+         |
+         |-->[state/province]
+                   |
+                   |-->[http]
+                   |
+                   |-->ftp
+
+
+</PRE>
+
+<H2 id="hostlist">Registered CPAN sites</H2>
+
+[% TRY %]
+[% INCLUDE "SITES-list.html" %]
+[% END %]
+
+<H2><A NAME="feedback">Feedback</A></H2>
+
+You can <A HREF="mailto:cpan@perl.org">send email</A>
+to the CPAN administrators, <TT>cpan@perl.org</TT>.
+
+<H2>How You Can Help</H2>
+
+<H3>Inform</H3>
+
+<P>If you are aware of Perl resources that are not in the CPAN
+(you did check the contents listings in <A HREF="http://www.cpan.org/indices/">indices/</A>,
+ didn't you?) please <A HREF="#feedback">tell us</A>. We will either add the
+resource to the local mirror, arrange for regular mirroring of the content or
+provide a link depending on the size, value and stability.</P>
+
+<H3>Contribute</H3>
+
+<P>If you have modules/scripts/documentation yourself that you
+would like to contribute to CPAN, please read the file 
+<A HREF="http://www.cpan.org/modules/04pause.html">modules/04pause.html</A>
+and <A HREF="#feedback">let us know</A>.</P>
+
+<H3><A NAME="register">Register</A></H3>
+
+<P>If you have a reliable and well-connected ftp or http site where you can
+keep CPAN (about 9GB currently), more mirror sites are welcome.
+Feel free to volunteer and contact the <A HREF="#feedback">CPAN
+administrators</A> describing your mirroring setup, please see the top
+of the file <A HREF="http://www.cpan.org/MIRRORED.BY">MIRRORED.BY</A>.
+</p>
+
+<p>See the FAQ for more instructions on <a
+href="http://www.cpan.org/misc/cpan-faq.html#How_mirror_CPAN">How to
+mirror CPAN</a></p>
+
+
+<H3><A NAME="private">Private/Local Mirroring</A></H3>
+
+<P>If you want to configure a <EM>private/local</EM> mirror of CPAN but
+do not want to advertise it you do not need to contact the CPAN
+admistrators. You need to assess which of the <EM>public</EM> CPAN
+sites would give the best <TT>ftp</TT> bandwidth for you (at off-peak hours)
+and contact the mirror admin via the email address 
+given in the <TT>MIRRORED.BY</TT> file to learn the best time of the
+day to do your mirror.</P>
+
+<P>We encourage you to read our <A
+HREF="http://www.cpan.org/misc/cpan-faq.html#How_mirror_CPAN"> FAQ
+Section</A> on how to mirror CPAN and visit <A
+HREF="http://mirror.cpan.org/">the mirror database</A> to find a
+mirror close to you and to register yours with CPAN.</P>
+
+<H3>Thank You</H3>
+
+<P>We would like to thank all of the mirrors who, throughout the years and
+every day, make the CPAN possible and such a valuable resource to the Perl
+community.</P>
+
+<HR>
+<table>
+<tr>
+
+<td>
+<div class="left">
+<a href="http://validator.w3.org/check?uri=http%3A%2F%2Fwww.cpan.org%2Findex.html">
+<img src="misc/gif/valid-xhtml10.gif" alt="Valid XHTML 1.0!" height="31" width="88"/></a>
+</div>
+</td>
+<td>
+<div class="right">
+
+<table>
+
+<tr>
+<td class="right">
+<small>
+CPAN master site hosted by
+</small>
+</td>
+</tr>
+<tr>
+<td class="right">
+<a href="http://www.csc.fi/english/funet/"><img src="misc/gif/funet.gif" alt="FUNET" height="25" width="88"/></a>
+</td>
+</tr>
+</table>
+</table>
+
