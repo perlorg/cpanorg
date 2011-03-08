@@ -6,7 +6,7 @@ ignore = \.tt$
 
 depend *=tpl/wrapper,tpl/defaults,style/cpan.html
 
-copy = \.(gif|png|pdf|jpg)$
+copy = \.(gif|png|pdf|jpg|css)$
 
 verbose
 

@@ -1,21 +1,49 @@
 <!DOCTYPE html>
 
 <html lang="en">
+
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    [% page.head %]
-    <title>[% page.title %]</title>
+    <title> ss[% page.title %] - [% site.name %]</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    [%- IF page.description %]<meta name="description" content="[% page.description %]" />[% END -%]
+    [%- IF page.keywords %]<meta name="keywords" content="[% page.keywords %]" />[% END -%]
     <link rel="author" href="mailto:cpan@perl.org">
+	<link type="text/css" rel="stylesheet" href="/css/cpan.css" /> 
+	[% page.head %]
 </head>
+<body[% ' class="section_' _ page.section _ '"' IF page.section %]>
 
-<body>
-
-<div id="content">
-[% content %]
-</div>
-
-<div id="footer">
-</div>
+<table columns="3" border="0" width="90%" cellspacing="0" cellpadding="2" align="center">
+    <tr>
+        <td colspan="3">
+            <div align="center">
+                <img width="264" height="77" src="http://www.perl.org/images/cpan_banner.png"><br>
+                <span class="big">The Comprehensive Perl Archive Network</span>
+            </div>
+            <div class="menubar" align="center">
+                <a href="/">Home</a>
+                | <a href="/modules/">Modules</a>
+                | <a href="/scripts/">Scripts</a>
+                | <a href="http://cpan.perl.org/ports/">Ports</a>
+                | <a href="http://cpan.perl.org/src/README.html">Perl Source</a>
+                | <a href="/misc/cpan-faq.html">FAQ</a>
+                | <a href="http://mirrors.cpan.org/">Mirrors</a>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="3">
+            <div id="content">
+            [% content %]
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="3">
+            <hr width="60%" />
+        </td>
+    </tr>
+</table>
 
 </body>
 </html>

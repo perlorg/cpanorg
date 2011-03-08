@@ -3,6 +3,14 @@
             style = template.style or 'cpan.html'
     };
 
+    # Configuration for this site
+    SET site = {
+        name            => 'www.cpan.org',
+        crum            => '<a href="/">Home</a>',
+    };
+
+	PROCESS tpl/cpan_stats.html;
+
     # don't include any whitespace from here...
     RETURN;
 -%]
