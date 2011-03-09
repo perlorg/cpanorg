@@ -1,4 +1,10 @@
-[% page.title = 'The CPAN Frequently Asked Questions' %]
+[% 
+  page.import({
+    title   => "The CPAN Frequently Asked Questions",
+    section => 'home',
+    stub => '../',
+  });
+%]
 
 [% page.head = BLOCK %]
 <!-- Copyright Jarkko Hietaniemi jhi@iki.fi 1998-2007 All Rights Reserved
@@ -24,9 +30,6 @@
 </style>
 [% END %]
 
-<center>
-    <img src="../misc/jpg/cpan.jpg" align="middle" alt="CPAN">
-</center>
 <h1>
     CPAN Frequently Asked Questions
 </h1>

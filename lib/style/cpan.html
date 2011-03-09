@@ -7,8 +7,8 @@
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
     [%- IF page.description %]<meta name="description" content="[% page.description %]" />[% END -%]
     [%- IF page.keywords %]<meta name="keywords" content="[% page.keywords %]" />[% END -%]
-    <link rel="author" href="mailto:cpan@perl.org">
-	<link type="text/css" rel="stylesheet" href="/css/cpan.css" /> 
+    <link rel="author" href="mailto:cpan@perl.org" />
+	<link type="text/css" rel="stylesheet" href="[% page.stub %]css/cpan.css" /> 
 	[% page.head %]
 </head>
 <body[% ' class="section_' _ page.section _ '"' IF page.section %]>
@@ -21,12 +21,12 @@
                 <span class="big">The Comprehensive Perl Archive Network</span>
             </div>
             <div class="menubar" align="center">
-                <a href="/">Home</a>
-                | <a href="/modules/">Modules</a>
-                | <a href="/scripts/">Scripts</a>
-                | <a href="http://cpan.perl.org/ports/">Ports</a>
-                | <a href="http://cpan.perl.org/src/README.html">Perl Source</a>
-                | <a href="/misc/cpan-faq.html">FAQ</a>
+                <a href="[% page.stub %]index.html">Home</a>
+                | <a href="[% page.stub %]modules/index.html">Modules</a>
+                | <a href="[% page.stub %]scripts/index.html">Scripts</a>
+                | <a href="[% page.stub %]ports/index.html">Ports</a>
+                | <a href="[% page.stub %]src/README.html">Perl Source</a>
+                | <a href="[% page.stub %]misc/cpan-faq.html">FAQ</a>
                 | <a href="http://mirrors.cpan.org/">Mirrors</a>
             </div>
         </td>
