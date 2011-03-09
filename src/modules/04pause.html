@@ -6,7 +6,8 @@
 %]
 
 <h2>
-    <a href="https://pause.perl.org/pause/">The [Perl programming] Authors Upload Server</a>
+    <a href="https://pause.perl.org/pause/">The [Perl programming] Authors
+    Upload Server</a>
 </h2>
 <h3>
     Contents
@@ -59,23 +60,49 @@
     <a id="upload" name="upload">Uploading</a>
 </h3>
 <p>
-    A server dedicated to collect the work of perl authors is a <a href="https://pause.perl.org/pause/">[Perl programming] Authors Upload Server (PAUSE)</a>. PAUSE provides personal directories and enables their owners to upload their work into that directory themselves. The procedure of uploading is trivial and needs no explanation here. You'll understand it as soon as you have access to the PAUSE. There's only one thing you need to know as soon as possible:
+    A server dedicated to collect the work of perl authors is a <a href=
+    "https://pause.perl.org/pause/">[Perl programming] Authors Upload Server
+    (PAUSE)</a>. PAUSE provides personal directories and enables their owners
+    to upload their work into that directory themselves. The procedure of
+    uploading is trivial and needs no explanation here. You'll understand it as
+    soon as you have access to the PAUSE. There's only one thing you need to
+    know as soon as possible:
 </p>
 <blockquote>
-    <b>Please,</b> make sure the filename you choose contains a <b>version number</b>. For security reasons you will never be able to upload a file with identical name again. This strict requirement does have one exception: documentation files may be overwritten. There's a simple regular expression that draws the line between docu and code: <code>/(readme|\.html|\.txt|\.[xy]ml|\.[pr]df|\.pod)$/i</code><!--
-see pause_1999/edit.pm: ALLOW_OVERWRITE -->. Filenames matching this regexp can be uploaded as often as you like. By the way: it is highly appreciated if your packages come tarred and gzipped with a Makefile.PL (or Build.PL), so they can be installed in a standard way.
+    <b>Please,</b> make sure the filename you choose contains a <b>version
+    number</b>. For security reasons you will never be able to upload a file
+    with identical name again. This strict requirement does have one exception:
+    documentation files may be overwritten. There's a simple regular expression
+    that draws the line between docu and code:
+    <code>/(readme|\.html|\.txt|\.[xy]ml|\.[pr]df|\.pod)$/i</code><!--
+see pause_1999/edit.pm: ALLOW_OVERWRITE -->. Filenames matching this regexp can
+be uploaded as often as you like. By the way: it is highly appreciated if your
+packages come tarred and gzipped with a Makefile.PL (or Build.PL), so they can
+be installed in a standard way.
 </blockquote>
 <p>
-    The upload server should not be used as a download server. Please don't mirror from there. The <a href="ftp://ftp.funet.fi/pub/languages/perl/CPAN/">funet</a> server in Finland mirrors frequently, so please try to download from there or from other CPAN sites.
+    The upload server should not be used as a download server. Please don't
+    mirror from there. The <a href=
+    "ftp://ftp.funet.fi/pub/languages/perl/CPAN/">funet</a> server in Finland
+    mirrors frequently, so please try to download from there or from other CPAN
+    sites.
 </p>
 <h3>
     <a id="registering" name="registering"></a>Registering as a developer
 </h3>
 <p>
-    Registered developers have a unique username and a home directory in the <i>authors/id/</i> tree of CPAN. The write access to that directory is password protected.
+    Registered developers have a unique username and a home directory in the
+    <i>authors/id/</i> tree of CPAN. The write access to that directory is
+    password protected.
 </p>
 <p>
-    If you have written a module, script, or documentation, if you have some porting material or patches you would like to contribute to the archive, visit <a href="https://pause.perl.org/pause/query?ACTION=request_id">pause.perl.org Registration</a> (<a href="http://pause.perl.org/pause/query?ACTION=request_id">Non-SSL version</a>) and fill in the form
+    If you have written a module, script, or documentation, if you have some
+    porting material or patches you would like to contribute to the archive,
+    visit <a href=
+    "https://pause.perl.org/pause/query?ACTION=request_id">pause.perl.org
+    Registration</a> (<a href=
+    "http://pause.perl.org/pause/query?ACTION=request_id">Non-SSL version</a>)
+    and fill in the form
 </p>
 <ul>
     <li>your name
@@ -84,31 +111,55 @@ see pause_1999/edit.pm: ALLOW_OVERWRITE -->. Filenames matching this regexp can 
     </li>
     <li>your homepage if you have one
     </li>
-    <li>your preferred user-ID on CPAN. It must be between 4 and 9 characters long, all uppercase, letters only.
+    <li>your preferred user-ID on CPAN. It must be between 4 and 9 characters
+    long, all uppercase, letters only.
     </li>
     <li>a short description of what you're planning to contribute
     </li>
 </ul>
 <p>
-    You will be notified by email about your registration. Please allow three weeks for proceeding, which should be the maximum during vacation time. Normally we hope to register you within a week. The resulting email traffic will run through modules@perl.org and will be archived at <a href="http://www.xray.mpe.mpg.de/mailing-lists/modules">http://www.xray.mpe.mpg.de/mailing-lists/modules</a>. modules@perl.org isn't a mailing list, just an alias for the maintainers of the Perl 5 modules database. Please do not try to subscribe. Visit the archive instead.
+    You will be notified by email about your registration. Please allow three
+    weeks for proceeding, which should be the maximum during vacation time.
+    Normally we hope to register you within a week. The resulting email traffic
+    will run through modules@perl.org and will be archived at <a href=
+    "http://www.xray.mpe.mpg.de/mailing-lists/modules">http://www.xray.mpe.mpg.de/mailing-lists/modules</a>.
+    modules@perl.org isn't a mailing list, just an alias for the maintainers of
+    the Perl 5 modules database. Please do not try to subscribe. Visit the
+    archive instead.
 </p>
 <h3>
     <a id="menu" name="menu"></a>Visit PAUSE
 </h3>
 <p>
-    As soon as you have a password (see <a href="#registering">registering</a>) you are enabled to use some <a href="https://pause.perl.org/pause/authenquery">forms to interact with the PAUSE database</a> (<a href="http://pause.perl.org/pause/authenquery">Non-SSL version</a>). You can add files to your home directory, edit your name, email, and homepage address, delete your files, change your password on PAUSE, etc.
+    As soon as you have a password (see <a href="#registering">registering</a>)
+    you are enabled to use some <a href=
+    "https://pause.perl.org/pause/authenquery">forms to interact with the PAUSE
+    database</a> (<a href="http://pause.perl.org/pause/authenquery">Non-SSL
+    version</a>). You can add files to your home directory, edit your name,
+    email, and homepage address, delete your files, change your password on
+    PAUSE, etc.
 </p>
 <p>
-    If you haven't got a password yet or have forgotten it, please visit <a href="https://pause.perl.org/pause/query?ACTION=mailpw">https://pause.perl.org/pause/query?ACTION=mailpw</a> (<a href="http://pause.perl.org/pause/query?ACTION=mailpw">Non-SSL version</a>) for further instructions.
+    If you haven't got a password yet or have forgotten it, please visit
+    <a href=
+    "https://pause.perl.org/pause/query?ACTION=mailpw">https://pause.perl.org/pause/query?ACTION=mailpw</a>
+    (<a href="http://pause.perl.org/pause/query?ACTION=mailpw">Non-SSL
+    version</a>) for further instructions.
 </p>
 <p>
-    Please, whenever you exchange email with the maintainers of PAUSE, mention either your userid or the name you used when you registered.
+    Please, whenever you exchange email with the maintainers of PAUSE, mention
+    either your userid or the name you used when you registered.
 </p>
 <h3>
     <a id="duties" name="duties">Your duties, the basics, traps</a>
 </h3>
 <p>
-    We trust that you have read the <code>perlmodinstall</code>, <code>perlmodlib</code>, <code>perlmodstyle</code>, and <code>perlnewmod</code> manpages and that you regularly check out uploads to CPAN and that you have been watching CPAN activities for a while to have an impression of how things fit together. It usually boils down to (slogan shamelessly stolen and adapted from sudo(1)):
+    We trust that you have read the <code>perlmodinstall</code>,
+    <code>perlmodlib</code>, <code>perlmodstyle</code>, and
+    <code>perlnewmod</code> manpages and that you regularly check out uploads
+    to CPAN and that you have been watching CPAN activities for a while to have
+    an impression of how things fit together. It usually boils down to (slogan
+    shamelessly stolen and adapted from sudo(1)):
 </p>
 <ol>
     <li>Think, better even <b>talk</b> before you upload
@@ -120,28 +171,73 @@ see pause_1999/edit.pm: ALLOW_OVERWRITE -->. Filenames matching this regexp can 
     <a id="namespace" name="namespace">Register your namespace!</a>
 </h3>
 <p>
-    <b>Please,</b> talk to other people (comp.lang.perl.modules, modules@perl.org or any mailing list that fits your problem domain) before you decide upon the namespace you're going to use for your module. Usually it's not considered the perl way to have bureaucratic conventions, but when it comes to namespace pollution, there is the need of coordination. Just like the InterNIC has to care for unique names for internet hosts, somebody has to (sort of) guarantee uniqueness, consistency, and sanity of module names. <a href="http://search.cpan.org/">search.cpan.org</a> is the place where all currently uploaded modules can be found and the email address <b>modules@perl.org</b> is an alias for a hand full of experienced volunteers who try to give advice for the appropriate namespace for your modules.
+    <b>Please,</b> talk to other people (comp.lang.perl.modules,
+    modules@perl.org or any mailing list that fits your problem domain) before
+    you decide upon the namespace you're going to use for your module. Usually
+    it's not considered the perl way to have bureaucratic conventions, but when
+    it comes to namespace pollution, there is the need of coordination. Just
+    like the InterNIC has to care for unique names for internet hosts, somebody
+    has to (sort of) guarantee uniqueness, consistency, and sanity of module
+    names. <a href="http://search.cpan.org/">search.cpan.org</a> is the place
+    where all currently uploaded modules can be found and the email address
+    <b>modules@perl.org</b> is an alias for a hand full of experienced
+    volunteers who try to give advice for the appropriate namespace for your
+    modules.
 </p>
 <p>
-    Please consider the namespace you're going to occupy with all due sensitivity. Discuss it in the appropriate fora. Read what the <code>perlmodlib</code> manpage has to say about this. Reading these sections carefully will help you and us to greatly improve the usefulness of the CPAN and avoid cumbersome renaming at a later date.
+    Please consider the namespace you're going to occupy with all due
+    sensitivity. Discuss it in the appropriate fora. Read what the
+    <code>perlmodlib</code> manpage has to say about this. Reading these
+    sections carefully will help you and us to greatly improve the usefulness
+    of the CPAN and avoid cumbersome renaming at a later date.
 </p>
 <blockquote>
-    Also: think carefully and honestly whether your module would be better off if it were integrated as an option into an already existing module. Sometimes it is for the best to put aside personal glory and join a collaborative effort: Perl itself is a good example of this. Contact the author of an existing module and ask whether your new features would fit into his framework. Even if you in the end decide to release the module as your very own, you really should know your 'competition', that is, know all the similar modules and the features they offer. Maybe you can learn from them, maybe you can help the users of your module better by giving them an overview about similar modules.
+    Also: think carefully and honestly whether your module would be better off
+    if it were integrated as an option into an already existing module.
+    Sometimes it is for the best to put aside personal glory and join a
+    collaborative effort: Perl itself is a good example of this. Contact the
+    author of an existing module and ask whether your new features would fit
+    into his framework. Even if you in the end decide to release the module as
+    your very own, you really should know your 'competition', that is, know all
+    the similar modules and the features they offer. Maybe you can learn from
+    them, maybe you can help the users of your module better by giving them an
+    overview about similar modules.
 </blockquote>
 <p>
-    And please do consult the archives of modules@perl.org before you post a module proposal. The fulltext search capabilities of the archive should help you to find similar suggestions and contact addresses. modules@perl.org is low volume, so your search in the archive is quite targetted. <b>modules@perl.org</b> is not a mailing list. Please do not try to subscribe. We do not want to establish yet another perl mailing list. If we encounter hot topics, we move the discussion to the appropriate mailing lists. The traffic on <b>modules@perl.org</b> is archived at <a href="http://www.xray.mpe.mpg.de/mailing-lists/modules/">http://www.xray.mpe.mpg.de/mailing-lists/modules/</a>.
+    And please do consult the archives of modules@perl.org before you post a
+    module proposal. The fulltext search capabilities of the archive should
+    help you to find similar suggestions and contact addresses.
+    modules@perl.org is low volume, so your search in the archive is quite
+    targetted. <b>modules@perl.org</b> is not a mailing list. Please do not try
+    to subscribe. We do not want to establish yet another perl mailing list. If
+    we encounter hot topics, we move the discussion to the appropriate mailing
+    lists. The traffic on <b>modules@perl.org</b> is archived at <a href=
+    "http://www.xray.mpe.mpg.de/mailing-lists/modules/">http://www.xray.mpe.mpg.de/mailing-lists/modules/</a>.
 </p>
 <p>
-    When you're done with all your preparations, considerations, and investigations, visit the PAUSE and fill in the form for a new module namespace. Take your time filling in the rationale of the module proposal. Consider, your form will be posted to modules@perl.org too, so other developers will probably stumble over this description many years later. The better the description, the better the chances that your module will actually be used.
+    When you're done with all your preparations, considerations, and
+    investigations, visit the PAUSE and fill in the form for a new module
+    namespace. Take your time filling in the rationale of the module proposal.
+    Consider, your form will be posted to modules@perl.org too, so other
+    developers will probably stumble over this description many years later.
+    The better the description, the better the chances that your module will
+    actually be used.
 </p>
 <p>
-    You need not wait for approval. You can upload anytime, even before you fill in the form. Uploading and registering are only loosely coupled.
+    You need not wait for approval. You can upload anytime, even before you
+    fill in the form. Uploading and registering are only loosely coupled.
 </p>
 <p>
-    The indexes that are maintained automatically on CPAN all double check if the module names that are used in the uploaded packages are registered. The indexer unwraps all packages and scans the source code (namely all <code>*.pm</code> files) for package declarations. You run the <b>risk of being ignored</b> by the index generator if you do not talk to the PAUSE maintainers about the namespace you are using.
+    The indexes that are maintained automatically on CPAN all double check if
+    the module names that are used in the uploaded packages are registered. The
+    indexer unwraps all packages and scans the source code (namely all
+    <code>*.pm</code> files) for package declarations. You run the <b>risk of
+    being ignored</b> by the index generator if you do not talk to the PAUSE
+    maintainers about the namespace you are using.
 </p>
 <p>
-    A frequent cause for confusion is the relation between CPAN itself and search.cpan.org. The PAUSE/CPAN indexer produces the files
+    A frequent cause for confusion is the relation between CPAN itself and
+    search.cpan.org. The PAUSE/CPAN indexer produces the files
 </p>
 <pre>
   authors/00whois.html
@@ -152,87 +248,171 @@ see pause_1999/edit.pm: ALLOW_OVERWRITE -->. Filenames matching this regexp can 
   modules/06perms.txt.gz
 </pre>
 <p>
-    These are the ones CPAN{,PLUS}.pm are using to find the downloadables and <a href="http://search.cpan.org">search.cpan.org</a> to mark releases as unauthorized.
+    These are the ones CPAN{,PLUS}.pm are using to find the downloadables and
+    <a href="http://search.cpan.org">search.cpan.org</a> to mark releases as
+    unauthorized.
 </p>
 <p>
-    <a href="http://search.cpan.org">search.cpan.org</a> has its own indexer which has to satisfy other demands. It is based on the PAUSE/CPAN indexes but it is being changed more often because of the specific needs search.cpan.org has.
+    <a href="http://search.cpan.org">search.cpan.org</a> has its own indexer
+    which has to satisfy other demands. It is based on the PAUSE/CPAN indexes
+    but it is being changed more often because of the specific needs
+    search.cpan.org has.
 </p>
 <p>
-    Questions regarding the PAUSE/CPAN indexer should be sent to modules@perl.org. The feedback addresses for issues with search.cpan.org are given at <a href="http://search.cpan.org/">search.cpan.org</a>. Click the <i>feedback</i> link there.
+    Questions regarding the PAUSE/CPAN indexer should be sent to
+    modules@perl.org. The feedback addresses for issues with search.cpan.org
+    are given at <a href="http://search.cpan.org/">search.cpan.org</a>. Click
+    the <i>feedback</i> link there.
 </p>
 <h3>
     <a id="takover" name="takeover">Taking over</a>
 </h3>
 <p>
-    So there's a module on CPAN that has a critical bug, lacks some features, or is generally under-maintained and you would like to step in?
+    So there's a module on CPAN that has a critical bug, lacks some features,
+    or is generally under-maintained and you would like to step in?
 </p>
 <p>
-    It's great that you want to help out and we, the PAUSE admins, really don't want to create any unnecessary barrier to getting involved with an existing module (or distribution) on CPAN. There are, however, some precautions we have to take. The following paragraphs outline the reason for these precautions and the steps you have to take. Please read them carefully.
+    It's great that you want to help out and we, the PAUSE admins, really don't
+    want to create any unnecessary barrier to getting involved with an existing
+    module (or distribution) on CPAN. There are, however, some precautions we
+    have to take. The following paragraphs outline the reason for these
+    precautions and the steps you have to take. Please read them carefully.
 </p>
 <p>
-    The majority of modules on CPAN has active maintainers. If the maintainer didn't answer the ticket you created in the request tracker, maybe she doesn't know about the CPAN ticketing system yet? Or she's just very busy this week and will get back to you in due time. The best way of helping out is to talk to the current maintainer about what you can do. Getting the PAUSE admins involved is only a last resort!
+    The majority of modules on CPAN has active maintainers. If the maintainer
+    didn't answer the ticket you created in the request tracker, maybe she
+    doesn't know about the CPAN ticketing system yet? Or she's just very busy
+    this week and will get back to you in due time. The best way of helping out
+    is to talk to the current maintainer about what you can do. Getting the
+    PAUSE admins involved is only a last resort!
 </p>
 <p>
-    In some circumstances, we can grant co-maintenance permissions to you or others if the current maintainer of a module has entirely disappeared. You have to understand that is not a decision we make lightly. We are essentially giving write access to somebody else's work to third parties without explicit consent from the missing author. Since almost all code on CPAN has a free license, this is likely unproblematic from a legal point of view, but any violation of a contributor's trust in the PAUSE/CPAN mechanisms is a serious blow against the work of everybody who contributes to CPAN. For this reason, we try to tread very lightly, make the least possible use of the administrative privileges and attempt to protect voluntary contributors like yourself or the author of the module at hand from any unnecessary burden.
+    In some circumstances, we can grant co-maintenance permissions to you or
+    others if the current maintainer of a module has entirely disappeared. You
+    have to understand that is not a decision we make lightly. We are
+    essentially giving write access to somebody else's work to third parties
+    without explicit consent from the missing author. Since almost all code on
+    CPAN has a free license, this is likely unproblematic from a legal point of
+    view, but any violation of a contributor's trust in the PAUSE/CPAN
+    mechanisms is a serious blow against the work of everybody who contributes
+    to CPAN. For this reason, we try to tread very lightly, make the least
+    possible use of the administrative privileges and attempt to protect
+    voluntary contributors like yourself or the author of the module at hand
+    from any unnecessary burden.
 </p>
 <p>
-    You have to realize that the author has probably invested a signficiant amount of time into writing the code in the first place and then gone through the additional work of making it available to others via CPAN free of charge. Therefore, it is crucial to be very polite when asking him or her for co-maintenance permissions. Politeness, however, does not suffice. Particularly when maintaining a module for which you received co-maintenance permissions from the admins (as opposed to being appointed by the author himself), you are *required* to respect the work and design of the author. A common fallacy is that people think they are much better programmers than their predecessors and that entitles them to judge others code quality and refactor everything. Whether or not your style is "better" is entirely irrelevant as it is not your code. Do not be arrogant, be respectful and tread lightly!
+    You have to realize that the author has probably invested a signficiant
+    amount of time into writing the code in the first place and then gone
+    through the additional work of making it available to others via CPAN free
+    of charge. Therefore, it is crucial to be very polite when asking him or
+    her for co-maintenance permissions. Politeness, however, does not suffice.
+    Particularly when maintaining a module for which you received
+    co-maintenance permissions from the admins (as opposed to being appointed
+    by the author himself), you are *required* to respect the work and design
+    of the author. A common fallacy is that people think they are much better
+    programmers than their predecessors and that entitles them to judge others
+    code quality and refactor everything. Whether or not your style is "better"
+    is entirely irrelevant as it is not your code. Do not be arrogant, be
+    respectful and tread lightly!
 </p>
 <p>
-    If you published your code to CPAN, then went on a hiking vacation (or to hospital) for a couple of weeks only to see that somebody took over, completely changed the design, and generally wreaked havoc, you would probably be rightfully upset and lose the good will that made you contribute in the first place. In order to prevent from happening, please go through the following steps and remember to be respectful all along:
+    If you published your code to CPAN, then went on a hiking vacation (or to
+    hospital) for a couple of weeks only to see that somebody took over,
+    completely changed the design, and generally wreaked havoc, you would
+    probably be rightfully upset and lose the good will that made you
+    contribute in the first place. In order to prevent from happening, please
+    go through the following steps and remember to be respectful all along:
 </p>
 <ol>
-    <li>Use the rt.cpan.org request tracker to submit a bug report. If the module's documentation lists another request tracker, try that instead.
+    <li>Use the rt.cpan.org request tracker to submit a bug report. If the
+    module's documentation lists another request tracker, try that instead.
     </li>
-    <li>Try to reach the author via mail. At the very least, try PAUSE_ID@cpan.org, any mail address the author listed on his search.cpan.org/~PAUSE_ID page, and any mail address that's listed in his or her module documentation. If there's even a mailing list, don't forget that either.
+    <li>Try to reach the author via mail. At the very least, try
+    PAUSE_ID@cpan.org, any mail address the author listed on his
+    search.cpan.org/~PAUSE_ID page, and any mail address that's listed in his
+    or her module documentation. If there's even a mailing list, don't forget
+    that either.
     </li>
     <li>Search the web for other ways of contacting the author. Send more mail.
     </li>
-    <li>Try posting in public places such as your use.perl.org journal, perlmonks.org or other forums about your looking for the author.
+    <li>Try posting in public places such as your use.perl.org journal,
+    perlmonks.org or other forums about your looking for the author.
     </li>
-    <li>Wait for *at least* several weeks. Remember, the author might be on vacation, ill, or simply busy.
+    <li>Wait for *at least* several weeks. Remember, the author might be on
+    vacation, ill, or simply busy.
     </li>
-    <li>Always keep modules@perl.org in the picture. Send us a copy of your mails to the author. After a reasonable period of waiting, send another mail to the list explaining how you tried to contact the author and pointing at the proof thereof. Do not forget to include your PAUSE ID and that of the original module author in this mail.
+    <li>Always keep modules@perl.org in the picture. Send us a copy of your
+    mails to the author. After a reasonable period of waiting, send another
+    mail to the list explaining how you tried to contact the author and
+    pointing at the proof thereof. Do not forget to include your PAUSE ID and
+    that of the original module author in this mail.
     </li>
 </ol>
 <p>
-    Usually, after all this hassle, we are reasonably quick at assigning co-maintenance permissions, but don't hold your breath, we're only human after all. Most requests won't even get here as many authors who moved on and don't maintain their modules any more are very happy to see them taken care of and will assign (primary or) co-maintenance permissions after you've tracked them down and asked nicely.
+    Usually, after all this hassle, we are reasonably quick at assigning
+    co-maintenance permissions, but don't hold your breath, we're only human
+    after all. Most requests won't even get here as many authors who moved on
+    and don't maintain their modules any more are very happy to see them taken
+    care of and will assign (primary or) co-maintenance permissions after
+    you've tracked them down and asked nicely.
 </p>
 <p>
     Good luck and thanks for stepping up.
 </p>
 <h3>
-    <a id="conventions" name="conventions">Other conventions you should know about</a>
+    <a id="conventions" name="conventions">Other conventions you should know
+    about</a>
 </h3>
 <h4>
     README
 </h4>
 <p>
-    Do not upload the <b>READMEs</b> that are integrated in your distribution files. PAUSE is designed to take care of unwrapping your file with tar or zip, registering all the modules it finds in there, and placing the readme file (i.e. a file with the name <code><b>README</b></code> in the top level directory of your package) into your directory. PAUSE will change the name of the file to <code><i>package-name</i><b>.readme</b></code>. It should do so within a few hours after your upload.
+    Do not upload the <b>READMEs</b> that are integrated in your distribution
+    files. PAUSE is designed to take care of unwrapping your file with tar or
+    zip, registering all the modules it finds in there, and placing the readme
+    file (i.e. a file with the name <code><b>README</b></code> in the top level
+    directory of your package) into your directory. PAUSE will change the name
+    of the file to <code><i>package-name</i><b>.readme</b></code>. It should do
+    so within a few hours after your upload.
 </p>
 <h4>
     $VERSION
 </h4>
 <p>
-    Please make sure all your <code>*.pm</code> files contain a <b><code>$VERSION</code></b> variable that conforms to the CPAN rules, i.e. the complete computation of $VERSION must take place on the one first line within the module that assigns to it. You can test if this is the case by running
+    Please make sure all your <code>*.pm</code> files contain a
+    <b><code>$VERSION</code></b> variable that conforms to the CPAN rules, i.e.
+    the complete computation of $VERSION must take place on the one first line
+    within the module that assigns to it. You can test if this is the case by
+    running
 </p>
 <blockquote>
-    <code>perl -MExtUtils::MakeMaker -le 'print MM-&gt;parse_version(shift)' 'file'</code>
+    <code>perl -MExtUtils::MakeMaker -le 'print MM-&gt;parse_version(shift)'
+    'file'</code>
 </blockquote>
 <p>
-    on the filenames in question. The CPAN indexer will run this code within a Safe compartment, so maybe even if the above command succeeds, PAUSE may fail if you're doing file IO or other potentially dangerous things within that line.
+    on the filenames in question. The CPAN indexer will run this code within a
+    Safe compartment, so maybe even if the above command succeeds, PAUSE may
+    fail if you're doing file IO or other potentially dangerous things within
+    that line.
 </p>
 <p>
-    Before you decide which style of versioning you prefer, you might want to read the <a href="http://search.cpan.org/perldoc?version">version</a> manpage.
+    Before you decide which style of versioning you prefer, you might want to
+    read the <a href="http://search.cpan.org/perldoc?version">version</a>
+    manpage.
 </p>
 <h4>
     Developer Releases
 </h4>
 <p>
-    The automatic integration of your work into several <b>indexes</b> and directory trees is not always what you desire. Often you want to release code for testing out the next release. Code that propagates through CPAN but is not in a stable state. Something <i>between</i> two versions.
+    The automatic integration of your work into several <b>indexes</b> and
+    directory trees is not always what you desire. Often you want to release
+    code for testing out the next release. Code that propagates through CPAN
+    but is not in a stable state. Something <i>between</i> two versions.
 </p>
 <p>
-    If you want to do that simply choose a filename that matches <b><code>/\d\.\d+_\d/</code></b>. Please choose a sequence that is easy to comprehend. People have adopted different conventions:
+    If you want to do that simply choose a filename that matches
+    <b><code>/\d\.\d+_\d/</code></b>. Please choose a sequence that is easy to
+    comprehend. People have adopted different conventions:
 </p>
 <pre>
 # 1.92 release and bug fixes
@@ -251,7 +431,8 @@ see pause_1999/edit.pm: ALLOW_OVERWRITE -->. Filenames matching this regexp can 
     This allows two separate development tracks between 1.92 and 1.93.
 </p>
 <p>
-    Other people do odd and even, with all odd majors always being dev releases:
+    Other people do odd and even, with all odd majors always being dev
+    releases:
 </p>
 <pre>
 0.15_01
@@ -264,98 +445,179 @@ see pause_1999/edit.pm: ALLOW_OVERWRITE -->. Filenames matching this regexp can 
 ...
 </pre>
 <p>
-    PAUSE will leave the underscore distributions alone: no readme will be extracted, no index will be updated, no symlinks will be created. Of course many users on the CPAN will take note of the developer releases. <a href="http://cpantesters.perl.org/">Cpan testers</a> will test them and bug chasers will probably file bug reports in <a href="http://rt.cpan.org">RT</a>.
+    PAUSE will leave the underscore distributions alone: no readme will be
+    extracted, no index will be updated, no symlinks will be created. Of course
+    many users on the CPAN will take note of the developer releases. <a href=
+    "http://cpantesters.perl.org/">Cpan testers</a> will test them and bug
+    chasers will probably file bug reports in <a href=
+    "http://rt.cpan.org">RT</a>.
 </p>
 <h4>
     Indexer
 </h4>
 <p>
-    Any distribution that arrives at PAUSE is checked for <b>package names</b> contained in the distribution. A package name that arrives for the first time is automatically assigned either to the author who submitted it or to user <i>perl</i> if the distribution file is a perl distribution. A package name that has already been used before must be submitted by its author, otherwise PAUSE will trigger a warning to the administrator. That way PAUSE will prevent accidental usage of a package namespace by more than one author.
+    Any distribution that arrives at PAUSE is checked for <b>package names</b>
+    contained in the distribution. A package name that arrives for the first
+    time is automatically assigned either to the author who submitted it or to
+    user <i>perl</i> if the distribution file is a perl distribution. A package
+    name that has already been used before must be submitted by its author,
+    otherwise PAUSE will trigger a warning to the administrator. That way PAUSE
+    will prevent accidental usage of a package namespace by more than one
+    author.
 </p>
 <p>
-    Be prepared that very soon after your upload your module will be tested on dozens of architectures by the never tired <a href="http://cpantesters.perl.org/">cpantesters</a>. This helpful lot will send their findings to their mailing list and collect the results in a database. If they find problems, they try to diagnose or even solve them and inform you about their findings. So be prepared to get mail from them before you have closed the buffer in your editor.
+    Be prepared that very soon after your upload your module will be tested on
+    dozens of architectures by the never tired <a href=
+    "http://cpantesters.perl.org/">cpantesters</a>. This helpful lot will send
+    their findings to their mailing list and collect the results in a database.
+    If they find problems, they try to diagnose or even solve them and inform
+    you about their findings. So be prepared to get mail from them before you
+    have closed the buffer in your editor.
 </p>
 <p>
-    Module::Build is an effort to overcome many deficiencies in MakeMaker and CPAN. One idea in that context is the storage of module-metadata in a file <a href="http://module-build.sourceforge.net/META-spec-v1.2.html">META.yml</a>, that is being integrated into the module-tarball. PAUSE is supposed to follow this emerging standard. The current code base of the PAUSE indexer supports META.yml by extracting it and storing it in a separate file that is called <code><i>package-name</i><b>.meta</b></code> in the same directory. The PAUSE indexer honours the contents of the <i>no_index</i> and the <i>provides</i> fields. All other fields are currently ignored.
+    Module::Build is an effort to overcome many deficiencies in MakeMaker and
+    CPAN. One idea in that context is the storage of module-metadata in a file
+    <a href=
+    "http://module-build.sourceforge.net/META-spec-v1.2.html">META.yml</a>,
+    that is being integrated into the module-tarball. PAUSE is supposed to
+    follow this emerging standard. The current code base of the PAUSE indexer
+    supports META.yml by extracting it and storing it in a separate file that
+    is called <code><i>package-name</i><b>.meta</b></code> in the same
+    directory. The PAUSE indexer honours the contents of the <i>no_index</i>
+    and the <i>provides</i> fields. All other fields are currently ignored.
 </p>
 <h3>
     <a id="services" name="services"></a>Related services on PAUSE
 </h3>
 <p>
-    Two documents are available about authors. <a href="../authors/00whois.html">00whois.html</a> is a list of authors, mailing lists and mailing list archives in HTML format,
+    Two documents are available about authors. <a href=
+    "../authors/00whois.html">00whois.html</a> is a list of authors, mailing
+    lists and mailing list archives in HTML format,
 </p>
 <p>
-    And <a href="../authors/01mailrc.txt.gz">01mailrc.txt.gz</a> is a smaller list intended to be used as a .mailrc file. Both files are maintained automatically.
+    And <a href="../authors/01mailrc.txt.gz">01mailrc.txt.gz</a> is a smaller
+    list intended to be used as a .mailrc file. Both files are maintained
+    automatically.
 </p>
 <p>
-    When new files arrive on the PAUSE, an Upload Scanner program scans the new files and categorizes them according to their contents. It tries to detect namespace clashes and to keep track of version numbers.
+    When new files arrive on the PAUSE, an Upload Scanner program scans the new
+    files and categorizes them according to their contents. It tries to detect
+    namespace clashes and to keep track of version numbers.
 </p>
 <p>
-    The document <a href="01modules.index.html">01modules.index.html</a> lists only the most recent distribution files that contain the latest of any given module that is available on CPAN. A second version of this document is also available that is <a href="01modules.mtime.html">sorted by modification date</a>. Both are maintained by the scanner automatically.
+    The document <a href="01modules.index.html">01modules.index.html</a> lists
+    only the most recent distribution files that contain the latest of any
+    given module that is available on CPAN. A second version of this document
+    is also available that is <a href="01modules.mtime.html">sorted by
+    modification date</a>. Both are maintained by the scanner automatically.
 </p>
 <p>
-    The listing <a href="02packages.details.txt.gz">02packages.details.txt</a> is also produced automatically. It is intended for programs but sometimes is a valuable information for humans too. It simply lists the current version number and the distribution file for all packages found on CPAN.
+    The listing <a href="02packages.details.txt.gz">02packages.details.txt</a>
+    is also produced automatically. It is intended for programs but sometimes
+    is a valuable information for humans too. It simply lists the current
+    version number and the distribution file for all packages found on CPAN.
 </p>
 <p>
-    There are also two symlink trees of modules maintained automatically. One is based on the basenames of the packages involved: <a href="by-module">by-module</a> and the other one divides the modules by the chapters of the Module List: <a href="by-category">by-category</a>.
+    There are also two symlink trees of modules maintained automatically. One
+    is based on the basenames of the packages involved: <a href=
+    "by-module">by-module</a> and the other one divides the modules by the
+    chapters of the Module List: <a href="by-category">by-category</a>.
 </p>
 <h3>
     <a id="ssl" name="ssl"></a>CACERT-ified SSL on PAUSE
 </h3>
 <p>
-    On Sat, April 19 2008, PAUSE switched to use a cacert certificate. <b><a href="http://wiki.cacert.org/wiki/BrowserClients">Get it now</a></b>.
+    On Sat, April 19 2008, PAUSE switched to use a cacert certificate.
+    <b><a href="http://wiki.cacert.org/wiki/BrowserClients">Get it now</a></b>.
 </p>
 <p>
-    As soon as you have cacert support installed into your browser, you need not confirm the SSL connection manually anymore. If you have no cacert certificate in your browser (and unfortunately many browsers do not have it) you may choose to either install it manually or still accept the connection without installing the cacert certificate.
+    As soon as you have cacert support installed into your browser, you need
+    not confirm the SSL connection manually anymore. If you have no cacert
+    certificate in your browser (and unfortunately many browsers do not have
+    it) you may choose to either install it manually or still accept the
+    connection without installing the cacert certificate.
 </p>
 <p>
-    Repeat: you can download the certificate from <a href="http://www.cacert.org/index.php?id=3">cacert</a> directly. Cacert provides guidance how <a href="http://wiki.cacert.org/wiki/BrowserClients">to install this certificate into your browser.</a>
+    Repeat: you can download the certificate from <a href=
+    "http://www.cacert.org/index.php?id=3">cacert</a> directly. Cacert provides
+    guidance how <a href="http://wiki.cacert.org/wiki/BrowserClients">to
+    install this certificate into your browser.</a>
 </p>
 <p>
-    Debian users can also access the cacert root certificate by installing the <b>ca-certificates</b> package. It contains the file the cacert root certificate as <code>/usr/share/ca-certificates/cacert.org/root.crt</code>. This can be installed into most browsers via preferences. Guidance provided in the above link.
+    Debian users can also access the cacert root certificate by installing the
+    <b>ca-certificates</b> package. It contains the file the cacert root
+    certificate as <code>/usr/share/ca-certificates/cacert.org/root.crt</code>.
+    This can be installed into most browsers via preferences. Guidance provided
+    in the above link.
 </p>
 <p>
-    The fingerprint of the cacert root certificate is <code>SHA1 Fingerprint=13:5C:EC:36:F4:9C:B8:E9:3B:1A:B2:70:CD:80:88:46:76:CE:8F:33</code>
+    The fingerprint of the cacert root certificate is <code>SHA1
+    Fingerprint=13:5C:EC:36:F4:9C:B8:E9:3B:1A:B2:70:CD:80:88:46:76:CE:8F:33</code>
 </p>
 <p>
     A big ThankYou to RJOOP for providing it.
 </p>
 <p>
-    In case all of the above does not work out for you, the fingerprint of the new PAUSE certificate is <code>SHA1 Fingerprint=82:7A:33:53:B4:20:36:D4:37:E4:54:F6:F3:15:87:63:3B:23:52:3E</code>
+    In case all of the above does not work out for you, the fingerprint of the
+    new PAUSE certificate is <code>SHA1
+    Fingerprint=82:7A:33:53:B4:20:36:D4:37:E4:54:F6:F3:15:87:63:3B:23:52:3E</code>
 </p>
 <h3>
     <a id="other" name="other"></a>Other useful links
 </h3>
 <p>
-    You have forgotten how you're supposed to package your software? Maybe <a href="http://search.cpan.org/perldoc?perlnewmod">the perlnewmod manpage</a> can help you.
+    You have forgotten how you're supposed to package your software? Maybe
+    <a href="http://search.cpan.org/perldoc?perlnewmod">the perlnewmod
+    manpage</a> can help you.
 </p>
 <p>
-    A real FAQ is about how to adopt or take over a module from somebody else? perlfaq7 has the full answer (as of <a href="http://www.nntp.perl.org/group/perl.cvs.perlfaq/2007/07/msg393.html">rev. 393</a>).
+    A real FAQ is about how to adopt or take over a module from somebody else?
+    perlfaq7 has the full answer (as of <a href=
+    "http://www.nntp.perl.org/group/perl.cvs.perlfaq/2007/07/msg393.html">rev.
+    393</a>).
 </p>
 <p>
-    You wanted to ask questions about authoring? Maybe the <a href="mailto:module-authors-help@perl.org">module authors mailinglist</a> or <a href="http://www.perlmonks.org/">the Perl Monks</a> will give you a lead.
+    You wanted to ask questions about authoring? Maybe the <a href=
+    "mailto:module-authors-help@perl.org">module authors mailinglist</a> or
+    <a href="http://www.perlmonks.org/">the Perl Monks</a> will give you a
+    lead.
 </p>
 <p>
-    You wanted to include proper tests in your package? A myriad of general purpose and custom tailored testing modules are discussed on the <a href="mailto:perl-qa-help@perl.org">QA mailing list</a>.
+    You wanted to include proper tests in your package? A myriad of general
+    purpose and custom tailored testing modules are discussed on the <a href=
+    "mailto:perl-qa-help@perl.org">QA mailing list</a>.
 </p>
 <h3>
     <a id="credits" name="credits"></a>Software
 </h3>
 <p>
-    The software running PAUSE consists of a database, which is driven by <a href="http://www.tcx.se/">mysql</a> and a <a href="http://perl.apache.org">mod_perl</a> server with <a href="ftp://ftp.ox.ac.uk/pub/crypto/SSL/">Ben-SSL</a>. Besides many of the perl standard modules like CGI, Data::Dumper, Text::Wrap, File, Directory, and IO modules, PAUSE itself uses lots of modules from the CPAN. For a complete list, feel free to visit <a href="https://pause.perl.org/perl-status">https://pause.perl.org/perl-status</a>. Also a lot of work is done by the mirror program by Lee McLoughlin, available from the CPAN scripts/ftpstuff directory.
+    The software running PAUSE consists of a database, which is driven by
+    <a href="http://www.tcx.se/">mysql</a> and a <a href=
+    "http://perl.apache.org">mod_perl</a> server with <a href=
+    "ftp://ftp.ox.ac.uk/pub/crypto/SSL/">Ben-SSL</a>. Besides many of the perl
+    standard modules like CGI, Data::Dumper, Text::Wrap, File, Directory, and
+    IO modules, PAUSE itself uses lots of modules from the CPAN. For a complete
+    list, feel free to visit <a href=
+    "https://pause.perl.org/perl-status">https://pause.perl.org/perl-status</a>.
+    Also a lot of work is done by the mirror program by Lee McLoughlin,
+    available from the CPAN scripts/ftpstuff directory.
 </p>
 <p>
-    The PAUSE source code is kept in a git repository at <a href="git://github.com/andk/pause.git">git://github.com/andk/pause.git</a>.
+    The PAUSE source code is kept in a git repository at <a href=
+    "git://github.com/andk/pause.git">git://github.com/andk/pause.git</a>.
 </p>
 <p>
     Thanks to all of you for your great contributions!
 </p>
-<hr />
+<hr>
 <p>
-    Contact <a href="mailto:modules@perl.org">modules@perl.org</a> or <a href="mailto:andreas.koenig.7os6VVqR@franz.ak.mind.de">Andreas König</a> for any questions.
+    Contact <a href="mailto:modules@perl.org">modules@perl.org</a> or <a href=
+    "mailto:andreas.koenig.7os6VVqR@franz.ak.mind.de">Andreas König</a> for any
+    questions.
 </p>
 <pre>
-<a id="pubkey" name="pubkey"></a>GnuPG public key for Andreas Koenig &lt;andreas.koenig.7os6VVqR@franz.ak.mind.de&gt;
+<a id="pubkey" name=
+"pubkey"></a>GnuPG public key for Andreas Koenig &lt;andreas.koenig.7os6VVqR@franz.ak.mind.de&gt;
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 Version: GnuPG v1.4.6 (GNU/Linux)
 
@@ -432,4 +694,5 @@ ok8Qe3w6O47oAJwOwsedVEZcWQPA6E3FQf8PicV3pg==
 =HPT0
 -----END PGP PUBLIC KEY BLOCK-----
 </pre>
+
 

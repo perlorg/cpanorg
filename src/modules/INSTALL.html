@@ -5,289 +5,411 @@
   });
 %]
     
-        <center>
-            <font size="+1">What To Do Once You've Downloaded A Module From The CPAN</font>
-        </center>
+<center>
+    <font size="+1">What To Do Once You've Downloaded A Module From The
+    CPAN</font>
+</center>
+<p>
+    You have a file ending in .tar.gz (or, less often, .zip). You know there's
+    a tasty module inside. There are four steps you must now take:
+</p>
+<ul>
+    <li>DECOMPRESS the file
+    </li>
+    <li>UNPACK the file into a directory
+    </li>
+    <li>BUILD the module (sometimes unnecessary)
+    </li>
+    <li>INSTALL the module.
+    </li>
+</ul>
+<p>
+    Here's how to perform each step for each operating system. This is
+    <i>not</i> a substitute for reading the README and INSTALL files that might
+    have come with your module!
+</p>
+<p>
+    Also note that these instructions are tailored for installing the module
+    into your system's repository of Perl modules. But you can install modules
+    into any directory you wish. For instance, where I say <code>perl
+    Makefile.PL</code>, you can substitute <code>perl Makefile.PL
+    PREFIX=/my/perl_directory</code> to install the modules into
+    <code>/my/perl_directory</code>. Then you can use the modules from your
+    Perl programs with <code>use lib "/my/perl_directory/lib/site_perl";</code>
+    or sometimes just <code>use "/my/perl_directory";</code>.
+</p>
+<ol>
+    <li>
+        <b>If you're on <a href=
+        "http://www.perl.com/CPAN/src/latest.tar.gz">Unix</a>,</b>
         <p>
-            You have a file ending in .tar.gz (or, less often, .zip). You know there's a tasty module inside. There are four steps you must now take:
-        </p>
-        <ul>
-            <li>DECOMPRESS the file
-            </li>
-            <li>UNPACK the file into a directory
-            </li>
-            <li>BUILD the module (sometimes unnecessary)
-            </li>
-            <li>INSTALL the module.
-            </li>
-        </ul>
-        <p>
-            Here's how to perform each step for each operating system. This is <i>not</i> a substitute for reading the README and INSTALL files that might have come with your module!
+            (You can use Andreas König's <a href=
+            "http://www.perl.com/CPAN/modules/by-module/CPAN">CPAN</a> module
+            to automate the entire process, from DECOMPRESS through INSTALL.)
         </p>
         <p>
-            Also note that these instructions are tailored for installing the module into your system's repository of Perl modules. But you can install modules into any directory you wish. For instance, where I say <code>perl Makefile.PL</code>, you can substitute <code>perl Makefile.PL PREFIX=/my/perl_directory</code> to install the modules into <code>/my/perl_directory</code>. Then you can use the modules from your Perl programs with <code>use lib "/my/perl_directory/lib/site_perl";</code> or sometimes just <code>use "/my/perl_directory";</code>.
+            A. DECOMPRESS
         </p>
-        <ol>
-            <li>
-                <b>If you're on <a href="http://www.perl.com/CPAN/src/latest.tar.gz">Unix</a>,</b>
-                <p>
-                    (You can use Andreas König's <a href="http://www.perl.com/CPAN/modules/by-module/CPAN">CPAN</a> module to automate the entire process, from DECOMPRESS through INSTALL.)
-                </p>
-                <p>
-                    A. DECOMPRESS
-                </p>
-                <blockquote>
-                    Decompress the file with <code>gzip -d yourmodule.tar.gz</code><br>
-                    You can get gzip from <a href="ftp://prep.ai.mit.edu/pub/gnu">ftp://prep.ai.mit.edu/pub/gnu</a>.<br>
-                    <br>
-                    Or, you can combine this step with the next to save disk space:<br>
-                    <br>
-                    <code>gzip -dc yourmodule.tar.gz | tar -xof -</code>
-                </blockquote>B. UNPACK
-                <blockquote>
-                    Unpack the result with <code>tar -xof yourmodule.tar</code>
-                </blockquote>C. BUILD
-                <blockquote>
-                    Go into the newly-created directory and type:<br>
-                    <br>
-                    <code>perl Makefile.PL</code><br>
-                    <code>make</code><br>
-                    <code>make test</code><br>
-                </blockquote>D. INSTALL
-                <blockquote>
-                    While still in that directory, type:<br>
-                    <br>
-                    <code>make install</code>
-                    <p>
-                        Make sure you have the appropriate permissions to install the module in your Perl 5 library directory. Often, you'll need to be root.
-                    </p>
-                    <p>
-                        That's all you need to do on Unix systems with dynamic linking. Most Unix systems have dynamic linking -- if yours doesn't, or if for another reason you have a statically-linked perl, <b>and</b> the module requires compilation, you'll need to build a new Perl binary that includes the module. Again, you'll probably need to be root.
-                    </p>
-                </blockquote>
-            </li>
-            <li>
-                <b>If you're running Windows 95 or NT with the <a href="http://www.perl.com/CPAN/ports/win95/ActiveState">ActiveState port of Perl</a>,</b>
-                <p>
-                    A. DECOMPRESS
-                </p>
-                <blockquote>
-                    You can use <a href="http://www.winzip.com">WinZip</a> (shareware) to decompress and unpack modules.
-                </blockquote>B. UNPACK
-                <blockquote>
-                    If you used WinZip, this was already done for you.
-                </blockquote>C. BUILD
-                <blockquote>
-                    Does the module require compilation (i.e. does it have files that end in .xs, .c, .h, .y, .cc, .cxx, or .C)? If it does, you're on your own. You can try compiling it yourself if you have a C compiler. If you're successful, consider uploading the resulting binary to the CPAN for others to use. If it doesn't, go to INSTALL.
-                </blockquote>D. INSTALL
-                <blockquote>
-                    Copy the module into your Perl's <i>lib</i> directory. That'll be one of the directories you see when you type <code>perl -e "print qq(@INC)"</code>.
-                </blockquote>
-            </li>
-            <li>
-                <b>If you're running Windows 95 or NT with <a href="http://www.perl.com/CPAN/ports/win95/Standard">the core Windows distribution of Perl</a>,</b>
-                <p>
-                    A. DECOMPRESS
-                </p>
-                <blockquote>
-                    When you download the module, make sure it ends in either <code>.tar.gz</code> or <code>.zip</code>. Windows browsers sometimes download <code>.tar.gz</code> files as <code>_tar.tar</code>, because early versions of Windows prohibited more than one dot in a filename.
-                    <p>
-                        You can use <a href="http://www.winzip.com">WinZip</a> (shareware) to decompress and unpack modules.
-                    </p>
-                    <p>
-                        Or, you can use <a href="http://www.cdrom.com/pub/infozip/Info-Zip.html">InfoZIP</a>'s <code>unzip</code> utility to uncompress <code>.zip</code> files; type <code>unzip yourmodule.zip</code> in your shell.
-                    </p>
-                    <p>
-                        Or, if you have a working <code>tar</code> and <code>gzip</code>, you can type<br>
-                        <code>gzip -cd yourmodule.tar.gz | tar xvf -</code><br>
-                        in the shell to decompress <code>yourmodule.tar.gz</code>. This will UNPACK your module as well.
-                    </p>
-                </blockquote>B. UNPACK
-                <blockquote>
-                    All of the methods in DECOMPRESS will have done this for you.
-                </blockquote>C. BUILD
-                <blockquote>
-                    Go into the newly-created directory and type:<br>
-                    <br>
-                    <code>perl Makefile.PL</code><br>
-                    <code>dmake</code><br>
-                    <code>dmake test</code><br>
-                    <p>
-                        Depending on your perl configuration, <code>dmake</code> might not be available. You might have to substitute whatever <code>perl -V:make</code> says. (Usually, that will be <code>nmake</code> or <code>make</code>.)
-                    </p>
-                </blockquote>D. INSTALL
-                <blockquote>
-                    While still in that directory, type:<br>
-                    <br>
-                    <code>dmake install</code>
-                </blockquote>
-            </li>
-            <li>
-                <b>If you're using a <a href="http://www.perl.com/CPAN/ports/mac">Macintosh</a>,</b>
-                <p>
-                    A. DECOMPRESS
-                </p>
-                <blockquote>
-                    You can either use <a href="http://www.aladdinsys.com/"><i>Stuffit Expander</i> in combination with <i>DropStuff with Expander Enhancer</i></a> (shareware), or <a href="http://persephone.cps.unizar.es/general/gente/spd/gzip/gzip.html">MacGzip</a> (freeware).
-                </blockquote>B. UNPACK
-                <blockquote>
-                    If you're using DropStuff or Stuffit, you can just extract the tar archive. Otherwise, you can use <a href="http://www.cirfid.unibo.it/~speranza">suntar</a> (freeware).
-                </blockquote>C. BUILD
-                <blockquote>
-                    Does the module require compilation?<br>
-                    <br>
-                    1. If it does,<br>
-                    <br>
-                    Overview: You need MPW and a combination of new and old CodeWarrior compilers for MPW and libraries. Makefiles created for building under MPW use the Metrowerks compilers. It's most likely possible to build without other compilers, but it has not been done successfully, to our knowledge. Read the documentation in <a href="http://www.ptf.com/macperl/">MacPerl: Power And Ease</a> on porting/building extensions, or find an existing precompiled binary, or hire someone to build it for you.
-                    <p>
-                        Or, ask someone on the <a href="mailto:mac-perl@iis.ee.ethz.ch">mac-perl mailing list</a> to build it for you. To subscribe to the mac-perl mailing list, send mail to <a href="mailto:mac-perl-request@iis.ee.ethz.ch">mac-perl-request@iis.ee.ethz.ch</a>.
-                    </p>
-                    <p>
-                        2. If the module doesn't require compilation, go to INSTALL.
-                    </p>
-                </blockquote>D. INSTALL
-                <blockquote>
-                    Make sure the newlines for the modules are in Mac format, not Unix format. Move the files manually into the correct folders.
-                    <p>
-                        Move the files to their final destination: This will most likely be in <code>$ENV{MACPERL}site_lib:</code> (i.e., <code>HD:MacPerl folder:site_lib:</code>). You can add new paths to the default <code>@INC</code> in the Preferences menu item in the MacPerl application (<code>$ENV{MACPERL}site_lib:</code> is added automagically). Create whatever directory structures are required (i.e., for <code>Some::Module</code>, create <code>$ENV{MACPERL}site_lib:Some:</code> and put <code>Module.pm</code> in that directory).
-                    </p>
-                    <p>
-                        Run the following script (or something like it):<br>
-                        <br>
-                    </p>
-                    <pre>
+        <blockquote>
+            Decompress the file with <code>gzip -d yourmodule.tar.gz</code><br>
+            You can get gzip from <a href=
+            "ftp://prep.ai.mit.edu/pub/gnu">ftp://prep.ai.mit.edu/pub/gnu</a>.<br>
+
+            <br>
+            Or, you can combine this step with the next to save disk space:<br>
+            <br>
+            <code>gzip -dc yourmodule.tar.gz | tar -xof -</code>
+        </blockquote>B. UNPACK
+        <blockquote>
+            Unpack the result with <code>tar -xof yourmodule.tar</code>
+        </blockquote>C. BUILD
+        <blockquote>
+            Go into the newly-created directory and type:<br>
+            <br>
+            <code>perl Makefile.PL</code><br>
+            <code>make</code><br>
+            <code>make test</code><br>
+        </blockquote>D. INSTALL
+        <blockquote>
+            While still in that directory, type:<br>
+            <br>
+            <code>make install</code>
+            <p>
+                Make sure you have the appropriate permissions to install the
+                module in your Perl 5 library directory. Often, you'll need to
+                be root.
+            </p>
+            <p>
+                That's all you need to do on Unix systems with dynamic linking.
+                Most Unix systems have dynamic linking -- if yours doesn't, or
+                if for another reason you have a statically-linked perl,
+                <b>and</b> the module requires compilation, you'll need to
+                build a new Perl binary that includes the module. Again, you'll
+                probably need to be root.
+            </p>
+        </blockquote>
+    </li>
+    <li>
+        <b>If you're running Windows 95 or NT with the <a href=
+        "http://www.perl.com/CPAN/ports/win95/ActiveState">ActiveState port of
+        Perl</a>,</b>
+        <p>
+            A. DECOMPRESS
+        </p>
+        <blockquote>
+            You can use <a href="http://www.winzip.com">WinZip</a> (shareware)
+            to decompress and unpack modules.
+        </blockquote>B. UNPACK
+        <blockquote>
+            If you used WinZip, this was already done for you.
+        </blockquote>C. BUILD
+        <blockquote>
+            Does the module require compilation (i.e. does it have files that
+            end in .xs, .c, .h, .y, .cc, .cxx, or .C)? If it does, you're on
+            your own. You can try compiling it yourself if you have a C
+            compiler. If you're successful, consider uploading the resulting
+            binary to the CPAN for others to use. If it doesn't, go to INSTALL.
+        </blockquote>D. INSTALL
+        <blockquote>
+            Copy the module into your Perl's <i>lib</i> directory. That'll be
+            one of the directories you see when you type <code>perl -e "print
+            qq(@INC)"</code>.
+        </blockquote>
+    </li>
+    <li>
+        <b>If you're running Windows 95 or NT with <a href=
+        "http://www.perl.com/CPAN/ports/win95/Standard">the core Windows
+        distribution of Perl</a>,</b>
+        <p>
+            A. DECOMPRESS
+        </p>
+        <blockquote>
+            When you download the module, make sure it ends in either
+            <code>.tar.gz</code> or <code>.zip</code>. Windows browsers
+            sometimes download <code>.tar.gz</code> files as
+            <code>_tar.tar</code>, because early versions of Windows prohibited
+            more than one dot in a filename.
+            <p>
+                You can use <a href="http://www.winzip.com">WinZip</a>
+                (shareware) to decompress and unpack modules.
+            </p>
+            <p>
+                Or, you can use <a href=
+                "http://www.cdrom.com/pub/infozip/Info-Zip.html">InfoZIP</a>'s
+                <code>unzip</code> utility to uncompress <code>.zip</code>
+                files; type <code>unzip yourmodule.zip</code> in your shell.
+            </p>
+            <p>
+                Or, if you have a working <code>tar</code> and
+                <code>gzip</code>, you can type<br>
+                <code>gzip -cd yourmodule.tar.gz | tar xvf -</code><br>
+                in the shell to decompress <code>yourmodule.tar.gz</code>. This
+                will UNPACK your module as well.
+            </p>
+        </blockquote>B. UNPACK
+        <blockquote>
+            All of the methods in DECOMPRESS will have done this for you.
+        </blockquote>C. BUILD
+        <blockquote>
+            Go into the newly-created directory and type:<br>
+            <br>
+            <code>perl Makefile.PL</code><br>
+            <code>dmake</code><br>
+            <code>dmake test</code><br>
+            <p>
+                Depending on your perl configuration, <code>dmake</code> might
+                not be available. You might have to substitute whatever
+                <code>perl -V:make</code> says. (Usually, that will be
+                <code>nmake</code> or <code>make</code>.)
+            </p>
+        </blockquote>D. INSTALL
+        <blockquote>
+            While still in that directory, type:<br>
+            <br>
+            <code>dmake install</code>
+        </blockquote>
+    </li>
+    <li>
+        <b>If you're using a <a href=
+        "http://www.perl.com/CPAN/ports/mac">Macintosh</a>,</b>
+        <p>
+            A. DECOMPRESS
+        </p>
+        <blockquote>
+            You can either use <a href="http://www.aladdinsys.com/"><i>Stuffit
+            Expander</i> in combination with <i>DropStuff with Expander
+            Enhancer</i></a> (shareware), or <a href=
+            "http://persephone.cps.unizar.es/general/gente/spd/gzip/gzip.html">MacGzip</a>
+            (freeware).
+        </blockquote>B. UNPACK
+        <blockquote>
+            If you're using DropStuff or Stuffit, you can just extract the tar
+            archive. Otherwise, you can use <a href=
+            "http://www.cirfid.unibo.it/~speranza">suntar</a> (freeware).
+        </blockquote>C. BUILD
+        <blockquote>
+            Does the module require compilation?<br>
+            <br>
+            1. If it does,<br>
+            <br>
+            Overview: You need MPW and a combination of new and old CodeWarrior
+            compilers for MPW and libraries. Makefiles created for building
+            under MPW use the Metrowerks compilers. It's most likely possible
+            to build without other compilers, but it has not been done
+            successfully, to our knowledge. Read the documentation in <a href=
+            "http://www.ptf.com/macperl/">MacPerl: Power And Ease</a> on
+            porting/building extensions, or find an existing precompiled
+            binary, or hire someone to build it for you.
+            <p>
+                Or, ask someone on the <a href=
+                "mailto:mac-perl@iis.ee.ethz.ch">mac-perl mailing list</a> to
+                build it for you. To subscribe to the mac-perl mailing list,
+                send mail to <a href=
+                "mailto:mac-perl-request@iis.ee.ethz.ch">mac-perl-request@iis.ee.ethz.ch</a>.
+            </p>
+            <p>
+                2. If the module doesn't require compilation, go to INSTALL.
+            </p>
+        </blockquote>D. INSTALL
+        <blockquote>
+            Make sure the newlines for the modules are in Mac format, not Unix
+            format. Move the files manually into the correct folders.
+            <p>
+                Move the files to their final destination: This will most
+                likely be in <code>$ENV{MACPERL}site_lib:</code> (i.e.,
+                <code>HD:MacPerl folder:site_lib:</code>). You can add new
+                paths to the default <code>@INC</code> in the Preferences menu
+                item in the MacPerl application
+                (<code>$ENV{MACPERL}site_lib:</code> is added automagically).
+                Create whatever directory structures are required (i.e., for
+                <code>Some::Module</code>, create
+                <code>$ENV{MACPERL}site_lib:Some:</code> and put
+                <code>Module.pm</code> in that directory).
+            </p>
+            <p>
+                Run the following script (or something like it):<br>
+                <br>
+            </p>
+            <pre>
   #!perl -w
   use AutoSplit;
   my $dir = "${MACPERL}site_perl";
   autosplit("$dir:Some:Module.pm", "$dir:auto", 0, 1, 1);
 </pre>
-                    <p>
-                        Eventually there should be a way to automate the installation process; some solutions exist, but none are ready for the general public yet.
-                    </p>
-                </blockquote>
-            </li>
-            <li>
-                <b>If you're on DOS (<a href="http://www.perl.com/CPAN/ports/msdos">the DJGPP port</a>),</b>
-                <p>
-                    A. DECOMPRESS
-                </p>
-                <blockquote>
-                    <a href="ftp://ftp.simtel.net/pub/simtelnet/gnu/djgpp/v2/">djtarx</a> will both uncompress and unpack.
-                </blockquote>B. UNPACK
-                <blockquote>
-                    See above.
-                </blockquote>C. BUILD
-                <blockquote>
-                    Go into the newly-created directory and type:<br>
-                    <br>
-                    <code>perl Makefile.PL</code><br>
-                    <code>make</code><br>
-                    <code>make test</code><br>
-                    <p>
-                        You will need the packages mentioned in Readme.dos in the Perl distribution.
-                    </p>
-                </blockquote>D. INSTALL
-                <blockquote>
-                    While still in that directory, type:<br>
-                    <br>
-                    <code>make install</code>
-                    <p>
-                        You will need the packages mentioned in Readme.dos in the Perl distribution.
-                    </p>
-                </blockquote>
-            </li>
-            <li>
-                <b>If you're on <a href="http://www.perl.com/CPAN/ports/os2">OS/2</a>,</b>
-                <p>
-                    Get the EMX development suite and gzip/tar, from either <a href="http://hobbes.nmsu.edu">Hobbes</a> or <a href="http:www.leo.org">LEO</a>, and then follow the instructions for Unix.
-                </p>
-            </li>
-            <li>
-                <b>If you're on <a href="http://www.perl.com/CPAN/src/latest.tar.gz">VMS</a>,</b>
-                <p>
-                    When downloading from CPAN, save your file with a <code>.tgz</code> extension instead of <code>.tar.gz</code>. All other periods in the filename should be replaced with underscores. For example, <code>Your-Module-1.33.tar.gz</code> should be downloaded as <code>Your-Module-1_33.tgz</code>.
-                </p>
-                <p>
-                    A. DECOMPRESS
-                </p>
-                <blockquote>
-                    Type<br>
-                    <br>
-                    <code>gzip -d Your-Module.tgz</code><br>
-                    <br>
-                    or, for zipped modules, type<br>
-                    <br>
-                    <code>unzip Your-Module.zip</code>
-                    <p>
-                        Executables for gzip, zip, and VMStar: <a href="http://www.openvms.digital.com/cd/000TOOLS/ALPHA/">Alphas</a>, <a href="http://www.openvms.digital.com/cd/000TOOLS/VAX/">Vaxen</a>.<br>
-                        gzip and tar are also available at <a href="ftp://ftp.digital.com/pub/VMS">ftp://ftp.digital.com/pub/VMS</a>.
-                    </p>
-                    <p>
-                        Note that GNU's gzip/gunzip is not the same as Info-ZIP's zip/unzip package. The former is a simple compression tool; the latter permits creation of multi-file archives.
-                    </p>
-                </blockquote>B. UNPACK
-                <blockquote>
-                    If you're using VMStar:<br>
-                    <br>
-                    <code>VMStar xf Your-Module.tar</code>
-                    <p>
-                        Or, if you're fond of VMS command syntax:<br>
-                        <br>
-                        <code>tar/extract/verbose Your_Module.tar</code>
-                    </p>
-                </blockquote>C. BUILD
-                <blockquote>
-                    Make sure you have MMS (from Digital) or MMK (freeware from <a href="http://www.madgoat.com">MadGoat</a>). Then type this to create the DESCRIP.MMS for th emodule:<br>
-                    <br>
-                    <code>perl Makefile.PL</code><br>
-                    <p>
-                        Now you're ready to build:<br>
-                        <br>
-                        <code>mms</code><br>
-                        <code>mms test</code><br>
-                    </p>
-                    <p>
-                        Substitute <code>mmk</code> for <code>mms</code> above if you're using MMK.
-                    </p>
-                </blockquote>D. INSTALL
-                <blockquote>
-                    Type<br>
-                    <br>
-                    <code>mms install</code><br>
-                    <br>
-                    Substitute <code>mmk</code> for <code>mms</code> above if you're using MMK.
-                </blockquote>
-            </li>
-            <li>
-                <b>If you're on <a href="http://www.perl.com/CPAN/ports/os390/">MVS</a>,</b>
-                <p>
-                    Introduce the .tar.gz file into an HFS as binary; don't translate from ASCII to EBCDIC.
-                </p>
-                <p>
-                    A. DECOMPRESS
-                </p>
-                <blockquote>
-                    Decompress the file with <code>gzip -d yourmodule.tar.gz</code><br>
-                    You can get gzip from <a href="http://www.s390.ibm.com/products/oe/bpxqp1.html">http://www.s390.ibm.com/products/oe/bpxqp1.html</a>.<br>
-                    <br>
-                </blockquote>B. UNPACK
-                <blockquote>
-                    Unpack the result with<br>
-                    <code>pax -o to=IBM-1047,from=ISO8859-1 -r &lt; yourmodule.tar</code>
-                </blockquote>The BUILD and INSTALL steps are identical to those for Unix. Some modules generate Makefiles that work better with GNU make, which is available from <a href="http://www.mks.com/s390/gnu/index.htm">http://www.mks.com/s390/gnu/index.htm</a>. 
-            </li>
-        </ol>
-        <hr>
+            <p>
+                Eventually there should be a way to automate the installation
+                process; some solutions exist, but none are ready for the
+                general public yet.
+            </p>
+        </blockquote>
+    </li>
+    <li>
+        <b>If you're on DOS (<a href="http://www.perl.com/CPAN/ports/msdos">the
+        DJGPP port</a>),</b>
         <p>
-            If you have any suggested changes for this page, <a href="mailto:orwant@tpj.com">let me know</a>. Please don't send me mail asking for help on how to install your modules. There are too many modules, and too few Orwants, for me to be able to answer or even acknowledge all your questions. Contact the module author instead, or post to <a href="news:comp.lang.perl.modules">comp.lang.perl.modules</a>, or ask someone familiar with Perl on your operating system.
+            A. DECOMPRESS
+        </p>
+        <blockquote>
+            <a href=
+            "ftp://ftp.simtel.net/pub/simtelnet/gnu/djgpp/v2/">djtarx</a> will
+            both uncompress and unpack.
+        </blockquote>B. UNPACK
+        <blockquote>
+            See above.
+        </blockquote>C. BUILD
+        <blockquote>
+            Go into the newly-created directory and type:<br>
+            <br>
+            <code>perl Makefile.PL</code><br>
+            <code>make</code><br>
+            <code>make test</code><br>
+            <p>
+                You will need the packages mentioned in Readme.dos in the Perl
+                distribution.
+            </p>
+        </blockquote>D. INSTALL
+        <blockquote>
+            While still in that directory, type:<br>
+            <br>
+            <code>make install</code>
+            <p>
+                You will need the packages mentioned in Readme.dos in the Perl
+                distribution.
+            </p>
+        </blockquote>
+    </li>
+    <li>
+        <b>If you're on <a href=
+        "http://www.perl.com/CPAN/ports/os2">OS/2</a>,</b>
+        <p>
+            Get the EMX development suite and gzip/tar, from either <a href=
+            "http://hobbes.nmsu.edu">Hobbes</a> or <a href=
+            "http:www.leo.org">LEO</a>, and then follow the instructions for
+            Unix.
+        </p>
+    </li>
+    <li>
+        <b>If you're on <a href=
+        "http://www.perl.com/CPAN/src/latest.tar.gz">VMS</a>,</b>
+        <p>
+            When downloading from CPAN, save your file with a <code>.tgz</code>
+            extension instead of <code>.tar.gz</code>. All other periods in the
+            filename should be replaced with underscores. For example,
+            <code>Your-Module-1.33.tar.gz</code> should be downloaded as
+            <code>Your-Module-1_33.tgz</code>.
         </p>
         <p>
-            Jon Orwant<br>
-            <a href="http://tpj.com">The Perl Journal</a>
+            A. DECOMPRESS
+        </p>
+        <blockquote>
+            Type<br>
+            <br>
+            <code>gzip -d Your-Module.tgz</code><br>
+            <br>
+            or, for zipped modules, type<br>
+            <br>
+            <code>unzip Your-Module.zip</code>
+            <p>
+                Executables for gzip, zip, and VMStar: <a href=
+                "http://www.openvms.digital.com/cd/000TOOLS/ALPHA/">Alphas</a>,
+                <a href=
+                "http://www.openvms.digital.com/cd/000TOOLS/VAX/">Vaxen</a>.<br>
+
+                gzip and tar are also available at <a href=
+                "ftp://ftp.digital.com/pub/VMS">ftp://ftp.digital.com/pub/VMS</a>.
+            </p>
+            <p>
+                Note that GNU's gzip/gunzip is not the same as Info-ZIP's
+                zip/unzip package. The former is a simple compression tool; the
+                latter permits creation of multi-file archives.
+            </p>
+        </blockquote>B. UNPACK
+        <blockquote>
+            If you're using VMStar:<br>
+            <br>
+            <code>VMStar xf Your-Module.tar</code>
+            <p>
+                Or, if you're fond of VMS command syntax:<br>
+                <br>
+                <code>tar/extract/verbose Your_Module.tar</code>
+            </p>
+        </blockquote>C. BUILD
+        <blockquote>
+            Make sure you have MMS (from Digital) or MMK (freeware from
+            <a href="http://www.madgoat.com">MadGoat</a>). Then type this to
+            create the DESCRIP.MMS for th emodule:<br>
+            <br>
+            <code>perl Makefile.PL</code><br>
+            <p>
+                Now you're ready to build:<br>
+                <br>
+                <code>mms</code><br>
+                <code>mms test</code><br>
+            </p>
+            <p>
+                Substitute <code>mmk</code> for <code>mms</code> above if
+                you're using MMK.
+            </p>
+        </blockquote>D. INSTALL
+        <blockquote>
+            Type<br>
+            <br>
+            <code>mms install</code><br>
+            <br>
+            Substitute <code>mmk</code> for <code>mms</code> above if you're
+            using MMK.
+        </blockquote>
+    </li>
+    <li>
+        <b>If you're on <a href=
+        "http://www.perl.com/CPAN/ports/os390/">MVS</a>,</b>
+        <p>
+            Introduce the .tar.gz file into an HFS as binary; don't translate
+            from ASCII to EBCDIC.
         </p>
         <p>
-            with invaluable help from Brandon Allbery, Charles Bailey, Graham Barr, Dominic Dunlop, Jarkko Hietaniemi, Ben Holzman, Tom Horsley, Nick Ing-Simmons, Tuomas J. Lukka, Laszlo Molnar, Chris Nandor, Alan Olsen, Peter Prymmer, Gurusamy Sarathy, Christoph Spalinger, Dan Sugalski, Larry Virden, and Ilya Zakharevich.
+            A. DECOMPRESS
         </p>
-        <p>
-            &copy; 1998 Jon Orwant. All Rights Reserved. This file may be copied and distributed under the same terms as Perl itself.
-        </p>
+        <blockquote>
+            Decompress the file with <code>gzip -d yourmodule.tar.gz</code><br>
+            You can get gzip from <a href=
+            "http://www.s390.ibm.com/products/oe/bpxqp1.html">http://www.s390.ibm.com/products/oe/bpxqp1.html</a>.<br>
+
+            <br>
+        </blockquote>B. UNPACK
+        <blockquote>
+            Unpack the result with<br>
+            <code>pax -o to=IBM-1047,from=ISO8859-1 -r &lt;
+            yourmodule.tar</code>
+        </blockquote>The BUILD and INSTALL steps are identical to those for
+        Unix. Some modules generate Makefiles that work better with GNU make,
+        which is available from <a href=
+        "http://www.mks.com/s390/gnu/index.htm">http://www.mks.com/s390/gnu/index.htm</a>.
+    </li>
+</ol>
+<hr>
+<p>
+    If you have any suggested changes for this page, <a href=
+    "mailto:orwant@tpj.com">let me know</a>. Please don't send me mail asking
+    for help on how to install your modules. There are too many modules, and
+    too few Orwants, for me to be able to answer or even acknowledge all your
+    questions. Contact the module author instead, or post to <a href=
+    "news:comp.lang.perl.modules">comp.lang.perl.modules</a>, or ask someone
+    familiar with Perl on your operating system.
+</p>
+<p>
+    Jon Orwant<br>
+    <a href="http://tpj.com">The Perl Journal</a>
+</p>
+<p>
+    with invaluable help from Brandon Allbery, Charles Bailey, Graham Barr,
+    Dominic Dunlop, Jarkko Hietaniemi, Ben Holzman, Tom Horsley, Nick
+    Ing-Simmons, Tuomas J. Lukka, Laszlo Molnar, Chris Nandor, Alan Olsen,
+    Peter Prymmer, Gurusamy Sarathy, Christoph Spalinger, Dan Sugalski, Larry
+    Virden, and Ilya Zakharevich.
+</p>
+<p>
+    © 1998 Jon Orwant. All Rights Reserved. This file may be copied and
+    distributed under the same terms as Perl itself.
+</p>
+

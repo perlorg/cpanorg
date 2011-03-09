@@ -10,31 +10,51 @@
 </h2>
 <ol>
     <li>
-        <a href="../modules/04pause.html">Get a PAUSE ID;</a> this is required to upload files to CPAN.
+        <a href="../modules/04pause.html">Get a PAUSE ID;</a> this is required
+        to upload files to CPAN.
     </li>
     <li>Create your script:
         <ul>
-            <li>It must be a single file, not compressed or archived. This constraint will be relaxed in the future.
+            <li>It must be a single file, not compressed or archived. This
+            constraint will be relaxed in the future.
             </li>
-            <li>Insert the appropriate POD sections, as outlined below. (If you don't know what POD is, consult the `perlpod' manpage). There is one mandatory section, and several useful-but-optional sections.
+            <li>Insert the appropriate POD sections, as outlined below. (If you
+            don't know what POD is, consult the `perlpod' manpage). There is
+            one mandatory section, and several useful-but-optional sections.
             </li>
-            <li>The mandatory POD section is `SCRIPT CATEGORIES'. The existence of this section informs PAUSE that this is a script. The contents of this section indicate where the script should be presented in <a href="index.html">the categorized hierarchy;</a> currently, you may specify up to three categories for your script.
+            <li>The mandatory POD section is `SCRIPT CATEGORIES'. The existence
+            of this section informs PAUSE that this is a script. The contents
+            of this section indicate where the script should be presented in
+            <a href="index.html">the categorized hierarchy;</a> currently, you
+            may specify up to three categories for your script.
             </li>
-            <li>The optional POD section `PREREQUISITES' contains a list of modules which this script <i>requires</i> in order to run.
+            <li>The optional POD section `PREREQUISITES' contains a list of
+            modules which this script <i>requires</i> in order to run.
             </li>
-            <li>The optional POD section `COREQUISITES' contains a list of modules which this script <i>would benefit from having available,</i> but which are not required.
+            <li>The optional POD section `COREQUISITES' contains a list of
+            modules which this script <i>would benefit from having
+            available,</i> but which are not required.
             </li>
-            <li>The optional POD section `OSNAMES' contains a list of operating systems (as given in Perl's $^O variable) under which this script will run.
+            <li>The optional POD section `OSNAMES' contains a list of operating
+            systems (as given in Perl's $^O variable) under which this script
+            will run.
             </li>
-            <li>The contents of the optional POD section `README' will be automatically extracted and displayed.
+            <li>The contents of the optional POD section `README' will be
+            automatically extracted and displayed.
             </li>
         </ul>
     </li>
-    <li>You may wish to check your script's format against <a href="../authors/id/K/KS/KSTAR/Sample-0.1">the example script.</a>
+    <li>You may wish to check your script's format against <a href=
+    "../authors/id/K/KS/KSTAR/Sample-0.1">the example script.</a>
     </li>
     <li>Upload your script to PAUSE.
     </li>
-    <li>New script categories are <i>not</i> automatically created. If you stipulate a SCRIPT CATEGORIES entry that does not exist, it will be silently ignored. New categories are created via discussion on <a href="mailto:scripts@perl.org">the scripts mailing list.</a> Please join the list before posting to it, by sending an empty email to <a href="mailto:scripts-subscribe@perl.org">scripts-subscribe@perl.org</a>.
+    <li>New script categories are <i>not</i> automatically created. If you
+    stipulate a SCRIPT CATEGORIES entry that does not exist, it will be
+    silently ignored. New categories are created via discussion on <a href=
+    "mailto:scripts@perl.org">the scripts mailing list.</a> Please join the
+    list before posting to it, by sending an empty email to <a href=
+    "mailto:scripts-subscribe@perl.org">scripts-subscribe@perl.org</a>.
     </li>
 </ol>
 <hr>
@@ -42,23 +62,28 @@
     Contents of POD sections
 </h2>
 <p>
-    The data in the POD sections, outlined above, must be presented in a machine-readable format. There are two ways to present the data:
+    The data in the POD sections, outlined above, must be presented in a
+    machine-readable format. There are two ways to present the data:
 </p>
 <ol>
     <li>Unadorned, one item per line.
     </li>
-    <li>Embedded in descriptive text, with the data appearing between C&lt; and &gt;.
+    <li>Embedded in descriptive text, with the data appearing between C&lt; and
+    &gt;.
     </li>
 </ol>
 <p>
-    <a href="../authors/id/K/KS/KSTAR/Sample-0.1">The example script</a> contains COREQUISITES, OSNAMES, and SCRIPT CATEGORIES sections in the first format, and a PREREQUISITES section in the second format.
+    <a href="../authors/id/K/KS/KSTAR/Sample-0.1">The example script</a>
+    contains COREQUISITES, OSNAMES, and SCRIPT CATEGORIES sections in the first
+    format, and a PREREQUISITES section in the second format.
 </p>
 <hr>
 <h2>
     Improving the process
 </h2>
 <p>
-    The scripts repository is still being refined. Please report and problems or suggestions to <a href="mailto:kstar@cpan.org">Kurt Starsinic.</a>
+    The scripts repository is still being refined. Please report and problems
+    or suggestions to <a href="mailto:kstar@cpan.org">Kurt Starsinic.</a>
 </p>
 <hr>
 <p>
