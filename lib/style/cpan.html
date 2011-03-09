@@ -9,6 +9,7 @@
     [%- IF page.keywords %]<meta name="keywords" content="[% page.keywords %]" />[% END -%]
     <link rel="author" href="mailto:cpan@perl.org" />
 	<link type="text/css" rel="stylesheet" href="[% page.stub %]css/cpan.css" /> 
+	<link rel="canonical" href="http://www.cpan.org/[% template.name %]" />
 	[% page.head %]
 </head>
 <body[% ' class="section_' _ page.section _ '"' IF page.section %]>
