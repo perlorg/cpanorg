@@ -5,6 +5,7 @@ ignore = .DS_Store
 ignore = \.tt$
 
 depend *=tpl/wrapper,tpl/defaults,style/cpan.html
+depend SITES.html=SITES-list.html
 
 copy = \.(gif|png|pdf|jpg|css)$
 
