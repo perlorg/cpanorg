@@ -59,8 +59,9 @@
             </p>
             <p>The archive has been online since 26th October 1995 and is constantly growing.</p>
             <ul>
-                <li><a href="/misc/cpan-faq.html">CPAN FAQ</a></li>
-                <li><a href="/disclaimer.html">Disclaimer</a></li>
+                <li><a href="misc/cpan-faq.html">CPAN FAQ</a></li>
+                <li><a href="disclaimer.html">Disclaimer</a></li>
+                <li><a href="RECENT.html">Recent uploads</a> (<a href="http://search.cpan.org/recent">See also</a>)</li>
             </ul>
             
         </td>
@@ -73,41 +74,17 @@
                 <li><a href="http://blogs.perl.org/">Perl blogs</a></li>
                 <li><a href="http://faq.perl.org/">Perl FAQ</a></li>
             </ul>
-            <h1>Other interfaces to CPAN</h1>
-            <ul>
-                <li><a href="http://search.cpan.org">CPAN search</a></li>
-                <li><a href="http://search.metacpan.org/">MetaCPAN</a></li>
-                
-            </ul>
         </td>
         <td class="third">
-            <!-- 
-            [% MACRO quicknews(shortname,count) BLOCK %]
-            [%- IF count < 1 %]
-              [%  count = 2 %]
-            [% END %]
-            [%- TRY %]
-              [%- USE news = XML.RSS("${root}/var/rss/${shortname}.rss") %]
-              [% FOREACH item = news.items %]
-                 <li><a href="[% item.link %]">[% item.title %]</a></li>
-                 [% count = count - 1 %]
-                 [% LAST IF count == 0 %]
-              [% END %]
-            [%- CATCH %]
-              [Error Processing Directive]
-            [%- FILTER stderr %][% error.info %][% END %]
-            [%- END %]
-            [%- END %]
-            -->
             <div style="margin-left: 20px">
-                <h1>Recent uploads (<a href="http://search.cpan.org/recent">More</a>)
-                </h1>
-                
+                <h1>Other interfaces to CPAN</h1>
                 <ul>
-                [% quicknews ("cpanrecent",12) %]
+                    <li><a href="http://search.cpan.org">CPAN search</a></li>
+                    <li><a href="http://search.metacpan.org/">MetaCPAN</a></li>
+
                 </ul>
             
-                <h1>Master mirror hosted by:</a>
+                <h1>Master mirror hosted by</a>
                 <p>
                     <a href="http://www.yellowbot.com/"><img src="i/YBheader150x40.png" width="150" height="40" /></a>
                 </p>
