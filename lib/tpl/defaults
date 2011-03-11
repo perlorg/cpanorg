@@ -10,10 +10,16 @@
         name            => 'www.cpan.org',
         crum            => '<a href="/">Home</a>',
     };
+    
+    # Defaults ( should be overwritten through tpl/cpan_stats.html )
+    SET cpan_stats = {
+        modules => 90000,
+        authors => 8000,
+        mirrors => 100,
+    };
 
-	PROCESS tpl/cpan_stats.html;
-
-    # don't include any whitespace from here...
-    RETURN;
 -%]
-
+[%- TRY -%]
+[%- PROCESS "tpl/cpan_stats.html" -%]
+[%- CATCH -%]
+[%- END -%]
