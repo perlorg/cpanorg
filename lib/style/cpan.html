@@ -14,9 +14,9 @@
 </head>
 <body[% ' class="section_' _ page.section _ '"' IF page.section %]>
 
-<table columns="3" border="0" width="90%" cellspacing="0" cellpadding="2" align="center">
+<table border="0" width="90%" cellspacing="0" cellpadding="2" align="center">
     <tr>
-        <td colspan="3">
+        <td>
             <div align="center">
                 <img width="264" height="77" src="http://www.perl.org/images/cpan_banner.png"><br>
                 <span class="big">The Comprehensive Perl Archive Network</span>
@@ -33,20 +33,30 @@
         </td>
     </tr>
     <tr>
-        <td colspan="3">
+        <td >
             <div id="content">
             [% content %]
             </div>
         </td>
     </tr>
     <tr>
-        <td colspan="3">
+        <td>
             <hr />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div id="footer_copyright">
+                <p>&copy; CPAN, <a href="http://dev.perl.org/licenses/artistic.html">Artistic license</a></p>
+            </div>
+
             [% UNLESS page.skip_master_mirror %]
-            <div id="mirror_footer">
+            <div id="footer_mirror">
 Master hosted by:<br /><a href="http://www.yellowbot.com/"><img src="[% page.stub %]i/YBheader150x40.png" width="150" height="40" /></a>
             </div>
             [% END %]
+
+
         </td>
     </tr>
 </table>
