@@ -15,10 +15,9 @@ a img{
 }
 h1 { 
     color: #333333;
-    text-align: left;
-    margin-bottom: 1px;
-    margin-top: 1px;
-    font-size: 100%;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-size: 150%;
 }
 li {
     list-style-type: circle;
