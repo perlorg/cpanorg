@@ -1,6 +1,10 @@
 [% 
-page.title = 'CPAN Sites';
-page.head = BLOCK %]
+  page.import({
+    title   => "CPAN Sites",
+    section => 'home',
+  });
+%]
+[% page.head = BLOCK %]
 <!-- Copyright Jarkko Hietaniemi jhi@iki.fi 2001-2010, Ask Bjørn Hansen ask@perl.org 2011
        All Rights Reserved -->
 <!-- You may distribute this document either under the Artistic License
