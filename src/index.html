@@ -2,6 +2,7 @@
   page.import({
     title   => "The Comprehensive Perl Archive Network",
     section => 'home',
+    skip_master_mirror => 1,
   });
 
 %]
@@ -55,7 +56,7 @@
             <h1>Welcome to CPAN</h1>
             <p>
                 CPAN currently has <a href="http://cpan.perl.org/modules/">[% cpan_stats.modules %] Perl modules</a>, written by [% cpan_stats.authors %] authors,
-                <a href="http://mirrors.cpan.org">mirrored</a> on [% cpan_stats.mirrors %] servers.
+                <a href="SITES.html">mirrored</a> on [% cpan_stats.mirrors %] servers.
             </p>
             <p>The archive has been online since 26th October 1995 and is constantly growing.</p>
             <ul>

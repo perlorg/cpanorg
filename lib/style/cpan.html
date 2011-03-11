@@ -28,7 +28,7 @@
                 | <a href="[% page.stub %]ports/index.html">Ports</a>
                 | <a href="[% page.stub %]src/README.html">Perl Source</a>
                 | <a href="[% page.stub %]misc/cpan-faq.html">FAQ</a>
-                | <a href="http://mirrors.cpan.org/">Mirrors</a>
+                | <a href="[% page.stub %]SITES.html">Mirrors</a>
             </div>
         </td>
     </tr>
@@ -41,7 +41,12 @@
     </tr>
     <tr>
         <td colspan="3">
-            <hr width="60%" />
+            <hr />
+            [% UNLESS page.skip_master_mirror %]
+            <div id="mirror_footer">
+Master hosted by:<br /><a href="http://www.yellowbot.com/"><img src="[% page.stub %]i/YBheader150x40.png" width="150" height="40" /></a>
+            </div>
+            [% END %]
         </td>
     </tr>
 </table>

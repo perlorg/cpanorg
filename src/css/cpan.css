@@ -87,3 +87,7 @@ img.extlink{
     float: none;
     padding-left: 0.25em;
 }
+#mirror_footer{
+    float: right;
+    vertical-align: top;
+}
