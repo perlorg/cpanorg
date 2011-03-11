@@ -1,4 +1,10 @@
-[% page.title = "CPAN/ports" %]
+[% 
+  page.import({
+    title   => "CPAN/ports",
+    section => 'ports',
+    stub    => '../',
+  });
+%]
 
 [% page.head = BLOCK %]
 <!-- Copyright Jarkko Hietaniemi <jhi@iki.fi>
@@ -49,30 +55,7 @@
 [% END %]
 
 
-<table width="100%">
- <tr>
-  <td>
-   <div class="left">
-    <img src="../misc/jpg/cpan.jpg"
-         alt="[CPAN Logo]" height="77" width="250"/>
-   </div>
-  </td>
-  <td>
-   <div class="right">
-    <h1><a id="top" name="top">Perl Ports (Binary Distributions)</a></h1>
-   </div>
-  </td>
- </tr>
- <tr>
-  <td>
-  </td>
-  <td>
-   <p class="right">
-    <a href="../index.html">CPAN</a>/ports
-   </p>
-  </td>
- </tr>
-</table>
+<h1><a id="top" name="top">Perl Ports (Binary Distributions)</a></h1>
 
 <hr/>
 
