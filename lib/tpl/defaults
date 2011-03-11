@@ -1,7 +1,17 @@
-[%-  page = {
+[%- 
+    page = {
             title = template.title,
             style = template.style or 'cpan.html'
+            stub  = '',
     };
+
+    # Configuration for this site
+    SET site = {
+        name            => 'www.cpan.org',
+        crum            => '<a href="/">Home</a>',
+    };
+
+	PROCESS tpl/cpan_stats.html;
 
     # don't include any whitespace from here...
     RETURN;

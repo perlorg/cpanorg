@@ -1,0 +1,89 @@
+body { 
+    width: 99%;
+    margin: auto; 
+	padding: 0;
+	margin-bottom: 3em;
+	font-family: Verdana, Arial, sans-serif;
+	font-size: 12pt;
+    background: white;
+}
+img{
+    border:0;
+}
+a img{
+    border:0;
+}
+h1 { 
+    color: #333333;
+    text-align: left;
+    margin-bottom: 1px;
+    margin-top: 1px;
+    font-size: 100%;
+}
+li {
+    list-style-type: circle;
+    font-size: 90%;
+}
+.search{
+    vertical-align: center;
+}
+#searchtitle {
+    float: right;
+    display: inline;
+}
+#strapline {
+    text-align: center;
+    font-style: italic;
+    vertical-align: center;
+}
+.big { 
+    font-size: 200%;
+    font-family: Times;
+}
+p {
+    font-size: 90%;
+}
+table { margin: auto; }
+img.border { border: none }
+td#search { 
+    text-align: center;
+    padding-bottom: 20px;
+}
+td {
+    padding: 4px;
+    vertical-align: top;
+}
+.third{
+    width: 30%;
+    padding-right: 3%;
+}
+.menubar {
+    background: #006699;
+    margin-top: 5px;
+    height: 25px;
+    color: #FFF;
+} 
+.menubar a {
+    padding: 10px;
+    font: bold 10pt Arial,Helvetica,sans-serif;
+}
+.menubar a:link, .menubar a:visited {
+    color: white;
+    text-decoration: none;
+}
+.menubar a:hover {
+    color: #ff6600;
+    text-decoration: underline;
+}
+hr {
+    border: 0;
+    width: 60%;
+    height: 2px;
+    color: #006699;
+    background-color: #006699;
+    
+}
+img.extlink{
+    float: none;
+    padding-left: 0.25em;
+}
