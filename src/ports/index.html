@@ -17,8 +17,30 @@
      You are not allowed to remove or alter these comments. -->
 [% END %]
 
+[% BLOCK version_table %]
+    <table class="os_version">
+        <tr><th>OS Name / version</th><th>Default Perl version</th></tr>
+        [% FOREACH version = os.versions %]
+            <tr>
+                <td>[% IF version.os_name && version.os_version %]
+                    [% version.os_name %] ([% version.os_version %])
+                    [% ELSIF version.os_name %]
+                    [% version.os_name %]
+                    [% ELSE %]
+                    [% version.os_version %]
+                    [% END %]
+                    </td>
+                <td>[% version.perl_version %]</td>
+            </tr>
+        [% END %]
+    </table>
+    <p><em>Last updated:</em> [% os.last_updated %]</p>
+[% END %]
 
 <h1><a id="top" name="top">Perl Ports (Binary Distributions)</a></h1>
+
+<p><em>Some of this information is now out of date. We are starting
+    to add 'last updated' so each section so you know how current it is.</em></p>
 
 
     <p>
@@ -231,6 +253,7 @@ No known ports for:
     |
     VxWorks
 </p>
+
 
 <hr/>
 
@@ -593,8 +616,35 @@ of prebuilt packages for DFlyBSD, use <tt>pkg_add -r packagename</tt> to install
     <p><small>
     Perl is known to be a standard component of the following distributions:
     </small></p>
+    
+    <h4>Debian</h4>
+    [% PROCESS version_table os => {
+          last_updated => '2011-03-13',
+          versions => [
+          {
+              os_name => 'Woody',
+              os_version => '3.0',
+              perl_version => '5.6.1',
+          },
+          {
+              os_name => 'Etch',
+              os_version => '4.0',
+              perl_version => '5.8.8',
+          },
+          {
+              os_name => 'Lenny',
+              os_version => '5.0',
+              perl_version => '5.10.0',
+          },
+          {
+              os_name => 'Squeeze',
+              os_version => '6.0',
+              perl_version => '5.10.1+patches',
+          },
+          ],
+      } %]
+    
     <ul>
-      <li><small>Debian: <b>5.6.1</b> in stable since Debian 3.0, <b>5.8.4</b> in unstable as of May 2004, probably will be in Debian 3.1</small></li>
       <li><small>Gentoo: <b>5.8.2</b> as of April 2004</small></li>
       <li><small>Mandrake: <b>5.6.1</b> since Mandrake 8.1, <b>5.8.1</b> since Mandrake 9.2</small></li>
       <li><small>RedHat: <b>5.8.0</b> both in RH 8 and RH 9, <b>5.6.1</b> in RHEL 2.1, <b>5.8.0 prerelease</b> in RHEL 3.0, originally <b>5.8.1</b> in FC1, later "erratad" to <b>5.8.3</b></small></li>
@@ -640,7 +690,7 @@ of prebuilt packages for DFlyBSD, use <tt>pkg_add -r packagename</tt> to install
 	<li><a href="ftp://ftp.lynx.com/contrib/utils/tools/">LynxOS</a> (Perl <b>5.6.1</b>)</li>
     </ul>
 
-<h2><a id="mac" name="mac">Macintosh</a></h2>
+<h2><a id="mac" name="mac">Apple Macintosh</a></h2>
 
     <h3><a id="macosclassic" name="macosclassic">Mac OS Classic (pre-<b>X</b>)</a></h3>
     <p>
@@ -687,17 +737,51 @@ of prebuilt packages for DFlyBSD, use <tt>pkg_add -r packagename</tt> to install
     based on Perl 5.004), and the <a href="#jperl">JPerl</a> patches
     (which were based on Perl 5.005).
     </p>
+    
 
     <h3><a id="macosx" name="macosx">Mac OS X</a></h3>
     <p>
-    Mac OS X ships with Perl as a standard component (<i>Perl <b>5.6.0</b>
-    as of OS X 10.2, 5.8.1-RC3 as of OS X 10.3, 5.8.6+patches as of OS X 10.4</i>).
-    If you want to build Perl yourself, you need to
-    get the Mac OS X Developer Tools which has among other things gcc.
+    Mac OS X ships with Perl as a standard component.
+    </p>
+    
+    [% PROCESS version_table os => {
+        last_updated => '2011-03-13',
+        versions => [
+        {
+            os_name => 'Jaguar',
+            os_version => '10.2',
+            perl_version => '5.6.0',
+        },
+        {
+            os_name => 'Panther',
+            os_version => '10.3',
+            perl_version => '5.8.1-RC3',
+        },
+        {
+            os_name => 'Tiger',
+            os_version => '10.4',
+            perl_version => '5.8.6+patches',
+        },
+        {
+            os_name => 'Leopard',
+            os_version => '10.5',
+            perl_version => '5.8.8',
+        },
+        {
+            os_name => 'Snow Leopard',
+            os_version => '10.6',
+            perl_version => '5.8.9',
+        },
+        ],
+    } %]
+    <p>Building the source requires you to have also installed
+        the "Mac OS X Developer tools" available on recent OSX install DVDs,
+        alternatively they can be downloaded from 
+        <a href="http://developer.apple.com/">Apple Developer</a> (free registration).
     <em>(Note: in 10.3 you should also install the optional
     BSD SDK, otherwise installing new Perl modules won't work.)</em>
-    To get the Mac OS X Developer Tools you can sign up as an <a href="http://developer.apple.com/">Apple Developer</a> (free registration).
     </p>
+    
     <p>
     Perl is available for Mac OS X also from third parties:</p>
     <ul>

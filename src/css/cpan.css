@@ -47,7 +47,7 @@ li {
 p {
     font-size: 90%;
 }
-table { margin: auto; }
+table#wrapper { margin: auto; }
 img.border { border: none }
 td#search { 
     text-align: center;
@@ -99,3 +99,15 @@ img.extlink{
     float: right;
     vertical-align: top;
 }
+
+/* Ports page version tables */
+table.os_version{
+    border: 1px solid #999;
+    width: 50%;
+}
+table.os_version th{
+    background-color: #E3E3E3;
+    padding-left: 5px;
+    text-align: left;
+}
+
