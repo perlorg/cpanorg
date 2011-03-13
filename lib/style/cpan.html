@@ -18,7 +18,7 @@
     <tr>
         <td>
             <div align="center">
-                <img width="264" height="77" src="http://www.perl.org/images/cpan_banner.png"><br>
+                <a href="[% page.stub %]"><img width="264" height="77" alt="CPAN.org" src="http://www.perl.org/images/cpan_banner.png"></a><br>
                 <span class="big">The Comprehensive Perl Archive Network</span>
             </div>
             <div class="menubar" align="center">
@@ -47,12 +47,12 @@
     <tr>
         <td>
             <div id="footer_copyright">
-                <p></p>
+                <p>Yours Eclectically, The Self-Appointed Master Librarians (OOK!) of the CPAN.</p>
             </div>
 
             [% UNLESS page.skip_master_mirror %]
             <div id="footer_mirror">
-Master hosted by:<br /><a href="http://www.yellowbot.com/"><img src="[% page.stub %]i/YBheader150x40.png" width="150" height="40" /></a>
+Master mirror hosted by:<br /><a href="http://www.yellowbot.com/"><img src="[% page.stub %]i/YBheader150x40.png" width="150" height="40" /></a>
             </div>
             [% END %]
 
@@ -60,6 +60,7 @@ Master hosted by:<br /><a href="http://www.yellowbot.com/"><img src="[% page.stu
         </td>
     </tr>
 </table>
+
 
 </body>
 </html>
