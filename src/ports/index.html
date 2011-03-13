@@ -873,20 +873,30 @@ not part of the NetWare binaries can be downloaded from CPAN.</p>
     </ul>
 
 <h2><a id="openbsd" name="openbsd">OpenBSD</a></h2>
-    <p>Perl has always been a standard component of formal OpenBSD releases.
-    OpenBSD 2.7 ships with Perl 5.6.</p>
-    <ul>
-      <li><a href="http://www.openbsd.org/ports.html">OpenBSD ports</a></li>
-    </ul>
+
+[% PROCESS version_table os => {
+    last_updated => '2011-03-13',
+    versions => [
+    {
+        os_name => '',
+        os_version => '2.7',
+        perl_version => '5.6.0',
+    },
+    {
+        os_name => '',
+        os_version => '4.8',
+        perl_version => '5.10.1+patches',
+    },
+    ],
+} %]
+
+<p>Perl has always been a standard component of formal OpenBSD releases.</p>
 
 <h2><a id="nonstop" name="nonstop">Tandem/Compaq NonStop/NonStop-UX</a></h2>
     <p>
       Starting from Perl 5.8.0 the NonStop-UX
       support is integrated to the Perl standard
       source code distribution.
-    </p>
-    <p>
-	<a href="https://www.itug.org/secure/ituglib/user/dsp_search.cfm">International Tandem Users' Group</a> ITUGLIB, Perl <b>5.8.7</b> (as of August 2006). If you want a never one, ask someone at the ITUG, or try compiling <a href="#usethesource">from the standard source</a>.
     </p>
 
 <h2><a id="OS1100" name="OS1100">OS1100</a></h2>
