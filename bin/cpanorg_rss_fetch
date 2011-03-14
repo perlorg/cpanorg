@@ -13,7 +13,7 @@ my $lwp_request
     : '/usr/bin/lwp-request';
 
 process_rss(
-    {   out  => 'data/recent.rdf',
+    {   out  => 'fetched_data/recent.rdf',
         file => get_rss( { url => "http://search.cpan.org/uploads.rdf", } )
     }
 );
@@ -38,10 +38,7 @@ sub process_rss {
     
     my $json_file;
     ($json_file = $conf->{out}) =~ s/\.rdf$/.json/; 
-    warn "O: $json_file";
     write_file($json_file, $json);
-
-
 }
 
 sub get_rss {

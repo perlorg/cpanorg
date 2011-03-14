@@ -19,6 +19,21 @@
     };
 
 -%]
+[%- BLOCK rss_feed %]
+    [% TRY %]
+    [% json_data = INSERT $conf.json_file %]
+    [% USE JSON %]
+    [% items = JSON.json_decode(json_data) %]
+    <ul>
+    [% FOREACH item = items %]
+        <li><a href="[% item.link %]">[% item.title %]</a></li>
+        [% LAST IF loop.count >= conf.max %]
+    [% END %]
+    </ul>
+    [% CATCH %]
+    [% END %]
+[% END -%]
+
 [%- TRY -%]
 [%- PROCESS "tpl/cpan_stats.html" -%]
 [%- CATCH -%]

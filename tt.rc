@@ -19,3 +19,4 @@ process     = tpl/wrapper
 src  = ${SRC}
 dest = html
 lib  = lib
+lib  = fetched_data

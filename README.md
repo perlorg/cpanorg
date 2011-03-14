@@ -29,13 +29,15 @@ to be expediently pulled in.
 
 ## How it works
 
-Install Template Toolkit (`cpanm Template`) and run `make`. This will
-in turn run `ttree` and generate output files in the html/ directory.
+Install Template Toolkit (`cpanm Template`), and the JSON plugin (`cpanm Template::Plugin::JSON`) and run `make`. This will in turn run `ttree` and generate output files in the html/ directory.
 
 Image files are copied plainly to the html/ directory.
 
 Everything else is processed through template toolkit. Only .html
 files get the "master template" applied automatically.
+
+To fetch the latest rss information run bin/cpanorg_rss_fetch which
+saves content into fetched_data
 
 The master template is in lib/style/cpan.html -- for now this is
 mostly just blank.
