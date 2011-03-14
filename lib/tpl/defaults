@@ -15,7 +15,7 @@
     SET cpan_stats = {
         modules => 90000,
         authors => 8000,
-        mirrors => 100,
+        mirrors => 200,
     };
 
 -%]
