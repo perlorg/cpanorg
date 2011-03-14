@@ -15,4 +15,6 @@ build:
 	@SRC=src ttree -f tt.rc
 
 
+install:
+	cpanm Template Template::Plugin::JSON
 
