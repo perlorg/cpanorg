@@ -1,0 +1,121 @@
+[% 
+  page.import({
+    title   => "Installing Perl Modules",
+    section => 'modules',
+    stub => '../',
+    to_be_symlinked => 1,
+  });
+%]
+
+<h1>How to install CPAN modules</h1>
+
+<p>
+    Here are some recommended approaches to installing modules from CPAN, as
+    with much of Perl there are several alternatives.
+</p>
+
+<h2>
+    Some basics
+</h2>
+<p>
+    Most Perl modules are written in Perl, some use <a href=
+    "http://perldoc.perl.org/perlxs.html">XS</a> (they are written in <a href=
+    "http://en.wikipedia.org/wiki/C_(programming_language)">C</a>) so require a
+    C <a href="http://en.wikipedia.org/wiki/Compiler">compiler</a>, see your OS
+    of choice below to find out how to get the right compiler. Modules may have
+    dependencies on other modules (almost always on <a href=
+    "http://www.cpan.org/">CPAN</a>) and cannot be installed without them (or
+    without a specific version of them). It is worth throughly reading the
+    documentation for the options below. Many modules on CPAN now require a
+    recent version of Perl (version 5.8 or above).
+</p>
+
+<h2>
+    Tools
+</h2>
+<p>
+    To help you install and manage your modules:
+</p>
+<p>
+    <em><a href=
+    "http://search.cpan.org/dist/local-lib/">local::lib</a></em> this module enables
+    you to install your module in a specified directory without requiring root
+    or administrator access. See the <a href=
+    "http://search.cpan.org/dist/local-lib/lib/local/lib.pm#The_bootstrapping_technique">
+    bootstrapping technique</a> for how to get started. You can create a
+    directory per project and deploy to other servers by copying the directory
+    (as long as you are on the same operating system).
+</p>
+
+<p>
+    <em><a href=
+    "http://search.cpan.org/dist/App-cpanminus/bin/cpanm">cpanm</a></em> from
+    <a href="http://search.cpan.org/dist/App-cpanminus/">App::cpanminus</a> is
+    a script to get, unpack, build and install modules from CPAN and does
+    nothing else. It's dependency free (can bootstrap itself), requires zero
+    configuration, and stands alone. It automates the process for the
+    majority of modules on CPAN and works well with local::lib.
+</p>
+<p>
+    <em>CPAN</em>
+</p>
+<p>
+    <em>CPANPLUS</em>
+</p>
+<p>
+    <em>perlbrew</em> - does not work on Win32.
+</p>
+
+<h2>
+    Win32
+</h2>
+<p>
+    <a href="http://strawberryperl.com/">Strawberry Perl</a> is a binary
+    distribution of Perl for the Windows operating system. It includes a
+    bundled compiler and pre-installed modules that offer the ability to
+    install XS CPAN modules directly from CPAN. 
+</p>
+
+<pre>
+Plan:
+
+Win32
+
+- Strawberry + local::lib + cpanm
+- ActiveState + ppm + CPAN + ?
+- CPAN and CPANPLUS
+
+MacOSX
+
+- Install developer tools, then follow Unix like below
+
+Unix like
+
+- local::lib + cpanm
+- perlbrew + cpanm
+- CPAN and CPANPLUS
+
+</pre>
+
+
+<pre>
+    # archive of any existing cpan configuration
+    mv ~/.cpan ~/.cpan_original
+
+    # Then one of the following:
+
+    # if you can run wget
+    wget -O - http://cpanmin.us/ | perl - local::lib App::cpanminus && \
+    echo 'eval $(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)' >> ~/.bashrc && . ~/.bashrc
+
+    # OR if you can run curl
+    curl -L http://cpanmin.us/ | perl - local::lib App::cpanminus && \
+    echo 'eval $(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)' >> ~/.bashrc && . ~/.bashrc
+
+    # otherwise, download the contents of http://cpanmin.us to a file 
+    # called cpanmin.us, make it executable and then run: 
+    ./cpanmin.us local::lib App::cpanminus && \
+    echo 'eval $(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)' >> ~/.bashrc && . ~/.bashrc
+</pre>
+
+<h2>CPAN::Mini</h2>

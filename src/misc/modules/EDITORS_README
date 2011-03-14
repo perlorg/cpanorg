@@ -1,0 +1,3 @@
+Files in here my be syminked into PAUSE, they
+will served from /modules/... NOT /misc/modules/...
+
