@@ -1,0 +1,63 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+use File::Temp;
+use XML::RSS;
+use JSON::Any;
+use File::Slurp;
+
+my $lwp_request
+    = -e '/usr/local/bin/lwp-request'
+    ? '/usr/local/bin/lwp-request'
+    : '/usr/bin/lwp-request';
+
+process_rss(
+    {   out  => 'data/recent.rdf',
+        file => get_rss( { url => "http://search.cpan.org/uploads.rdf", } )
+    }
+);
+
+sub process_rss {
+    my $conf = shift;
+
+    unless ( -r $conf->{file} ) {
+        warn "Could not find $conf->{file}";
+        return;
+    }
+
+    rename( $conf->{file}, $conf->{out} );
+
+    my $rss = XML::RSS->new;
+    $rss->parsefile( $conf->{out} );
+    my $items = $rss->{'items'};
+
+    my $j = JSON::Any->new();
+    
+    my $json = $j->encode($items);
+    
+    my $json_file;
+    ($json_file = $conf->{out}) =~ s/\.rdf$/.json/; 
+    warn "O: $json_file";
+    write_file($json_file, $json);
+
+
+}
+
+sub get_rss {
+    my $conf = shift;
+
+    my $tmp_file;
+
+    {
+        my $fh = File::Temp->new();
+        $tmp_file = $fh->filename;
+    }
+
+    my $cmd = join( ' ', ( $lwp_request, $conf->{url}, '>', $tmp_file ) );
+    system($cmd);
+
+    return $tmp_file;
+
+}
+
