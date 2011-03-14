@@ -1,10 +1,11 @@
-#!/usr/bin/perl
+#!/usr/bin/env perl
 
 use strict;
 use warnings;
+use local::lib;
 use File::Temp;
 use XML::RSS;
-use JSON::Any;
+use JSON;
 use File::Slurp;
 
 my $lwp_request
@@ -32,7 +33,7 @@ sub process_rss {
     $rss->parsefile( $conf->{out} );
     my $items = $rss->{'items'};
 
-    my $j = JSON::Any->new();
+    my $j = JSON->new();
     
     my $json = $j->encode($items);
     

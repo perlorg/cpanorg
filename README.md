@@ -29,7 +29,10 @@ to be expediently pulled in.
 
 ## How it works
 
-Install Template Toolkit (`cpanm Template`), and the JSON plugin (`cpanm Template::Plugin::JSON`) and run `make`. This will in turn run `ttree` and generate output files in the html/ directory.
+Install Template Toolkit and the other requirements with `cpanm` by running `make install`.
+
+Then run `make`. This will in turn run `ttree` and generate output
+files in the html/ directory.
 
 Image files are copied plainly to the html/ directory.
 

@@ -16,5 +16,6 @@ build:
 
 
 install:
-	cpanm Template Template::Plugin::JSON
+	cpanm Template JSON Template::Plugin::JSON \
+	XML::RSS local::lib File::Slurp
 
