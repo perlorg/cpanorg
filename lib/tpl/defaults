@@ -35,6 +35,11 @@
 [% END -%]
 
 [%- TRY -%]
-[%- PROCESS "tpl/cpan_stats.html" -%]
+[%- USE JSON %]
+[%- json_data = INSERT "cpan_stats.json" %]
+[% 
+   data = JSON.json_decode(json_data);
+   cpan_stats.import(data);
+%]
 [%- CATCH -%]
 [%- END -%]
