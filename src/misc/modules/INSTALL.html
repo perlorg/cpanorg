@@ -43,18 +43,23 @@
     or administrator access. See the <a href=
     "http://search.cpan.org/dist/local-lib/lib/local/lib.pm#The_bootstrapping_technique">
     bootstrapping technique</a> for how to get started. You can create a
-    directory per user/project/company and deploy to other servers by copying the directory
+    directory per user/project/company and deploy to other servers, by copying the directory
     (as long as you are on the same operating system).
 </p>
-
 <p>
     <em><a href=
     "http://search.cpan.org/dist/App-cpanminus/bin/cpanm">cpanm</a></em> from
     <a href="http://search.cpan.org/dist/App-cpanminus/">App::cpanminus</a> is
-    a script to get, unpack, build and install modules from CPAN. 
-    It's dependency free (can bootstrap itself) and requires zero
-    configuration. It automates the entire build process for the
-    majority of modules on CPAN and works well with local::lib and perlbrew.
+    a script to get, unpack, build and install modules from CPAN. It's
+    dependency free (can bootstrap itself) and requires zero configuration. It
+    automates the entire build process for the majority of modules on CPAN and
+    works well with local::lib and perlbrew. Many experienced Perl developers
+    use this as their tool of choice. Related tools: <a href=
+    "http://search.cpan.org/dist/App-cpanoutdated/bin/cpan-outdated">cpan-outdated</a>,
+    <a href=
+    "http://search.cpan.org/dist/App-pmuninstall/bin/pm-uninstall">pm-uninstall</a>,
+    <a href=
+    "http://search.cpan.org/dist/cpan-listchanges/bin/cpan-listchanges">cpan-listchanges</a>.
 </p>
 <p>
     <em><a href=
@@ -67,35 +72,56 @@
     also much easier and you more confident about how your project is setup.
     Currently (March 2011) Win32/64 is not supported.
 </p>
+<p>
+    <em><a href="http://search.cpan.org/dist/CPAN/scripts/cpan">cpan</a></em>
+    from <a href="http://search.cpan.org/dist/CPAN/">CPAN</a> has been
+    distributed with Perl since 1997 (5.004). It has more options than cpanm,
+    it is also much more verbose.
+</p>
+<p>
+    <em><a href="http://search.cpan.org/dist/CPANPLUS/bin/cpanp">cpanp</a></em>
+    from <a href="http://search.cpan.org/dist/CPANPLUS/">CPANPLUS</a> has been
+    distributed with Perl since 2007 (5.009). This offers even more options
+    than cpanm or cpan.
+</p>
 
-<p>
-    <em><a href="http://search.cpan.org/dist/CPAN/scripts/cpan">cpan</em>
-        from <a href="http://search.cpan.org/dist/CPAN/">CPAN</a>
-        has been distributed with Perl since 1997 (5.004).
-        
-</p>
-<p>
-    <em>CPANPLUS</em> - 2007 (5.009)
-</p>
 
 <h2>
-    Win32
+    Perl on Windows (Win32 and Win64)
 </h2>
 <p>
-    <a href="http://strawberryperl.com/">Strawberry Perl</a> is a binary
-    distribution of Perl for the Windows operating system. It includes a
-    bundled compiler and pre-installed modules that offer the ability to
-    install XS CPAN modules directly from CPAN. 
+    <a href="http://strawberryperl.com/">Strawberry Perl</a> is a open source
+    binary distribution of Perl for the Windows operating system. It includes a
+    compiler and pre-installed modules that offer the ability to install XS
+    CPAN modules directly from CPAN.
 </p>
+<p>
+    <a href="http://www.activestate.com/activeperl/downloads">ActiveState</a>
+    provide a binary distribution of Perl (for many platforms), as well as their
+    own <a href="http://www.activestate.com/activeperl/ppm-perl-modules">perl
+    package manager</a> (ppm). Some modules are not available as ppm's 
+    or have reported errors on the ppm build system, this does not mean
+    they do not work. You to use the <em>cpan</em> script and build modules 
+    from CPAN against ActiveState Perl. 
+</p>
+
+<h2>Perl on Mac OSX</h2>
+<p>
+    OSX comes with Perl pre-installed, in order to build and install your
+    own modules you will need to install the 'developer tools' which
+    can be found on your OSX install CD. Once you have done this
+    you can use all of the tools mentioned above.
+</p>
+
+<h2>Perl on Unix like OSs</h2>
+<p>
+    Install 'make' through your package manager. You can then
+    use all of the tools mentioned above
+</p>
+
 
 <pre>
 Plan:
-
-Win32
-
-- Strawberry + local::lib + cpanm
-- ActiveState + ppm + CPAN + ?
-- CPAN and CPANPLUS
 
 MacOSX
 
