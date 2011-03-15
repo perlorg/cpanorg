@@ -7,13 +7,8 @@
     [%- IF page.description %]<meta name="description" content="[% page.description %]" />[% END -%]
     [%- IF page.keywords %]<meta name="keywords" content="[% page.keywords %]" />[% END -%]
     <link rel="author" href="mailto:cpan@perl.org" />
-    [% IF page.to_be_symlinked && 1 %]
-	<link type="text/css" rel="stylesheet" href="[% page.stub %]../misc/css/cpan.css" /> 
-	<link rel="canonical" href="http://www.cpan.org/[% template.name.replace('misc/') %]" />	
-	[% ELSE %]
+	<link rel="canonical" href="http://www.cpan.org/[% page.canonical || template.name %]" />	
 	<link type="text/css" rel="stylesheet" href="[% page.stub %]misc/css/cpan.css" /> 
-	<link rel="canonical" href="http://www.cpan.org/[% template.name %]" />
-	[% END %]
 	[% page.head %]
 </head>
 <body[% ' class="section_' _ page.section _ '"' IF page.section %]>
