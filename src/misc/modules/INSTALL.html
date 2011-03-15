@@ -38,8 +38,8 @@
 </p>
 <p>
     <em><a href=
-    "http://search.cpan.org/dist/local-lib/">local::lib</a></em> this module enables
-    you to install your module in a specified directory without requiring root
+    "http://search.cpan.org/dist/local-lib/">local::lib</a></em> enables
+    you to install modules into a specified directory, without requiring root
     or administrator access. See the <a href=
     "http://search.cpan.org/dist/local-lib/lib/local/lib.pm#The_bootstrapping_technique">
     bootstrapping technique</a> for how to get started. You can create a
@@ -53,7 +53,7 @@
     a script to get, unpack, build and install modules from CPAN. It's
     dependency free (can bootstrap itself) and requires zero configuration. It
     automates the entire build process for the majority of modules on CPAN and
-    works well with local::lib and perlbrew. Many experienced Perl developers
+    works well with <em>local::lib</em> and <em>perlbrew</em>. Many experienced Perl developers
     use this as their tool of choice. Related tools: <a href=
     "http://search.cpan.org/dist/App-cpanoutdated/bin/cpan-outdated">cpan-outdated</a>,
     <a href=
@@ -69,31 +69,33 @@
     upgrade the Perl your OS uses to try different versions of Perl. You can
     use multiple versions of Perl (maybe as you upgrade) across different
     projects. The separation from your system Perl makes server maintenance
-    also much easier and you more confident about how your project is setup.
+    much easier and you more confident about how your project is setup.
     Currently (March 2011) Win32/64 is not supported.
 </p>
 <p>
     <em><a href="http://search.cpan.org/dist/CPAN/scripts/cpan">cpan</a></em>
     from <a href="http://search.cpan.org/dist/CPAN/">CPAN</a> has been
-    distributed with Perl since 1997 (5.004). It has more options than cpanm,
-    it is also much more verbose.
+    distributed with Perl since 1997 (5.004). It has many more options than
+    <em>cpanm</em>, it is also much more verbose.
 </p>
 <p>
     <em><a href="http://search.cpan.org/dist/CPANPLUS/bin/cpanp">cpanp</a></em>
     from <a href="http://search.cpan.org/dist/CPANPLUS/">CPANPLUS</a> has been
     distributed with Perl since 2007 (5.009). This offers even more options
-    than cpanm or cpan.
+    than <em>cpanm</em> or <em>cpan</em>.
 </p>
+
 
 
 <h2>
     Perl on Windows (Win32 and Win64)
 </h2>
 <p>
-    <a href="http://strawberryperl.com/">Strawberry Perl</a> is a open source
+    <a href="http://strawberryperl.com/">Strawberry Perl</a> is an open source
     binary distribution of Perl for the Windows operating system. It includes a
     compiler and pre-installed modules that offer the ability to install XS
-    CPAN modules directly from CPAN.
+    CPAN modules directly from CPAN. <em>cpanm</em> can be installed by
+    running <code>cpan cpanm</code>.
 </p>
 <p>
     <a href="http://www.activestate.com/activeperl/downloads">ActiveState</a>
@@ -108,52 +110,39 @@
 <h2>Perl on Mac OSX</h2>
 <p>
     OSX comes with Perl pre-installed, in order to build and install your
-    own modules you will need to install the 'developer tools' which
-    can be found on your OSX install CD. Once you have done this
-    you can use all of the tools mentioned above.
+    own modules you will need to install the 'developer' package which
+    can be found on your OSX install DVD (you only need the 'unix tools').
+    Once you have done this you can use all of the tools mentioned above.
 </p>
 
-<h2>Perl on Unix like OSs</h2>
+<h2>Perl on other Unix like OSs</h2>
 <p>
     Install 'make' through your package manager. You can then
-    use all of the tools mentioned above
+    use all of the tools mentioned above.
+</p>
+
+<h2>
+    Other tools
+</h2>
+<p>
+    <a href="http://search.cpan.org/dist/CPAN-Mini/">CPAN::Mini</a> can provide
+    you with a minimal mirror of <a href="http://www.cpan.org">CPAN</a> (just
+    the latest version of all modules). This makes working offline easy.
+</p>
+<p>
+    <a href=
+    "http://search.cpan.org/dist/CPAN-Mini-Inject/">CPAN::Mini::Inject</a>
+    allows you to add your own modules to your local CPAN::Mini mirror of CPAN.
+    So you can install and deploy your own modules through the same tools you
+    do CPAN modules.
 </p>
 
 
-<pre>
-Plan:
-
-MacOSX
-
-- Install developer tools, then follow Unix like below
-
-Unix like
-
-- local::lib + cpanm
-- perlbrew + cpanm
-- CPAN and CPANPLUS
-
-</pre>
 
 
-<pre>
-    # archive of any existing cpan configuration
-    mv ~/.cpan ~/.cpan_original
 
-    # Then one of the following:
 
-    # if you can run wget
-    wget -O - http://cpanmin.us/ | perl - local::lib App::cpanminus && \
-    echo 'eval $(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)' >> ~/.bashrc && . ~/.bashrc
 
-    # OR if you can run curl
-    curl -L http://cpanmin.us/ | perl - local::lib App::cpanminus && \
-    echo 'eval $(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)' >> ~/.bashrc && . ~/.bashrc
 
-    # otherwise, download the contents of http://cpanmin.us to a file 
-    # called cpanmin.us, make it executable and then run: 
-    ./cpanmin.us local::lib App::cpanminus && \
-    echo 'eval $(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)' >> ~/.bashrc && . ~/.bashrc
-</pre>
 
-<h2>CPAN::Mini</h2>
+
