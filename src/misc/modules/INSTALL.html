@@ -43,7 +43,7 @@
     or administrator access. See the <a href=
     "http://search.cpan.org/dist/local-lib/lib/local/lib.pm#The_bootstrapping_technique">
     bootstrapping technique</a> for how to get started. You can create a
-    directory per project and deploy to other servers by copying the directory
+    directory per user/project/company and deploy to other servers by copying the directory
     (as long as you are on the same operating system).
 </p>
 
@@ -51,19 +51,31 @@
     <em><a href=
     "http://search.cpan.org/dist/App-cpanminus/bin/cpanm">cpanm</a></em> from
     <a href="http://search.cpan.org/dist/App-cpanminus/">App::cpanminus</a> is
-    a script to get, unpack, build and install modules from CPAN and does
-    nothing else. It's dependency free (can bootstrap itself), requires zero
-    configuration, and stands alone. It automates the process for the
-    majority of modules on CPAN and works well with local::lib.
+    a script to get, unpack, build and install modules from CPAN. 
+    It's dependency free (can bootstrap itself) and requires zero
+    configuration. It automates the entire build process for the
+    majority of modules on CPAN and works well with local::lib and perlbrew.
 </p>
 <p>
-    <em>CPAN</em>
+    <em><a href=
+    "http://search.cpan.org/dist/App-perlbrew/bin/perlbrew">perlbrew</a></em>
+    from <a href="http://search.cpan.org/dist/App-perlbrew/">App::perlbrew</a>
+    lets you create completely separate Perl environments. You do not need to
+    upgrade the Perl your OS uses to try different versions of Perl. You can
+    use multiple versions of Perl (maybe as you upgrade) across different
+    projects. The separation from your system Perl makes server maintenance
+    also much easier and you more confident about how your project is setup.
+    Currently (March 2011) Win32/64 is not supported.
+</p>
+
+<p>
+    <em><a href="http://search.cpan.org/dist/CPAN/scripts/cpan">cpan</em>
+        from <a href="http://search.cpan.org/dist/CPAN/">CPAN</a>
+        has been distributed with Perl since 1997 (5.004).
+        
 </p>
 <p>
-    <em>CPANPLUS</em>
-</p>
-<p>
-    <em>perlbrew</em> - does not work on Win32.
+    <em>CPANPLUS</em> - 2007 (5.009)
 </p>
 
 <h2>
