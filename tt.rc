@@ -6,6 +6,7 @@ ignore = \.tt$
 
 depend *=tpl/wrapper,tpl/defaults,style/cpan.html
 depend SITES.html=SITES-list.html
+depend index.html=recent.json
 
 copy = \.(gif|png|pdf|jpg)$
 
@@ -19,4 +20,4 @@ process     = tpl/wrapper
 src  = ${SRC}
 dest = html
 lib  = lib
-lib  = fetched_data
+lib  = data

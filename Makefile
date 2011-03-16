@@ -3,7 +3,9 @@ all: build
 
 clean: buildclean
 
-update: build
+update: update-data build
+
+update-master: update
 	rsync -av html/ ../CPAN/
 
 buildclean: rmclean build
@@ -14,6 +16,8 @@ rmclean:
 build:
 	@SRC=src ttree -f tt.rc
 
+update-data:
+	@./bin/cpanorg_rss_fetch
 
 install:
 	cpanm Template JSON Template::Plugin::JSON \

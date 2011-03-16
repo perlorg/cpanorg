@@ -6,15 +6,13 @@ use local::lib;
 use File::Temp;
 use XML::RSS;
 use JSON;
-use File::Slurp;
+use LWP::Simple qw(mirror);
+use File::Path qw(mkpath);
 
-my $lwp_request
-    = -e '/usr/local/bin/lwp-request'
-    ? '/usr/local/bin/lwp-request'
-    : '/usr/bin/lwp-request';
+mkpath 'data', 0755 unless -e 'data';
 
 process_rss(
-    {   out  => 'fetched_data/recent.rdf',
+    {   out  => 'data/recent.rdf',
         file => get_rss( { url => "http://search.cpan.org/uploads.rdf", } )
     }
 );
@@ -35,11 +33,13 @@ sub process_rss {
 
     my $j = JSON->new();
     
-    my $json = $j->encode($items);
-    
     my $json_file;
-    ($json_file = $conf->{out}) =~ s/\.rdf$/.json/; 
-    write_file($json_file, $json);
+    ($json_file = $conf->{out}) =~ s/\.rdf$/.json/;
+
+    open my $fh, ">:utf8", $json_file
+        or die "Could not open $json_file: $!";
+    print $fh $j->encode($items);
+    close $fh;
 }
 
 sub get_rss {
@@ -52,8 +52,7 @@ sub get_rss {
         $tmp_file = $fh->filename;
     }
 
-    my $cmd = join( ' ', ( $lwp_request, $conf->{url}, '>', $tmp_file ) );
-    system($cmd);
+    mirror($conf->{url}, $tmp_file);
 
     return $tmp_file;
 
