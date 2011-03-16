@@ -20,6 +20,6 @@ update-data:
 	@./bin/cpanorg_rss_fetch
 
 install:
-	cpanm Template JSON Template::Plugin::JSON \
+	cpanm Template JSON Template::Plugin::Comma  Template::Plugin::JSON \
 	XML::RSS local::lib File::Slurp
 

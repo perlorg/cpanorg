@@ -4,6 +4,8 @@
     section => 'home',
     skip_master_mirror => 0,
   });
+  
+  USE Comma;
 
 %][% page.head = BLOCK %]
 <!-- Copyright Jarkko Hietaniemi <jhi@iki.fi>
@@ -61,7 +63,7 @@
     <tr>
         <td id="strapline" colspan="3">
             <p>
-            CPAN holds [% cpan_stats.modules %] open source Perl modules ready for you to download and use.<br />
+            CPAN holds [% cpan_stats.modules | comma %] open source Perl modules ready for you to download and use.<br />
             Stop reinventing wheels, start building space rockets.
             </p>
         </td>
@@ -106,8 +108,8 @@
         <td class="third">
             <h2>Welcome to CPAN</h2>
             <p>
-                CPAN currently has <a href="http://cpan.perl.org/modules/">[% cpan_stats.modules %] Perl modules</a>, written by [% cpan_stats.authors %] authors,
-                <a href="SITES.html">mirrored</a> on [% cpan_stats.mirrors %] servers.
+                CPAN currently has <a href="http://cpan.perl.org/modules/">[% cpan_stats.modules  | comma  %] Perl modules</a>, written by [% cpan_stats.authors  | comma %] authors,
+                <a href="SITES.html">mirrored</a> on [% cpan_stats.mirrors  | comma  %] servers.
             </p>
             <p>The archive has been online since October 1995 and is constantly growing.</p>
             <ul>
