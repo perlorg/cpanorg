@@ -72,14 +72,14 @@ td {
     width: 30%;
     padding-right: 3%;
 }
+/* nav */
 .menubar {
     background: #006699;
-    margin-top: 5px;
-    height: 25px;
+    padding: 2px 0 5px 0;
     color: #FFF;
 } 
 .menubar a {
-    padding: 10px;
+    padding: 0 10px;
     font: bold 10pt Arial,Helvetica,sans-serif;
 }
 .menubar a:link, .menubar a:visited {
@@ -90,6 +90,7 @@ td {
     color: #ff6600;
     text-decoration: underline;
 }
+
 hr {
     border: 0;
     width: 60%;
