@@ -1,3 +1,4 @@
-Files in here my be syminked into PAUSE, they
-will served from /modules/... NOT /misc/modules/...
+NOTE:
 
+Files in here need be symlinked into PAUSE, they
+will served from /modules/... NOT /_modules/...
