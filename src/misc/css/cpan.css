@@ -19,6 +19,13 @@ h1 {
     margin-top: 10px;
     font-size: 130%;
 }
+h2 { 
+    color: #333333;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-size: 100%;
+}
+
 #searchtitle {
     margin-top: 0px;
     margin-bottom: 0px;
@@ -27,6 +34,7 @@ h1 {
 li {
     list-style-type: circle;
     font-size: 90%;
+    padding-top: 3px;
 }
 .search{
     vertical-align: center;

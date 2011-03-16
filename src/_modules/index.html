@@ -1,93 +1,84 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1 Strict//EN"
-   "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US">
-<head>
-<title>CPAN/modules</title>
-<!-- Copyright Jarkko Hietaniemi jhi@iki.fi 1998 All Rights Reserved -->
-<!-- You may distribute this document either under the Artistic License
-     (comes with Perl) or the GNU Public License, whichever suits you. 
-     The CPAN Logo provided by J.C. Thorpe. -->
-<!-- $Id: index.html,v 1.19 2007/08/01 00:44:27 jhi Exp $ -->
-<link rev="made" href="mailto:cpan@perl.org">
-<style type="text/css">
-  <!--
-   body	{ color: black;
-	  background:	white;
-	      margin-left:	2%;
-	      margin-right:	2%
-        }
-   h1	{ text-align:	center; }
-   img  { vertical-align:        50%;
-          border:       0
-        }
-   -->
-</style>
-</head>
-<body>
+[% 
+  page.import({
+    title   => "Perl Modules",
+    section => 'modules',
+    stub => '../',
+    canonical => 'modules/index.html',
+  });
+%]
 
-<a NAME="top"></a>
-<center><img SRC="../misc/jpg/cpan.jpg" ALIGN=MIDDLE ALT="CPAN"></center>
 <h1>Perl Modules</h1>
 
+<h2>
+    How to install modules
+</h2>
 <p>
-CPAN navigation:
-<a href="../index.html">CPAN</a>/modules/
+    There are several methods you can use, see the <a href=
+    "INSTALL.html">Installing Perl Modules</a> page.
 </p>
 
-<hr>
-
-<p>
-You can <b>search</b> all of CPAN
+<h2>
+    How to find modules
+</h2>
 <ul>
-<li><a href="http://search.cpan.org/">CPAN Search</a></li>
-<li><a href="http://kobesearch.cpan.org/">Randy Kobes'</a> Search</li>
+    <li>
+        <a href="http://search.cpan.org/">http://search.cpan.org/</a> - search
+    </li>
+    <li>
+        <a href="search.cpan.org/dist/Task-Kensho/">Task::Kensho</a> - some
+        recommended modules
+    </li>
+    <li>Browse:
+        <ul>
+            <li>
+                <a href="01modules.index.html">All modules</a> (a
+                <strong>long</strong> list)
+            </li>
+            <li>
+                <a href="by-authors/id/">Authors</a>
+            </li>
+            <li>
+                <a href="by-module/">Name</a>
+            </li>
+            <li>
+                <a href="by-category">Category</a> (not maintained)
+            </li>
+            <li>
+                <a href="01modules.mtime.html">recentness</a>
+            </li>
+        </ul>
+    </li>
 </ul>
 
-or search the documentation on CPAN
+<h2>
+    How to contribute
+</h2>
 <ul>
-<li><a href="http://perldoc.perl.org/">perldoc.perl.org</a></li>
+    <li>Read <a href="04pause.html">this</a>
+    </li>
+    <li>Visit <a href="https://pause.perl.org/">https://pause.perl.org/</a>
+    </li>
 </ul>
 
-<hr>
-
-<p>
+<h2>
+    Other useful sites
+</h2>
 <ul>
-  <li>how to <a href="INSTALL.html">install</a> modules
-  <li><a href="01modules.index.html">all modules (a <b>long</b> list)</a>
-  <li>how to <a href="04pause.html">contribute</a> modules
-  <li>modules by
-  <ul>
-    <li><a href="by-authors/id/">authors</a>
-    <li><a href="by-category">category</a>
-    <li><a href="by-module/">name</a>
-    <li><a href="01modules.mtime.html">recentness</a>
-  </ul>
+    <li>
+        <a href="http://www.perl.org/">www.perl.org</a>
+    </li>
+    <li>
+        <a href="http://perldoc.perl.org/">perldoc.perl.org</a>
+    </li>
+    <li>
+        <a href="http://learn.perl.org/">learn.perl.org</a>
+    </li>
 </ul>
 
-<hr>
 
 <p>
-In case you are looking for <i>scripts</i>:
-modules are reusable software components, not standalone like
-<a href="../scripts/index.html">scripts</a>.
-
-<hr>
-
-<p>
-<b>Questions about the modules?  Please contact the
-   module author directly.</b> 
-Corrections?  Additions?  Suggestions?  Please contact
-<a href="mailto:cpan@perl.org">cpan@perl.org</a>.
-Other questions?  See the
-<a href="../misc/cpan-faq.html">CPAN FAQ</a>.
+    <b>Questions about the modules? Please contact the module author
+    directly.</b> Corrections? Additions? Suggestions? Please contact <a href=
+    "mailto:cpan@perl.org">cpan@perl.org</a>. Other questions? See the <a href=
+    "../misc/cpan-faq.html">CPAN FAQ</a>.
 </p>
-
-<hr>
-
-<p>
-CPAN navigation:
-<a href="../index.html">CPAN</a>/<a href="index.html#top">modules/</a>
-</p>
-
-</body>
-</html>
