@@ -36,6 +36,9 @@ li {
     font-size: 90%;
     padding-top: 3px;
 }
+ul {
+    padding-left: 14px;
+}
 .search{
     vertical-align: center;
 }
