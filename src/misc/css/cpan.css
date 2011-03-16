@@ -10,6 +10,12 @@ body {
 img{
     border:0;
 }
+a:link {
+    color: #0083C1;
+}
+a:hover {
+    color: #000000;
+}
 a img{
     border:0;
 }
