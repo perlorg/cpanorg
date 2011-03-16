@@ -1,0 +1,31 @@
+[% 
+  page.import({
+    title   => "Perl Modules by author ID",
+    section => 'modules',
+    stub => '../../../',
+    canonical => 'modules/index.html',
+  });
+%]
+
+<h1>Perl Modules by author ID</h1>
+
+<p>
+    Author ID (the ID is chosen by module authors) breaks down as follows.
+    Given an author ID, such as LLAP, the directory will be 
+    <a href="L/LL/LLAP">L/LL/LLAP</a>.
+</p>
+
+<table width="50%">
+    <tr>
+[% USE table(['A'..'Z'], cols=3, pad=0);
+      FOREACH group = table.cols %]
+      <td>
+          <ul>
+          [% FOREACH letter = group %]
+          <li><a href="[% letter %]/">[% letter %]</a></li>
+          [% END %]
+          </ul>
+      </td>
+[% END %]
+</tr>
+</table>
