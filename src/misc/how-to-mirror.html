@@ -26,130 +26,107 @@
         <a href="#Which_site_mirror">Which CPAN site should I mirror?</a>
     </li>
     <li>
-        <a href="#How_register_mirror">How do I register my mirror to make it a
-        public resource?</a>
+        <a href="#How_register_mirror">How do I register my mirror to make it a public resource?</a>
     </li>
 </ul>
-
 <hr>
 <h3>
     <a name="How_mirror_CPAN" id="How_mirror_CPAN">How do I mirror CPAN?</a>
 </h3>
 <p>
-    You can mirror with an FTP client, but it's highly highly recommended that
-    you use rsync.
+    It's highly highly recommended that you use rsync. You can also use FTP if rsync is absolutely impossible. You should absolutely not mirror with HTTP - you will end up with a million duplicate files in tens of gigabytes.
+</p>
+<p>
+    If you don't require a full mirror, you can use the <a href="http://search.cpan.org/dist/CPAN-Mini/bin/minicpan">Mini CPAN</a> to just mirror the latest version of each module.
 </p>
 <hr>
 <h3>
-    <a name="What_do_I_need" id="What_do_I_need">What do I need to mirror
-    CPAN?</a>
+    <a name="What_do_I_need" id="What_do_I_need">What do I need to mirror CPAN?</a>
 </h3>
 <ul>
-    <li>"Good" internet connectivity; if you are on a slow connection and won't
-    offer the CPAN mirror for others to use, you might be better off just
-    downloading what you need on demand or make a <a href=
-    "http://search.cpan.org/dist/CPAN-Mini/">Mini CPAN</a> mirror.
+    <li>"Good" internet connectivity; if you are on a slow connection and won't offer the CPAN mirror for others to use, you might be better off just downloading what you need on demand or make a <a href="http://search.cpan.org/dist/CPAN-Mini/">Mini CPAN</a> mirror.
     </li>
-    <li>Around 10GB of storage space. <a href=
-    "http://www.cpan.org/indices/du-k.gz">http://www.cpan.org/indices/du-k.gz</a>
-    tells you the current size of the CPAN.
+    <li>Around 10GB of storage space. <a href="http://www.cpan.org/indices/du-k.gz">http://www.cpan.org/indices/du-k.gz</a> tells you the current size of the CPAN.
     </li>
-    <li>An FTP or rsync client.<br>
-        <ul>
-            <li>For FTP there is a Perl script named mirror (which assumes a
-            command line FTP client):<br>
-                <a href=
-                "http://sunsite.org.uk/packages/mirror/">http://sunsite.org.uk/packages/mirror/</a><br>
-                <br>
-                <b>The FTP address for the CPAN master site is:</b><br>
-                <a href=
-                "ftp://ftp.funet.fi/pub/languages/perl/CPAN/">ftp://ftp.funet.fi/pub/languages/perl/CPAN/</a><br>
-                <br>
-            </li>
-            <li>and for rsync:<br>
-                <a href=
-                "http://rsync.samba.org/">http://rsync.samba.org/</a><br>
-                <br>
-                <b>The rsync addresses for the CPAN master site are:</b><br>
-                <tt>ftp.funet.fi::CPAN</tt> or <tt>ftp.sedl.org::cpan</tt><br>
-                <br>
-                Once you have the rsync client installed on your system and the
-                disk space mapped out, you may then add an entry to your
-                crontab [ if using UNIX, AT if using Windows NT ] like the
-                following example:<br>
-                <br>
-                <tt>0 20 * * * /usr/local/bin/rsync -av --delete
-                ftp.funet.fi::CPAN /project/CPAN/</tt><br>
-                <br>
-                <tt>AT 20:00 /every:M,T,W,Th,F,S,Su "C:\Program
-                Files\Rsync\rsync -av --delete ftp.funet.fi::CPAN
-                /project/CPAN/"</tt>
-            </li>
-        </ul>
-        <p>
-            Please make sure your rsync uses at least protocol version 30 ; use
-            the command 'rsync --version' to find out. You can get the latest
-            rsync from 'http://rsync.samba.org/'.
-        </p>
-        <p>
-            About rsync frequency: once a day is fine and enough; once every
-            hour is far, far too often.
-        </p>
+    <li>The <a href="http://rsync.samba.org/">rsync</a> program, version 3.x or newer is highly recommended.
     </li>
 </ul>
 <hr>
 <h3>
-    <a name="Which_site_mirror" id="Which_site_mirror">Which CPAN site should I
-    mirror?</a>
+    Using rsync to mirror CPAN
 </h3>
 <p>
-    The one that gives the best bandwidth (where your mirror finishes quickest)
-    and which is most up-to-date. Most up-to-date is, by definition, the CPAN
-    master site <tt>ftp.funet.fi</tt>. Note that it lives in the GMT+2 timezone
-    so please try not to mirror during working hours: 0600 to 1400 GMT/UTC. If
-    you want to mirror from somewhere else, check the list at <a href=
-    "http://www.cpan.org/SITES.html">http://www.cpan.org/SITES.html</a>. If you
-    are making a tool that needs the CPAN mirrors list (and you are able to
-    load a JSON file), it might be easier to use the <a href=
-    "http://www.cpan.org/indices/mirrors.json">mirrors.json</a> file.
+    Once you have the rsync client installed on your system and the disk space mapped out, you can setup automatic daily mirroring.
 </p>
 <p>
-    Please organize the mirroring with the corresponding FTP maintainer (their
-    email addresses from the file <a href=
-    "http://www.cpan.org/MIRRORED.BY">http://www.cpan.org/MIRRORED.BY</a>) so
-    that you will not overload their site and that your mirror starts just
-    after theirs has finished.
+    For a regular mirror, once a day is fine and enough; once every hour is far, far too often. If you want much faster updating, you can use the <a href="#Instant_Mirroring">instant mirroring</a>.
+</p>
+<h4>
+    On Unix systems
+</h4>
+<p>
+    Using 'crontab' you can make rsync run once a day, for example<br>
+    <tt>4 40 * * * sleep $(expr $RANDOM \% 7200); /usr/bin/rsync -av --delete cpan-rsync.perl.org::CPAN /project/CPAN/</tt><br>
+    The "sleep $(...);" statement makes the command delay up to 2 hours before running rsync; the advantage of this is that you (and everybody else) won't access the mirror at the same time!
+</p>
+<h4>
+    On Windows systems
+</h4>
+<p>
+    Using the 'AT' tool, you can schedule rsync to run daily, for example:<br>
+    <tt>AT 20:00 /every:M,T,W,Th,F,S,Su "C:\Program Files\Rsync\rsync -av --delete cpan-rsync.perl.org::CPAN /project/CPAN/"</tt><br>
+</p>
+<hr>
+<h3>
+    <a name="Which_site_mirror" id="Which_site_mirror">Which CPAN site should I mirror?</a>
+</h3>
+<p>
+    The one that gives the best bandwidth (where your mirror finishes quickest) and which is most up-to-date. Most up-to-date is, by definition, the CPAN master site <tt>cpan-rsync.perl.org</tt>.  If you want to mirror from somewhere else, check the list at <a href="http://www.cpan.org/SITES.html">http://www.cpan.org/SITES.html</a> and look for rsync:// sites.  If you are making a tool that needs the CPAN mirrors list (and you are able to load a JSON file), it might be easier to use the <a href="http://www.cpan.org/indices/mirrors.json">mirrors.json</a> file.
+</p>
+<p>
+    Please organize the mirroring with the corresponding FTP maintainer (their email addresses from the file <a href="http://www.cpan.org/MIRRORED.BY">http://www.cpan.org/MIRRORED.BY</a>) so that you will not overload their site and that your mirror starts just after theirs has finished.
 </p>
 <p>
     A few tips to keep in mind:
 </p>
 <ul>
-    <li>For your mirror site to be useful to your users you should mirror
-    daily.
+    <li>For your mirror site to be useful to your users you should mirror daily.
     </li>
-    <li>You can also provide a HTTP interface in addition to an FTP interface
-    to CPAN if you wish to do so.
+    <li>You can also provide a HTTP interface in addition to an FTP interface to CPAN if you wish to do so.
     </li>
-    <li>Consider also giving rsync access to your mirror. Many people like
-    rsync because it's very bandwidth-friendly.
+    <li>Consider also giving rsync access to your mirror. Many people like rsync because it's very bandwidth-friendly.
     </li>
-    <li>Remember to tell cpan@perl.org about all the access methods you provide
-    to your mirror: ftp, http, or rsync (or any other methods).
+    <li>Remember to tell cpan@perl.org about all the access methods you provide to your mirror: ftp, http, or rsync (or any other methods).
     </li>
 </ul>
+<h3>
+    Which mirror ...
+</h3>
+<h4>
+    Private mirror
+</h4>
+<h4>
+    Public mirror
+</h4>
+<h4>
+    Tier 1 mirror
+</h4>
+<div style="margin-left: 2em">
+    <b>The rsync addresses for the CPAN master site are:</b><br>
+    <tt>ftp.funet.fi::CPAN</tt> or <tt>ftp.sedl.org::cpan</tt><br>
+    <br>
+</div>
+<p>
+    Please make sure your rsync uses at least protocol version 30 ; use the command 'rsync --version' to find out. You can get the latest rsync from 'http://rsync.samba.org/'.
+</p>
+
 <hr>
 <h3>
-    <a name="How_register_mirror" id="How_register_mirror">How do I register my
-    mirror to make it a public resource?</a>
+    <a name="How_register_mirror" id="How_register_mirror">How do I register my mirror to make it a public resource?</a>
 </h3>
 <p>
-    If you want to publicize your CPAN mirror (meaning that your mirror is
-    publicly available), please fill in the template which can be found from
-    the top of the file <a href=
-    "http://www.cpan.org/MIRRORED.BY">http://www.cpan.org/MIRRORED.BY</a>.
+    If you want to publicize your CPAN mirror (meaning that your mirror is publicly available), please fill in the template which can be found from the top of the file <a href="http://www.cpan.org/MIRRORED.BY">http://www.cpan.org/MIRRORED.BY</a>.
 </p>
 <p>
-    There are plenty of examples of how to fill in the template file. When your
-    template is ready, please send it to cpan@perl.org and you will be
-    registered.
+    There are plenty of examples of how to fill in the template file. When your template is ready, please send it to cpan@perl.org and you will be registered.
 </p>
