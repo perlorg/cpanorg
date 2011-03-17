@@ -17,7 +17,10 @@
 
 <ul>
     <li>
-        <a href="#How_mirror_CPAN">How do I mirror CPAN?</a>
+        <a href="#How_mirror_private">How do I privately mirror CPAN?</a>
+    </li>
+    <li>
+        <a href="#How_mirror_public">How do I publicly mirror CPAN?</a>
     </li>
     <li>
         <a href="#What_do_I_need">What do I need to mirror CPAN?</a>
@@ -32,31 +35,34 @@
 </ul>
 <hr>
 <h3>
-    <a name="How_mirror_CPAN" id="How_mirror_CPAN">How do I mirror CPAN?</a>
+    <a name="How_mirror_private" id="How_mirror_private">How do I privately
+    mirror CPAN?</a>
 </h3>
 <p>
-    It's highly highly recommended that you use rsync. You can also use FTP if
-    rsync is absolutely impossible. You should absolutely not mirror with HTTP
-    - you will end up with a million duplicate files in tens of gigabytes.
+    To mirror only the current version of each module you can use <a href=
+    "http://search.cpan.org/dist/CPAN-Mini/bin/minicpan">Mini CPAN</a>,
+    otherwise see <a href="#How_mirror_public">How do publicly mirror CPAN?</a>
 </p>
+<h3>
+    <a name="How_mirror_public" id="How_mirror_public">How do I publicly mirror
+    CPAN?</a>
+</h3>
 <p>
-    If you don't require a full mirror, you can use the <a href=
-    "http://search.cpan.org/dist/CPAN-Mini/bin/minicpan">Mini CPAN</a> to just
-    mirror the latest version of each module.
+    Use <a href="http://rsync.samba.org/">rsync</a>, this is by far the best
+    way. Only use FTP if rsync is absolutely impossible. Never mirror with HTTP
+    - you will end up with a million duplicate files in tens of gigabytes.
 </p>
 <hr>
 <h3>
     <a name="What_do_I_need" id="What_do_I_need">What do I need to mirror
     CPAN?</a>
 </h3>
-
 <ul>
-    <li>"Good" internet connectivity; if you are on a slow connection and won't
-    offer the CPAN mirror for others to use, you might be better off just
-    downloading what you need on demand or make a <a href=
-    "http://search.cpan.org/dist/CPAN-Mini/">Mini CPAN</a> mirror.
+    <li>Good internet connectivity
     </li>
-    <li>Around 10GB of storage space. <a href=
+    <li>Around 1GB of storage space for just the current modules.
+    </li>
+    <li>Around 10GB of storage space for the full mirror. <a href=
     "http://www.cpan.org/indices/du-k.gz">http://www.cpan.org/indices/du-k.gz</a>
     tells you the current size of the CPAN.
     </li>
@@ -73,9 +79,8 @@
     mapped out, you can setup automatic daily mirroring.
 </p>
 <p>
-    For a regular mirror, once a day is fine and enough; once every hour is
-    far, far too often. If you want much faster updating, you can use the
-    <a href="#Instant_Mirroring">instant mirroring</a>.
+    For a regular mirror, once a day is fine and enough; If you need more
+    frequent updates use <a href="#Instant_Mirroring">instant mirroring</a>.
 </p>
 <h4>
     On Unix systems
