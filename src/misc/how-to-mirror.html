@@ -14,16 +14,16 @@
      You are not allowed to remove or alter these comments.
 -->
 [% END %]
-
-<h1>How to mirror CPAN</h1>
-
+<h1>
+    How to mirror CPAN
+</h1>
 <p>
     There are several ways to mirror CPAN depending upon what you want to
     achieve.
 </p>
-
-<h2>Requirements</h2>
-
+<h2>
+    Requirements
+</h2>
 <ul>
     <li>Good internet connectivity
     </li>
@@ -34,9 +34,9 @@
     tells you the current size of the CPAN.
     </li>
 </ul>
-
-<h2>Tools</h2>
-
+<h2>
+    Tools
+</h2>
 <p>
     <a href="http://search.cpan.org/dist/CPAN-Mini/">CPAN::Mini</a> provides
     you with a minimal mirror of <a href="http://www.cpan.org">CPAN</a> (the
@@ -49,29 +49,34 @@
     "#rsync">Instructions</a>.
 </p>
 <p>
-    <a href=
+    New: <a href=
     "https://github.com/abh/rersyncrecent/raw/master/bin/rrr-client">rrr-tool</a>
     allows instant mirroring so should be used on official public mirrors where
-    possible. <a href="#Instant_Mirroring">Instructions</a>
+    possible. <a href="#Instant_mirroring">Instructions</a>
 </p>
 <p>
     Only use FTP if these other methods are absolutely impossible. Never mirror
     with HTTP - you will end up with a million duplicate files in tens of
     gigabytes.
 </p>
-
-
-<h2><a name="rsync">Using rsync</a></h2>
+<h2>
+    <a name="rsync" id="rsync">Using rsync</a>
+</h2>
 <p>
-    Please limit to daily updates if possible. If you need more 
-    frequent updates please see 
+    Please limit to once or twice a day. For more frequent updates please see
+    <a href="#Instant_mirroring">Instant mirroring</a>. The first pull will
+    take a couple of hours at least.
+</p>
 <h4>
     On Unix systems
 </h4>
+<pre>
+/usr/bin/rsync -av --delete cpan-rsync.perl.org::CPAN /project/CPAN/
+</pre>
 <p>
     Using 'crontab' you can make rsync run once a day, for example<br>
     <tt>4 40 * * * sleep $(expr $RANDOM \% 7200); /usr/bin/rsync -av --delete
-    cpan-rsync.perl.org::CPAN /project/CPAN/</tt><br>
+    cpan-rsync.perl.org::CPAN /project/CPAN/</tt><br />
     The "sleep $(...);" statement makes the command delay up to 2 hours before
     running rsync; the advantage of this is that you (and everybody else) won't
     access the mirror at the same time!
@@ -79,103 +84,40 @@
 <h4>
     On Windows systems
 </h4>
+<pre>
+C:\Program Files\Rsync\rsync -av --delete cpan-rsync.perl.org::CPAN /project/CPAN/
+</pre>
 <p>
     Using the 'AT' tool, you can schedule rsync to run daily, for example:<br>
     <tt>AT 20:00 /every:M,T,W,Th,F,S,Su "C:\Program Files\Rsync\rsync -av
-    --delete cpan-rsync.perl.org::CPAN /project/CPAN/"</tt><br>
+    --delete cpan-rsync.perl.org::CPAN /project/CPAN/"</tt><br />
 </p>
+<h2>
+    How do I create a public mirror?
+</h2>
+<ul>
+    <li>Consider joining the <a href="#Instant_mirroring">Instant mirroring</a>
+    trail or..
+    </li>
+    <li>rsync once a day
+    </li>
+    <li>Provide (in order of preference) rsync, FTP and or HTTP public access
+    </li>
+    <li>Register hear XXXXXXXXXXXX so you are added to <a href=
+    "http://www.cpan.org/SITES.html">http://www.cpan.org/SITES.html</a> and
+    <a href="http://www.cpan.org/indices/mirrors.json">mirrors.json</a>
+    </li>
+</ul>
 
+<h2><a name="Instant_mirroring">Instant mirroring</a></h2>
+<p>
+    Please <a href="https://github.com/perlorg/cpanorg/wiki/Instant-update-mirroring">join the trial</a>.
+</p>
 
 <hr />
 <h1>OLDER COPY BELOW HERE</h1>
 <hr />
 
-<ul>
-    <li>
-        <a href="#How_mirror_private">How do I privately mirror CPAN?</a>
-    </li>
-    <li>
-        <a href="#How_mirror_public">How do I publicly mirror CPAN?</a>
-    </li>
-    <li>
-        <a href="#What_do_I_need">What do I need to mirror CPAN?</a>
-    </li>
-    <li>
-        <a href="#Which_site_mirror">Which CPAN site should I mirror?</a>
-    </li>
-    <li>
-        <a href="#How_register_mirror">How do I register my mirror to make it a
-        public resource?</a>
-    </li>
-</ul>
-<hr>
-<h3>
-    <a name="How_mirror_private" id="How_mirror_private">How do I privately
-    mirror CPAN?</a>
-</h3>
-<p>
-    To mirror only the current version of each module you can use <a href=
-    "http://search.cpan.org/dist/CPAN-Mini/bin/minicpan">Mini CPAN</a>,
-    otherwise see <a href="#How_mirror_public">How do publicly mirror CPAN?</a>
-</p>
-<h3>
-    <a name="How_mirror_public" id="How_mirror_public">How do I publicly mirror
-    CPAN?</a>
-</h3>
-<p>
-    Use <a href="http://rsync.samba.org/">rsync</a>, this is by far the best
-    way. Only use FTP if rsync is absolutely impossible. Never mirror with HTTP
-    - you will end up with a million duplicate files in tens of gigabytes.
-</p>
-<hr>
-<h3>
-    <a name="What_do_I_need" id="What_do_I_need">What do I need to mirror
-    CPAN?</a>
-</h3>
-<ul>
-    <li>Good internet connectivity
-    </li>
-    <li>Around 1GB of storage space for just the current modules.
-    </li>
-    <li>Around 10GB of storage space for the full mirror. <a href=
-    "http://www.cpan.org/indices/du-k.gz">http://www.cpan.org/indices/du-k.gz</a>
-    tells you the current size of the CPAN.
-    </li>
-    <li>The <a href="http://rsync.samba.org/">rsync</a> program, version 3.x or
-    newer is highly recommended.
-    </li>
-</ul>
-<hr>
-<h3>
-    Using rsync to mirror CPAN
-</h3>
-<p>
-    Once you have the rsync client installed on your system and the disk space
-    mapped out, you can setup automatic daily mirroring.
-</p>
-<p>
-    For a regular mirror, once a day is fine and enough; If you need more
-    frequent updates use <a href="#Instant_Mirroring">instant mirroring</a>.
-</p>
-<h4>
-    On Unix systems
-</h4>
-<p>
-    Using 'crontab' you can make rsync run once a day, for example<br>
-    <tt>4 40 * * * sleep $(expr $RANDOM \% 7200); /usr/bin/rsync -av --delete
-    cpan-rsync.perl.org::CPAN /project/CPAN/</tt><br>
-    The "sleep $(...);" statement makes the command delay up to 2 hours before
-    running rsync; the advantage of this is that you (and everybody else) won't
-    access the mirror at the same time!
-</p>
-<h4>
-    On Windows systems
-</h4>
-<p>
-    Using the 'AT' tool, you can schedule rsync to run daily, for example:<br>
-    <tt>AT 20:00 /every:M,T,W,Th,F,S,Su "C:\Program Files\Rsync\rsync -av
-    --delete cpan-rsync.perl.org::CPAN /project/CPAN/"</tt><br>
-</p>
 <hr>
 <h3>
     <a name="Which_site_mirror" id="Which_site_mirror">Which CPAN site should I
@@ -225,6 +167,10 @@
 <h4>
     Public mirror
 </h4>
+
+  "Tier 1" mirrors (to-be the cpan-rsync.perl.org hosts) MUST use the rrr tools
+so their mirrors are "instantly updated".
+
 <h4>
     Tier 1 mirror
 </h4>
