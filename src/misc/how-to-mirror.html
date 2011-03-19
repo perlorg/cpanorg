@@ -21,6 +21,7 @@
     There are several ways to mirror CPAN depending upon what you want to
     achieve.
 </p>
+
 <h2>
     Requirements
 </h2>
@@ -34,31 +35,49 @@
     tells you the current size of the CPAN.
     </li>
 </ul>
+
 <h2>
     Tools
 </h2>
 <p>
     <a href="http://search.cpan.org/dist/CPAN-Mini/">CPAN::Mini</a> provides
     you with a minimal mirror of <a href="http://www.cpan.org">CPAN</a> (the
-    latest version of all modules). This makes working offline easy, this is
-    the best tool of you are running a private mirror.
+    latest version of all modules). This makes working offline easy, it is the
+    best tool of you are running a private mirror.
+</p>
+<p>
+    <em>New:</em> <a href="#Instant_mirroring">rrr-client</a> allows
+    instant mirroring, and should be used on official public mirrors where
+    possible. See instant mirroring <a href=
+    "#Instant_mirroring">instructions</a>.
 </p>
 <p>
     <a href="http://rsync.samba.org/">rsync</a> is the best tool if you need to
-    mirror the whole of CPAN or if you are providing a public mirror. <a href=
-    "#rsync">Instructions</a>.
-</p>
-<p>
-    New: <a href=
-    "https://github.com/abh/rersyncrecent/raw/master/bin/rrr-client">rrr-tool</a>
-    allows instant mirroring so should be used on official public mirrors where
-    possible. <a href="#Instant_mirroring">Instructions</a>
+    mirror the whole of CPAN or if you are providing a public mirror. Rsync
+    <a href="#rsync">Instructions</a>.
 </p>
 <p>
     Only use FTP if these other methods are absolutely impossible. Never mirror
     with HTTP - you will end up with a million duplicate files in tens of
     gigabytes.
 </p>
+
+<h2>
+    Which CPAN Mirror should I use?
+</h2>
+<p>
+    <em>Near future:</em> All Tier 1 mirrors are instantly updated and
+    can be accessed as <a href=
+    "http://cpan-rsync.perl.org/">cpan-rsync.perl.org</a>, you will
+    automatically be directed to your nearest mirror.
+</p>
+<p>
+    <em>Current:</em> find your nearest site on <a href=
+    "http://www.cpan.org/SITES.html">http://www.cpan.org/SITES.html</a>, or use
+    <a href="http://www.cpan.org/indices/mirrors.json">mirrors.json</a>
+    especially if you are building a tool which lets the user select a mirror.
+</p>
+
 <h2>
     <a name="rsync" id="rsync">Using rsync</a>
 </h2>
@@ -67,137 +86,69 @@
     <a href="#Instant_mirroring">Instant mirroring</a>. The first pull will
     take a couple of hours at least.
 </p>
-<h4>
-    On Unix systems
-</h4>
+<p>
+    <em>On Unix systems</em>
+</p>
 <pre>
 /usr/bin/rsync -av --delete cpan-rsync.perl.org::CPAN /project/CPAN/
 </pre>
 <p>
     Using 'crontab' you can make rsync run once a day, for example<br>
     <tt>4 40 * * * sleep $(expr $RANDOM \% 7200); /usr/bin/rsync -av --delete
-    cpan-rsync.perl.org::CPAN /project/CPAN/</tt><br />
+    cpan-rsync.perl.org::CPAN /project/CPAN/</tt><br>
     The "sleep $(...);" statement makes the command delay up to 2 hours before
     running rsync; the advantage of this is that you (and everybody else) won't
     access the mirror at the same time!
 </p>
-<h4>
-    On Windows systems
-</h4>
+<p>
+    <em>On Windows systems</em>
+</p>
 <pre>
 C:\Program Files\Rsync\rsync -av --delete cpan-rsync.perl.org::CPAN /project/CPAN/
 </pre>
 <p>
     Using the 'AT' tool, you can schedule rsync to run daily, for example:<br>
     <tt>AT 20:00 /every:M,T,W,Th,F,S,Su "C:\Program Files\Rsync\rsync -av
-    --delete cpan-rsync.perl.org::CPAN /project/CPAN/"</tt><br />
+    --delete cpan-rsync.perl.org::CPAN /project/CPAN/"</tt><br>
 </p>
+
 <h2>
     How do I create a public mirror?
 </h2>
 <ul>
-    <li>Consider joining the <a href="#Instant_mirroring">Instant mirroring</a>
-    trail or..
+    <li>Consider <a href="#Instant_mirroring">Instant mirroring</a>, required
+    if you wish to be a tier 1 mirror, or..
     </li>
     <li>rsync once a day
     </li>
     <li>Provide (in order of preference) rsync, FTP and or HTTP public access
     </li>
-    <li>Register hear XXXXXXXXXXXX so you are added to <a href=
+    <li>To be added to <a href=
     "http://www.cpan.org/SITES.html">http://www.cpan.org/SITES.html</a> and
-    <a href="http://www.cpan.org/indices/mirrors.json">mirrors.json</a>
+    <a href="http://www.cpan.org/indices/mirrors.json">mirrors.json</a> please
+    complete the <a href="http://www.cpan.org/MIRRORED.BY">template</a>
+    confirming the public accessible URLs to your mirror: rsync, ftp, http and
+    email it to cpan@perl.org.
     </li>
 </ul>
 
-<h2><a name="Instant_mirroring">Instant mirroring</a></h2>
+<h2>
+    How do I create a private or offline mirror?
+</h2>
 <p>
-    Please <a href="https://github.com/perlorg/cpanorg/wiki/Instant-update-mirroring">join the trial</a>.
+    <a href="http://search.cpan.org/dist/CPAN-Mini/bin/minicpan">minicpan</a>
+    from <a href="http://search.cpan.org/dist/CPAN-Mini/">CPAN::Mini</a> is the
+    best tool for this. Also look at <a href=
+    "http://search.cpan.org/dist/CPAN-Mini-Inject/">CPAN::Mini::Inject</a>
+    which allows you to add your own modules into your private mirror.
 </p>
 
-<hr />
-<h1>OLDER COPY BELOW HERE</h1>
-<hr />
-
-<hr>
-<h3>
-    <a name="Which_site_mirror" id="Which_site_mirror">Which CPAN site should I
-    mirror?</a>
-</h3>
+<h2>
+    <a name="Instant_mirroring" id="Instant_mirroring">Instant mirroring</a>
+</h2>
 <p>
-    The one that gives the best bandwidth (where your mirror finishes quickest)
-    and which is most up-to-date. Most up-to-date is, by definition, the CPAN
-    master site <tt>cpan-rsync.perl.org</tt>. If you want to mirror from
-    somewhere else, check the list at <a href=
-    "http://www.cpan.org/SITES.html">http://www.cpan.org/SITES.html</a> and
-    look for rsync:// sites. If you are making a tool that needs the CPAN
-    mirrors list (and you are able to load a JSON file), it might be easier to
-    use the <a href="http://www.cpan.org/indices/mirrors.json">mirrors.json</a>
-    file.
+    Please <a href=
+    "https://github.com/perlorg/cpanorg/wiki/Instant-update-mirroring">join the
+    trial</a>. This will become the preferred method of mirroring for public
+    sites, it is required for all Tier 1 mirrors. Currently being tested.
 </p>
-<p>
-    Please organize the mirroring with the corresponding FTP maintainer (their
-    email addresses from the file <a href=
-    "http://www.cpan.org/MIRRORED.BY">http://www.cpan.org/MIRRORED.BY</a>) so
-    that you will not overload their site and that your mirror starts just
-    after theirs has finished.
-</p>
-<p>
-    A few tips to keep in mind:
-</p>
-<ul>
-    <li>For your mirror site to be useful to your users you should mirror
-    daily.
-    </li>
-    <li>You can also provide a HTTP interface in addition to an FTP interface
-    to CPAN if you wish to do so.
-    </li>
-    <li>Consider also giving rsync access to your mirror. Many people like
-    rsync because it's very bandwidth-friendly.
-    </li>
-    <li>Remember to tell cpan@perl.org about all the access methods you provide
-    to your mirror: ftp, http, or rsync (or any other methods).
-    </li>
-</ul>
-<h3>
-    Which mirror ...
-</h3>
-<h4>
-    Private mirror
-</h4>
-<h4>
-    Public mirror
-</h4>
-
-  "Tier 1" mirrors (to-be the cpan-rsync.perl.org hosts) MUST use the rrr tools
-so their mirrors are "instantly updated".
-
-<h4>
-    Tier 1 mirror
-</h4>
-<div style="margin-left: 2em">
-    <b>The rsync addresses for the CPAN master site are:</b><br>
-    <tt>ftp.funet.fi::CPAN</tt> or <tt>ftp.sedl.org::cpan</tt><br>
-    <br>
-</div>
-<p>
-    Please make sure your rsync uses at least protocol version 30 ; use the
-    command 'rsync --version' to find out. You can get the latest rsync from
-    'http://rsync.samba.org/'.
-</p>
-<hr>
-<h3>
-    <a name="How_register_mirror" id="How_register_mirror">How do I register my
-    mirror to make it a public resource?</a>
-</h3>
-<p>
-    If you want to publicize your CPAN mirror (meaning that your mirror is
-    publicly available), please fill in the template which can be found from
-    the top of the file <a href=
-    "http://www.cpan.org/MIRRORED.BY">http://www.cpan.org/MIRRORED.BY</a>.
-</p>
-<p>
-    There are plenty of examples of how to fill in the template file. When your
-    template is ready, please send it to cpan@perl.org and you will be
-    registered.
-</p>
-
