@@ -1,4 +1,6 @@
 [%- 
+    USE JSON;
+
     page = {
             title = template.title,
             style = template.style or 'cpan.html'
@@ -10,8 +12,8 @@
         name            => 'www.cpan.org',
         crum            => '<a href="/">Home</a>',
     };
-    
-    # Defaults ( should be overwritten through tpl/cpan_stats.html )
+
+    # Defaults ( should be overwritten through tpl/data/cpan-stats )
     SET cpan_stats = {
         modules => 90000,
         authors => 8000,
@@ -22,7 +24,6 @@
 [%- BLOCK rss_feed %]
     [% TRY %]
     [% json_data = INSERT $conf.json_file %]
-    [% USE JSON %]
     [% items = JSON.json_decode(json_data) %]
     <ul>
     [% FOREACH item = items %]
@@ -33,13 +34,3 @@
     [% CATCH %]
     [% END %]
 [% END -%]
-
-[%- TRY -%]
-[%- USE JSON %]
-[%- json_data = INSERT "cpan_stats.json" %]
-[% 
-   data = JSON.json_decode(json_data);
-   cpan_stats.import(data);
-%]
-[%- CATCH -%]
-[%- END -%]

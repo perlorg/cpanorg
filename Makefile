@@ -18,6 +18,7 @@ build:
 
 update-data:
 	@./bin/cpanorg_rss_fetch
+	@./bin/update_data
 
 install:
 	cpanm Template JSON Template::Plugin::Comma  Template::Plugin::JSON \

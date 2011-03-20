@@ -4,6 +4,9 @@
     section => 'home',
     stub => '../',
   });
+
+  PROCESS "tpl/data/cpan-stats";
+
 %]
 
 [% page.head = BLOCK %]
@@ -335,7 +338,7 @@
 </h3>
 <p>
     CPAN works with the generosity and cooperation of thousands of developers,
-    over [% cpan_stats.mirrors %] participating mirrors, many companies,
+    over [% cpan_stats.mirrors.count %] participating mirrors, many companies,
     institutions and individuals donating the network bandwidth, storage space
     and computing power, volunteers who help keep everything together and users
     whose interest in Perl keep the archive alive and growing.
