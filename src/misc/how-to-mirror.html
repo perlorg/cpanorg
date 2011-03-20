@@ -4,6 +4,9 @@
     section => 'home',
     stub => '../',
   });
+
+  PROCESS "tpl/data/cpan-stats";
+
 %]
 
 [% page.head = BLOCK %]
@@ -42,9 +45,11 @@
     </li>
     <li>Around 1GB of storage space for just the current modules.
     </li>
-    <li>Around 10GB of storage space for the full mirror. <a href=
-    "http://www.cpan.org/indices/du-k.gz">http://www.cpan.org/indices/du-k.gz</a>
-    tells you the current size of the CPAN.
+    <li>Around [% 
+      cpan_gb = cpan_stats.disk_usage.gb;
+      cpan_gb = cpan_gb.remove('\..*');
+      cpan_gb = cpan_gb + 2;
+      cpan_gb %]GB of storage space for the full mirror.
     </li>
 </ul>
 
