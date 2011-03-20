@@ -2,8 +2,6 @@
 [% 
    data = JSON.json_decode(json_data);
    cpan_stats.import(data);
+   # USE Dumper;
+   # Dumper.dump_html(cpan_stats, data);
 %]
-CPAN STAST!
-[% USE Dumper %]
-
-[% Dumper.dump_html(cpan_stats, data) %]
