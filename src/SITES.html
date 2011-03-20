@@ -27,37 +27,32 @@
     The master CPAN site is hosted by <a href="http://www.yellowbot.com/">YellowBot</a>.
 </p>
 <p>
-    Select the site nearest to you from the list below, <strong>'Registered CPAN
-    sites</strong>' or from our <a href="http://mirror.cpan.org/">mirror
-    database</a> to get the best response time and bandwidth.
+    If you wish to mirror (either privately or publicly) please see <a href=
+    "http://www.cpan.org/misc/how-to-mirror.html">how to mirror CPAN</a>.
 </p>
+    
 <p>
     The list of the <a href="#register">registered</a> CPAN sites follows.
     Please note that the sorting order is alphabetical on fields:
 </p>
 
-<PRE>
+<pre>
 
 Continent
    |
    |-->Country
          |
          |-->[state/province]
-                   |
-                   |-->[http]
-                   |
-                   |-->ftp
 
+</pre>
 
-</PRE>
-
-<H2 id="hostlist">Registered CPAN sites</H2>
+<h2 id="hostlist">Registered public CPAN sites</H2>
 
 [% TRY %]
 [% INCLUDE "SITES-list.html" %]
 [% CATCH %]
 <h1>
-<strong> The SITES-list.html should be included here </strong>
+<strong>The SITES-list.html should be included here</strong>
 </h1>
 [% END %]
 
@@ -68,52 +63,10 @@ Continent
     You can <a href="mailto:cpan@perl.org">send email</a> to the CPAN
     administrators, <tt>cpan@perl.org</tt>.
 </p>
+
 <h2>
-    How You Can Help
-</h2>
-<h3>
-    Contribute
-</h3>
-<p>
-    If you have modules/scripts/documentation yourself that you would like to
-    contribute to CPAN, please read the file 
-    <a href="http://www.cpan.org/modules/04pause.html">modules/04pause.html</a>
-    and <a href="#feedback">let us know</a>.
-</p>
-<h3>
-    <a name="register" id="register">Register</a>
-</h3>
-<p>
-    If you have a reliable and well-connected ftp or http site where you can
-    keep CPAN (about 9GB currently), more mirror sites are welcome. Feel free
-    to volunteer and contact the <a href="#feedback">CPAN administrators</a>
-    describing your mirroring setup, please see the top of the file <a href=
-    "http://www.cpan.org/MIRRORED.BY">MIRRORED.BY</a>.
-</p>
-<p>
-    See the FAQ for more instructions on <a href=
-    "[% page.stub %]misc/how-to-mirror.html">How to mirror
-    CPAN</a>
-</p>
-<h3>
-    <a name="private" id="private">Private/Local Mirroring</a>
-</h3>
-<p>
-    If you want to configure a <em>private/local</em> mirror of CPAN but do not
-    want to advertise it you do not need to contact the CPAN administrators. You
-    need to assess which of the <em>public</em> CPAN sites would give the best
-    <tt>ftp</tt> bandwidth for you (at off-peak hours) and contact the mirror
-    admin via the email address given in the <tt>MIRRORED.BY</tt> file to learn
-    the best time of the day to do your mirror.
-</p>
-<p>
-    Read our <a href="[% page.stub %]misc/how-to-mirror.html">how to mirror
-    cpan</a> page and visit <a href="http://mirror.cpan.org/">the mirror
-    database</a> to find a mirror close to you and to register yours with CPAN.
-</p>
-<h3>
     Thank You
-</h3>
+</h2>
 <p>
     We would like to thank all of the mirrors who, throughout the years and
     every day, make the CPAN possible and such a valuable resource to the Perl
