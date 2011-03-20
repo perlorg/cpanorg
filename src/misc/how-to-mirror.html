@@ -23,7 +23,19 @@
 </p>
 
 <h2>
-    Requirements
+    How do I create a private or offline mirror?
+</h2>
+<p>
+    <a href="http://search.cpan.org/dist/CPAN-Mini/bin/minicpan">minicpan</a>
+    from <a href="http://search.cpan.org/dist/CPAN-Mini/">CPAN::Mini</a> is the
+    best tool for this. Also look at <a href=
+    "http://search.cpan.org/dist/CPAN-Mini-Inject/">CPAN::Mini::Inject</a>
+    which allows you to add your own modules into your private mirror.
+</p>
+
+
+<h2>
+    Requirements for a full / public mirror
 </h2>
 <ul>
     <li>Good internet connectivity
@@ -66,25 +78,22 @@
     Which CPAN Mirror should I use?
 </h2>
 <p>
-    <em>Near future:</em> All Tier 1 mirrors are instantly updated and
-    can be accessed as <a href=
-    "http://cpan-rsync.perl.org/">cpan-rsync.perl.org</a>, you will
-    automatically be directed to your nearest mirror.
+    <em>Near future:</em> Tier 1 mirrors are instantly updated and can be accessed as <code>rsync://cpan-rsync.perl.org/CPAN/</code>.
 </p>
 <p>
-    <em>Current:</em> find your nearest site on <a href=
+    <em>Current:</em> Find your nearest site on <a href=
     "http://www.cpan.org/SITES.html">http://www.cpan.org/SITES.html</a>, or use
     <a href="http://www.cpan.org/indices/mirrors.json">mirrors.json</a>
-    especially if you are building a tool which lets the user select a mirror.
+    especially if you are building a tool which lets the user select a mirror.  You can also sync from rsync://cpan.rsync.perl.org/CPAN/, though you might get better performance from a "local" mirror.
 </p>
+
 
 <h2>
     <a name="rsync" id="rsync">Using rsync</a>
 </h2>
 <p>
     Please limit to once or twice a day. For more frequent updates please see
-    <a href="#Instant_mirroring">Instant mirroring</a>. The first pull will
-    take a couple of hours at least.
+    <a href="#Instant_mirroring">Instant mirroring</a>.
 </p>
 <p>
     <em>On Unix systems</em>
@@ -112,6 +121,7 @@ C:\Program Files\Rsync\rsync -av --delete cpan-rsync.perl.org::CPAN /project/CPA
     --delete cpan-rsync.perl.org::CPAN /project/CPAN/"</tt><br>
 </p>
 
+
 <h2>
     How do I create a public mirror?
 </h2>
@@ -121,7 +131,7 @@ C:\Program Files\Rsync\rsync -av --delete cpan-rsync.perl.org::CPAN /project/CPA
     </li>
     <li>rsync once a day
     </li>
-    <li>Provide (in order of preference) rsync, FTP and or HTTP public access
+    <li>Provide (in order of preference) rsync, HTTP and/or FTP public access
     </li>
     <li>To be added to <a href=
     "http://www.cpan.org/SITES.html">http://www.cpan.org/SITES.html</a> and
@@ -132,16 +142,6 @@ C:\Program Files\Rsync\rsync -av --delete cpan-rsync.perl.org::CPAN /project/CPA
     </li>
 </ul>
 
-<h2>
-    How do I create a private or offline mirror?
-</h2>
-<p>
-    <a href="http://search.cpan.org/dist/CPAN-Mini/bin/minicpan">minicpan</a>
-    from <a href="http://search.cpan.org/dist/CPAN-Mini/">CPAN::Mini</a> is the
-    best tool for this. Also look at <a href=
-    "http://search.cpan.org/dist/CPAN-Mini-Inject/">CPAN::Mini::Inject</a>
-    which allows you to add your own modules into your private mirror.
-</p>
 
 <h2>
     <a name="Instant_mirroring" id="Instant_mirroring">Instant mirroring</a>
