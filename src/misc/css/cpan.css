@@ -7,6 +7,15 @@ body {
 	font-size: 12pt;
     background: white;
 }
+
+#header img {
+    float: right;
+}
+#header h1 {
+    font:italic 28pt Times,serif;
+    color:#555
+}
+
 img{
     border:0;
 }
