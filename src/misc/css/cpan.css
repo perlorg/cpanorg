@@ -12,6 +12,8 @@ body {
     float: right;
 }
 #header h1 {
+    margin-top: 0px;
+    padding-top: 11px;
     font:italic 28pt Times,serif;
     color:#555
 }
