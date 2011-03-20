@@ -11,7 +11,7 @@ depend misc/cpan-faq.html=cpan-stats.json
 
 copy = \.(gif|png|pdf|jpg)$
 
-verbose
+#verbose
 
 recurse
 

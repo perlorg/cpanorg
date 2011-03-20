@@ -6,7 +6,7 @@ clean: buildclean
 update: update-data build
 
 update-master: update
-	rsync --temp-dir=/cpan/tmp -av html/ ../CPAN/
+	@rsync --temp-dir=/cpan/tmp -a html/ ../CPAN/
 
 buildclean: rmclean build
 
