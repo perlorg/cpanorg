@@ -60,6 +60,15 @@
      from CPAN".
  
 -->
+<script type="text/javascript" charset="utf-8">
+    function focusField() {
+        var mytext = document.getElementById("searchfield"); 
+        mytext.focus();
+        alert
+    }
+    onload = focusField;
+</script>
+
 [% END %]
 
 <p id="strapline">
@@ -75,7 +84,7 @@ Stop reinventing wheels, start building space rockets.
         </td>
         <form method="get" action="http://search.cpan.org/search" name="f" class="searchbox" id="f">
         <td class="search" colspan="2">
-                <input type="text" name="query" value="" size="35"> in <select name="mode">
+                <input id="searchfield" type="text" name="query" value="" size="35"> in <select name="mode">
                     <option value="all">
                         All
                     </option>
