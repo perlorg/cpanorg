@@ -61,25 +61,17 @@
  
 -->
 [% END %]
+
+<p id="strapline">
+CPAN: [% cpan_stats.modules.count | comma %] open source Perl modules ready for you to download and use.<br />
+Stop reinventing wheels, start building space rockets.
+</p>
     <table border="0" cellspacing="0" cellpadding="0">
-    <tr>
-        <td id="strapline" colspan="3">
-            <p>
-            CPAN holds [% cpan_stats.modules.count | comma %] open source Perl modules ready for you to download and use.<br />
-            Stop reinventing wheels, start building space rockets.
-            </p>
-        </td>
-    </tr>
-    <tr>
-        <td colspan="3  ">
-            <hr width="60%" />
-        </td>
-    </tr>
-    <tr>
+    <tr class="hilightrow">
         <td class="search" colspan="1">
-            <h1 id="searchtitle">
+            <h2 id="searchtitle">
                 Search CPAN
-            </h1>
+            </h2>
         </td>
         <form method="get" action="http://search.cpan.org/search" name="f" class="searchbox" id="f">
         <td class="search" colspan="2">
@@ -101,19 +93,11 @@
     </form>
     </tr>
     <tr>
-        <td colspan="3">
-            <hr width="60%" />
-        </td>
-    </tr>
-    
-    <tr>
         <td class="third">
             <h2>Welcome to CPAN</h2>
             <p>
-
                 CPAN currently has <a href="http://cpan.perl.org/modules/">[% cpan_stats.modules.count  | comma  %] Perl modules</a>, written by [% cpan_stats.authors.count  | comma %] authors,
                 <a href="SITES.html">mirrored</a> on [% cpan_stats.mirrors.count | comma  %] servers.
-
             </p>
             <p>The archive has been online since October 1995 and is constantly growing.</p>
             <ul>

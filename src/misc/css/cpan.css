@@ -47,11 +47,6 @@ h3 {
     font-weight: normal;
 }
 
-#searchtitle {
-    margin-top: 0px;
-    margin-bottom: 0px;
-    font-size: 120%;
-}
 li {
     list-style-type: circle;
     font-size: 90%;
@@ -64,10 +59,13 @@ ul {
     vertical-align: center;
 }
 #searchtitle {
+    margin-top: 2px;
+    margin-bottom: 0px;
     float: right;
     display: inline;
 }
 #strapline {
+    margin-top: 5px;
     text-align: center;
     font-style: italic;
     vertical-align: center;
@@ -92,6 +90,9 @@ td {
 .third{
     width: 30%;
     padding-right: 3%;
+}
+.hilightrow{
+    background-color: #b1ccd5;
 }
 /* nav */
 .menubar {
