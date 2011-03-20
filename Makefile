@@ -13,8 +13,10 @@ buildclean: rmclean build
 rmclean:
 	rm -fr html
 
-build:
+build: data/cpan-stats.json
 	@SRC=src ttree -f tt.rc
+
+data/cpan-stats.json: update-data
 
 update-data:
 	@./bin/cpanorg_rss_fetch
