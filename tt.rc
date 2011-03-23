@@ -4,7 +4,7 @@ ignore = ~$
 ignore = .DS_Store
 ignore = \.tt$
 
-depend *=tpl/wrapper,tpl/defaults,style/cpan.html
+depend *=tpl/wrapper,tpl/defaults,style/cpan.html,tpl/straps.html
 depend SITES.html=SITES-list.html
 depend index.html=recent.json,cpan-stats.json
 depend misc/cpan-faq.html=cpan-stats.json
