@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
+[%- 
+	USE Comma;
+	PROCESS "tpl/data/cpan-stats";
+%]
 <head>
     <title>[% page.title %] - [% site.name %]</title>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
@@ -16,47 +19,53 @@
 <table id="wrapper" border="0" width="95%" cellspacing="0" cellpadding="2" align="center">
     <tr>
         <td id="header">
-        	<div id="header_left">
-        		<img src="[% page.stub %]misc/jpg/cpan.jpg" alt="[CPAN Logo]" height="77" width="250"/>	
-        		<h1>Comprehensive Perl Archive Network</h1>
-        	</div>
-            <div id="header_right">
-              <p id=strapline>
-              [% INCLUDE tpl/straps.html %]
-              </p>
-            </div>
+        	
+			<div id="header_left">
+				<a href="[% page.stub %]index.html"><img src="[% page.stub %]misc/images/cpan.png" id="logo" alt="CPAN" /></a>
+     		</div>
+			
+			<div id="header_right">
+			  <h1>[% cpan_stats.modules.count | comma %] Open Source Perl Modules</h1>
+              <p id="strapline">[% INCLUDE tpl/straps.html %]</p>
+           </div>
         </td>
     </tr>
     <tr> 
-        <td id="menubar_td">
-            <div class="menubar" align="center">
-                <a href="[% page.stub %]index.html">Home</a>
-                | <a href="[% page.stub %]modules/index.html">Modules</a>
-                | <a href="[% page.stub %]ports/index.html">Ports</a>
-                | <a href="[% page.stub %]src/README.html">Perl Source</a>
-                | <a href="[% page.stub %]misc/cpan-faq.html">FAQ</a>
-                | <a href="[% page.stub %]SITES.html">Mirrors</a>
-            </div>
-        </td>
+        <td id="menubar_holder">
+
+            <ul class="menubar">
+				<li><a href="[% page.stub %]index.html">Home</a></li>
+                <li><a href="[% page.stub %]modules/index.html">Modules</a></li>
+                <li><a href="[% page.stub %]ports/index.html">Ports</a></li>
+                <li><a href="[% page.stub %]src/README.html">Perl Source</a></li>
+                <li><a href="[% page.stub %]misc/cpan-faq.html">FAQ</a></li>
+                <li><a href="[% page.stub %]SITES.html">Mirrors</a></li>
+			</ul>
+			
+			<div id="searchbar">
+				<form method="get" action="http://search.cpan.org/search" name="f" class="searchbox" id="f">
+					<input type="hidden" name="mode" value="all" />
+				Search:
+					 <input id="searchfield" type="text" name="query" value="" />
+					<input type="submit" value="Search" />
+				</form>
+			</div>
+		</td>
     </tr>
     <tr>
         <td>
             <div id="content">
+			
             [% content %]
             </div>
         </td>
     </tr>
     <tr>
-        <td>
-            <hr />
-        </td>
-    </tr>
-    <tr>
-        <td>
+        <td id="footer">
             <div id="footer_copyright">
-                <p>Yours Eclectically, The Self-Appointed Master Librarians (<i>OOK!</i>) of the CPAN.<br>
-                   Copyright 1995-2010 Jarkko Hietaniemi.  
-                   Copyright 2011 Perl.org.  
+                <p>Yours Eclectically, The Self-Appointed Master Librarians (<i>OOK!</i>) of the CPAN.<br/>
+                   &copy; 1995-2010 Jarkko Hietaniemi.  
+                   &copy; 2011 <a href="http://www.perl.org">Perl.org</a>.  
                    All rights reserved. 
                    <a href="[% page.stub %]disclaimer.html">Disclaimer</a>.
                 </p>
@@ -64,7 +73,7 @@
 
             [% UNLESS page.skip_master_mirror %]
             <div id="footer_mirror">
-Master mirror hosted by:<br /><a href="http://www.yellowbot.com/"><img alt="YellowBot" src="[% page.stub %]misc/images/yellowbot.png" width="115" height="25" /></a>
+			<p>Master mirror hosted by <a href="http://www.yellowbot.com/"><img alt="YellowBot" src="[% page.stub %]misc/images/yellowbot.png" /></a></p>
             </div>
             [% END %]
 

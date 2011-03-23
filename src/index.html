@@ -4,12 +4,8 @@
     section => 'home',
     skip_master_mirror => 0,
   });
-  
-  USE Comma;
-
-  PROCESS "tpl/data/cpan-stats";
-
-%][% page.head = BLOCK %]
+ 
+ %][% page.head = BLOCK %]
 <!-- Copyright Jarkko Hietaniemi <jhi@iki.fi>
      1998,1999,2000,2001,2003,2003,2004,2005,2008
      Copyright 2010 Ask Bjørn Hansen <ask@perl.org>
@@ -70,60 +66,35 @@
 [% END %]
 
     <table border="0" cellspacing="0" cellpadding="0">
-    <tr class="hilightrow">
-        <td class="search" colspan="1">
-            <h2 id="searchtitle">
-                Search CPAN
-            </h2>
-        </td>
-        <form method="get" action="http://search.cpan.org/search" name="f" class="searchbox" id="f">
-        <td class="search" colspan="2">
-                <input id="searchfield" type="text" name="query" value="" size="35"> in <select name="mode">
-                    <option value="all">
-                        All
-                    </option>
-                    <option value="module">
-                        Modules
-                    </option>
-                    <option value="dist">
-                        Distributions
-                    </option>
-                    <option value="author">
-                        Authors
-                    </option>
-                </select>&nbsp;<input type="submit" value="CPAN Search">
-        </td>
-    </form>
-    </tr>
     <tr>
         <td class="third">
             <h2>Welcome to CPAN</h2>
             <p>
-                CPAN currently
+                The Comprehensive Perl Archive Network (CPAN) currently
                 has <a href="http://cpan.perl.org/modules/">[% cpan_stats.modules.count | comma %]
                 Perl modules</a> in [% cpan_stats.distributions.count | comma %] distributions,
                 written by [% cpan_stats.authors.count | comma %] authors,
                 <a href="SITES.html">mirrored</a> on [% cpan_stats.mirrors.count | comma  %] servers.
             </p>
             <p>The archive has been online since October 1995 and is constantly growing.</p>
-            <ul>
-                <li><a href="misc/cpan-faq.html">CPAN FAQ</a></li>
-                <li><a href="scripts/index.html">Scripts</a></li>
-            </ul>
-            <h2>Ways to search CPAN</h2>
+			
+			<p>You can search CPAN in the following 2 ways:</p>
+        
+ 
             <ul>
                 <li><a href="http://search.cpan.org">CPAN search</a></li>
-                <li><a href="http://search.metacpan.org/">MetaCPAN</a></li>
+                <li><a href="http://search.metacpan.org/">MetaCPAN search</a></li>
             </ul>
+			
         </td>
 
         <td class="third">
             <div style="margin-left: 20px">
-                <h2>Recent uploads</h2>
+                <h2>Recent modules</h2>
                 [% PROCESS rss_feed, conf => {
                     json_file => "recent.json",
                     max => 10,
-                }, rss_footer = '<li><a href="http://search.cpan.org/recent">more...</a></li>'
+                }, rss_footer = '<li><a href="http://search.cpan.org/recent"><strong>more...</strong></a></li>'
                 %]
             </div>
         </td>
@@ -142,7 +113,9 @@
                 <li><a href="http://faq.perl.org/">Perl FAQ</a></li>
             </ul>
 
-
+ 			<ul>
+				<li><a href="scripts/index.html">Scripts</a></li>
+			</ul>
         </td>
     </tr>
     </table>
