@@ -123,10 +123,8 @@
                 [% PROCESS rss_feed, conf => {
                     json_file => "recent.json",
                     max => 10,
-                } %]
-                <p>
-                <a href="RECENT.html">More...</a> (<a href="http://search.cpan.org/recent">See also</a>)
-                </pagex>
+                }, rss_footer = '<li><a href="http://search.cpan.org/recent">more...</a></li>'
+                %]
             </div>
         </td>
         

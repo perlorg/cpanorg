@@ -30,6 +30,7 @@
         <li><a href="[% item.link %]">[% item.title %]</a></li>
         [% LAST IF loop.count >= conf.max %]
     [% END %]
+    [% rss_footer || "" %]
     </ul>
     [% CATCH %]
     [% END %]
