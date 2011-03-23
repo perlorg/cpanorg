@@ -4,7 +4,7 @@ EXT_EXE=
 CPANM=cpanm$(EXT_BAT)
 PERL=perl$(EXT_EXE)
 TTREE=ttree$(EXT_BAT)
-RSYNC=rsync($EXT_EXE)
+RSYNC=rsync$(EXT_EXE)
 
 SRC=src
 
