@@ -1,4 +1,5 @@
 [%- 
+    USE Comma;
     USE JSON;
 
     page = {
@@ -14,11 +15,9 @@
     };
 
     # Defaults ( should be overwritten through tpl/data/cpan-stats )
-    SET cpan_stats = {
-        modules => 90000,
-        authors => 8000,
-        mirrors => 200,
-    };
+    SET cpan_stats = {};
+    
+	PROCESS "tpl/data/cpan-stats";
 
 -%]
 [%- BLOCK rss_feed %]
