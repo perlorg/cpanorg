@@ -12,41 +12,21 @@
 [% END %]
 
 <h1>
-    SITES
+    CPAN Mirror Network
 </h1>
-<hr>
-
-<h2>
-    Network
-</h2>
 <p>
-    Welcome to the CPAN, the Comprehensive Perl Archive Network. This document
-    describes the CPAN itself, the Mirror Network.
+    [% cpan_stats.mirrors.count | comma %] registered sites around the world
+    make up the <em>N</em> part of CPAN (the Network), find the full list
+    below.
 </p>
 <p>
-    The master CPAN site is hosted
-    by <a href="http://www.yellowbot.com/">YellowBot</a> in Los
-    Angeles, California.
+    The master CPAN site is hosted by <a href=
+    "http://www.yellowbot.com/">YellowBot</a> in Los Angeles, California.
 </p>
 <p>
     If you wish to mirror (either privately or publicly) please see <a href=
     "http://www.cpan.org/misc/how-to-mirror.html">how to mirror CPAN</a>.
 </p>
-    
-<p>
-    The list of the registered CPAN sites follows, sorted is alphabetical on fields:
-</p>
-
-
-<pre>
-
-Continent
-   |
-   |-->Country
-         |
-         |-->[state/province]
-
-</pre>
 
 <h2>Mirror status</h2>
 
@@ -66,9 +46,7 @@ track of the status of the mirrors below.
 </h1>
 [% END %]
 
-<h2>
-    <a name="feedback" id="feedback">Feedback</a>
-</h2>
+<h2 id="feedback">Feedback</h2>
 <p>
     You can <a href="mailto:cpan@perl.org">send email</a> to the CPAN
     administrators, <tt>cpan@perl.org</tt>.
