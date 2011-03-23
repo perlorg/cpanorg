@@ -41,6 +41,7 @@ img{
 }
 a{
 	color: #0083C1;
+	text-decoration: none;
 }
 a:link {
     color: #0083C1;
