@@ -18,7 +18,6 @@ recurse
 pre_process = tpl/defaults
 process     = tpl/wrapper
 
-src  = ${SRC}
 dest = html
 lib  = lib
 lib  = data
