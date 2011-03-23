@@ -6,6 +6,10 @@ body {
 	font-family: Arial, Verdana, sans-serif;
     background: white url(../images/bg_gradient.jpg) repeat-x left top;
 }
+body.section_home {
+    /* keep the homepage from getting too wide on big screens */
+    max-width: 70em;
+}
 td#header {
 	padding:12px 0;
 }
@@ -59,7 +63,8 @@ h2 {
 	font-family:Calibri, Arial, sans-serif;
 	font-family:Times, Georgia, serif;
 	font-weight:normal;
-	margin-top:20px;
+	margin-top: 0;
+	margin-bottom: .5em;
 }
 h3 {
     font-size: 100%;
@@ -75,10 +80,15 @@ ul {
     padding-left: 16px;
 }
 #content{
-	padding:24px 0;
+	padding-top: .5em;
+    padding-bottom: 1em;
+    padding-left: .5em;
 }
 #content li{
 	font-size:90%;
+}
+.section_home #content ul {
+    padding-left: 1.5em;
 }
 .search{
     vertical-align: center;
