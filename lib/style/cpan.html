@@ -15,15 +15,20 @@
 
 <table id="wrapper" border="0" width="95%" cellspacing="0" cellpadding="2" align="center">
     <tr>
-        <td>
-        	<div id="header">
+        <td id="header">
+        	<div id="header_left">
         		<img src="[% page.stub %]misc/jpg/cpan.jpg" alt="[CPAN Logo]" height="77" width="250"/>	
         		<h1>Comprehensive Perl Archive Network</h1>
         	</div>
+            <div id="header_right">
+              <p id=strapline>
+              [% INCLUDE tpl/straps.html %]
+              </p>
+            </div>
         </td>
     </tr>
     <tr> 
-        <td>
+        <td id="menubar_td">
             <div class="menubar" align="center">
                 <a href="[% page.stub %]index.html">Home</a>
                 | <a href="[% page.stub %]modules/index.html">Modules</a>
