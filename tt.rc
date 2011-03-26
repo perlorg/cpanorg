@@ -3,6 +3,7 @@ ignore = ^#
 ignore = ~$
 ignore = .DS_Store
 ignore = \.tt$
+ignore = \.swp$
 
 depend *=tpl/wrapper,tpl/defaults,style/cpan.html,tpl/straps.html
 depend SITES.html=SITES-list.html
