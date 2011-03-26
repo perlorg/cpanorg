@@ -34,19 +34,9 @@ Mac OS X ships with Perl as a standard component.
 [% PROCESS version_view os_versions => {
     versions => [
     {
-        os_name => 'Jaguar',
-        os_version => '10.2',
-        perl_version => '5.6.0',
-    },
-    {
-        os_name => 'Panther',
-        os_version => '10.3',
-        perl_version => '5.8.1-RC3+patches',
-    },
-    {
-        os_name => 'Tiger',
-        os_version => '10.4',
-        perl_version => '5.8.6+patches',
+        os_name => 'Snow Leopard',
+        os_version => '10.6',
+        perl_version => '5.10.0',
     },
     {
         os_name => 'Leopard',
@@ -54,9 +44,19 @@ Mac OS X ships with Perl as a standard component.
         perl_version => '5.8.8',
     },
     {
-        os_name => 'Snow Leopard',
-        os_version => '10.6',
-        perl_version => '5.10.0',
+        os_name => 'Tiger',
+        os_version => '10.4',
+        perl_version => '5.8.6+patches',
+    },
+    {
+        os_name => 'Panther',
+        os_version => '10.3',
+        perl_version => '5.8.1-RC3+patches',
+    },
+    {
+        os_name => 'Jaguar',
+        os_version => '10.2',
+        perl_version => '5.6.0',
     },
     ],
 } %]

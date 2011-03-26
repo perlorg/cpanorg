@@ -22,6 +22,11 @@
 
 [% PROCESS binary_view binary_source => [
     {
+        name => "Merijn's HP-UX software",
+        url => 'http://mirrors.develooper.com/hpux/',
+        notes => ''
+    },
+    {
         name => 'ActiveState (commercial)',
         url => active_state_url,
         notes => ''
