@@ -56,7 +56,7 @@ Mac OS X ships with Perl as a standard component.
     {
         os_name => 'Snow Leopard',
         os_version => '10.6',
-        perl_version => '5.8.9',
+        perl_version => '5.10.0',
     },
     ],
 } %]
