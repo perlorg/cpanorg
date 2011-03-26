@@ -34,27 +34,27 @@
     {
         os_name => 'Maverick',
         os_version => '10.10',
-        perl_version => '5.10.1',
+        perl_version => '5.10.1+patches',
     },
     {
         os_name => 'Lucid',
         os_version => '10.04LTS',
-        perl_version => '5.10.1',
+        perl_version => '5.10.1+patches',
     },
     {
         os_name => 'Karmic',
         os_version => '9.10',
-        perl_version => '5.10.0',
+        perl_version => '5.10.0+patches',
     },
     {
         os_name => 'Hardy',
         os_version => '8.04LTS',
-        perl_version => '5.8.8',
+        perl_version => '5.8.8+patches',
     },
     {
         os_name => 'Dapper',
         os_version => '6.06LTS',
-        perl_version => '5.8.7',
+        perl_version => '5.8.7+patches',
     },
     
     ],

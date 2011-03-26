@@ -37,18 +37,18 @@
           os_name => 'Lenny',
           os_version => '5.0',
           os_release => '2009-02-01', 
-          perl_version => '5.10.0',
+          perl_version => '5.10.0+patches',
       },
       {
           os_name => 'Etch',
           os_version => '4.0',
           os_release => '2007-04-01', 
-          perl_version => '5.8.8',
+          perl_version => '5.8.8+patches',
       },
       {
           os_name => 'Woody',
           os_version => '3.0',
-          perl_version => '5.6.1',
+          perl_version => '5.6.1+patches',
       },
       ],
   } %]

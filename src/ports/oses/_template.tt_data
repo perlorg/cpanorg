@@ -43,7 +43,8 @@
         os_name => '',
         os_version => '',
         os_release => '', # optional release date of the os (yyyy-mm-dd)
-        # include '+patch' if it is known to have been patached
+        # include '+patches' if applicable please (e.g. Debian)
+        # (so people know they would not get the same by just building themselves)
         perl_version => '',
         
     },
