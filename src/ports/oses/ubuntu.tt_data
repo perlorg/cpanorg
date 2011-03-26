@@ -32,20 +32,9 @@
 [% PROCESS version_view os_versions => {
     versions => [
     {
-        # name and/or version
-        os_name => 'Dapper',
-        os_version => '6.06LTS',
-        perl_version => '5.8.7',
-    },
-    {
-        os_name => 'Hardy',
-        os_version => '8.04LTS',
-        perl_version => '5.8.8',
-    },
-    {
-        os_name => 'Karmic',
-        os_version => '9.10',
-        perl_version => '5.10.0',
+        os_name => 'Maverick',
+        os_version => '10.10',
+        perl_version => '5.10.1',
     },
     {
         os_name => 'Lucid',
@@ -53,10 +42,21 @@
         perl_version => '5.10.1',
     },
     {
-        os_name => 'Maverick',
-        os_version => '10.10',
-        perl_version => '5.10.1',
+        os_name => 'Karmic',
+        os_version => '9.10',
+        perl_version => '5.10.0',
     },
+    {
+        os_name => 'Hardy',
+        os_version => '8.04LTS',
+        perl_version => '5.8.8',
+    },
+    {
+        os_name => 'Dapper',
+        os_version => '6.06LTS',
+        perl_version => '5.8.7',
+    },
+    
     ],
 } %]
 
