@@ -9,7 +9,18 @@
   SET active_state_url = 'http://www.activestate.com/activeperl/downloads';
   
   # The list of OS'es - each one must have a ports/oses/<os>.tt_data file
-  SET os_list = ['debian','fedora','linux','mac_osx','redhat', 'win32'];
+  SET os_list = [
+    'aix', 'centos',
+    'debian','fedora', 'hpux', 
+    'linux','mac_osx',
+    'mandriva',
+    'openbsd',
+    'redhat',
+    'slackware',
+    'solaris',
+    'suse',
+    'win32',
+  ];
   
 %]
 
@@ -36,6 +47,9 @@
                     [% ELSE %]
                     [% version.os_version %]
                     [% END %]
+
+                    [%# version.os_release %]
+                    
                     </td>
                 <td>[% version.perl_version %]</td>
             </tr>

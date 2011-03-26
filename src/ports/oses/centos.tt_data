@@ -1,0 +1,63 @@
+[% 
+    # Setup information
+    os_config = {
+        # Name of the OS
+        name => 'CentoS',
+
+        # URL of the OS (e.g. www.m)
+        url => 'http://www.centos.org/',
+
+        # Is it a specific vendor who runs the OS?
+        vendor => '',
+
+        # Specifying linux will add a 'see also'
+        kernel => 'linux',
+
+        # When was this file last reviewed (yyyy-mm-dd)?
+        information_last_verified => '2011-03-26',
+    }
+%]
+
+[% BLOCK show_os %]
+
+[% PROCESS version_view os_versions => {
+    versions => [
+    { 
+    os_name => '', 
+    os_version => '6', 
+    os_release => '', 
+    perl_version  => '5.10.1', 
+    }, 
+
+    { 
+    os_name => '', 
+    os_version => '5.5', 
+    os_release => '2010-05-01', 
+    perl_version  => '5.8.8', 
+    }, 
+
+    { 
+    os_name => '', 
+    os_version => '5.2', 
+    os_release => '2008-6-01', 
+    perl_version  => '5.8.8', 
+    }, 
+
+    { 
+    os_name => '', 
+    os_version => '5', 
+    os_release => '2007-4-01', 
+    perl_version  => '5.8.8', 
+    }, 
+
+    { 
+    os_name => '', 
+    os_version => '4', 
+    os_release => '', 
+    perl_version  => '5.8.5', 
+    }, 
+
+    ],
+} %]
+
+[% END %]

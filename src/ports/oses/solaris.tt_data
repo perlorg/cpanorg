@@ -2,7 +2,7 @@
     # Setup information
     os_config = {
         # Name of the OS
-        name => '',
+        name => 'Solaris',
 
         # URL of the OS (e.g. http://www.microsoft.com/windows/)
         url => '',
@@ -11,7 +11,7 @@
         vendor => '',
 
         # Specifying linux will add a 'see also'
-        kernel => 'linux',
+        kernel => '',
 
         # When was this file last reviewed (yyyy-mm-dd)?
         information_last_verified => '2011-03-26',
@@ -19,8 +19,6 @@
 %]
 
 [% BLOCK show_os %]
-
-<p>Some basic copy, can go here</p>
 
 [% PROCESS binary_view binary_source => [
     {
@@ -38,26 +36,35 @@
 
 [% PROCESS version_view os_versions => {
     versions => [
-    {
-        # name and/or version
-        os_name => '',
-        os_version => '',
-        os_release => '', # optional release date of the os (yyyy-mm-dd)
-        # include '+patch' if it is known to have been patached
-        perl_version => '',
-        
-    },
-    {
-        os_name => '',
-        os_version => '',
-        perl_version => '',
-    },
+    { 
+    os_name => '',
+    os_version => '11 Express', 
+    os_release => '2010-11-01', 
+    perl_version  => '5.10.0, 5.8.4', 
+    }, 
 
+    { 
+    os_name => '',
+    os_version => '10', 
+    os_release => '2010-09-01', 
+    perl_version  => '5.8.4, 5.6.1', 
+    }, 
+
+    { 
+    os_name => '',
+    os_version => '9', 
+    os_release => '', 
+    perl_version  => '5.6.1', 
+    }, 
+
+    { 
+    os_name => '',
+    os_version => '8', 
+    os_release => '', 
+    perl_version  => '5.005_03', 
+    },
     ],
 } %]
-
-<p>Add specific instructions for building from source here</a>
-
 
 
 [% END %]

@@ -1,0 +1,74 @@
+[% 
+    # Setup information
+    os_config = {
+        # Name of the OS
+        name => 'AIX',
+
+        # URL of the OS (e.g. www.m)
+        url => 'http://www.ibm.com/developerworks/aix/',
+
+        # Is it a specific vendor who runs the OS?
+        vendor => 'IBM',
+
+        # Specifying linux will add a 'see also'
+        kernel => '',
+
+        # When was this file last reviewed?
+        information_last_verified => '2011-03-26',
+    }
+%]
+
+[% BLOCK show_os %]
+
+[% PROCESS binary_view binary_source => [
+    {
+        name => 'ActiveState (commercial)',
+        url => active_state_url,
+        notes => ''
+    },
+]
+%]
+
+[% PROCESS version_view os_versions => {
+    versions => [
+
+    { 
+    os_name => '',
+    os_version => '6.1', 
+    os_release => '2007-11-01', 
+    perl_version  => '5.8.2', 
+    }, 
+
+    { 
+    os_name => '',
+    os_version => '5.3', 
+    os_release => '2004-08-01', 
+    perl_version  => '5.8.2', 
+    }, 
+
+    { 
+    os_name => '',
+    os_version => '5.2', 
+    os_release => '2002-10-01', 
+    perl_version  => '5.8.0', 
+    }, 
+
+    { 
+    os_name => '',
+    os_version => '5.1', 
+    os_release => '2001-05-01', 
+    perl_version  => '5.6.0', 
+    }, 
+
+    { 
+    os_name => '',
+    os_version => '4.3', 
+    os_release => '2007-10-01', 
+    perl_version  => '5.005_03', 
+    },
+
+    ],
+} %]
+
+
+[% END %]

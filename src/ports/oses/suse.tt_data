@@ -2,10 +2,10 @@
     # Setup information
     os_config = {
         # Name of the OS
-        name => '',
+        name => 'Suse',
 
         # URL of the OS (e.g. http://www.microsoft.com/windows/)
-        url => '',
+        url => 'http://www.opensuse.org/',
 
         # Is it a specific vendor who runs the OS?
         vendor => '',
@@ -20,17 +20,10 @@
 
 [% BLOCK show_os %]
 
-<p>Some basic copy, can go here</p>
-
 [% PROCESS binary_view binary_source => [
     {
         name => 'ActiveState',
         url => active_state_url,
-        notes => ''
-    },
-    {
-        name => '',
-        url  => '',
         notes => ''
     },
 ]
@@ -38,26 +31,36 @@
 
 [% PROCESS version_view os_versions => {
     versions => [
-    {
-        # name and/or version
-        os_name => '',
-        os_version => '',
-        os_release => '', # optional release date of the os (yyyy-mm-dd)
-        # include '+patch' if it is known to have been patached
-        perl_version => '',
-        
-    },
-    {
-        os_name => '',
-        os_version => '',
-        perl_version => '',
-    },
 
+ { 
+ os_name => '',
+ os_version => '11.4', 
+ os_release => '2011-3-01', 
+ perl_version  => '', 
+ }, 
+
+ { 
+ os_name => '',
+ os_version => '11.3', 
+ os_release => '2010-7-01', 
+ perl_version  => '', 
+ }, 
+
+ { 
+ os_name => '',
+ os_version => '11.0', 
+ os_release => '2008-6-01', 
+ perl_version  => '', 
+ }, 
+
+ { 
+ os_name => '',
+ os_version => '10.0', 
+ os_release => '2005-10-01', 
+ perl_version  => '', 
+ },
     ],
 } %]
-
-<p>Add specific instructions for building from source here</a>
-
 
 
 [% END %]
