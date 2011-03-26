@@ -1,0 +1,54 @@
+[% 
+    # Setup information
+    os_config = {
+        name => 'Redhat',
+        url => 'http://www.redhat.com/',
+        vendor => '',
+        kernel => 'linux',
+        information_last_verified => '2011-03-26',
+    }
+%]
+
+[% BLOCK show_os %]
+
+
+[% PROCESS binary_view binary_source => [
+    {
+        name => 'ActiveState',
+        url => active_state_url,
+        notes => ''
+    },
+
+]
+%]
+
+[% PROCESS version_view os_versions => {
+    versions => [
+    {
+        os_name => '',
+        os_version => '2.1',
+        perl_version => '5.8.0 prerelease',
+    },
+    {
+        os_name => '',
+        os_version => '3',
+        perl_version => '5.8.1 - erratad to 5.8.3',
+    },
+    {
+        os_name => '',
+        os_version => '5.6',
+        perl_version => '5.8.8',
+    },
+    {
+        os_name => '',
+        os_version => '6',
+        perl_version => '5.10.1',
+    },
+
+    ],
+} %]
+
+
+
+
+[% END %]

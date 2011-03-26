@@ -1,0 +1,74 @@
+[% 
+    # Setup information
+    os_config = {
+        name => 'Mac OS X',
+        url => 'http://www.apple.com/macosx/',
+        vendor => 'Apple',
+        information_last_verified => '2011-03-26',
+    }
+%]
+
+[% BLOCK show_os %]
+<p>
+Mac OS X ships with Perl as a standard component.
+</p>
+[% PROCESS binary_view binary_source => [
+    {
+        name => 'ActiveState',
+        url => active_state_url,
+        notes => 'In universal disk image format'
+    },
+    {
+        name => 'MacPorts',
+        url => 'http://www.macports.org/',
+        notes => 'Formerly known as DarwinPorts',
+    },
+    {
+        name => 'Fink',
+        url => 'http://www.finkproject.org/',
+    },
+
+]
+%]
+
+[% PROCESS version_view os_versions => {
+    versions => [
+    {
+        os_name => 'Jaguar',
+        os_version => '10.2',
+        perl_version => '5.6.0',
+    },
+    {
+        os_name => 'Panther',
+        os_version => '10.3',
+        perl_version => '5.8.1-RC3+patches',
+    },
+    {
+        os_name => 'Tiger',
+        os_version => '10.4',
+        perl_version => '5.8.6+patches',
+    },
+    {
+        os_name => 'Leopard',
+        os_version => '10.5',
+        perl_version => '5.8.8',
+    },
+    {
+        os_name => 'Snow Leopard',
+        os_version => '10.6',
+        perl_version => '5.8.9',
+    },
+    ],
+} %]
+
+<p class="from_source">
+    Building from source (or building XS modules) requires you to have also
+    installed the "Mac OS X Developer tools" available on recent OSX install
+    DVDs, alternatively they can be downloaded from <a href=
+    "http://developer.apple.com/">Apple Developer</a> (free registration).
+    <em>(Note: in 10.3 you should also install the optional BSD SDK, otherwise
+    installing new Perl modules won't work.)</em>
+</p>
+
+
+[% END %]

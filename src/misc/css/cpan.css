@@ -71,7 +71,10 @@ h3 {
     font-size: 100%;
     font-weight: normal;
 }
-
+h4 {
+    font-size: 100%;
+    font-weight: normal;
+}
 li {
     list-style-type: circle;
     padding-top: 3px;
@@ -192,13 +195,41 @@ img.extlink{
 }
 
 /* Ports page version tables */
+div.os_holder {
+    border-bottom:1px solid black;
+    margin: 0.5em 0;
+    padding: 0 0.5em;
+}
+
 table.os_version{
     border: 1px solid #999;
-    width: 50%;
+    width: 45%;
 }
 table.os_version th{
     background-color: #E3E3E3;
     padding-left: 5px;
     text-align: left;
 }
+.os_binary{
+    float: right;
+    border: 1px solid #999;
+    padding: 0;
+    width: 45%;
+    margin-bottom: 0.5em;
+}
+.os_binary h4{
+    background-color: #E3E3E3;
+    margin: 0;
+    font-weight: bold;
+    padding: 0.1em;
+    margin: 0.1em;
+}
+.os_binary ul{
+    margin: 1em 1em;
+}
+.clear {
+    clear: both;
+}
+
+
 
