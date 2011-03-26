@@ -1,0 +1,63 @@
+[% 
+    # Setup information
+    os_config = {
+        # Name of the OS
+        name => 'Ubuntu',
+
+        # URL of the OS (e.g. www.m)
+        url => 'http://www.ubuntu.com/',
+
+        # Is it a specific vendor who runs the OS?
+        vendor => '',
+
+        # Specifying linux will add a 'see also'
+        kernel => 'linux',
+
+        # When was this file last reviewed?
+        information_last_verified => '2011-03-26',
+    }
+%]
+
+[% BLOCK show_os %]
+
+[% PROCESS binary_view binary_source => [
+    {
+        name => 'ActiveState',
+        url => active_state_url,
+        notes => ''
+    },
+]
+%]
+
+[% PROCESS version_view os_versions => {
+    versions => [
+    {
+        # name and/or version
+        os_name => 'Dapper',
+        os_version => '6.06LTS',
+        perl_version => '5.8.7',
+    },
+    {
+        os_name => 'Hardy',
+        os_version => '8.04LTS',
+        perl_version => '5.8.8',
+    },
+    {
+        os_name => 'Karmic',
+        os_version => '9.10',
+        perl_version => '5.10.0',
+    },
+    {
+        os_name => 'Lucid',
+        os_version => '10.04LTS',
+        perl_version => '5.10.1',
+    },
+    {
+        os_name => 'Maverick',
+        os_version => '10.10',
+        perl_version => '5.10.1',
+    },
+    ],
+} %]
+
+[% END %]
