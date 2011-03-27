@@ -12,6 +12,9 @@
 
         # Specifying linux will add a 'see also'
         kernel => 'linux',
+        
+        # Only needed for Windows so far
+        # not_included_in_os_packages => 1,
 
         # When was this file last reviewed (yyyy-mm-dd)?
         information_last_verified => '2011-03-26',

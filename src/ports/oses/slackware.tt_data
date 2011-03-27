@@ -26,11 +26,6 @@
         url => active_state_url,
         notes => ''
     },
-    {
-        name => '',
-        url  => '',
-        notes => ''
-    },
 ]
 %]
 

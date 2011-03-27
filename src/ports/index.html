@@ -38,9 +38,9 @@
 
 [% BLOCK version_view %]
     <table class="os_version">
-        <tr><th>OS Name / version</th><th>Default Perl version</th></tr>
+        <tr class="table_header"><th>OS Name / version</th><th>Default Perl version</th></tr>
         [% FOREACH version = os_versions.versions %]
-            <tr>
+            <tr class="[% "latest" IF loop.first %][% " even" IF loop.even %]">
                 <td>[% IF version.os_name && version.os_version %]
                     [% version.os_name %] ([% version.os_version %])
                     [% ELSIF version.os_name %]
@@ -49,7 +49,8 @@
                     [% version.os_version %]
                     [% END %]
 
-                    [%# version.os_release %]
+                    [% IF loop.first && version.os_release%]
+                    <span>released [% version.os_release %]</span>[% END %]
                     
                     </td>
                 <td>[% version.perl_version %]</td>
@@ -60,7 +61,7 @@
 
 [% BLOCK binary_view %]
 <div class="os_binary">
-    <h4>Sources for binaries:</h4>
+    <h4>Binaries[% " (other than from your OS provider)" UNLESS os_config.not_included_in_os_packages %]:</h4>
     <ul>
         [% FOREACH source = binary_source %]
         <li><a href="[% source.url %]">[% source.name %]</a>
@@ -73,12 +74,11 @@
 
 
 <h1 id="top">Perl Ports (Binary Distributions)</h1>
-
 <p>
-    Perl supports over 100 platforms, many of which ship with a version of Perl
-    by default. We would however recommend that you <em>build your own</em> version of
-    Perl from the <a href="src/">source</a> where possible, the exception
-    to this being for <a href="#win">Windows</a>.
+    Perl supports over <strong>100 platforms</strong>, many of which ship with
+    a version of Perl by default. You may wish to <em>build your own</em>
+    version of Perl from the <a href="src/">source</a> where possible, the
+    exception to this being for <a href="#win">Windows</a>.
 </p>
 <p>
     If you do not see your preferred OS in the list below please see our

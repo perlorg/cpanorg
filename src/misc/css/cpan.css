@@ -210,6 +210,27 @@ table.os_version th{
     padding-left: 5px;
     text-align: left;
 }
+table.os_version tr {
+    font-size: 80%;
+}
+table.os_version td {
+    font-size: 90%;
+    padding: 0;
+}
+table.os_version tr.table_header {
+    font-size: 100%;
+}
+table.os_version tr.latest{
+    font-size: 140%;
+}
+table.os_version tr span{
+    font-size: 70%;
+    color: #BABABA;
+}
+table.os_version tr.even{
+    background-color: #E3E3E3;
+}
+
 .os_binary{
     float: right;
     border: 1px solid #999;

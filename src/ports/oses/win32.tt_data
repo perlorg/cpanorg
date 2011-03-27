@@ -4,7 +4,9 @@
         name => 'Windows 95/98/Me/NT/2000/XP',
         url => 'http://www.microsoft.com/windows/',
         vendor => 'Microsoft',
+        not_included_in_os_packages => 1,
         information_last_verified => '2011-03-26',
+        
     }
 %]
 
