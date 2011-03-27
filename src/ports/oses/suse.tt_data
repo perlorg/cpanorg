@@ -36,29 +36,14 @@
  os_name => '',
  os_version => '11.4', 
  os_release => '2011-3-01', 
- perl_version  => '', 
+ perl_version  => '5.12.3', 
  }, 
-
  { 
  os_name => '',
  os_version => '11.3', 
  os_release => '2010-7-01', 
- perl_version  => '', 
+ perl_version  => '5.12.1', 
  }, 
-
- { 
- os_name => '',
- os_version => '11.0', 
- os_release => '2008-6-01', 
- perl_version  => '', 
- }, 
-
- { 
- os_name => '',
- os_version => '10.0', 
- os_release => '2005-10-01', 
- perl_version  => '', 
- },
     ],
 } %]
 
