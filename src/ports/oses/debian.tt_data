@@ -53,4 +53,13 @@
       ],
   } %]
 
+<p>
+  Mostly minor <a href=
+  "http://patch-tracker.debian.org/package/perl">patches</a> are applied.
+</p>
+
+
 [% END %]
+
+    
+    
