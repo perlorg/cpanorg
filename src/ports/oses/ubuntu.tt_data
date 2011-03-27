@@ -35,6 +35,7 @@
         os_name => 'Maverick',
         os_version => '10.10',
         perl_version => '5.10.1+patches',
+        os_release => '2010-10-01', 
     },
     {
         os_name => 'Lucid',
