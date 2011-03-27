@@ -74,18 +74,29 @@
 
 
 <h1 id="top">Perl Ports (Binary Distributions)</h1>
-<p>
-    Perl supports over <strong>100 platforms</strong>, many of which ship with
-    a version of Perl by default. You may wish to <em>build your own</em>
-    version of Perl from the <a href="src/">source</a> where possible, the
-    exception to this being for <a href="#win">Windows</a>.
-</p>
-<p>
-    If you do not see your preferred OS in the list below please see our
+
+
+
+<ul>
+    <li>Perl supports over <strong><a href=
+    "http://perldoc.perl.org/perlport.html#PLATFORMS">100
+    platforms</a></strong>, many of which ship with a version of Perl by
+    default.
+    </li>
+    <li>Latest stable version of Perl is 5.12.3[%# FIXME: automate %].
+    </li>
+    <li>Running a version older than 5.8.3? - you may find that the
+    latest versions of some CPAN modules do not work.
+    </li>
+    <li>You can build your own version of Perl from the <a href="src/">
+        source</a>.
+    </li>
+    <li>If you do not see your preferred OS in the list below please see our
     <a href="archive-2011-03-26.html">archive page</a>.
-    Additions/updates/corrections please submit a pull request to the <a href=
-    "https://github.com/perlorg/cpanorg/tree/master/src/ports/oses">master repository</a>.
-</p>
+    </li>
+</ul>
+
+
 <hr />
 <p>
     [% FOREACH os = os_list.sort %]
@@ -108,6 +119,11 @@
     <p><em>Last updated:</em> [% os_config.information_last_verified || 'unknown' %]</p>
 </div>
 [% END %]
+
+<p>
+    Additions/updates/corrections please submit a pull request to the <a href=
+    "https://github.com/perlorg/cpanorg/tree/master/src/ports/oses">master repository</a>.
+</p>
 
 
 
