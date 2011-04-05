@@ -21,14 +21,31 @@
     Most Perl modules are written in Perl, some use <a href=
     "http://perldoc.perl.org/perlxs.html">XS</a> (they are written in <a href=
     "http://en.wikipedia.org/wiki/C_(programming_language)">C</a>) so require a
-    C <a href="http://en.wikipedia.org/wiki/Compiler">compiler</a>, see your OS
-    of choice below to find out how to get the right compiler. Modules may have
-    dependencies on other modules (almost always on <a href=
-    "http://www.cpan.org/">CPAN</a>) and cannot be installed without them (or
-    without a specific version of them). It is worth throughly reading the
-    documentation for the options below. Many modules on CPAN now require a
-    recent version of Perl (version 5.8 or above).
+    C <a href="http://en.wikipedia.org/wiki/Compiler">compiler</a> (it's easy
+    to get this setup - don't panic), see your OS of choice below to find out how
+    to get the right compiler. Modules may have dependencies on other modules
+    (almost always on <a href="http://www.cpan.org/">CPAN</a>) and cannot be
+    installed without them (or without a specific version of them). It is worth
+    throughly reading the documentation for the options below. Many modules on
+    CPAN now require a recent version of Perl (version 5.8 or above).
 </p>
+
+<h2>
+    Quick start
+</h2>
+<p>
+    Install <code>cpanm</code> to make installing other modules easier (you'll
+    thank us later).
+</p>
+<pre>
+cpan App::cpanminus
+</pre>
+<p>
+    Now install any module you can <a href="http://search.cpan.org/">find</a>.
+</p>
+<pre>
+cpanm Module::Name
+</pre>
 
 <h2>
     Tools
