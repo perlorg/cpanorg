@@ -1,0 +1,269 @@
+[% 
+  page.import({
+    title   => "Perl Source",
+    section => 'source',
+    stub => '../',
+    canonical => 'src/index.html',
+  });
+%]
+
+<h1>Perl Source</h1>
+
+<p>
+    Perl compiles on over <a href=
+    "http://perldoc.perl.org/perlport.html#PLATFORMS">100 platforms</a>, if you
+    want to install from a binary instead see the <a href=
+    "../ports/index.html">ports</a> page (especially for Windows).
+</p>
+
+<h2>
+    How to install from source
+</h2>
+[% TRY %]
+[% latest_data = INSERT perl_version_latest_stable.json %]
+[% latest = JSON.json_decode(latest_data) %]
+<pre>
+     wget <a href="[% latest.url %]">[% latest.url %]</a>
+     tar -xzf [% latest.zip_file %]
+     cd [% latest.distvname %]
+     ./Configure -des -Dprefix=$HOME/localperl
+     make
+     make test
+     make install
+</pre>
+[% CATCH %]
+[% END %]
+
+
+[% TRY %]
+<h2>Latest releases in each branch of Perl</h2>
+[% json_data = INSERT perl_versions_latest.json %]
+[% versions = JSON.json_decode(json_data) %]
+<table class="os_version">
+    <tr class="table_header">
+        <th>Major</th>
+        <th>Version</th>
+        <th>Type</th>
+        <th>Released</th>
+        <th>Download</th>
+    </tr>
+[% FOREACH release = versions %]
+
+    <tr [% 'class="latest"' IF release.latest %]>
+        <td>[% release.version_major %].[% release.version_minor %]</td>
+        <td>[% release.version_major %].[% release.version_minor %].[% release.version_iota %]
+        <td>[% release.type | ucfirst %]</td>
+        <td>[% release.released_date %]</td>
+        <td><a href="[% release.url %]">[% release.zip_file %]</a></td>
+    </tr>
+[% END %]
+</table>
+[% CATCH %]
+[% END %]
+
+<p>
+    See the README.<strong>yoursystem</strong> in the unpacked file for specific
+    instructions for your operating system, also read the INSTALL file.
+</p>
+
+<p>
+    <a href="http://perldoc.perl.org/perlhist.html">Perl History</a>
+</p>
+<p>
+    Since the release 5.6 (March 2000) Perl has followed the commonly used
+    scheme where there is a development branch, which eventually stabilizes
+    into a "point-oh/point-zero" (.0) release, which then branches into a
+    maintenance branch with maintenance releases (.1, .2, ...), while the
+    development branches back to uncharted waters. The development (or devel,
+    as it is called by the Perl 5 developers) releases have an odd (as opposed
+    to even) major release number (5.7, 5.9, 5.11, 5.13, ...), while the
+    maintenance (or maint) releases have an even major release number (5.6,
+    5.8, 5.10, 5.12, 5.14, ...). The release candidates leading up to
+    "point-zero" releases are called testing releases.
+</p>
+<p>
+    For stable production use the maint branches are recommended. The
+    "point-oh/point-zero" releases of maintenance releases have of course by
+    definition not been tested for long periods of time, but you should still
+    start using them.
+</p>
+<p>
+    If you want to help out developing new releases of Perl you can use the
+    devel releases, but you should probably not wait for them and instead
+    follow the development and hang around in the perl5-porters@perl.org
+    mailing list.
+</p>
+<p>
+    Please note that branches earlier than 5.8 are no more supported (as of
+    2008), though fixes for urgent issues like for example for severe security
+    problems may still be issued. Also, there are 5.005_04 and 5.6.2 releases
+    which enabled compiling 5.005 and 5.6 with some of the more current
+    platforms and compilers, for those who need backward compatibility.
+</p>
+<p>
+    Note: please avoid referring to the "symbolic" source releases like
+    "stable" and "latest", or "maint" and "devel". They are still used here but
+    only for backward compatibility. The symbolic names were found to cause
+    more confusion than they are worth because they don't really work with
+    multiple branches, especially not with multiple maintenance branches, and
+    especially the "latest" makes absolutely no sense. The "latest" and
+    "stable" are now just aliases for "maint", and "maint" in turn is the
+    maintenance branch with the largest release number.
+</p>
+
+[% TRY %]
+<h2>First release in each branch of Perl</h2>
+[% json_data = INSERT perl_versions_earliest.json %]
+[% versions = JSON.json_decode(json_data) %]
+<table class="os_version">
+    <tr class="table_header">
+        <th>Major</th>
+        <th>Version</th>
+        <th>Released</th>
+    </tr>
+[% FOREACH release = versions %]
+
+    <tr>
+        <td>[% release.version_major %].[% release.version_minor %]</td>
+        <td>[% release.version_major %].[% release.version_minor %].[% release.version_iota %]
+        <td>[% release.released_date %]</td>
+    </tr>
+[% END %]
+</table>
+[% CATCH %]
+[% END %]
+
+<p></p>
+
+<h2>
+    Other files and directories (mostly for posterity)
+</h2>
+<ul>
+    <li>
+        <a href="5.0/">5.0/</a>
+        <p>
+            Source archives for all releases of perl5. You should only need to
+            look here if you have an application which, for some reason or
+            another, does not run with the current release of perl5. Be aware
+            that only 5.004 and later versions of perl are maintained. If you
+            report a genuine bug in such a version, you will probably be
+            informed either that it is fixed in the current maintenance
+            release, or will be fixed in a subsequent one. If you report a bug
+            in an unmaintained version, you are likely to be advised to upgrade
+            to a maintained version which fixes the bug, or to await a fix in a
+            maintained version. No fix will be provided for the unmaintained
+            version.
+        </p>
+    </li>
+    <li>
+        <p>
+            Perl 6 or Parrot are not yet in CPAN. In the meanwhile, try
+            <a href="http://dev.perl.org/perl6/">here</a> or <a href=
+            "http://www.parrotcode.org/">here</a>.
+        </p>
+    </li>
+    <li>
+        <a href="5.0/jperl">5.0/jperl</a>
+        <p>
+            Path to patch files needed to adapt particular perl releases for
+            use with Japanese character sets.
+        </p>
+    </li>
+    <li>
+        <a href="ENDINGS">ENDINGS</a>
+        <p>
+            Discussion of the meanings of the endings of filenames (.gz, .ZIP
+            and so on). Read this file if you want to know how to handle a
+            source code archive after you've downloaded it.
+        </p>
+    </li>
+    <li>
+        <a href="README">README</a>
+        <p>
+            This file.
+        </p>
+    </li>
+    <li>
+        <a href="misc/">misc/</a>
+        <p>
+            Third-party and other add-on source packages needed in order to
+            build certain perl configurations. You do not need any of this
+            stuff to build a default configuration.
+        </p>
+    </li>
+    <li>perl-5.*.tar.gz, perl-5.*.tar.bz2, perl5_*.tar.gz
+        <p>
+            Source code archives for several recent production releases of
+            perl.
+        </p>
+    </li>
+    <li>
+        <a href="unsupported/">unsupported/</a>
+        <p>
+            This is where we hid the source for perl4, which was superseded by
+            perl5 years ago. We would really much rather that you didn't use
+            it. It is definitely obsolete and has security and other bugs. And,
+            since it's unsupported, it will continue to have them.
+        </p>
+    </li>
+    <li>
+        <a href="5.0/sperl-2000-08-05/">5.0/sperl-2000-08-05</a>
+        <p>
+            Files relevant to the security problem found in 'suidperl' in
+            August 2000, reported in the bugtraq mailing list. The problem was
+            found in all Perl release branches: 5.6, 5.005, and 5.004. The
+            5.6.1 release has a fix for this, as have the 5.8 releases. The
+            (now obsolete) development branch 5.7 was unaffected, except for
+            very early (pre-5.7.0) developer-only snapshots. The bug affects
+            you only if you use an executable called 'suidperl', not if you use
+            'perl', and it is very likely only to affect UNIX platforms, and
+            even more precisely, as of March 2001, the only platforms known to
+            be affected are Linux platforms (all of them, <a href=
+            "5.0/sperl-2000-08-05/sperl-2000-08-05.txt">as far as we know</a>).
+            The 'suidperl' is an optional component which is not installed, or
+            even built, by default. These files will help you in the case you
+            compile Perl yourself from the source and you want to close the
+            security hole.
+        </p>
+    </li>
+    <li>
+        <a href="5.0/CA-97.17.sperl">5.0/CA-97.17.sperl</a>
+    </li>
+    <li>
+        <a href="5.0/fixsperl-0">5.0/fixsperl-0</a>
+    </li>
+    <li>
+        <a href="5.0/fixsuid5-0.pat">5.0/fixsuid5-0.pat</a>
+        <p>
+            Files relevant to the CERT Advisory CA-97.17.sperl, a security
+            problem found in 'suidperl' back in 1997. The problem was found
+            both in Perl 4.036 (the final) (and last) release of Perl 4 and in
+            early versions of Perl 5 (pre-5.003). The bug affects you only if
+            you use an executable called 'suidperl', not if you use 'perl', and
+            it is very likely only to affect UNIX platform. The 'suidperl' is
+            an optional component which is not installed, or even built, by
+            default. These files will help you in the (very unlikely) case you
+            need to use (the obsolete and unsupported) Perl 4 or the early Perl
+            5s, <b>Perl releases newer than Perl 5.003 do not have this
+            security problem.</b>
+        </p>
+    </li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
