@@ -1,5 +1,7 @@
 #!/usr/bin/env perl
 
+# Fetch the most recent module releases and save out as JSON
+
 use strict;
 use warnings;
 use local::lib;
