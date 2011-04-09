@@ -35,6 +35,8 @@ $perl_versions = sort_versions($perl_versions);
 
     my $latest = sort_versions( [ values %{$latest_per_version} ] );
 
+    print_file( "perl_version_latest_stable.json", $latest->[0] );
+
     # Add the latest test so people know what's coming
     unshift @$latest, $perl_testing->[0]
 
@@ -99,8 +101,23 @@ sub fetch_perl_version_data {
 
         my ( $major, $minor, $iota ) = split( '[\._]', $version );
         $module->{version_major} = $major;
-        $module->{version_minor} = $minor;
-        $module->{version_iota}  = $iota || '0';
+        $module->{version_minor} = int($minor);
+        $module->{version_iota}  = int( $iota || '0' );
+
+        $module->{type}
+            = $module->{status} eq 'testing'
+            ? 'Devel'
+            : 'Maint';
+
+        # TODO: Ask - please add some validation logic here
+        # so that on live it checks this exists
+        my $zip_file = $module->{distvname} . '.tar.gz';
+
+        $module->{zip_file} = $zip_file;
+        $module->{url} = "http://www.cpan.org/src/" . $module->{zip_file};
+
+        ( $module->{released_date}, $module->{released_time} )
+            = split( 'T', $module->{released} );
 
         next if $major < 5;
 
