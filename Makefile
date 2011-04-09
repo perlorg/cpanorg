@@ -29,6 +29,7 @@ data/cpan-stats.json: update-data
 
 update-data:
 	@$(PERL) ./bin/cpanorg_rss_fetch
+	@$(PERL) ./bin/cpanorg_perl_releases
 	@$(PERL) ./bin/update_data
 
 install:

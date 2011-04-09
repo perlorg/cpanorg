@@ -1,0 +1,114 @@
+#!/usr/bin/env perl
+use strict;
+use warnings;
+
+# Work out the earliest and latest of each version of Perl
+# save as seperate json files
+
+use JSON ();
+use LWP::Simple qw(get);
+
+my $json = JSON->new->pretty;
+
+# Fetch all perl versions on cpan, perl_testing seperated out
+my ( $perl_versions, $perl_testing ) = fetch_perl_version_data();
+
+$perl_versions = sort_versions($perl_versions);
+
+# Earliest
+{
+
+    # Reverse to get earliest first
+    my $earliest_per_version
+        = extract_first_per_version_in_list( [ reverse @{$perl_versions} ] );
+
+    my $earliest = sort_versions( [ values %{$earliest_per_version} ] );
+    print_file( "perl_versions_earliest.json", $earliest );
+}
+
+# Latest
+{
+
+    # List ordered with latest first
+    my $latest_per_version
+        = extract_first_per_version_in_list($perl_versions);
+
+    my $latest = sort_versions( [ values %{$latest_per_version} ] );
+
+    # Add the latest test so people know what's coming
+    unshift @$latest, $perl_testing->[0]
+
+        # but only if not of the same version as the latest release
+        if $perl_testing->[0]->{version_number} ne
+            $latest->[0]->{version_number};
+
+    print_file( "perl_versions_latest.json", $latest );
+}
+
+sub print_file {
+    my ( $file, $data ) = @_;
+
+    open my $fh, ">:utf8", "data/$file"
+        or die "Could not open data/$file: $!";
+    print $fh $json->encode($data);
+    close $fh;
+
+}
+
+sub sort_versions {
+    my $list = shift;
+
+    my @sorted = sort {
+               $b->{version_major} <=> $a->{version_major}
+            || int( $b->{version_minor} ) <=> int( $a->{version_minor} )
+            || $b->{version_iota} <=> $a->{version_iota}
+    } @{$list};
+
+    return \@sorted;
+
+}
+
+sub extract_first_per_version_in_list {
+    my $versions = shift;
+
+    my $lookup = {};
+    foreach my $version ( @{$versions} ) {
+        my $minor_version = $version->{version_major} . '.'
+            . int( $version->{version_minor} );
+
+        $lookup->{$minor_version} = $version
+            unless $lookup->{$minor_version};
+    }
+    return $lookup;
+}
+
+sub fetch_perl_version_data {
+    my $perl_dist_url  = "http://search.cpan.org/api/dist/perl";
+    my $perl_dist_json = get($perl_dist_url);
+    my $data           = $json->decode($perl_dist_json);
+
+    my @perls;
+    my @testing;
+    foreach my $module ( @{ $data->{releases} } ) {
+        next unless $module->{authorized} eq 'true';
+
+        my $version = $module->{version};
+
+        $version =~ s/-(?:RC|TRIAL)\d+$//;
+        $module->{version_number} = $version;
+
+        my ( $major, $minor, $iota ) = split( '[\._]', $version );
+        $module->{version_major} = $major;
+        $module->{version_minor} = $minor;
+        $module->{version_iota}  = $iota || '0';
+
+        next if $major < 5;
+
+        if ( $module->{status} eq 'stable' ) {
+            push @perls, $module;
+        } else {
+            push @testing, $module;
+        }
+    }
+    return \@perls, \@testing;
+}
