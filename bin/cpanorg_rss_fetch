@@ -38,18 +38,3 @@ sub process_rss {
     close $fh;
 }
 
-sub get_rss {
-    my $conf = shift;
-
-    my $tmp_file;
-
-    {
-        my $fh = File::Temp->new();
-        $tmp_file = $fh->filename;
-    }
-
-
-    return $tmp_file;
-
-}
-
