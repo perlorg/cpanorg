@@ -10,16 +10,16 @@
 <h1>Perl Source</h1>
 
 <p>
-    Perl compiles on over <a href=
+    Perl <a href="http://en.wikipedia.org/wiki/Compiler">compiles</a> on over <a href=
     "http://perldoc.perl.org/perlport.html#PLATFORMS">100 platforms</a>, if you
     want to install from a binary instead see the <a href=
     "../ports/index.html">ports</a> page (especially for Windows).
 </p>
 
+[% TRY %]
 <h2>
     How to install from source
 </h2>
-[% TRY %]
 [% latest_data = INSERT perl_version_latest_stable.json %]
 [% latest = JSON.json_decode(latest_data) %]
 <pre>
@@ -31,6 +31,11 @@
      make test
      make install
 </pre>
+<p>
+    Read both INSTALL and README.<strong>yoursystem</strong> in 
+    the <code>[% latest.distvname %]</code> directory for more detailed information.
+</p>
+
 [% CATCH %]
 [% END %]
 
@@ -61,44 +66,42 @@
 [% CATCH %]
 [% END %]
 
-<p>
-    See the README.<strong>yoursystem</strong> in the unpacked file for specific
-    instructions for your operating system, also read the INSTALL file.
-</p>
+
 
 <p>
     <a href="http://perldoc.perl.org/perlhist.html">Perl History</a>
 </p>
 <p>
-    Since the release 5.6 (March 2000) Perl has followed the commonly used
-    scheme where there is a development branch, which eventually stabilizes
-    into a "point-oh/point-zero" (.0) release, which then branches into a
-    maintenance branch with maintenance releases (.1, .2, ...), while the
-    development branches back to uncharted waters. The development (or devel,
-    as it is called by the Perl 5 developers) releases have an odd (as opposed
-    to even) major release number (5.7, 5.9, 5.11, 5.13, ...), while the
-    maintenance (or maint) releases have an even major release number (5.6,
-    5.8, 5.10, 5.12, 5.14, ...). The release candidates leading up to
-    "point-zero" releases are called testing releases.
+    If you want to help out developing new releases of Perl visit the <a href=
+    "http://dev.perl.org/perl5/">development site</a> and join the
+    perl5-porters@perl.org mailing list.
 </p>
+
+<h2>
+    Version scheme
+</h2>
 <p>
-    For stable production use the maint branches are recommended. The
-    "point-oh/point-zero" releases of maintenance releases have of course by
-    definition not been tested for long periods of time, but you should still
-    start using them.
+    Perl has used the following <a href=
+    "http://perldoc.perl.org/perlpolicy.html">policy</a> since the 5.6 release
+    of Perl:
 </p>
+<ul>
+    <li>Maintenance branches (ready for production use) are even numbers (5.8,
+    5.10, 5.12 etc)
+    </li>
+    <li>Sub-branches of maintenance releases (5.12.1, 5.12.2 etc) are mostly
+    just for bug fixes
+    </li>
+    <li>Development branches are odd numbers (5.9, 5.11, 5.13 etc)
+    </li>
+    <li>RC (release candidates) leading up to a maintenance branch are called
+    testing releases
+    </li>
+</ul>
 <p>
-    If you want to help out developing new releases of Perl you can use the
-    devel releases, but you should probably not wait for them and instead
-    follow the development and hang around in the perl5-porters@perl.org
-    mailing list.
-</p>
-<p>
-    Please note that branches earlier than 5.8 are no more supported (as of
-    2008), though fixes for urgent issues like for example for severe security
-    problems may still be issued. Also, there are 5.005_04 and 5.6.2 releases
-    which enabled compiling 5.005 and 5.6 with some of the more current
-    platforms and compilers, for those who need backward compatibility.
+    Please note that branches earlier than 5.8 are no longer supported, though
+    fixes for urgent issues like for example for severe security problems may
+    still be issued.
 </p>
 <p>
     Note: please avoid referring to the "symbolic" source releases like
