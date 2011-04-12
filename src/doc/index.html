@@ -1,184 +1,75 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1 Strict//EN"
-   "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<title>CPAN/doc</title>
-<!-- Copyright Jarkko Hietaniemi <jhi@iki.fi> 1998,1999,2000,2001
-     All Rights Reserved.
-     The CPAN Logo provided by J.C. Thorpe.
-     You may distribute this document either under the Artistic License
-     (comes with Perl) or the GNU Public License, whichever suits you.
+[% 
+  page.import({
+    title   => "Perl Documentation",
+    section => 'docs',
+    stub => '../',
+  });
+%]
 
-     You are not allowed to remove or alter these comments. -->
-<!-- $Id: index.html,v 1.27 2008/10/25 19:04:51 jhi Exp $ -->
-<link rev="made" href="mailto:cpan@perl.org"></link>
-<style type="text/css">
-<!--
+<h1>Perl Documentation</h1>
 
-body	{
-  color:	black;
-  background:	white;
-  margin-left:	2%;
-  margin-right:	2%;
-}
-
-h1	{
-  text-align:	center;
-}
-
-img     {
-  vertical-align:        50%;
-  border:       0;
-}
-
-.left	{
-  text-align:	left;
-  float:	none;
-}
-
-.center	{
-  text-align:	center;
-  float:	none;
-}
-
-.right	{
-  text-align:	right;
-  float:	none;
-}
-
-.alert	{
-  background:	yellow;
-}
-
--->
-</style>
-</head>
-<body>
-
-<table width="100%">
- <tr>
-  <td>
-   <div class="left">
-    <img src="http://www.cpan.org/misc/jpg/cpan.jpg"
-         alt="[CPAN Logo]" height="77" width="250"/>
-   </div>
-  </td>
-  <td>
-   <div class="right">
-    <h1><a id="top">Perl Documentation</a></h1>
-   </div>
-  </td>
- </tr>
- <tr>
-  <td>
-  </td>
-  <td>
-   <p class="right">
-    <a href="http://www.cpan.org/index.html">CPAN</a>/doc
-   </p>
-  </td>
- </tr>
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+    <tr>
+        <td>
+            <h2>
+                Perl Core and Module Documentation
+            </h2>
+            <ul>
+                <li>
+                    <a href=
+                    "http://perldoc.perl.org/">http://perldoc.perl.org/</a> -
+                    core
+                </li>
+                <li>
+                    <a href=
+                    "http://search.cpan.org/">http://search.cpan.org/</a> -
+                    modules
+                </li>
+            </ul>
+            <h2>
+                Command line
+            </h2>
+            <ul>
+                <li>
+                    <code>perldoc perldoc</code> - find out more about
+                    <code>perldoc</code>
+                </li>
+                <li>
+                    <code>perldoc perlintro</code> - introduction to Perl
+                </li>
+                <li>
+                    <code>perldoc Module::Name</code> - documentation for an
+                    installed module
+                </li>
+            </ul>
+        </td>
+        <td>
+            <h2>
+                FAQs
+            </h2>
+            <ul>
+                <li>
+                    <a href="http://faq.perl.org/">Perl FAQ</a>
+                </li>
+                <li>
+                    <a href="../misc/cpan-faq.html">CPAN FAQ</a>
+                </li>
+            </ul>
+            <h2>
+                Other useful sites
+            </h2>
+            <ul>
+                <li>
+                    <a href="http://www.perl.org/">www.perl.org</a>
+                </li>
+                <li>
+                    <a href="http://lists.perl.org/">lists.perl.org</a> -
+                    mailing lists
+                </li>
+                <li>
+                    <a href="http://learn.perl.org/">learn.perl.org</a>
+                </li>
+            </ul>
+        </td>
+    </tr>
 </table>
-
-<hr/>
-
-<p class="alert">
-Note that the old documentation, often advertised as
-<tt>www.perl.com/doc</tt> or <tt>www.perl.com/CPAN/doc</tt>, has been
-removed from CPAN as of November 2001 because it had not been updated
-for several years, and many people complained about this.
-Please use the below links for much more current information, the closest
-counterpart to the old material would be
-the <a href="http://perldoc.perl.org/">Perl core documentation</a> site.
-If you have Perl documentation bookmarks pointing to <tt>cpan.org</tt>
-or <tt>perl.org</tt>, consider updating your bookmarks.  <b>Note that
-as of late 2008, the old documentation was removed also from perl.com.</b>
-The perhaps still most useful bits of the old documentation,
-Tom Christiansen's <a href="http://www.cpan.org/misc/olddoc/FMTEYEWTK.tgz">FMTEYEWTK</a>
-and <a href="http://www.cpan.org/misc/olddoc/tips.tgz">tips</a> are still available.
-</p>
-
-<p class="alert">
-One more thing: if you see "www.perl.com/CPAN-local" links somewhere,
-please tell the maintainer of that document to fix that to
-"www.cpan.org".  For example, "http://www.perl.com/CPAN-local/ports/"
-should be "http://www.cpan.org/ports/".  This unfortunate bug spread
-all around the world for quite some time because of perl.com's
-slightly broken redirect feature.  www.perl.com never was intended to
-be the definitive CPAN site.  www.cpan.org is a load-balancing cluster
-of more than 200 hosts around the globe, www.perl.com/CPAN is just one
-mirror of it.  Spread the word.
-</p>
-
-<h1>Searching</h1>
-
-<ul>
-<li><a href="http://kobesearch.cpan.org/">Perl core and CPAN modules documentation </a> (Randy Kobes)</li>
-<li><a href="http://perldoc.perl.org/">Perl core documentation</a></li>
-<li><a href="http://search.cpan.org/">CPAN modules, distributions, and authors</a> (search.cpan.org)</li>
-<li><a href="http://perlfaq.cpan.org/">Perl FAQs</a></li>
-<li><a href="http://www.perl.org/CGI_MetaFAQ.html">CGI MetaFAQ</a></li>
-<li><a href="http://wait.cpan.org/">CPAN modules documentation</a> (Ulrich Pfeifer)</li>
-</ul>
-
-<h1>FAQ etc</h1>
-
-<ul>
-<li><a href="http://www.cpan.org/misc/cpan-faq.html">CPAN Frequently Asked Questions</a></li>
-<li><a href="http://lists.cpan.org/">Perl Mailing Lists</a></li>
-<li><a href="http://bookmarks.cpan.org/">Perl Bookmarks</a></li>
-</ul>
-
-<hr/>
-
-<p>
-Corrections?  Additions?  Suggestions?  Please contact
-<a href="mailto:cpan@perl.org">cpan@perl.org</a>.
-Other questions?  See the
-<a href="http://www.cpan.org/misc/cpan-faq.html">CPAN FAQ</a>.
-</p>
-
-<p>
-<small>Copyright Jarkko Hietaniemi <tt>&lt;jhi@iki.fi&gt;</tt> 1998-2001
-All Rights Reserved.</small>
-</p>
-
-<hr/>
-
-<table width="100%">
-<tr>
-
-<td>
-<div class="left">
-<a href="http://validator.w3.org/check?uri=http%3A%2F%2Fwww.cpan.org%2Fdoc%2Findex.html">
-<img src="http://www.cpan.org/misc/gif/valid-xhtml10.gif" alt="Valid XHTML 1.0!" height="31" width="88"/></a>
-</div>
-</td>
-<td>
-<div class="right">
-
-<table width="100%">
-
-<tr>
-<td class="right">
-<small>
-CPAN master site hosted by
-</small>
-</td>
-</tr>
-<tr>
-<td class="right">
-<a href="http://www.csc.fi/suomi/funet/verkko.html.en/"><img src="http://www.cpan.org/misc/gif/funet.gif" alt="FUNET" height="25" width="88"/></a>
-</td>
-</tr>
-</table>
-
-</div>
-</td>
-
-</tr>
-</table>
-
-</body>
-</html>
