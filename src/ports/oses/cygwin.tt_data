@@ -1,7 +1,7 @@
 [% 
     # Setup information
     os_config = {
-        name => 'cygwin',
+        name => 'Cygwin',
         url => 'http://www.cygwin.com/',
         vendor => '',
         information_last_verified => '2011-04-13',
