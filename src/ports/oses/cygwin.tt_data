@@ -1,0 +1,32 @@
+[% 
+    # Setup information
+    os_config = {
+        name => 'cygwin',
+        url => 'http://www.cygwin.com/',
+        vendor => '',
+        information_last_verified => '2011-04-13',
+    }
+%]
+
+[% BLOCK show_os %]
+
+[% PROCESS version_view os_versions => {
+    versions => [
+    { 
+    os_name => '', 
+    os_version => '1.7', 
+    os_release => '2010-01-21', 
+    perl_version  => '5.10.1', 
+    }, 
+
+    { 
+    os_name => '', 
+    os_version => '1.5', 
+    os_release => '', 
+    perl_version  => '5.10.1', 
+    }, 
+
+    ],
+} %]
+
+[% END %]
