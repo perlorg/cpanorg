@@ -5,9 +5,6 @@ body {
 	margin-bottom: 3em;
 	font-family: Arial, Verdana, sans-serif;
     background: white url(../images/bg_gradient.jpg) repeat-x left top;
-}
-body.section_home {
-    /* keep the homepage from getting too wide on big screens */
     max-width: 70em;
 }
 td#header {
