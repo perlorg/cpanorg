@@ -3,19 +3,20 @@ body {
     margin: auto; 
 	padding: 0;
 	margin-bottom: 3em;
+	font-size: 1em;
 	font-family: Arial, Verdana, sans-serif;
     background: white url(../images/bg_gradient.jpg) repeat-x left top;
     max-width: 70em;
 }
 td#header {
-	padding:12px 0;
+	padding:.8em 0;
 }
 
 #header_left {
     float: left;
 }
 #header_right {
-	padding-top:12px;
+	padding-top:.8em;
     float: right;
 }
 #header_right h1{
@@ -24,7 +25,7 @@ td#header {
 	font-size:210%;
 	font-weight:normal;
 	font-family:Times, Georgia, serif;
-	margin:0 0 6px 0;	
+	margin:0 0 .1em 0;	
 }
 #header_right #strapline {
 	color:#007CB9;
@@ -52,8 +53,8 @@ a img{
 }
 h1 { 
     color:#006699;
-    margin-bottom: 10px;
-    margin-top: 10px;
+    margin-bottom: .6em;
+    margin-top: .6em;
     font-size: 130%;
 }
 h2 { 
@@ -74,11 +75,11 @@ h4 {
 }
 li {
     list-style-type: circle;
-    padding-top: 3px;
+    padding-top: .25em;
 }
 ul {
-	margin: 12px 0;
-    padding-left: 16px;
+	margin: .8em 0;
+    padding-left: 1em;
 }
 #content{
 	padding-top: .5em;
@@ -95,13 +96,13 @@ ul {
     vertical-align: center;
 }
 #searchtitle {
-    margin-top: 2px;
-    margin-bottom: 0px;
+    margin-top: .1em;
+    margin-bottom: 0;
     float: right;
     display: inline;
 }
 #searchfield{
-	width:200px;
+	width:18em;
 }
 .big { 
     font-size: 200%;
@@ -115,12 +116,8 @@ p img{
 }
 table#wrapper { margin: auto; }
 img.border { border: none }
-td#search { 
-    text-align: center;
-    padding-bottom: 20px;
-}
 td {
-    padding: 4px 0;
+    padding: .3em 0;
     vertical-align: top;
 }
 .third{
@@ -145,7 +142,7 @@ td {
 }
 .menubar li a {
 	display:block;
-    padding: 5px 14px;
+    padding: .35em .9em;
 }
 .menubar a:link, .menubar a:visited {
     color: white;
@@ -162,15 +159,15 @@ form{
 #searchbar{
 	float:right;
 	font-weight:bold;
-	padding: 5px;
+	padding: .3em;
 }
 
 hr {
     border: 0;
-    height: 1px;
+    height: 0.1em;
     color: #006699;
     background-color: #006699;
-    margin-top: 20px;
+    margin-top: 1em;
 }
 img.extlink{
     float: none;
@@ -178,7 +175,7 @@ img.extlink{
 }
 #footer{
 	background: white url(../images/bg_gradient.jpg) repeat-x left top;
-	padding:12px;
+	padding:.8em;
 }
 #footer_copyright{
     font-size: 80%;    
@@ -193,18 +190,18 @@ img.extlink{
 
 /* Ports page version tables */
 div.os_holder {
-    border-bottom:1px solid black;
+    border-bottom:0.1em solid black;
     margin: 0.5em 0;
     padding: 0 0.5em;
 }
 
 table.os_version{
-    border: 1px solid #999;
+    border: 0.1em solid #999;
     width: 45%;
 }
 table.os_version th{
     background-color: #E3E3E3;
-    padding-left: 5px;
+    padding-left: 0.2em;
     text-align: left;
 }
 table.os_version tr {
@@ -230,7 +227,7 @@ table.os_version tr.even{
 
 .os_binary{
     float: right;
-    border: 1px solid #999;
+    border: 0.1em solid #999;
     padding: 0;
     width: 45%;
     margin-bottom: 0.5em;
