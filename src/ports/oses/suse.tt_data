@@ -2,7 +2,7 @@
     # Setup information
     os_config = {
         # Name of the OS
-        name => 'Suse',
+        name => 'OpenSUSE',
 
         # URL of the OS (e.g. http://www.microsoft.com/windows/)
         url => 'http://www.opensuse.org/',

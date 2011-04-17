@@ -1,7 +1,7 @@
 [% 
     # Setup information
     os_config = {
-        name => 'Windows 95/98/Me/NT/2000/XP',
+        name => 'Windows',
         url => 'http://www.microsoft.com/windows/',
         vendor => 'Microsoft',
         not_included_in_os_packages => 1,
