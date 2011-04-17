@@ -14,42 +14,35 @@
 <ul>
     <li>Perl supports over <strong><a href=
     "http://perldoc.perl.org/perlport.html#PLATFORMS">100
-    platforms</a></strong>, many of which ship with a version of Perl by
-    default.
+    platforms</a></strong>!
     </li>
-    <li>Almost all <a href="http://www.perl.org/get.html">Unix/Linux</a> and <a href="http://www.perl.org/get.html">Mac</a> platforms have Perl available by default</li>
-    <li>You need to download <a href="http://www.perl.org/get.html">Perl for Windows</a></li>
+    <li>Almost Unix/Linux and Macs already have Perl already installed.</li>
+    <li>You will need to <a href="http://www.perl.org/get.html">download</a> Perl for Windows.</li>
     
     [% TRY %]
     [% latest_data = INSERT perl_version_latest_stable.json %]
     [% latest = JSON.json_decode(latest_data) %]
-    <li>Latest stable version of Perl is [% latest.version %]
+    <li>The latest stable version of Perl is [% latest.version %].
     </li>
     [% CATCH %]
     [% END %]
 
-    <li>Running a version pre 5.8.3? - some of the more widely used CPAN modules now require at least this version
+    <li>Running a version older than 5.8.3? - some of the more widely used CPAN modules now require at least this version.
     </li>
     <li>You can build your own version of Perl from the <a href="src/">
-        source</a>
+        source code</a>!
     </li>
 </ul>
 
-<h2>Get Perl</h2>
+<h2>What OS do you run?</h2>
+
 <ul>
-    <li><a href="http://www.perl.org/get.html">http://www.perl.org/get.html</a></li>
-</ul>
-
-<h2>Specific OS information</h2>
-
-<hr />
-<p> <a href="binaries.html">All</a> |
     [% FOREACH os = os_list.sort %]
-        [% " | " UNLESS loop.first %]
-        [% PROCESS "ports/oses/${os}.tt_data" %]
-        <a href="binaries.html#[% os %]">[% os_config.name %]</a>
+    <li>[% PROCESS "ports/oses/${os}.tt_data" %]
+      <a href="binaries.html#[% os %]">[% os_config.name %]</a></li>
     [% END %]
-</p>
+    <li><a href="archive-2011-03-26.html">More...</a></li>
+</ul>
 <hr />
 
 
