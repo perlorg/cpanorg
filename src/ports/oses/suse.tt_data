@@ -23,7 +23,7 @@
 [% PROCESS binary_view binary_source => [
     {
         name => 'ActiveState',
-        url => active_state_url,
+        url => activestate_url,
         notes => ''
     },
 ]

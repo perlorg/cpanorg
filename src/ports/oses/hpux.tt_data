@@ -28,7 +28,7 @@
     },
     {
         name => 'ActiveState (commercial)',
-        url => active_state_url,
+        url => activestate_url,
         notes => ''
     },
 ]
