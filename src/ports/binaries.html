@@ -37,7 +37,7 @@
 
 [% BLOCK binary_view %]
 <div class="os_binary">
-    <h4>Binaries[% " (other than from your OS provider)" UNLESS os_config.not_included_in_os_packages %]:</h4>
+    <h4>[% "Other " UNLESS os_config.not_included_in_os_packages %]Binaries:</h4>
     <ul>
         [% FOREACH source = binary_source %]
         <li><a href="[% source.url %]">[% source.name %]</a>
@@ -49,7 +49,7 @@
 
 
 
-<h1 id="top">Perl binaries on different platforms</h1>
+<h1 id="top">Perl Binaries</h1>
 
 <ul>
     <li>Perl supports over <strong><a href=
@@ -65,13 +65,13 @@
     </li>
 </ul>
 
-<hr />
 <p>
+  <ul>
     [% FOREACH os = os_list.sort %]
-        [% " | " UNLESS loop.first %]
         [% PROCESS "ports/oses/${os}.tt_data" %]
-        <a href="#[% os %]">[% os_config.name %]</a>
+        <li><a href="#[% os %]">[% os_config.name %]</a></li>
     [% END %]
+  </ul>
 </p>
 <hr />
 
@@ -79,18 +79,20 @@
 [% FOREACH os = os_list.sort %]
 <div class="os_holder">
     [% PROCESS "ports/oses/${os}.tt_data" %]
-    <h2 id="[% os %]">[% os_config.name %][% IF os_config.url %] - <a href="[% os_config.url %]">[% os_config.url %]</a>[% END %]</h2>
+    <h2 id="[% os %]"><a href="[% IF os_config.url %][% os_config.url %][%END%]">[% os_config.name %]</a></h2>
     [% PROCESS show_os %]
     [% IF os_config.kernel %]
-    <p><a href="#[% os_config.kernel %]">See also [% os_config.kernel | upper %]</a></p>
+    <p><a href="#[% os_config.kernel %]">See also [% os_config.kernel | ucfirst %]</a></p>
     [% END %]
-    <p><em>Last updated:</em> [% os_config.information_last_verified || 'unknown' %]</p>
+    <p style="font-size: 50%"><em>Last updated:</em> [% os_config.information_last_verified || 'unknown' %]</p>
 </div>
 [% END %]
 
+<br><br><br><br>
 <p>
-    Additions/updates/corrections please submit a pull request to the <a href=
-    "https://github.com/perlorg/cpanorg/tree/master/src/ports/oses">master repository</a>.
+  Do you have additions, updates, or corrections?  If so, please submit a pull request to 
+  <a href="https://github.com/perlorg/cpanorg/tree/master/src/ports/oses">our
+  github repository.</a>.
 </p>
 
 
