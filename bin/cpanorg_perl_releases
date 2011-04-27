@@ -6,13 +6,13 @@ use warnings;
 # save as seperate json files
 
 use JSON ();
-use LWP::Simple qw(mirror RC_NOT_MODIFIED RC_OK);
+use LWP::Simple qw(get);
 use File::Slurp qw(read_file);
-use Digest::MD5 qw(md5_hex);
 
 my $json = JSON->new->pretty;
 
 # Fetch all perl versions on cpan, perl_testing seperated out
+# will exit if the data has not changed
 my ( $perl_versions, $perl_testing ) = fetch_perl_version_data();
 
 $perl_versions = sort_versions($perl_versions);
@@ -90,27 +90,26 @@ sub fetch_perl_version_data {
     my $perl_dist_url = "http://search.cpan.org/api/dist/perl";
 
     my $filename           = 'perl_version_all.json';
-    my $all_perl_dist_file = "data/$filename";
 
     # See what we have on disk
-    my $disk_data = '';
-    $disk_data = read_file($all_perl_dist_file)
-        if -r $all_perl_dist_file;
+    my $disk_json = '';
+    $disk_json = read_file("data/$filename")
+        if -r "data/$filename";
 
-    my $cpan_data = get($perl_dist_url);
-    die "Unable to fetch $perl_dist_url" unless $cpan_data;
+    my $cpan_json = get($perl_dist_url);
+    die "Unable to fetch $perl_dist_url" unless $cpan_json;
 
-    if ( $cpan_data eq $disk_data ) {
+    if ( $cpan_json eq $disk_json ) {
 
         # Data has not changed so don't need to do anything
         exit;
     } else {
 
         # Save for next fetch
-        print_file( $cpan_data, $filename );
+        print_file( $filename, $cpan_json  );
     }
 
-    my $data = $json->decode($cpan_data);
+    my $data = $json->decode($cpan_json);
 
     my @perls;
     my @testing;
