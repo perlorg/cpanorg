@@ -6,7 +6,9 @@ use warnings;
 # save as seperate json files
 
 use JSON ();
-use LWP::Simple qw(get);
+use LWP::Simple qw(mirror RC_NOT_MODIFIED RC_OK);
+use File::Slurp qw(read_file);
+use Digest::MD5 qw(md5_hex);
 
 my $json = JSON->new->pretty;
 
@@ -23,7 +25,7 @@ $perl_versions = sort_versions($perl_versions);
         = extract_first_per_version_in_list( [ reverse @{$perl_versions} ] );
 
     my $earliest = sort_versions( [ values %{$earliest_per_version} ] );
-    print_file( "perl_versions_earliest.json", $earliest );
+    print_file( "perl_versions_earliest.json", $json->encode($earliest) );
 }
 
 # Latest
@@ -35,16 +37,16 @@ $perl_versions = sort_versions($perl_versions);
 
     my $latest = sort_versions( [ values %{$latest_per_version} ] );
 
-    print_file( "perl_version_latest_stable.json", $latest->[0] );
+    print_file( "perl_version_latest_stable.json",
+        $json->encode( $latest->[0] ) );
 
     # Add the latest test so people know what's coming
+    # but only if not of the same version as the latest release
     unshift @$latest, $perl_testing->[0]
-
-        # but only if not of the same version as the latest release
         if $perl_testing->[0]->{version_number} ne
             $latest->[0]->{version_number};
 
-    print_file( "perl_versions_latest.json", $latest );
+    print_file( "perl_versions_latest.json", $json->encode($latest) );
 }
 
 sub print_file {
@@ -52,7 +54,7 @@ sub print_file {
 
     open my $fh, ">:utf8", "data/$file"
         or die "Could not open data/$file: $!";
-    print $fh $json->encode($data);
+    print $fh $data;
     close $fh;
 
 }
@@ -85,9 +87,30 @@ sub extract_first_per_version_in_list {
 }
 
 sub fetch_perl_version_data {
-    my $perl_dist_url  = "http://search.cpan.org/api/dist/perl";
-    my $perl_dist_json = get($perl_dist_url);
-    my $data           = $json->decode($perl_dist_json);
+    my $perl_dist_url = "http://search.cpan.org/api/dist/perl";
+
+    my $filename           = 'perl_version_all.json';
+    my $all_perl_dist_file = "data/$filename";
+
+    # See what we have on disk
+    my $disk_data = '';
+    $disk_data = read_file($all_perl_dist_file)
+        if -r $all_perl_dist_file;
+
+    my $cpan_data = get($perl_dist_url);
+    die "Unable to fetch $perl_dist_url" unless $cpan_data;
+
+    if ( $cpan_data eq $disk_data ) {
+
+        # Data has not changed so don't need to do anything
+        exit;
+    } else {
+
+        # Save for next fetch
+        print_file( $cpan_data, $filename );
+    }
+
+    my $data = $json->decode($cpan_data);
 
     my @perls;
     my @testing;
