@@ -88,15 +88,17 @@
     Which CPAN Mirror should I use?
 </h2>
 <p>
-    <em>Near future:</em> Tier 1 mirrors are instantly updated and can be accessed as <code>rsync://cpan-rsync.perl.org/CPAN/</code>.
-</p>
-<p>
-    <em>Current:</em> Find your nearest rsync enabled site on <a href=
+    You can find your nearest rsync enabled site on <a href=
     "http://www.cpan.org/SITES.html">http://www.cpan.org/SITES.html</a>, or use
     <a href="http://www.cpan.org/indices/mirrors.json">mirrors.json</a>
-    especially if you are building a tool which lets the user select a mirror.  You can also sync from rsync://cpan-rsync.perl.org/CPAN/, though you currently might get better performance from a "local" mirror.
+    especially if you are building a tool which lets the user select a mirror.
 </p>
 
+<p>
+    You can also sync from <code>rsync://cpan-rsync.perl.org/CPAN/</code> (the
+    "tier 1 mirrors"), though you currently might get better
+    performance from a "local" mirror.
+</p>
 
 <h2>
     <a name="rsync" id="rsync">Using rsync</a>
@@ -157,8 +159,15 @@ C:\Program Files\Rsync\rsync -av --delete cpan-rsync.perl.org::CPAN /project/CPA
     <a name="Instant_mirroring" id="Instant_mirroring">Instant mirroring</a>
 </h2>
 <p>
-    Please <a href=
-    "https://github.com/perlorg/cpanorg/wiki/Instant-update-mirroring">join the
-    trial</a>. This will become the preferred method of mirroring for public
-    sites, it is required for all Tier 1 mirrors. Currently being tested.
+    If you want "instant" updates (updates from PAUSE within a few
+    minutes or less) and you are willing to put a little more effort into running the mirror you can
+    <a href="https://github.com/perlorg/cpanorg/wiki/Instant-update-mirroring">join the instant mirroring
+    trial</a>.
 </p>
+<p>
+    It is used by more than 60 mirrors already, generally without
+    issue but is still considered "under testing".  Instant mirroring
+    is required for all Tier 1 mirrors (so cpan-rsync.perl.org stays
+    in sync across mirrors).
+</p>
+
