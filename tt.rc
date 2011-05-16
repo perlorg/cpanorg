@@ -9,6 +9,7 @@ depend *=tpl/wrapper,tpl/defaults,style/cpan.html,tpl/straps.html
 depend SITES.html=SITES-list.html
 depend index.html=recent.json,cpan-stats.json
 depend misc/cpan-faq.html=cpan-stats.json
+depend src/README.html=perl_version_latest_stable.json,perl_versions_latest.json,perl_versions_earliest.json
 
 copy = \.(gif|png|pdf|jpg)$
 
