@@ -109,7 +109,10 @@ sub fetch_perl_version_data {
         print_file( $filename, $cpan_json  );
     }
 
-    my $data = $json->decode($cpan_json);
+    my $data = eval { $json->decode($cpan_json) };
+    if (my $err = $@) {
+        die "$err: [$cpan_json]";
+    }
 
     my @perls;
     my @testing;
