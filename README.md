@@ -31,6 +31,8 @@ to be expediently pulled in.
 
 Install Template Toolkit and the other requirements with `cpanm` by running `make install`.
 
+To fetch the data from needed for the site, run `make update-data update-daily`.
+
 Then run `make`. This will in turn run `ttree` and generate output
 files in the html/ directory.
 
@@ -38,11 +40,5 @@ Image files are copied plainly to the html/ directory.
 
 Everything else is processed through template toolkit. Only .html
 files get the "master template" applied automatically.
-
-To fetch the latest rss information run bin/cpanorg_rss_fetch which
-saves content into fetched_data
-
-The master template is in lib/style/cpan.html -- for now this is
-mostly just blank.
 
 

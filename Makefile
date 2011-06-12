@@ -29,8 +29,10 @@ data/cpan-stats.json: update-data
 
 update-data:
 	@$(PERL) ./bin/cpanorg_rss_fetch
-	@$(PERL) ./bin/cpanorg_perl_releases
 	@$(PERL) ./bin/update_data
+
+update-daily:
+	@$(PERL) ./bin/cpanorg_perl_releases
 
 install:
 	$(CPANM) Template JSON Template::Plugin::Comma Template::Plugin::JSON XML::RSS local::lib File::Slurp
