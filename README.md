@@ -31,7 +31,7 @@ to be expediently pulled in.
 
 Install Template Toolkit and the other requirements with `cpanm` by running `make install`.
 
-To fetch the data from needed for the site, run `make update-data update-daily`.
+To fetch the data needed for the site, run `make update-data update-daily`.
 
 Then run `make`. This will in turn run `ttree` and generate output
 files in the html/ directory.
