@@ -36,6 +36,7 @@ $perl_versions = sort_versions($perl_versions);
         = extract_first_per_version_in_list($perl_versions);
 
     my $latest = sort_versions( [ values %{$latest_per_version} ] );
+    $latest->[0]->{latest} = 'true';
 
     print_file( "perl_version_latest_stable.json",
         $json->encode( $latest->[0] ) );
@@ -89,7 +90,7 @@ sub extract_first_per_version_in_list {
 sub fetch_perl_version_data {
     my $perl_dist_url = "http://search.cpan.org/api/dist/perl";
 
-    my $filename           = 'perl_version_all.json';
+    my $filename = 'perl_version_all.json';
 
     # See what we have on disk
     my $disk_json = '';
@@ -106,11 +107,11 @@ sub fetch_perl_version_data {
     } else {
 
         # Save for next fetch
-        print_file( $filename, $cpan_json  );
+        print_file( $filename, $cpan_json );
     }
 
     my $data = eval { $json->decode($cpan_json) };
-    if (my $err = $@) {
+    if ( my $err = $@ ) {
         die "$err: [$cpan_json]";
     }
 
@@ -128,6 +129,9 @@ sub fetch_perl_version_data {
         $module->{version_major} = $major;
         $module->{version_minor} = int($minor);
         $module->{version_iota}  = int( $iota || '0' );
+
+        # Do not trust the API as it gets it wrong
+        delete $module->{latest};
 
         $module->{type}
             = $module->{status} eq 'testing'
