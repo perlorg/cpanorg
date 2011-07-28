@@ -4,7 +4,7 @@
         name => 'Mac OS X',
         url => 'http://www.apple.com/macosx/',
         vendor => 'Apple',
-        information_last_verified => '2011-03-26',
+        information_last_verified => '2011-07-28',
     }
 %]
 
@@ -27,12 +27,16 @@ Mac OS X ships with Perl as a standard component.
         name => 'Fink',
         url => 'http://www.finkproject.org/',
     },
-
 ]
 %]
 
 [% PROCESS version_view os_versions => {
     versions => [
+    {
+        os_name => 'Lion',
+        os_version => '10.7',
+        perl_version => '5.12.3',
+    },
     {
         os_name => 'Snow Leopard',
         os_version => '10.6',
