@@ -26,6 +26,11 @@
         url => activestate_url,
         notes => ''
     },
+    {
+        name => 'Sunfreeware',
+        url => 'http://www.sunfreeware.com/',
+        notes => ''
+    }    
 ]
 %]
 
