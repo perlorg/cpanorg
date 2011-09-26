@@ -57,7 +57,12 @@
     <tr [% 'class="latest"' IF release.latest %]>
         <td>[% release.version_major %].[% release.version_minor %]</td>
         <td>[% release.version_major %].[% release.version_minor %].[% release.version_iota %]
-        <td>[% release.type | ucfirst %]</td>
+        <td>[% IF release.type != 'Maint';
+                release.type;
+               ELSE;
+                    release.latest ? 'Maint' : 'Old-Maint';
+                END;
+             %]</td>
         <td>[% release.released_date %]</td>
         <td><a href="[% release.url %]">[% release.zip_file %]</a></td>
     </tr>
