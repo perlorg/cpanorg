@@ -129,6 +129,13 @@
     access the mirror at the same time!
 </p>
 <p>
+    If you have a problem with permissions (files are created with mode
+    <tt>-rw-------</tt>), set <tt>umask</tt> in your cronjob :<br>
+    <tt>4 40 * * * umask 022 ; sleep ... ; /usr/bin/rsync ...</tt><br>
+    The <tt>umask 022</tt> allows rsync to set proper permissions for
+    files and directories.
+</p>
+<p>
     <em>On Windows systems</em>
 </p>
 <pre>
