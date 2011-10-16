@@ -1,0 +1,65 @@
+[% 
+    # Setup information
+    os_config = {
+        name => 'Debian',
+        url => 'http://www.debian.org/',
+        kernel => 'linux',
+        information_last_verified => '2011-03-26',
+    }
+%]
+
+[% BLOCK show_os %]
+
+[% PROCESS binary_view binary_source => [
+    {
+        name => 'Backports',
+        url => 'http://backports.debian.org/',
+        notes => '',
+    },
+    {
+        name => 'ActiveState',
+        url => activestate_url,
+        notes => '',
+    },
+
+]
+%]
+
+
+[% PROCESS version_view os_versions => {
+      versions => [
+      {
+          os_name => 'Squeeze',
+          os_version => '6.0',
+          perl_version => '5.10.1+patches',
+      },
+      {
+          os_name => 'Lenny',
+          os_version => '5.0',
+          os_release => '2009-02-01', 
+          perl_version => '5.10.0+patches',
+      },
+      {
+          os_name => 'Etch',
+          os_version => '4.0',
+          os_release => '2007-04-01', 
+          perl_version => '5.8.8+patches',
+      },
+      {
+          os_name => 'Woody',
+          os_version => '3.0',
+          perl_version => '5.6.1+patches',
+      },
+      ],
+  } %]
+
+<p>
+  Mostly minor <a href=
+  "http://patch-tracker.debian.org/package/perl">patches</a> are applied.
+</p>
+
+
+[% END %]
+
+    
+    

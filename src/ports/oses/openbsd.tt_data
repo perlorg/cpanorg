@@ -1,0 +1,79 @@
+[% 
+    # Setup information
+    os_config = {
+        # Name of the OS
+        name => 'OpenBSD',
+
+        # URL of the OS (e.g. http://www.microsoft.com/windows/)
+        url => 'http://www.openbsd.org/',
+
+        # Is it a specific vendor who runs the OS?
+        vendor => '',
+
+        # Specifying linux will add a 'see also'
+        kernel => 'linux',
+
+        # When was this file last reviewed (yyyy-mm-dd)?
+        information_last_verified => '2011-03-26',
+    }
+%]
+
+[% BLOCK show_os %]
+
+[% PROCESS binary_view binary_source => [
+    {
+        name => 'ActiveState',
+        url => activestate_url,
+        notes => ''
+    },
+]
+%]
+
+[% PROCESS version_view os_versions => {
+    versions => [
+    { 
+    os_name => '',
+    os_version => '4.9', 
+    os_release => '', 
+    perl_version  => '5.12.2', 
+    }, 
+    { 
+    os_name => '',
+    os_version => '4.8', 
+    os_release => '2010-11-01', 
+    perl_version  => '5.10.1', 
+    }, 
+
+    { 
+    os_name => '',
+    os_version => '4.7', 
+    os_release => '2010-05-01', 
+    perl_version  => '5.10.1', 
+    }, 
+
+    { 
+    os_name => '',
+    os_version => '4.6', 
+    os_release => '2009-10-01', 
+    perl_version  => '5.10.0', 
+    }, 
+
+    { 
+    os_name => '',
+    os_version => '4.5', 
+    os_release => '2009-05-01', 
+    perl_version  => '5.10.0', 
+    },
+    { 
+    os_name => '4', 
+    os_version => '4', 
+    os_release => '2006-11-01', 
+    perl_version  => '5.8.8', 
+    }, 
+    
+
+    ],
+} %]
+
+
+[% END %]

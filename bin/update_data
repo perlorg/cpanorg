@@ -1,0 +1,10 @@
+#!/usr/bin/env perl
+use strict;
+use warnings;
+use LWP::Simple qw(mirror);
+
+mirror("http://www.cpan.org/indices/cpan-stats.json", "data/cpan-stats.json");
+
+
+
+

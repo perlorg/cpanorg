@@ -1,0 +1,17 @@
+#!/bin/sh
+
+#cd ~/cpan/content
+
+current=`git rev-list -n 1 HEAD`
+git pull --rebase 
+new=`git rev-list -n 1 HEAD`
+
+if [ "$current" != "$new" ]; then
+  echo "Tagging"
+  now=`TZ=UTC date +'%Y%m%d-%H%M'`
+  git tag -s $now -m "Release to master mirror"
+  git push origin tag $now
+fi
+
+make update-master
+

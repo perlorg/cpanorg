@@ -1,0 +1,35 @@
+[% 
+    # Setup information
+    os_config = {
+        name => 'Windows',
+        url => 'http://www.microsoft.com/windows/',
+        vendor => 'Microsoft',
+        not_included_in_os_packages => 1,
+        information_last_verified => '2011-03-26',
+        
+    }
+%]
+
+[% BLOCK show_os %]
+<p>
+Windows does not come with Perl by default.
+</p>
+
+[% PROCESS binary_view binary_source => [
+    {
+        name => 'Strawberry Perl',
+        url => 'http://strawberryperl.com/',
+        notes => ''
+    },
+    {
+        name => 'ActiveState',
+        url => activestate_url,
+        notes => ''
+    },
+
+]
+%]
+<div class="clear"></div>
+
+
+[% END %]

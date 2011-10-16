@@ -1,0 +1,4 @@
+NOTE:
+
+Files in here need be symlinked into PAUSE, they
+will served from /modules/... NOT /_modules/...

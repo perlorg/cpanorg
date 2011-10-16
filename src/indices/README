@@ -5,6 +5,7 @@ This document describes the indices subdirectories of the CPAN.
 The directories contains various index views of CPAN.
 ---
 
+  mirrors.json	CPAN mirrors list in JSON format
   RECENT-ls	the recent (7 days) arrivals to CPAN as seen by find -ls
   RECENT-print	ditto with find -print (the same file as CPAN/RECENT)
   du-k.gz	disk usage by directory (du -k)

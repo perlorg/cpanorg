@@ -1,0 +1,78 @@
+[% 
+    # Setup information
+    os_config = {
+        # Name of the OS
+        name => 'HP-UX',
+
+        # URL of the OS (e.g. http://www.microsoft.com/windows/)
+        url => '',
+
+        # Is it a specific vendor who runs the OS?
+        vendor => '',
+
+        # Specifying linux will add a 'see also'
+        kernel => 'linux',
+
+        # When was this file last reviewed (yyyy-mm-dd)?
+        information_last_verified => '2011-03-26',
+    }
+%]
+
+[% BLOCK show_os %]
+
+[% PROCESS binary_view binary_source => [
+    {
+        name => "Merijn's HP-UX software",
+        url => 'http://mirrors.develooper.com/hpux/',
+        notes => ''
+    },
+    {
+        name => 'ActiveState (commercial)',
+        url => activestate_url,
+        notes => ''
+    },
+]
+%]
+
+[% PROCESS version_view os_versions => {
+    versions => [
+    { 
+    os_name => '', 
+    os_version => '11.31/IPF', 
+    os_release => '', 
+    perl_version  => '5.8.8', 
+    }, 
+
+    { 
+    os_name => '', 
+    os_version => '11.23/IPF', 
+    os_release => '', 
+    perl_version  => '5.8.8', 
+    }, 
+
+    { 
+    os_name => '', 
+    os_version => '11.11/PA', 
+    os_release => '', 
+    perl_version  => '5.005_02', 
+    }, 
+
+    { 
+    os_name => '', 
+    os_version => '11.00/PA', 
+    os_release => '', 
+    perl_version  => '4.0 PL36', 
+    }, 
+
+    { 
+    os_name => '', 
+    os_version => '10.20/PA', 
+    os_release => '', 
+    perl_version  => '4.0 PL36', 
+    },
+
+    ],
+} %]
+
+
+[% END %]

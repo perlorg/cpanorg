@@ -1,0 +1,51 @@
+[% 
+    # Setup information
+    os_config = {
+        # Name of the OS
+        name => 'OpenSUSE',
+
+        # URL of the OS (e.g. http://www.microsoft.com/windows/)
+        url => 'http://www.opensuse.org/',
+
+        # Is it a specific vendor who runs the OS?
+        vendor => '',
+
+        # Specifying linux will add a 'see also'
+        kernel => 'linux',
+
+        # When was this file last reviewed (yyyy-mm-dd)?
+        information_last_verified => '2011-03-26',
+    }
+%]
+
+[% BLOCK show_os %]
+
+[% PROCESS binary_view binary_source => [
+    {
+        name => 'ActiveState',
+        url => activestate_url,
+        notes => ''
+    },
+]
+%]
+
+[% PROCESS version_view os_versions => {
+    versions => [
+
+ { 
+ os_name => '',
+ os_version => '11.4', 
+ os_release => '2011-3-01', 
+ perl_version  => '5.12.3', 
+ }, 
+ { 
+ os_name => '',
+ os_version => '11.3', 
+ os_release => '2010-7-01', 
+ perl_version  => '5.12.1', 
+ }, 
+    ],
+} %]
+
+
+[% END %]

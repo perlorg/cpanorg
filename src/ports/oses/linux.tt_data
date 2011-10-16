@@ -1,0 +1,27 @@
+[% 
+    # Setup information
+    os_config = {
+        name => 'Linux',
+        information_last_verified => '2011-03-26',
+    }
+%]
+
+[% BLOCK show_os %]
+
+<p>
+Almost all Linux distributions come with Perl, or you are
+able to install Perl through their package management system.
+</p>
+
+[% PROCESS binary_view binary_source => [
+    {
+        name => 'ActiveState',
+        url => activestate_url,
+        notes => '',
+    },
+
+]
+%]
+<div class="clear"></div>
+
+[% END %]

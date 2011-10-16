@@ -1,0 +1,250 @@
+body { 
+    width: 99%;
+    margin: auto; 
+	padding: 0;
+	margin-bottom: 3em;
+	font-size: 1em;
+	font-family: Arial, Verdana, sans-serif;
+    background: white url(../images/bg_gradient.jpg) repeat-x left top;
+    max-width: 70em;
+}
+td#header {
+	padding:.8em 0;
+}
+
+#header_left {
+    float: left;
+}
+#header_right {
+	padding-top:.8em;
+    float: right;
+}
+#header_right h1{
+	color: #000;
+	text-align: right;
+	font-size:210%;
+	font-weight:normal;
+	font-family:Times, Georgia, serif;
+	margin:0 0 .1em 0;	
+}
+#header_right #strapline {
+	color:#007CB9;
+    text-align: right;
+	text-transform: uppercase;
+    font-size: 90%;
+    font-weight: 700;
+	margin:0;
+}
+img{
+    border:0;
+}
+a{
+	color: #0083C1;
+	text-decoration: none;
+}
+a:link {
+    color: #0083C1;
+}
+a:hover {
+    color: #000000;
+}
+a img{
+    border:0;
+}
+h1 { 
+    color:#006699;
+    margin-bottom: .6em;
+    margin-top: .6em;
+    font-size: 200%;
+}
+h2 { 
+    color:#006699;
+    font-size: 150%;
+	font-family:Calibri, Arial, sans-serif;
+	font-weight:normal;
+	margin-top: 0;
+	margin-bottom: .5em;
+}
+h3 {
+    font-size: 100%;
+    font-weight: normal;
+}
+h4 {
+    font-size: 100%;
+    font-weight: normal;
+}
+li {
+    list-style-type: circle;
+    padding-top: .25em;
+}
+ul {
+	margin: .8em 0;
+    padding-left: 1em;
+}
+#content{
+	padding-top: .5em;
+    padding-bottom: 1em;
+    padding-left: .5em;
+}
+#content li{
+	font-size:90%;
+}
+.section_home #content ul {
+    padding-left: 1.5em;
+}
+.search{
+    vertical-align: center;
+}
+#searchtitle {
+    margin-top: .1em;
+    margin-bottom: 0;
+    float: right;
+    display: inline;
+}
+#searchfield{
+	width:18em;
+}
+.big { 
+    font-size: 200%;
+    font-family: Times;
+}
+p {
+    font-size: 90%;
+}
+p img{
+	vertical-align:middle;
+}
+table#wrapper { margin: auto; }
+img.border { border: none }
+td {
+    padding: .3em 0;
+    vertical-align: top;
+}
+.third{
+    width: 30%;
+    padding-right: 3%;
+}
+/* nav */
+#menubar_holder {
+	/*background: #006699 url(../images/menubar_highlight.png) repeat-x left top;*/
+	background: #006699;
+	color: #FFF;
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:bold;
+}
+.menubar{
+	margin:0;
+	padding:0;
+}
+.menubar li{
+	list-style:none;
+	float:left;
+}
+.menubar li a {
+	display:block;
+    padding: .35em .9em;
+}
+.menubar a:link, .menubar a:visited {
+    color: white;
+    text-decoration: none;
+}
+.menubar a:hover {
+	color: #DBE7EC;
+	text-decoration: underline;
+}
+form{
+	margin:0;
+	padding:0;
+}
+#searchbar{
+	float:right;
+	font-weight:bold;
+	padding: .3em;
+}
+
+hr {
+    border: 0;
+    height: 0.1em;
+    color: #006699;
+    background-color: #006699;
+    margin-top: 1em;
+}
+img.extlink{
+    float: none;
+    padding-left: 0.25em;
+}
+#footer{
+	background: white url(../images/bg_gradient.jpg) repeat-x left top;
+	padding:.8em;
+}
+#footer_copyright{
+    font-size: 80%;    
+    float: left;
+    vertical-align: top;
+}
+#footer_mirror{
+    font-size: 90%;    
+    float: right;
+    vertical-align: top;
+}
+
+/* Ports page version tables */
+div.os_holder {
+    border-bottom:0.1em solid black;
+    margin: 0.5em 0;
+    padding: 0 0.5em;
+}
+
+table.os_version{
+    border: 0.1em solid #999;
+    width: 45%;
+}
+table.os_version th{
+    background-color: #E3E3E3;
+    padding-left: 0.2em;
+    text-align: left;
+}
+table.os_version tr {
+    font-size: 80%;
+}
+table.os_version td {
+    font-size: 90%;
+    padding: 0;
+}
+table.os_version tr.table_header {
+    font-size: 100%;
+}
+table.os_version tr.latest{
+    font-size: 140%;
+}
+table.os_version tr span{
+    font-size: 70%;
+    color: #BABABA;
+}
+table.os_version tr.even{
+    background-color: #E3E3E3;
+}
+
+.os_binary{
+    float: right;
+    border: 0.1em solid #999;
+    padding: 0;
+    width: 45%;
+    margin-bottom: 0.5em;
+}
+.os_binary h4{
+    background-color: #E3E3E3;
+    margin: 0;
+    font-weight: bold;
+    padding: 0.1em;
+    margin: 0.1em;
+}
+.os_binary ul{
+    margin: 1em 1em;
+}
+.clear {
+    clear: both;
+}
+
+
+

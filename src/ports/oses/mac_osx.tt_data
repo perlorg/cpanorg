@@ -1,0 +1,79 @@
+[% 
+    # Setup information
+    os_config = {
+        name => 'Mac OS X',
+        url => 'http://www.apple.com/macosx/',
+        vendor => 'Apple',
+        information_last_verified => '2011-07-28',
+    }
+%]
+
+[% BLOCK show_os %]
+<p>
+Mac OS X ships with Perl as a standard component.
+</p>
+[% PROCESS binary_view binary_source => [
+    {
+        name => 'ActiveState',
+        url => activestate_url,
+        notes => 'In universal disk image format'
+    },
+    {
+        name => 'MacPorts',
+        url => 'http://www.macports.org/',
+        notes => 'Formerly known as DarwinPorts',
+    },
+    {
+        name => 'Fink',
+        url => 'http://www.finkproject.org/',
+    },
+]
+%]
+
+[% PROCESS version_view os_versions => {
+    versions => [
+    {
+        os_name => 'Lion',
+        os_version => '10.7',
+        perl_version => '5.12.3',
+    },
+    {
+        os_name => 'Snow Leopard',
+        os_version => '10.6',
+        perl_version => '5.10.0',
+    },
+    {
+        os_name => 'Leopard',
+        os_version => '10.5',
+        perl_version => '5.8.8',
+    },
+    {
+        os_name => 'Tiger',
+        os_version => '10.4',
+        perl_version => '5.8.6+patches',
+    },
+    {
+        os_name => 'Panther',
+        os_version => '10.3',
+        perl_version => '5.8.1-RC3+patches',
+    },
+    {
+        os_name => 'Jaguar',
+        os_version => '10.2',
+        perl_version => '5.6.0',
+    },
+    ],
+} %]
+
+<p class="from_source">
+    To build from source (or build XS modules) you need to install Xcode (UNIX
+    Development Support) available on recent OSX install DVDs or SSDs, download
+    from <a href="http://developer.apple.com/">Apple Developer</a> or <a href=
+    "http://itunes.apple.com/us/app/xcode/id422352214?mt=12&amp;ls=1">Mac App
+    Store</a>. <em>(Note: in 10.3 you should also install the optional BSD SDK,
+    otherwise installing new Perl modules won't work.)</em>
+</p>
+
+
+
+[% END %]

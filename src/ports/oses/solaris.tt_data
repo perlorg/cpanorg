@@ -1,0 +1,70 @@
+[% 
+    # Setup information
+    os_config = {
+        # Name of the OS
+        name => 'Solaris',
+
+        # URL of the OS (e.g. http://www.microsoft.com/windows/)
+        url => '',
+
+        # Is it a specific vendor who runs the OS?
+        vendor => '',
+
+        # Specifying linux will add a 'see also'
+        kernel => '',
+
+        # When was this file last reviewed (yyyy-mm-dd)?
+        information_last_verified => '2011-03-26',
+    }
+%]
+
+[% BLOCK show_os %]
+
+[% PROCESS binary_view binary_source => [
+    {
+        name => 'ActiveState (commercial)',
+        url => activestate_url,
+        notes => ''
+    },
+    {
+        name => 'Sunfreeware',
+        url => 'http://www.sunfreeware.com/',
+        notes => ''
+    }    
+]
+%]
+
+[% PROCESS version_view os_versions => {
+    versions => [
+    { 
+    os_name => '',
+    os_version => '11 Express', 
+    os_release => '2010-11-01', 
+    perl_version  => '5.10.0, 5.8.4', 
+    }, 
+
+    { 
+    os_name => '',
+    os_version => '10', 
+    os_release => '2010-09-01', 
+    perl_version  => '5.8.4, 5.6.1', 
+    }, 
+
+    { 
+    os_name => '',
+    os_version => '9', 
+    os_release => '', 
+    perl_version  => '5.6.1', 
+    }, 
+
+    { 
+    os_name => '',
+    os_version => '8', 
+    os_release => '', 
+    perl_version  => '5.005_03', 
+    },
+    ],
+} %]
+
+
+[% END %]

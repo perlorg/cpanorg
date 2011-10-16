@@ -1,0 +1,64 @@
+[% 
+  page.import({
+    title   => "CPAN Sites",
+    section => 'home',
+  });
+%]
+[% page.head = BLOCK %]
+<!-- Copyright Jarkko Hietaniemi jhi@iki.fi 2001-2010, Ask Bjørn Hansen ask@perl.org 2011
+       All Rights Reserved -->
+<!-- You may distribute this document either under the Artistic License
+     (comes with Perl) or the GNU Public License, whichever suits you.  -->
+[% END %]
+
+<h1>
+    CPAN Mirror Network
+</h1>
+<p>
+    [% cpan_stats.mirrors.count | comma %] registered sites around the world
+    make up the <em>N</em> part of CPAN (the Network), find the full list
+    below.
+</p>
+<p>
+    The master CPAN site is hosted by <a href=
+    "http://www.yellowbot.com/">YellowBot</a> in Los Angeles, California.
+</p>
+<p>
+    If you wish to mirror (either privately or publicly) please see <a href=
+    "http://www.cpan.org/misc/how-to-mirror.html">how to mirror CPAN</a>.
+</p>
+
+<h2>Mirror status</h2>
+
+<p>
+<a href="http://mirrors.cpan.org/">http://mirrors.cpan.org/</a> keeps
+track of the status of the mirrors below.
+</p>
+
+<h2 id="hostlist">Registered public CPAN sites</h2>
+
+
+[% TRY %]
+[% INCLUDE "SITES-list.html" %]
+[% CATCH %]
+<h1>
+<strong>The SITES-list.html should be included here</strong>
+</h1>
+[% END %]
+
+<h2 id="feedback">Feedback</h2>
+<p>
+    You can <a href="mailto:cpan@perl.org">send email</a> to the CPAN
+    administrators, <tt>cpan@perl.org</tt>.
+</p>
+
+<h2>
+    Thank You
+</h2>
+<p>
+    We would like to thank all of the mirrors who, throughout the years and
+    every day, make the CPAN possible and such a valuable resource to the Perl
+    community.
+</p>
+
+

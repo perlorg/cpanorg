@@ -1,0 +1,180 @@
+[% 
+  page.import({
+    title   => "How to mirror CPAN",
+    section => 'home',
+    stub => '../',
+  });
+
+  PROCESS "tpl/data/cpan-stats";
+
+%]
+
+[% page.head = BLOCK %]
+<!-- Copyright Ask Bjørn Hansen ask@perl.org 2011 All Rights Reserved
+     You may distribute this document either under the Artistic License
+     (comes with Perl) or the GNU Public License, whichever suits you.
+     The CPAN Logo provided by J.C. Thorpe.
+     You are not allowed to remove or alter these comments.
+-->
+[% END %]
+<h1>
+    How to mirror CPAN
+</h1>
+<p>
+    There are several ways to mirror CPAN depending upon what you want to
+    achieve.
+</p>
+
+<h2>
+    How do I create a private or offline mirror?
+</h2>
+<p>
+    <a href="http://search.cpan.org/dist/CPAN-Mini/bin/minicpan">minicpan</a>
+    from <a href="http://search.cpan.org/dist/CPAN-Mini/">CPAN::Mini</a> is the
+    best tool for this. Also look at <a href=
+    "http://search.cpan.org/dist/CPAN-Mini-Inject/">CPAN::Mini::Inject</a>
+    which allows you to add your own modules into your private mirror.
+</p>
+
+
+<h2>
+    Requirements for a full / public mirror
+</h2>
+<ul>
+    <li>Good internet connectivity
+    </li>
+    <li>Around 1GB of storage space for just the current modules.
+    </li>
+    <li>Around [% 
+      cpan_gb = cpan_stats.disk_usage.gb;
+      cpan_gb = cpan_gb.remove('\..*');
+      cpan_gb = cpan_gb + 2;
+      cpan_gb %]GB of storage space for the full mirror.
+    </li>
+</ul>
+
+<p>It's highly recommended that you also subscribe to the announcements-only
+   <a href="http://www.nntp.perl.org/group/perl.cpan.mirrors">cpan-mirrors
+   mailing list</a> by emailing cpan-mirrors-subscribe at perl.org.
+</p>
+
+<h2>
+    Tools
+</h2>
+<p>
+    <a href="http://search.cpan.org/dist/CPAN-Mini/">CPAN::Mini</a> provides
+    you with a minimal mirror of <a href="http://www.cpan.org">CPAN</a> (the
+    latest version of all modules). This makes working offline easy, it is the
+    best tool of you are running a private mirror.
+</p>
+<p>
+    <em>New:</em> <a href="#Instant_mirroring">rrr-client</a> allows
+    instant mirroring, and should be used on official public mirrors where
+    possible. See instant mirroring <a href=
+    "#Instant_mirroring">instructions</a>.
+</p>
+<p>
+    <a href="http://rsync.samba.org/">rsync</a> is the best tool if you need to
+    mirror the whole of CPAN or if you are providing a public mirror. Rsync
+    <a href="#rsync">Instructions</a>.
+</p>
+<p>
+    Only use FTP if these other methods are absolutely impossible. Never mirror
+    with HTTP - you will end up with a million duplicate files in tens of
+    gigabytes.
+</p>
+
+<h2>
+    Which CPAN Mirror should I use?
+</h2>
+
+<p>
+    Please note that after 15 years of service to the Perl community,
+    FUnet is no longer the master CPAN mirror.  If you update from
+    funet.fi you should update your mirroring source.
+</p>
+
+<p>
+    You can find your nearest rsync enabled site on <a href=
+    "http://www.cpan.org/SITES.html">http://www.cpan.org/SITES.html</a>, or use
+    <a href="http://www.cpan.org/indices/mirrors.json">mirrors.json</a>
+    especially if you are building a tool which lets the user select a mirror.
+</p>
+
+<p>
+    You can also sync from <code>rsync://cpan-rsync.perl.org/CPAN/</code> (the
+    "tier 1 mirrors"), though you currently might get better
+    performance from a "local" mirror.
+</p>
+
+<h2>
+    <a name="rsync" id="rsync">Using rsync</a>
+</h2>
+<p>
+    Please limit to once or twice a day. For more frequent updates please see
+    <a href="#Instant_mirroring">Instant mirroring</a>.
+</p>
+<p>
+    <em>On Unix systems</em>
+</p>
+<pre>
+/usr/bin/rsync -av --delete cpan-rsync.perl.org::CPAN /project/CPAN/
+</pre>
+<p>
+    Using 'crontab' you can make rsync run once a day, for example<br>
+    <tt>4 40 * * * sleep $(expr $RANDOM \% 7200); /usr/bin/rsync -av --delete
+    cpan-rsync.perl.org::CPAN /project/CPAN/</tt><br>
+    The "sleep $(...);" statement makes the command delay up to 2 hours before
+    running rsync; the advantage of this is that you (and everybody else) won't
+    access the mirror at the same time!
+</p>
+<p>
+    <em>On Windows systems</em>
+</p>
+<pre>
+C:\Program Files\Rsync\rsync -av --delete cpan-rsync.perl.org::CPAN /project/CPAN/
+</pre>
+<p>
+    Using the 'AT' tool, you can schedule rsync to run daily, for example:<br>
+    <tt>AT 20:00 /every:M,T,W,Th,F,S,Su "C:\Program Files\Rsync\rsync -av
+    --delete cpan-rsync.perl.org::CPAN /project/CPAN/"</tt><br>
+</p>
+
+
+<h2 id="Public_mirror">
+    How do I create a public mirror?
+</h2>
+<ul>
+    <li>Consider <a href="#Instant_mirroring">Instant mirroring</a>, required
+    if you wish to be a tier 1 mirror, or..
+    </li>
+    <li>rsync once a day
+    </li>
+    <li>Provide (in order of preference) rsync, HTTP and/or FTP public access
+    </li>
+    <li>To be added to <a href=
+    "http://www.cpan.org/SITES.html">http://www.cpan.org/SITES.html</a> and
+    <a href="http://www.cpan.org/indices/mirrors.json">mirrors.json</a> please
+    complete the <a href="http://www.cpan.org/MIRRORED.BY">template</a>
+    confirming the public accessible URLs to your mirror: rsync, ftp, http and
+    email it to cpan@perl.org.
+    </li>
+</ul>
+
+
+<h2>
+    <a name="Instant_mirroring" id="Instant_mirroring">Instant mirroring</a>
+</h2>
+<p>
+    If you want "instant" updates (updates from PAUSE within a few
+    minutes or less) and you are willing to put a little more effort into running the mirror you can
+    <a href="https://github.com/perlorg/cpanorg/wiki/Instant-update-mirroring">join the instant mirroring
+    trial</a>.
+</p>
+<p>
+    It is used by more than 60 mirrors already, generally without
+    issue but is still considered "under testing".  Instant mirroring
+    is required for all Tier 1 mirrors (so cpan-rsync.perl.org stays
+    in sync across mirrors).
+</p>
+

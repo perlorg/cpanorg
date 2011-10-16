@@ -1,0 +1,42 @@
+#!/usr/bin/env perl
+
+# Fetch the most recent module releases and save out as JSON
+
+use strict;
+use warnings;
+use local::lib;
+use File::Temp;
+use XML::RSS;
+use JSON;
+use LWP::Simple qw(mirror RC_OK);
+use File::Path qw(mkpath);
+
+mkpath 'data', 0755 unless -e 'data';
+
+process_rss(
+    {   out => 'data/recent.json',
+        url => "http://search.cpan.org/uploads.rdf",
+    }
+);
+
+sub process_rss {
+    my $conf = shift;
+
+    my $local = $conf->{out} . ".rss";
+
+    return unless mirror($conf->{url}, $local) == RC_OK;
+
+    my $rss = XML::RSS->new;
+    $rss->parsefile( $local );
+    my $items = $rss->{'items'};
+
+    my $j = JSON->new();
+    
+    my $json_file = $conf->{out};
+
+    open my $fh, ">:utf8", $json_file
+        or die "Could not open $json_file: $!";
+    print $fh $j->encode($items);
+    close $fh;
+}
+

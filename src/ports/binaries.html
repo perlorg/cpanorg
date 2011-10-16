@@ -1,0 +1,99 @@
+[% 
+  page.import({
+    title   => "Perl binaries",
+    section => 'ports',
+    stub    => '../',
+  });
+  
+  # Active State's main download URL
+  SET activestate_url = 'http://www.activestate.com/activeperl/downloads';
+  
+  PROCESS ports/oses/list.html;
+  
+%]
+
+[% BLOCK version_view %]
+    <table class="os_version">
+        <tr class="table_header"><th>OS Name / version</th><th>Default Perl version</th></tr>
+        [% FOREACH version = os_versions.versions %]
+            <tr class="[% "latest" IF loop.first %][% " even" IF loop.even %]">
+                <td>[% IF version.os_name && version.os_version %]
+                    [% version.os_name %] ([% version.os_version %])
+                    [% ELSIF version.os_name %]
+                    [% version.os_name %]
+                    [% ELSE %]
+                    [% version.os_version %]
+                    [% END %]
+
+                    [% IF loop.first && version.os_release%]
+                    <span><br />Released [% version.os_release %]</span>[% END %]
+                    
+                    </td>
+                <td>[% version.perl_version %]</td>
+            </tr>
+        [% END %]
+    </table>
+[% END %]
+
+[% BLOCK binary_view %]
+<div class="os_binary">
+    <h4>[% "Other " UNLESS os_config.not_included_in_os_packages %]Binaries:</h4>
+    <ul>
+        [% FOREACH source = binary_source %]
+        <li><a href="[% source.url %]">[% source.name %]</a>
+            [% IF source.notes %] - [% source.notes %][% END %]</li>
+        [% END %]
+    </ul>
+</div>
+[% END %]
+
+
+
+<h1 id="top">Perl Binaries</h1>
+
+<ul>
+    <li>Perl supports over <strong><a href=
+    "http://perldoc.perl.org/perlport.html#PLATFORMS">100
+    platforms</a></strong>, many of which ship with a version of Perl by
+    default.
+    </li>
+    <li>You can build your own version of Perl from the <a href="src/">
+        source</a>.
+    </li>
+    <li>If you do not see your preferred OS in the list below please see our
+    <a href="archive-2011-03-26.html">archive page</a>.
+    </li>
+</ul>
+
+<p>
+  <ul>
+    [% FOREACH os = os_list.sort %]
+        [% PROCESS "ports/oses/${os}.tt_data" %]
+        <li><a href="#[% os %]">[% os_config.name %]</a></li>
+    [% END %]
+  </ul>
+</p>
+<hr />
+
+
+[% FOREACH os = os_list.sort %]
+<div class="os_holder">
+    [% PROCESS "ports/oses/${os}.tt_data" %]
+    <h2 id="[% os %]"><a href="[% IF os_config.url %][% os_config.url %][%END%]">[% os_config.name %]</a></h2>
+    [% PROCESS show_os %]
+    [% IF os_config.kernel %]
+    <p><a href="#[% os_config.kernel %]">See also [% os_config.kernel | ucfirst %]</a></p>
+    [% END %]
+    <p style="font-size: 50%"><em>Last updated:</em> [% os_config.information_last_verified || 'unknown' %]</p>
+</div>
+[% END %]
+
+<br><br><br><br>
+<p>
+  Do you have additions, updates, or corrections?  If so, please submit a pull request to 
+  <a href="https://github.com/perlorg/cpanorg/tree/master/src/ports/oses">our
+  github repository.</a>.
+</p>
+
+
+

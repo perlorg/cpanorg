@@ -1,21 +1,83 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    [% page.head %]
-    <title>[% page.title %]</title>
-    <link rel="author" href="mailto:cpan@perl.org">
+    <title>[% page.title %] - [% site.name %]</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    [%- IF page.description %]<meta name="description" content="[% page.description %]" />[% END -%]
+    [%- IF page.keywords %]<meta name="keywords" content="[% page.keywords %]" />[% END -%]
+    <link rel="author" href="mailto:cpan+linkrelauthor@perl.org" />
+	<link rel="canonical" href="http://www.cpan.org/[% page.canonical || template.name %]" />	
+	<link type="text/css" rel="stylesheet" href="[% page.stub %]misc/css/cpan.css" /> 
+	[% page.head %]
 </head>
+<body[% ' class="section_' _ page.section _ '"' IF page.section %]>
 
-<body>
+<table id="wrapper" border="0" width="95%" cellspacing="0" cellpadding="2" align="center">
+    <tr>
+        <td id="header">
+        	
+			<div id="header_left">
+				<a href="[% page.stub %]index.html"><img src="[% page.stub %]misc/images/cpan.png" id="logo" alt="CPAN" /></a>
+     		</div>
+			
+			<div id="header_right">
+			  <h1>Comprehensive Perl Archive Network</h1>
+              <p id="strapline">[% INCLUDE tpl/straps.html %]</p>
+           </div>
+        </td>
+    </tr>
+    <tr> 
+        <td id="menubar_holder">
 
-<div id="content">
-[% content %]
-</div>
+            <ul class="menubar">
+				<li><a href="[% page.stub %]index.html">Home</a></li>
+                <li><a href="[% page.stub %]modules/index.html">Modules</a></li>
+                <li><a href="[% page.stub %]ports/index.html">Ports</a></li>
+                <li><a href="[% page.stub %]src/README.html">Perl Source</a></li>
+                <li><a href="[% page.stub %]misc/cpan-faq.html">FAQ</a></li>
+                <li><a href="[% page.stub %]SITES.html">Mirrors</a></li>
+			</ul>
+			
+			<div id="searchbar">
+				<form method="get" action="http://search.cpan.org/search" name="f" class="searchbox menubar" id="f">
+					<input type="hidden" name="mode" value="all" />
+				<a href="http://search.cpan.org">Search</a>:
+					 <input id="searchfield" type="text" name="query" value="" placeholder="Module name" />
+					<input type="submit" value="Search" />
+				</form>
+			</div>
+		</td>
+    </tr>
+    <tr>
+        <td>
+            <div id="content">
+			
+            [% content %]
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td id="footer">
+            <div id="footer_copyright">
+                <p>Yours Eclectically, The Self-Appointed Master Librarians (<i>OOK!</i>) of the CPAN.<br/>
+                   &copy; 1995-2010 Jarkko Hietaniemi.  
+                   &copy; 2011 <a href="http://www.perl.org">Perl.org</a>.  
+                   All rights reserved. 
+                   <a href="[% page.stub %]disclaimer.html">Disclaimer</a>.
+                </p>
+            </div>
 
-<div id="footer">
-</div>
+            [% UNLESS page.skip_master_mirror %]
+            <div id="footer_mirror">
+			<p>Master mirror hosted by <a href="http://www.yellowbot.com/"><img alt="YellowBot" src="[% page.stub %]misc/images/yellowbot.png" /></a></p>
+            </div>
+            [% END %]
+
+
+        </td>
+    </tr>
+</table>
+
 
 </body>
 </html>

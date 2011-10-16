@@ -1,0 +1,138 @@
+[% 
+    # Setup information
+    os_config = {
+        name => 'Fedora',
+        url => 'http://fedoraproject.org/',
+        vendor => '',
+        kernel => 'linux',
+        information_last_verified => '2011-03-26',
+    }
+%]
+
+[% BLOCK show_os %]
+
+
+[% PROCESS binary_view binary_source => [
+    {
+        name => 'ActiveState',
+        url => activestate_url,
+        notes => ''
+    },
+
+]
+%]
+
+[% PROCESS version_view os_versions => {
+    versions => [
+    { 
+    os_name => 'Rawhide', 
+    os_version => '', 
+    os_release => '', 
+    perl_version  => '5.12.2', 
+    }, 
+
+    { 
+    os_name => 'Laughlin', 
+    os_version => '14', 
+    os_release => '2010-11-01', 
+    perl_version  => '5.12.2', 
+    }, 
+
+    { 
+    os_name => 'Goddard', 
+    os_version => '13', 
+    os_release => '2010-05-01', 
+    perl_version  => '5.10.1', 
+    }, 
+
+    { 
+    os_name => 'Constantine', 
+    os_version => '12', 
+    os_release => '2009-11-01', 
+    perl_version  => '5.10.0', 
+    }, 
+
+    { 
+    os_name => 'Leonidas', 
+    os_version => '11', 
+    os_release => '2009-06-01', 
+    perl_version  => '5.10.0', 
+    }, 
+
+    { 
+    os_name => 'Cambridge', 
+    os_version => '10', 
+    os_release => '', 
+    perl_version  => '5.10.0', 
+    }, 
+
+    { 
+    os_name => 'Sulphur', 
+    os_version => '9', 
+    os_release => '', 
+    perl_version  => '5.10.0', 
+    }, 
+
+    { 
+    os_name => 'Werewolf', 
+    os_version => '8', 
+    os_release => '', 
+    perl_version  => '5.8.8', 
+    }, 
+
+    { 
+    os_name => 'Moonshine', 
+    os_version => '7', 
+    os_release => '', 
+    perl_version  => '5.8.8', 
+    }, 
+
+    { 
+    os_name => 'Zod', 
+    os_version => '6', 
+    os_release => '', 
+    perl_version  => '5.8.8', 
+    }, 
+
+    { 
+    os_name => 'Bordeaux', 
+    os_version => '5', 
+    os_release => '', 
+    perl_version  => '5.8.8', 
+    }, 
+
+    { 
+    os_name => 'Stentz', 
+    os_version => '4', 
+    os_release => '', 
+    perl_version  => '5.8.6', 
+    }, 
+
+    { 
+    os_name => 'Heidelberg', 
+    os_version => '3', 
+    os_release => '', 
+    perl_version  => '5.8.5', 
+    }, 
+
+    { 
+    os_name => 'Tettnang', 
+    os_version => '2', 
+    os_release => '', 
+    perl_version  => '5.8.3', 
+    }, 
+
+    { 
+    os_name => 'Yarrow', 
+    os_version => '1', 
+    os_release => '', 
+    perl_version  => '5.8.1', 
+    }, 
+
+    ],
+} %]
+
+
+
+
+[% END %]

@@ -1,0 +1,7 @@
+[%- json_data = INSERT "cpan-stats.json" %]
+[% 
+   data = JSON.json_decode(json_data);
+   cpan_stats.import(data);
+   # USE Dumper;
+   # Dumper.dump_html(cpan_stats, data);
+%]
