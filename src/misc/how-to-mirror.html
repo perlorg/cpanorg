@@ -122,7 +122,7 @@
 </pre>
 <p>
     Using 'crontab' you can make rsync run once a day, for example<br>
-    <tt>4 40 * * * sleep $(expr $RANDOM \% 7200); /usr/bin/rsync -av --delete
+    <tt>40 4 * * * sleep $(expr $RANDOM \% 7200); /usr/bin/rsync -av --delete
     cpan-rsync.perl.org::CPAN /project/CPAN/</tt><br>
     The "sleep $(...);" statement makes the command delay up to 2 hours before
     running rsync; the advantage of this is that you (and everybody else) won't
@@ -131,7 +131,7 @@
 <p>
     If you have a problem with permissions (files are created with mode
     <tt>-rw-------</tt>), set <tt>umask</tt> in your cronjob :<br>
-    <tt>4 40 * * * umask 022 ; sleep ... ; /usr/bin/rsync ...</tt><br>
+    <tt>40 4 * * * umask 022 ; sleep ... ; /usr/bin/rsync ...</tt><br>
     The <tt>umask 022</tt> allows rsync to set proper permissions for
     files and directories.
 </p>
