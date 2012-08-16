@@ -168,20 +168,37 @@ C:\Program Files\Rsync\rsync -av --delete cpan-rsync.perl.org::CPAN /project/CPA
     </li>
 </ul>
 
-
 <h2>
     <a name="Instant_mirroring" id="Instant_mirroring">Instant mirroring</a>
 </h2>
 <p>
-    If you want "instant" updates (updates from PAUSE within a few
-    minutes or less) and you are willing to put a little more effort into running the mirror you can
-    <a href="https://github.com/perlorg/cpanorg/wiki/Instant-update-mirroring">join the instant mirroring
-    trial</a>.
+    "Instant mirroring" keeps your CPAN mirror up-to-date by continuously
+    tracking the CPAN master; picking up the changes from the master, a short
+    time (minutes) after they occur.
 </p>
 <p>
-    It is used by more than 60 mirrors already, generally without
-    issue but is still considered "under testing".  Instant mirroring
-    is required for all Tier 1 mirrors (so cpan-rsync.perl.org stays
-    in sync across mirrors).
+    Instant mirroring is used for all Tier 1 mirrors (so
+    cpan-rsync.perl.org stays in sync across mirrors).
 </p>
+<p>
+    To use "instant mirroring", you need a special client: "rrr-client" or
+    "iim".
+</p>
+<p>
+    <a href="http://search.cpan.org/dist/File-Rsync-Mirror-Recent/bin/rrr-client">"rrr-client"</a> is part of the <a href=
+    "http://search.cpan.org/dist/File-Rsync-Mirror-Recent/">File::Rsync::Mirror::Recent</a>
+    (also known as <code>rrr</code>) package ; it is the official client, used
+    on the CPAN master to get updates from <a href=
+    "http://pause.perl.org/">PAUSE</a> : the true heart and soul of "all things
+    perl", see the <a href=
+    "https://github.com/perlorg/cpanorg/wiki/Instant-update-mirroring">setup
+    guide</a> for more details.
+</p>
+<p>
+    <a href="http://www.staff.science.uu.nl/~penni101/iim">"iim"</a> is an
+    alternative for "rrr-client" ; basically it does the same thing, but it is
+    more efficient (on start-up) and has some features that may be helpful to
+    CPAN mirror operators.
+</p>
+
 
