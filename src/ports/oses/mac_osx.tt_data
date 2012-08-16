@@ -33,6 +33,11 @@ Mac OS X ships with Perl as a standard component.
 [% PROCESS version_view os_versions => {
     versions => [
     {
+        os_name => 'Mountain Lion',
+        os_version => '10.8',
+        perl_version => '5.12.4',
+    },
+    {
         os_name => 'Lion',
         os_version => '10.7',
         perl_version => '5.12.3',
