@@ -4,7 +4,7 @@
         name => 'Mac OS X',
         url => 'http://www.apple.com/macosx/',
         vendor => 'Apple',
-        information_last_verified => '2011-07-28',
+        information_last_verified => '2012-08-16',
     }
 %]
 
