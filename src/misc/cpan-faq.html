@@ -1213,9 +1213,16 @@ spells all this out for your protection, so you may prefer to use that.
     report/fix a bug in a module/script?</a>
 </h3>
 <p>
-    Please contact the author of the module/script. The documentation of the
-    module/script should contain a contact address or you can try
-    <tt>CPANID@perl.org</tt> where CPANID is the authors CPANID.
+    Please contact the author of the module/script.
+    Open a ticket for the module at its bug tracker linked at
+    <a href="http://search.cpan.org">search.cpan.org</a>
+    and <a href="http://metacpan.org">metacpan.org</a> which is usually
+    <a href="http://rt.cpan.org">rt.cpan.org</a>.
+    The author is automatically notified by email about the new bug report in
+    case of rt.cpan.org.
+    If the author doesn't respond, the documentation of the module/script might
+    contain a contact address or you can try <tt>CPANID@perl.org</tt> where
+    CPANID is the authors CPANID.
 </p>
 <p>
     Most of the checklist in <a href="#How_report_bug_Perl">reporting bugs in
@@ -1231,7 +1238,8 @@ spells all this out for your protection, so you may prefer to use that.
 <p>
     Sometimes a module goes unmaintained for a while due to the author pursuing
     other interests, being busy, etc. and another person needs changes applied
-    to that module and may become frustrated when their email goes unanswered.
+    to that module and may become frustrated when their bug reports and emails
+    goes unanswered.
     CPAN does not mediate or dictate a policy in this situation and rely on the
     respective authors to work out the details. If you treat other authors as
     you would like to be treated in the same situation the manner in which you
@@ -1242,7 +1250,9 @@ spells all this out for your protection, so you may prefer to use that.
     </li>
     <li>Be considerate.
     </li>
-    <li>Make an earnest attempt to contact the author.
+    <li>Make an earnest attempt to contact the author as explained in
+    <a href="#How_report_bug_module">How do I report/fix a bug in a
+    module/script?</a>.
     </li>
     <li>Give it time. If you need changes made immediately, consider applying
     your patches to the current module, changing the version and requiring that
@@ -1275,12 +1285,17 @@ spells all this out for your protection, so you may prefer to use that.
     PAUSE admins at modules@perl.org can help. The PAUSE admins treat each case
     individually.
 </p>
+<p>
+    Please make sure you have tried all of the above ways of getting in contact
+    with the author before going this way!
+</p>
 <ul>
     <li>Get a login for the Perl Authors Upload Server (PAUSE) if you don't
     already have one: http://pause.perl.org
     </li>
     <li>Write to modules@perl.org explaining what you did to contact the
-    current maintainer. The PAUSE admins will also try to reach the maintainer.
+    current maintainer including all email addresses of the author in cc.
+    The PAUSE admins will also try to reach the maintainer.
     </li>
     <li>Post a public message in a heavily trafficked site announcing your
     intention to take over the module. Potential places are
