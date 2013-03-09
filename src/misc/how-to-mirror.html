@@ -10,7 +10,7 @@
 %]
 
 [% page.head = BLOCK %]
-<!-- Copyright Ask Bjørn Hansen ask@perl.org 2011 All Rights Reserved
+<!-- Copyright Ask Bjørn Hansen ask@perl.org 2011-2013 All Rights Reserved
      You may distribute this document either under the Artistic License
      (comes with Perl) or the GNU Public License, whichever suits you.
      The CPAN Logo provided by J.C. Thorpe.
@@ -90,7 +90,7 @@
 
 <p>
     Please note that after 15 years of service to the Perl community,
-    FUnet is no longer the master CPAN mirror.  If you update from
+    FUnet is no longer the master CPAN mirror. If you update from
     funet.fi you should update your mirroring source.
 </p>
 
@@ -122,11 +122,15 @@
 </pre>
 <p>
     Using 'crontab' you can make rsync run once a day, for example<br>
-    <tt>40 4 * * * sleep $(expr $RANDOM \% 7200); /usr/bin/rsync -av --delete
+    <tt>40 4 * * * sleep $(expr $RANDOM \% 7200); /usr/bin/rsync -a --delete
     cpan-rsync.perl.org::CPAN /project/CPAN/</tt><br>
     The "sleep $(...);" statement makes the command delay up to 2 hours before
     running rsync; the advantage of this is that you (and everybody else) won't
-    access the mirror at the same time!
+    access the mirror at the same time.
+</p>
+<p>
+    Unless you are mirroring to an SSD you might get timeouts using --delete-after
+    when many symlinks are being purged. Using --delete will work properly.
 </p>
 <p>
     If you have a problem with permissions (files are created with mode
@@ -143,7 +147,7 @@ C:\Program Files\Rsync\rsync -av --delete cpan-rsync.perl.org::CPAN /project/CPA
 </pre>
 <p>
     Using the 'AT' tool, you can schedule rsync to run daily, for example:<br>
-    <tt>AT 20:00 /every:M,T,W,Th,F,S,Su "C:\Program Files\Rsync\rsync -av
+    <tt>AT 20:00 /every:M,T,W,Th,F,S,Su "C:\Program Files\Rsync\rsync -a
     --delete cpan-rsync.perl.org::CPAN /project/CPAN/"</tt><br>
 </p>
 
