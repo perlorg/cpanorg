@@ -42,10 +42,14 @@ $perl_versions = sort_versions($perl_versions);
         $json->encode( $latest->[0] ) );
 
     # Add the latest test so people know what's coming
-    # but only if not of the same version as the latest release
+    # only if:
+    # - not of the same version as the latest release
+    # - larger number than the previous release (fix for security releases)
     unshift @$latest, $perl_testing->[0]
-        if $perl_testing->[0]->{version_number} ne
-            $latest->[0]->{version_number};
+        if ( $perl_testing->[0]->{version_number} ne
+        $latest->[0]->{version_number} )
+        && (
+        $perl_testing->[0]->{version_minor} > $latest->[0]->{version_minor} );
 
     print_file( "perl_versions_latest.json", $json->encode($latest) );
 }
