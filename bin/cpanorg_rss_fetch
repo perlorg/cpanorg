@@ -15,7 +15,7 @@ mkpath 'data', 0755 unless -e 'data';
 
 process_rss(
     {   out => 'data/recent.json',
-        url => "http://search.cpan.org/uploads.rdf",
+        url => "http://metacpan.org/feed/recent?f=",
     }
 );
 
