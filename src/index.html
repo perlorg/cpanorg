@@ -1,10 +1,10 @@
-[% 
+[%
   page.import({
     title   => "The Comprehensive Perl Archive Network",
     section => 'home',
     skip_master_mirror => 0,
   });
- 
+
  %][% page.head = BLOCK %]
 <!-- Copyright Jarkko Hietaniemi <jhi@iki.fi>
      1998,1999,2000,2001,2003,2003,2004,2005,2008
@@ -13,18 +13,18 @@
      The CPAN Logo provided by J.C. Thorpe.
      You may distribute this document either under the Artistic License
      (comes with Perl) or the GNU Public License, whichever suits you.
- 
+
      LEGALESE
- 
+
      You are not allowed to remove or alter these comments.
- 
+
      You are not allowed to rename, remove, or add any files
      in your public mirror of CPAN.
- 
+
      "Public mirror of CPAN" means a site listed in
      the SITES.html and SITES files at the top level of CPAN
      and also listed at the site http://mirrors.cpan.org/.
- 
+
      You are not allowed to alter any file
      in you public mirror of CPAN
      EXCEPT
@@ -41,24 +41,24 @@
          CPAN mirrors.)
      Altering this index.html in any other way is not allowed.
      Altering any other files is not allowed.
- 
+
      Adding any advertisements or any revenue-generating material
      is strictly forbidden.
- 
+
      Similarly, for your public CPAN mirrors "framing" or "wrapping"
      the CPAN web pages into other sites by using e.g. HTML tables
      or frames is not allowed.
- 
+
      You are allowed to use the files of CPAN to create your own
      web sites and services since we are just a distributor of the files,
      we do not own most of them.  However, you may not call your creations
      "CPAN" or "CPAN mirrors".  You may say that the files are "mirrored
      from CPAN".
- 
+
 -->
 <script type="text/javascript" charset="utf-8">
     function focusField() {
-        document.getElementById("searchfield").focus(); 
+        document.getElementById("searchfield").focus();
     }
     onload = focusField;
 </script>
@@ -77,14 +77,14 @@
                 <a href="SITES.html">mirrored</a> on [% cpan_stats.mirrors.count | comma  %] servers.
             </p>
             <p>The archive has been online since October 1995 and is constantly growing.</p>
-			
+
 			<h2>Search CPAN via</h2>
- 
+
             <ul>
                 <li><a href="http://metacpan.org/">metacpan.org</a></li>
                 <li><a href="http://search.cpan.org/">search.cpan.org</a></li>
             </ul>
-			
+
         </td>
 
         <td class="third">
@@ -93,11 +93,11 @@
                 [% PROCESS rss_feed, conf => {
                     json_file => "recent.json",
                     max => 10,
-                }, rss_footer = '<li><a href="http://search.cpan.org/recent"><strong>more...</strong></a></li>'
+                }, rss_footer = '<li><a href="https://metacpan.org/recent"><strong>more...</strong></a></li>'
                 %]
             </div>
         </td>
-        
+
         <td class="third">
             <h2>Getting Started</h2>
             <ul>
