@@ -34,6 +34,13 @@
 
     { 
     os_name => '',
+    os_version => '7.1', 
+    os_release => '2010-09-10', 
+    perl_version  => '5.10.1', 
+    }, 
+
+    { 
+    os_name => '',
     os_version => '6.1', 
     os_release => '2007-11-01', 
     perl_version  => '5.8.2', 
