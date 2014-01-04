@@ -11,7 +11,7 @@
         vendor => '',
 
         # Specifying linux will add a 'see also'
-        kernel => 'linux',
+        kernel => '',
 
         # When was this file last reviewed (yyyy-mm-dd)?
         information_last_verified => '2011-03-26',
