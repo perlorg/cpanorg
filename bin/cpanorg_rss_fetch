@@ -15,7 +15,7 @@ mkpath 'data', 0755 unless -e 'data';
 
 process_rss(
     {   out => 'data/recent.json',
-        url => "http://metacpan.org/feed/recent?f=",
+        url => "https://metacpan.org/feed/recent",
     }
 );
 
@@ -31,7 +31,7 @@ sub process_rss {
     my $items = $rss->{'items'};
 
     my $j = JSON->new();
-    
+
     my $json_file = $conf->{out};
 
     open my $fh, ">:utf8", $json_file
@@ -39,4 +39,3 @@ sub process_rss {
     print $fh $j->encode($items);
     close $fh;
 }
-
