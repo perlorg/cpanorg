@@ -1,4 +1,4 @@
-[% 
+[%
   page.import({
     title   => "How to mirror CPAN",
     section => 'home',
@@ -29,10 +29,10 @@
     How do I create a private or offline mirror?
 </h2>
 <p>
-    <a href="http://search.cpan.org/dist/CPAN-Mini/bin/minicpan">minicpan</a>
-    from <a href="http://search.cpan.org/dist/CPAN-Mini/">CPAN::Mini</a> is the
+    <a href="https://metacpan.org/pod/distribution/CPAN-Mini/bin/minicpan">minicpan</a>
+    from <a href="https://metacpan.org/release/CPAN-Mini">CPAN::Mini</a> is the
     best tool for this. Also look at <a href=
-    "http://search.cpan.org/dist/CPAN-Mini-Inject/">CPAN::Mini::Inject</a>
+    "https://metacpan.org/release/CPAN-Mini-Inject">CPAN::Mini::Inject</a>
     which allows you to add your own modules into your private mirror.
 </p>
 
@@ -45,7 +45,7 @@
     </li>
     <li>Around 1GB of storage space for just the current modules.
     </li>
-    <li>Around [% 
+    <li>Around [%
       cpan_gb = cpan_stats.disk_usage.gb;
       cpan_gb = cpan_gb.remove('\..*');
       cpan_gb = cpan_gb + 2;
@@ -62,7 +62,7 @@
     Tools
 </h2>
 <p>
-    <a href="http://search.cpan.org/dist/CPAN-Mini/">CPAN::Mini</a> provides
+    <a href="https://metacpan.org/release/CPAN-Mini">CPAN::Mini</a> provides
     you with a minimal mirror of <a href="http://www.cpan.org">CPAN</a> (the
     latest version of all modules). This makes working offline easy, it is the
     best tool of you are running a private mirror.
@@ -189,8 +189,8 @@ C:\Program Files\Rsync\rsync -av --delete cpan-rsync.perl.org::CPAN /project/CPA
     "iim".
 </p>
 <p>
-    <a href="http://search.cpan.org/dist/File-Rsync-Mirror-Recent/bin/rrr-client">"rrr-client"</a> is part of the <a href=
-    "http://search.cpan.org/dist/File-Rsync-Mirror-Recent/">File::Rsync::Mirror::Recent</a>
+    <a href="https://metacpan.org/pod/distribution/File-Rsync-Mirror-Recent/bin/rrr-client">"rrr-client"</a> is part of the <a href=
+    "https://metacpan.org/release/File-Rsync-Mirror-Recent">File::Rsync::Mirror::Recent</a>
     (also known as <code>rrr</code>) package ; it is the official client, used
     on the CPAN master to get updates from <a href=
     "http://pause.perl.org/">PAUSE</a> : the true heart and soul of "all things
@@ -204,5 +204,3 @@ C:\Program Files\Rsync\rsync -av --delete cpan-rsync.perl.org::CPAN /project/CPA
     more efficient (on start-up) and has some features that may be helpful to
     CPAN mirror operators.
 </p>
-
-
