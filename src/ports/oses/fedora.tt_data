@@ -5,7 +5,7 @@
         url => 'http://fedoraproject.org/',
         vendor => '',
         kernel => 'linux',
-        information_last_verified => '2011-03-26',
+        information_last_verified => '2014-12-23',
     }
 %]
 
@@ -24,12 +24,33 @@
 
 [% PROCESS version_view os_versions => {
     versions => [
-    { 
-    os_name => 'Rawhide', 
-    os_version => '', 
-    os_release => '', 
-    perl_version  => '5.12.2', 
-    }, 
+    {
+    os_name => 'Rawhide',
+    os_version => '',
+    os_release => '',
+    perl_version  => '5.20.1',
+    },
+
+    {
+    os_name => '',
+    os_version => '21',
+    os_release => '2014-12-09',
+    perl_version  => '5.18.4',
+    },
+
+    {
+    os_name => 'Heisenbug',
+    os_version => '20',
+    os_release => '2013-12-17',
+    perl_version  => '5.18.4',
+    },
+
+    {
+    os_name => ' Schrödinger's Cat',
+    os_version => '19',
+    os_release => '2013-07-02',
+    perl_version  => '5.16.3',
+    },
 
     { 
     os_name => 'Laughlin', 

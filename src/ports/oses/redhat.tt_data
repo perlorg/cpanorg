@@ -3,9 +3,9 @@
     os_config = {
         name => 'Redhat',
         url => 'http://www.redhat.com/',
-        vendor => '',
+        vendor => 'Red Hat, Inc.',
         kernel => 'linux',
-        information_last_verified => '2011-03-26',
+        information_last_verified => '2014-12-23',
     }
 %]
 
@@ -24,6 +24,12 @@
 
 [% PROCESS version_view os_versions => {
     versions => [
+    {
+    os_name => '',
+    os_version => '7',
+    os_release => '2014-07-10',
+    perl_version  => '5.16.3',
+    },
     { 
     os_name => '', 
     os_version => '6', 
