@@ -8,13 +8,13 @@
         url => 'http://www.ubuntu.com/',
 
         # Is it a specific vendor who runs the OS?
-        vendor => '',
+        vendor => 'Canonical Ltd.',
 
         # Specifying linux will add a 'see also'
         kernel => 'linux',
 
         # When was this file last reviewed?
-        information_last_verified => '2011-03-26',
+        information_last_verified => '2014-12-23',
     }
 %]
 
@@ -32,30 +32,42 @@
 [% PROCESS version_view os_versions => {
     versions => [
     {
-        os_name => 'Maverick',
-        os_version => '10.10',
-        perl_version => '5.10.1+patches',
-        os_release => '2010-10-01', 
+        os_name => 'Utopic Unicorn',
+        os_version => '14.10',
+        perl_version => '5.20.1',
+        os_release => '2014-10-23',
     },
     {
-        os_name => 'Lucid',
+        os_name => 'Trusty Tahr',
+        os_version => '14.04LTS',
+        perl_version => '5.18.2',
+        os_release => '2014-04-17',
+    },
+    {
+        os_name => 'Precise Pangolin',
+        os_version => '12.04LTS',
+        perl_version => '5.14.2',
+        os_release => '2012-04-26',
+    },
+    {
+        os_name => 'Lucid Lynx',
         os_version => '10.04LTS',
-        perl_version => '5.10.1+patches',
+        perl_version => '5.10.1',
     },
     {
-        os_name => 'Karmic',
+        os_name => 'Karmic Koala',
         os_version => '9.10',
-        perl_version => '5.10.0+patches',
+        perl_version => '5.10.0',
     },
     {
         os_name => 'Hardy',
         os_version => '8.04LTS',
-        perl_version => '5.8.8+patches',
+        perl_version => '5.8.8',
     },
     {
         os_name => 'Dapper',
         os_version => '6.06LTS',
-        perl_version => '5.8.7+patches',
+        perl_version => '5.8.7',
     },
     
     ],
