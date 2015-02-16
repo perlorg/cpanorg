@@ -1,18 +1,15 @@
 [%-
   USE Math;
-  
+
   module_count = cpan_stats.modules.count | comma;
-  
+
   SET straps = [
     "${module_count} open source Perl modules ready to download and use",
     "Stop reinventing wheels, start building space rockets",
-    "Over 15 years of Perl libraries at your fingertips",
+    "Over 20 years of Perl libraries at your fingertips",
     "You can never have too many Perl modules",
     "LWPs, POEs, and DBIs -- oh my!",
   ];
   SET strapid = Math.int(Math.rand(straps.size()));
   straps.${strapid};
 -%]
-
-
-

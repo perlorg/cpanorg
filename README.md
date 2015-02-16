@@ -14,7 +14,7 @@ ask@perl.org to get new files included here. Making new
 templates/scripts/etc to produce the output files is fine.
 
 * Be conservative in your edits.  While lots of updates are needed,
-this has been around for 15 years and will be for many more. There's
+this has been around for 20 years and will be for many more. There's
 no rush.
 
 * No style edits for now. Cleanups yes; but a new design/layout will
@@ -40,5 +40,3 @@ Image files are copied plainly to the html/ directory.
 
 Everything else is processed through template toolkit. Only .html
 files get the "master template" applied automatically.
-
-
