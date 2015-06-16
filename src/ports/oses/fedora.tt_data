@@ -46,7 +46,7 @@
     },
 
     {
-    os_name => ' Schrödinger's Cat',
+    os_name => "Schrödinger's Cat",
     os_version => '19',
     os_release => '2013-07-02',
     perl_version  => '5.16.3',
