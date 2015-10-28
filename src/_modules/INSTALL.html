@@ -27,7 +27,7 @@
     (almost always on <a href="http://www.cpan.org/">CPAN</a>) and cannot be
     installed without them (or without a specific version of them). It is worth
     throughly reading the documentation for the options below. Many modules on
-    CPAN now require a recent version of Perl (version 5.8 or above).
+    CPAN require a somewhat recent version of Perl (version 5.8 or above).
 </p>
 
 <h2>
@@ -39,7 +39,7 @@
     "http://en.wikipedia.org/wiki/Terminal_emulator">Terminal emulator</a>
     (<a href="http://en.wikipedia.org/wiki/Apple_Terminal">Mac OS X</a>,
     <a href="http://sourceforge.net/projects/console/">Win32</a>, <a href=
-    "http://en.wikipedia.org/wiki/Xterm">X Windows/Linux</a>)
+    "http://en.wikipedia.org/wiki/Xterm">Linux</a>)
 </p>
 <pre>
 cpan App::cpanminus
@@ -65,7 +65,7 @@ cpanm Module::Name
     "https://metacpan.org/pod/local::lib#The-bootstrapping-technique">
     bootstrapping technique</a> for how to get started. You can create a
     directory per user/project/company and deploy to other servers, by copying the directory
-    (as long as you are on the same operating system).
+    (as long as you are on the same operating system and perl version).
 </p>
 <p>
     <em><a href=
@@ -96,8 +96,8 @@ cpanm Module::Name
     Perl without needing root or administrator privileges. You can use multiple
     versions of Perl (maybe as you upgrade) across different projects. The
     separation from your system Perl makes server maintenance much easier and
-    you more confident about how your project is setup. Currently (March 2011)
-    Win32/64 is not supported.
+    you more confident about how your project is setup. Currently
+    Windows is not supported.
 </p>
 <p>
     <em><a href="https://metacpan.org/pod/distribution/CPAN/scripts/cpan">cpan</a></em>
@@ -107,9 +107,9 @@ cpanm Module::Name
 </p>
 <p>
     <em><a href="https://metacpan.org/pod/distribution/CPANPLUS/bin/cpanp">cpanp</a></em>
-    from <a href="https://metacpan.org/release/CPANPLUS">CPANPLUS</a> has been
-    distributed with Perl since 2007 (5.009). This offers even more options
-    than <em>cpanm</em> or <em>cpan</em>.
+    from <a href="https://metacpan.org/release/CPANPLUS">CPANPLUS</a> had been
+    distributed with Perl since 5.10 (2007) until 5.20 (2014). This offers even more options
+    than <em>cpanm</em> or <em>cpan</em> and can be installed just like cpanminus.
 </p>
 
 
@@ -121,8 +121,8 @@ cpanm Module::Name
     <a href="http://strawberryperl.com/">Strawberry Perl</a> is an open source
     binary distribution of Perl for the Windows operating system. It includes a
     compiler and pre-installed modules that offer the ability to install XS
-    CPAN modules directly from CPAN. <em>cpanm</em> can be installed by
-    running <code>cpan App::cpanminus</code>.
+    CPAN modules directly from CPAN. It also comes with lots of modules
+    pre-installed, including <em>cpanm</em>.
 </p>
 <p>
     <a href="http://www.activestate.com/activeperl/downloads">ActiveState</a>
@@ -130,14 +130,14 @@ cpanm Module::Name
     own <a href="http://www.activestate.com/activeperl/ppm-perl-modules">perl
     package manager</a> (ppm). Some modules are not available as ppm's
     or have reported errors on the ppm build system, this does not mean
-    they do not work. You to use the <em>cpan</em> script to build modules
+    they do not work. You can use the <em>cpan</em> script to build modules
     from CPAN against ActiveState Perl.
 </p>
 
 <h2>Perl on Mac OSX</h2>
 
 <p>
-    OSX comes with Perl pre-installed, in order to build and install your
+    OSX comes with Perl pre-installed. in order to build and install your
     own modules you will need to install the "Command Line Tools for XCode"
     or "XCode" package - details on our <a href="../ports/binaries.html#mac_osx">
     ports page</a>.
