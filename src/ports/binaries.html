@@ -1,15 +1,15 @@
-[% 
+[%
   page.import({
     title   => "Perl binaries",
     section => 'ports',
     stub    => '../',
   });
-  
+
   # Active State's main download URL
   SET activestate_url = 'http://www.activestate.com/activeperl/downloads';
-  
+
   PROCESS ports/oses/list.html;
-  
+
 %]
 
 [% BLOCK version_view %]
@@ -27,7 +27,7 @@
 
                     [% IF loop.first && version.os_release%]
                     <span><br />Released [% version.os_release %]</span>[% END %]
-                    
+
                     </td>
                 <td>[% version.perl_version %]</td>
             </tr>
@@ -57,7 +57,7 @@
     platforms</a></strong>, many of which ship with a version of Perl by
     default.
     </li>
-    <li>You can build your own version of Perl from the <a href="src/">
+    <li>You can build your own version of Perl from the <a href="/src/">
         source</a>.
     </li>
     <li>If you do not see your preferred OS in the list below please see our
@@ -90,10 +90,7 @@
 
 <br><br><br><br>
 <p>
-  Do you have additions, updates, or corrections?  If so, please submit a pull request to 
+  Do you have additions, updates, or corrections?  If so, please submit a pull request to
   <a href="https://github.com/perlorg/cpanorg/tree/master/src/ports/oses">our
   github repository.</a>.
 </p>
-
-
-
