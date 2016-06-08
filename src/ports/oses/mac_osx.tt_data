@@ -1,8 +1,8 @@
 [%
     # Setup information
     os_config = {
-        name => 'Mac OS X',
-        url => 'http://www.apple.com/macosx/',
+        name => 'OS X',
+        url => 'http://www.apple.com/osx/',
         vendor => 'Apple',
         information_last_verified => '2014-01-04',
     }
@@ -32,6 +32,16 @@ Mac OS X ships with Perl as a standard component.
 
 [% PROCESS version_view os_versions => {
     versions => [
+    {
+        os_name => 'El Capitan',
+        os_version => '10.11',
+        perl_version => '5.18.2',
+    },
+    {
+        os_name => 'Yosemite',
+        os_version => '10.10',
+        perl_version => '5.18.2',
+    },
     {
         os_name => 'Mavericks',
         os_version => '10.9',
