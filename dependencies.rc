@@ -11,7 +11,7 @@ ports/binaries.html : ports/oses/_template.tt_data \
     ports/oses/cygwin.tt_data ports/oses/debian.tt_data \
     ports/oses/fedora.tt_data ports/oses/hpux.tt_data \
     ports/oses/linux.tt_data ports/oses/mac_osx.tt_data \
-    ports/oses/mandriva.tt_data ports/oses/openbsd.tt_data \
+    ports/oses/openbsd.tt_data \
     ports/oses/redhat.tt_data ports/oses/slackware.tt_data \
     ports/oses/solaris.tt_data ports/oses/suse.tt_data \
     ports/oses/ubuntu.tt_data ports/oses/win32.tt_data
