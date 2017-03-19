@@ -60,7 +60,7 @@ FUNNY FILE ENDINGS AND WHAT TO DO ABOUT THEM
   .html	HyperText Markup Language: the Web-speak
   .tex	TeX or LaTeX formatted text
   .txt	Text
-		
+
   Graphics
 
   .xbm	X11 BitMap, view with e.g. "xv"
@@ -101,8 +101,8 @@ Note 2:
 	gtar ztvf foo.tar.gz
 
   will list the contents of the gzipped foo.tar without having foo.tar
-  in the disk.  
+  in the disk.
 
--- 
+--
 cpan@perl.org
 

@@ -1,4 +1,4 @@
-[% 
+[%
   page.import({
     title   => "CPAN/ports",
     section => 'ports',
@@ -106,7 +106,7 @@
     |
     <a href="#darwin">GNU&nbsp;Darwin</a>
     |
-    <a href="#guardian">Guardian</a> 
+    <a href="#guardian">Guardian</a>
     |
     <a href="#hp">HP</a>
     |
@@ -202,7 +202,7 @@
     |
     <a href="#symbian">Symbian</a>
     |
-    <a href="#tandem">Tandem</a> 
+    <a href="#tandem">Tandem</a>
     |
     <a href="#tivo">Tivo</a>
     |
@@ -591,10 +591,10 @@ of prebuilt packages for DFlyBSD, use <tt>pkg_add -r packagename</tt> to install
       <li><a href="http://www.activestate.com/Products/ActivePerl/">ActiveState</a> <code>DEB</code>, <code>RPM</code>, <code>ActiveState</code> formats</li>
       <li><a href="../authors/id/G/GR/GRAHAMC/">SiePerl</a> for Linux by Siemens, contains several modules</li>
     </ul>
-    
+
     <div>
     <p><small>
-    Many people ask for <i>"Perl for RedHat / SuSE / Mandrake / Debian / 
+    Many people ask for <i>"Perl for RedHat / SuSE / Mandrake / Debian /
     Gentoo / Slackware / LinuxPPC / OpenLinux / TurboLinux / RockLinux / Yellow
     Dog Linux / LFS / WhateverLinuxDistribution?"</i> Well...
     </small></p>
@@ -620,7 +620,7 @@ of prebuilt packages for DFlyBSD, use <tt>pkg_add -r packagename</tt> to install
     <p><small>
     Perl is known to be a standard component of the following distributions:
     </small></p>
-    
+
     <h3>Debian</h3>
     [% PROCESS version_view os => {
           last_updated => '2011-03-13',
@@ -647,7 +647,7 @@ of prebuilt packages for DFlyBSD, use <tt>pkg_add -r packagename</tt> to install
           },
           ],
       } %]
-    
+
 <ul>
     <li>
         <small>Gentoo: <b>5.8.2</b> as of April 2004</small>
@@ -684,12 +684,12 @@ of prebuilt packages for DFlyBSD, use <tt>pkg_add -r packagename</tt> to install
     Firstly, there are the <a href="#unixides">usual</a> UNIX IDEs.
     Then there are various IDEs originating from Win32 but also
     available in Linux:
-    </p> 
+    </p>
     <ul>
     <li><a href="http://www.solutionsoft.com/perl.htm">Perl Builder</a> from Solutionsoft (IDE Windows only, ActivePerl also for Linux and Solaris)</li>
     <li><a href="http://www.indigostar.com/perledit.html">PerlEdit</a> from IndigoStar (Windows and Linux)</li>
     </ul>
-    
+
     <p>The <a href="http://www.scintilla.org/SciTE.html">SciTE</a> editor
     works on both X (gtk+) and <a href="#win32">Win32</a>.</p>
 
@@ -716,7 +716,7 @@ of prebuilt packages for DFlyBSD, use <tt>pkg_add -r packagename</tt> to install
     <p>
     Mac OS X ships with Perl as a standard component.
     </p>
-    
+
     [% PROCESS version_view os => {
         last_updated => '2011-03-13',
         versions => [
@@ -749,12 +749,12 @@ of prebuilt packages for DFlyBSD, use <tt>pkg_add -r packagename</tt> to install
     } %]
     <p>Building the source requires you to have also installed
         the "Mac OS X Developer tools" available on recent OSX install DVDs,
-        alternatively they can be downloaded from 
+        alternatively they can be downloaded from
         <a href="http://developer.apple.com/">Apple Developer</a> (free registration).
     <em>(Note: in 10.3 you should also install the optional
     BSD SDK, otherwise installing new Perl modules won't work.)</em>
     </p>
-    
+
     <p>
     Perl is available for Mac OS X also from third parties:</p>
     <ul>
@@ -817,7 +817,7 @@ of prebuilt packages for DFlyBSD, use <tt>pkg_add -r packagename</tt> to install
         </li>
     </ul>
 
-    
+
     <h3><a id="macosclassic" name="macosclassic">Mac OS Classic (pre-<b>X</b>)</a></h3>
     <p>
         MacPerl is not supported (as of December 2004, version 5.8.8) For older
@@ -837,7 +837,7 @@ of prebuilt packages for DFlyBSD, use <tt>pkg_add -r packagename</tt> to install
     based on Perl 5.004), and the <a href="#jperl">JPerl</a> patches
     (which were based on Perl 5.005).
     </p>
-    
+
 
 <h2 id="mingw">MinGW</h2>
 <p>
@@ -907,7 +907,7 @@ of prebuilt packages for DFlyBSD, use <tt>pkg_add -r packagename</tt> to install
         or the beta compiler
         <a href="ftp://ftp.delorie.com/pub/djgpp/beta/v2gnu/perl588b.zip">(using DJGPP 2.04)</a>.
         <a href="ftp://ftp.delorie.com/pub/djgpp/current/v2gnu/perl588s.zip">Source code</a> is also
-        available. The same package is available from a faster mirror: 
+        available. The same package is available from a faster mirror:
         <a href="http://gd.tuwien.ac.at/pc/dos/djgpp/current/v2gnu/perl588b.zip">binary (DJGPP 2.03)</a>,
         <a href="http://gd.tuwien.ac.at/pc/dos/djgpp/beta/v2gnu/perl588b.zip">binary (DJGPP 2.04)</a> and
         <a href="http://gd.tuwien.ac.at/pc/dos/djgpp/current/v2gnu/perl588s.zip">source</a>.

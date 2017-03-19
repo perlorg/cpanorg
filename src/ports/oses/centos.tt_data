@@ -1,4 +1,4 @@
-[% 
+[%
     # Setup information
     os_config = {
         # Name of the OS
@@ -29,26 +29,26 @@
     perl_version  => '5.16.1',
     },
 
-    { 
-    os_name => '', 
-    os_version => '6', 
+    {
+    os_name => '',
+    os_version => '6',
     os_release => '2011-7-10',
-    perl_version  => '5.10.1', 
-    }, 
+    perl_version  => '5.10.1',
+    },
 
-    { 
-    os_name => '', 
-    os_version => '5', 
-    os_release => '2007-4-01', 
-    perl_version  => '5.8.8', 
-    }, 
+    {
+    os_name => '',
+    os_version => '5',
+    os_release => '2007-4-01',
+    perl_version  => '5.8.8',
+    },
 
-    { 
-    os_name => '', 
-    os_version => '4', 
-    os_release => '', 
-    perl_version  => '5.8.5', 
-    }, 
+    {
+    os_name => '',
+    os_version => '4',
+    os_release => '',
+    perl_version  => '5.8.5',
+    },
 
     ],
 } %]

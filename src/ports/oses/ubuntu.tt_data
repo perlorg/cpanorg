@@ -1,4 +1,4 @@
-[% 
+[%
     # Setup information
     os_config = {
         # Name of the OS
@@ -69,7 +69,7 @@
         os_version => '6.06LTS',
         perl_version => '5.8.7',
     },
-    
+
     ],
 } %]
 

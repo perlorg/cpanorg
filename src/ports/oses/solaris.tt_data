@@ -1,4 +1,4 @@
-[% 
+[%
     # Setup information
     os_config = {
         # Name of the OS
@@ -30,38 +30,38 @@
         name => 'Sunfreeware',
         url => 'http://www.sunfreeware.com/',
         notes => ''
-    }    
+    }
 ]
 %]
 
 [% PROCESS version_view os_versions => {
     versions => [
-    { 
+    {
     os_name => '',
-    os_version => '11 Express', 
-    os_release => '2010-11-01', 
-    perl_version  => '5.10.0, 5.8.4', 
-    }, 
+    os_version => '11 Express',
+    os_release => '2010-11-01',
+    perl_version  => '5.10.0, 5.8.4',
+    },
 
-    { 
+    {
     os_name => '',
-    os_version => '10', 
-    os_release => '2010-09-01', 
-    perl_version  => '5.8.4, 5.6.1', 
-    }, 
+    os_version => '10',
+    os_release => '2010-09-01',
+    perl_version  => '5.8.4, 5.6.1',
+    },
 
-    { 
+    {
     os_name => '',
-    os_version => '9', 
-    os_release => '', 
-    perl_version  => '5.6.1', 
-    }, 
+    os_version => '9',
+    os_release => '',
+    perl_version  => '5.6.1',
+    },
 
-    { 
+    {
     os_name => '',
-    os_version => '8', 
-    os_release => '', 
-    perl_version  => '5.005_03', 
+    os_version => '8',
+    os_release => '',
+    perl_version  => '5.005_03',
     },
     ],
 } %]

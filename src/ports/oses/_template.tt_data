@@ -1,4 +1,4 @@
-[% 
+[%
     # Setup information
     os_config = {
         # Name of the OS
@@ -12,7 +12,7 @@
 
         # Specifying linux will add a 'see also'
         kernel => 'linux',
-        
+
         # Only needed for Windows so far
         # not_included_in_os_packages => 1,
 
@@ -49,7 +49,7 @@
         # include '+patches' if applicable please (e.g. Debian)
         # (so people know they would not get the same by just building themselves)
         perl_version => '',
-        
+
     },
     {
         os_name => '',

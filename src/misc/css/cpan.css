@@ -1,6 +1,6 @@
-body { 
+body {
     width: 99%;
-    margin: auto; 
+    margin: auto;
 	padding: 0;
 	margin-bottom: 3em;
 	font-size: 1em;
@@ -25,7 +25,7 @@ td#header {
 	font-size:210%;
 	font-weight:normal;
 	font-family:Times, Georgia, serif;
-	margin:0 0 .1em 0;	
+	margin:0 0 .1em 0;
 }
 #header_right #strapline {
 	color:#007CB9;
@@ -51,13 +51,13 @@ a:hover {
 a img{
     border:0;
 }
-h1 { 
+h1 {
     color:#006699;
     margin-bottom: .6em;
     margin-top: .6em;
     font-size: 200%;
 }
-h2 { 
+h2 {
     color:#006699;
     font-size: 150%;
 	font-family:Calibri, Arial, sans-serif;
@@ -104,7 +104,7 @@ ul {
 #searchfield{
 	width:18em;
 }
-.big { 
+.big {
     font-size: 200%;
     font-family: Times;
 }
@@ -178,12 +178,12 @@ img.extlink{
 	padding:.8em;
 }
 #footer_copyright{
-    font-size: 80%;    
+    font-size: 80%;
     float: left;
     vertical-align: top;
 }
 #footer_mirror{
-    font-size: 90%;    
+    font-size: 90%;
     float: right;
     vertical-align: top;
 }

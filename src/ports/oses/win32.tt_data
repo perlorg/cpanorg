@@ -1,4 +1,4 @@
-[% 
+[%
     # Setup information
     os_config = {
         name => 'Windows',
@@ -6,7 +6,7 @@
         vendor => 'Microsoft',
         not_included_in_os_packages => 1,
         information_last_verified => '2011-03-26',
-        
+
     }
 %]
 

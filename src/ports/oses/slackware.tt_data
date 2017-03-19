@@ -1,4 +1,4 @@
-[% 
+[%
     # Setup information
     os_config = {
         # Name of the OS
@@ -31,90 +31,90 @@
 
 [% PROCESS version_view os_versions => {
     versions => [
-    { 
-    os_name => '', 
-    os_version => '13.1', 
-    os_release => '2010-05-01', 
-    perl_version  => '5.10.1', 
-    }, 
+    {
+    os_name => '',
+    os_version => '13.1',
+    os_release => '2010-05-01',
+    perl_version  => '5.10.1',
+    },
 
-    { 
-    os_name => '', 
-    os_version => '13.0', 
-    os_release => '2009-08-01', 
-    perl_version  => '5.10.0', 
-    }, 
+    {
+    os_name => '',
+    os_version => '13.0',
+    os_release => '2009-08-01',
+    perl_version  => '5.10.0',
+    },
 
-    { 
-    os_name => '', 
-    os_version => '12.2', 
-    os_release => '2008-12-01', 
-    perl_version  => '5.10.0', 
-    }, 
+    {
+    os_name => '',
+    os_version => '12.2',
+    os_release => '2008-12-01',
+    perl_version  => '5.10.0',
+    },
 
-    { 
-    os_name => '', 
-    os_version => '12.1', 
-    os_release => '2008-05-01', 
-    perl_version  => '5.8.8', 
-    }, 
+    {
+    os_name => '',
+    os_version => '12.1',
+    os_release => '2008-05-01',
+    perl_version  => '5.8.8',
+    },
 
-    { 
-    os_name => '', 
-    os_version => '12.0', 
-    os_release => '2007-07-01', 
-    perl_version  => '5.8.8', 
-    }, 
+    {
+    os_name => '',
+    os_version => '12.0',
+    os_release => '2007-07-01',
+    perl_version  => '5.8.8',
+    },
 
-    { 
-    os_name => '', 
-    os_version => '11.0', 
-    os_release => '2006-10-01', 
-    perl_version  => '5.8.8', 
-    }, 
+    {
+    os_name => '',
+    os_version => '11.0',
+    os_release => '2006-10-01',
+    perl_version  => '5.8.8',
+    },
 
-    { 
-    os_name => '', 
-    os_version => '10.2', 
-    os_release => '2005-09-01', 
-    perl_version  => '5.8.7', 
-    }, 
+    {
+    os_name => '',
+    os_version => '10.2',
+    os_release => '2005-09-01',
+    perl_version  => '5.8.7',
+    },
 
-    { 
-    os_name => '', 
-    os_version => '9.1', 
-    os_release => '2003-09-01', 
-    perl_version  => '5.8.0', 
-    }, 
+    {
+    os_name => '',
+    os_version => '9.1',
+    os_release => '2003-09-01',
+    perl_version  => '5.8.0',
+    },
 
-    { 
-    os_name => '', 
-    os_version => '9.0', 
-    os_release => '2003-03-01', 
-    perl_version  => '5.8.0', 
-    }, 
+    {
+    os_name => '',
+    os_version => '9.0',
+    os_release => '2003-03-01',
+    perl_version  => '5.8.0',
+    },
 
-    { 
-    os_name => '', 
-    os_version => '8.1', 
-    os_release => '2002-06-01', 
-    perl_version  => '5.6.1', 
-    }, 
+    {
+    os_name => '',
+    os_version => '8.1',
+    os_release => '2002-06-01',
+    perl_version  => '5.6.1',
+    },
 
-    { 
-    os_name => '', 
-    os_version => '3.3', 
-    os_release => '1997-06-01', 
-    perl_version  => '5.004', 
-    }, 
+    {
+    os_name => '',
+    os_version => '3.3',
+    os_release => '1997-06-01',
+    perl_version  => '5.004',
+    },
 
 
-    { 
-    os_name => '', 
-    os_version => '1.1.2', 
-    os_release => '1994-02-01', 
-    perl_version  => '4.0', 
-    }, 
+    {
+    os_name => '',
+    os_version => '1.1.2',
+    os_release => '1994-02-01',
+    perl_version  => '4.0',
+    },
 
 
     ],

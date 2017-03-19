@@ -1,4 +1,4 @@
-[% 
+[%
     # Setup information
     os_config = {
         # Name of the OS
@@ -32,18 +32,18 @@
 [% PROCESS version_view os_versions => {
     versions => [
 
- { 
+ {
  os_name => '',
- os_version => '11.4', 
- os_release => '2011-3-01', 
- perl_version  => '5.12.3', 
- }, 
- { 
+ os_version => '11.4',
+ os_release => '2011-3-01',
+ perl_version  => '5.12.3',
+ },
+ {
  os_name => '',
- os_version => '11.3', 
- os_release => '2010-7-01', 
- perl_version  => '5.12.1', 
- }, 
+ os_version => '11.3',
+ os_release => '2010-7-01',
+ perl_version  => '5.12.1',
+ },
     ],
 } %]
 

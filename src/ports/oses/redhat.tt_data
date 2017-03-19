@@ -1,4 +1,4 @@
-[% 
+[%
     # Setup information
     os_config = {
         name => 'Redhat',
@@ -30,23 +30,23 @@
     os_release => '2014-07-10',
     perl_version  => '5.16.3',
     },
-    { 
-    os_name => '', 
-    os_version => '6', 
-    os_release => '2010-11-01', 
-    perl_version  => '5.10.1', 
-    }, 
-    { 
-    os_name => '', 
-    os_version => '5', 
-    os_release => '2007-03-01', 
-    perl_version  => '5.8.8', 
-    }, 
-    { 
-    os_name => '', 
-    os_version => '4', 
-    os_release => '2005-02-01', 
-    perl_version  => '5.8.5', 
+    {
+    os_name => '',
+    os_version => '6',
+    os_release => '2010-11-01',
+    perl_version  => '5.10.1',
+    },
+    {
+    os_name => '',
+    os_version => '5',
+    os_release => '2007-03-01',
+    perl_version  => '5.8.8',
+    },
+    {
+    os_name => '',
+    os_version => '4',
+    os_release => '2005-02-01',
+    perl_version  => '5.8.5',
     },
     {
         os_name => '',

@@ -1,12 +1,12 @@
-[% 
+[%
   page.import({
     title   => "Perl Ports - Perl on different platforms",
     section => 'ports',
     stub    => '../',
   });
-  
+
   PROCESS ports/oses/list.html;
-  
+
 %]
 
 <h1 id="top">Perl Ports (Binary Distributions)</h1>
@@ -18,7 +18,7 @@
     </li>
     <li>Most Unix/Linux and Macs have Perl already installed.</li>
     <li>You will need to <a href="http://www.perl.org/get.html">download</a> Perl for Windows.</li>
-    
+
     [% TRY %]
     [% latest_data = INSERT perl_version_latest_stable.json %]
     [% latest = JSON.json_decode(latest_data) %]

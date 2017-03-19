@@ -1,4 +1,4 @@
-[% 
+[%
     # Setup information
     os_config = {
         name => 'Linux',

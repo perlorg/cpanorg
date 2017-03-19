@@ -1,4 +1,4 @@
-[% 
+[%
     # Setup information
     os_config = {
         # Name of the OS
@@ -36,39 +36,39 @@
 
 [% PROCESS version_view os_versions => {
     versions => [
-    { 
-    os_name => '', 
-    os_version => '11.31/IPF', 
-    os_release => '', 
-    perl_version  => '5.8.8', 
-    }, 
+    {
+    os_name => '',
+    os_version => '11.31/IPF',
+    os_release => '',
+    perl_version  => '5.8.8',
+    },
 
-    { 
-    os_name => '', 
-    os_version => '11.23/IPF', 
-    os_release => '', 
-    perl_version  => '5.8.8', 
-    }, 
+    {
+    os_name => '',
+    os_version => '11.23/IPF',
+    os_release => '',
+    perl_version  => '5.8.8',
+    },
 
-    { 
-    os_name => '', 
-    os_version => '11.11/PA', 
-    os_release => '', 
-    perl_version  => '5.005_02', 
-    }, 
+    {
+    os_name => '',
+    os_version => '11.11/PA',
+    os_release => '',
+    perl_version  => '5.005_02',
+    },
 
-    { 
-    os_name => '', 
-    os_version => '11.00/PA', 
-    os_release => '', 
-    perl_version  => '4.0 PL36', 
-    }, 
+    {
+    os_name => '',
+    os_version => '11.00/PA',
+    os_release => '',
+    perl_version  => '4.0 PL36',
+    },
 
-    { 
-    os_name => '', 
-    os_version => '10.20/PA', 
-    os_release => '', 
-    perl_version  => '4.0 PL36', 
+    {
+    os_name => '',
+    os_version => '10.20/PA',
+    os_release => '',
+    perl_version  => '4.0 PL36',
     },
 
     ],

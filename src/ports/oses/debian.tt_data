@@ -1,4 +1,4 @@
-[% 
+[%
     # Setup information
     os_config = {
         name => 'Debian',
@@ -43,13 +43,13 @@
       {
           os_name => 'Lenny',
           os_version => '5.0',
-          os_release => '2009-02-01', 
+          os_release => '2009-02-01',
           perl_version => '5.10.0+patches',
       },
       {
           os_name => 'Etch',
           os_version => '4.0',
-          os_release => '2007-04-01', 
+          os_release => '2007-04-01',
           perl_version => '5.8.8+patches',
       },
       {
@@ -68,5 +68,4 @@
 
 [% END %]
 
-    
-    
+
