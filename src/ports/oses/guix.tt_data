@@ -1,0 +1,51 @@
+[%
+    # Setup information
+    os_config = {
+        # Name of the OS
+        name => 'GNU Guix and GuixSD',
+
+        # URL of the OS
+        url => 'https://gnu.org/s/guix',
+
+        # Is it a specific vendor who runs the OS?
+        vendor => '',
+
+        # Specifying linux will add a 'see also'
+        kernel => 'linux',
+
+        # When was this file last reviewed (yyyy-mm-dd)?
+        information_last_verified => '2017-05-25',
+    }
+%]
+
+[% BLOCK show_os %]
+
+[% PROCESS binary_view binary_source => [
+    {
+        name => 'Guix',
+        url => 'https://www.gnu.org/software/guix/packages/p.html#perl',
+        notes => 'Install perl on any system Guix supports'
+    },
+]
+%]
+
+[% PROCESS version_view os_versions => {
+    versions => [
+    {
+    os_name => '',
+    os_version => '',
+    os_release => '',
+    perl_version  => '5.24.0',
+    },
+
+    {
+    os_name => '',
+    os_version => '0.13.0',
+    os_release => '2017-05-22',
+    perl_version  => '5.24.0',
+    },
+    ],
+} %]
+
+
+[% END %]
