@@ -2,3 +2,5 @@
 /html/
 /data/
 
+# for development with docker
+/root/

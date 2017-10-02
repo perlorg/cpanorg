@@ -40,3 +40,14 @@ Image files are copied plainly to the html/ directory.
 
 Everything else is processed through template toolkit. Only .html
 files get the "master template" applied automatically.
+
+## Run under docker
+
+Experimental, you can build the content from theses templates with:
+
+    mkdir -p root/tmp root/CPAN
+    docker run --rm -ti \
+      -v `pwd`:/cpan/content -v `pwd`/root:/cpan \
+      -w /cpan/content \
+      quay.io/perl/cpanorg:master \
+        make build update-data update-master
