@@ -5,6 +5,8 @@ index.html : recent.json cpan-stats.json
 misc/cpan-faq.html : cpan-stats.json
 src/README.html : perl_version_latest_stable.json perl_versions_latest.json perl_versions_earliest.json
 
+misc/how-to-mirror.html : cpan-stats.json
+
 # the dependency stuff doesn't know about wildcards in the values
 ports/binaries.html : ports/oses/_template.tt_data \
     ports/oses/aix.tt_data ports/oses/centos.tt_data \
