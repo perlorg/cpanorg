@@ -4,7 +4,7 @@
         name => 'Debian',
         url => 'http://www.debian.org/',
         kernel => 'linux',
-        information_last_verified => '2014-01-02',
+        information_last_verified => '2017-10-04',
     }
 %]
 
@@ -28,6 +28,18 @@
 
 [% PROCESS version_view os_versions => {
       versions => [
+      {
+          os_name => 'Stretch',
+          os_version => '9',
+          os_release => '2017-07-17',
+          perl_version => '5.24.1+patches',
+      },
+      {
+          os_name => 'Jessie',
+          os_version => '8',
+          os_release => '2015-04-26',
+          perl_version => '5.20.2+patches',
+      },
       {
           os_name => 'Wheezy',
           os_version => '7.0',
