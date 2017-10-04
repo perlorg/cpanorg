@@ -14,7 +14,7 @@
         kernel => 'linux',
 
         # When was this file last reviewed?
-        information_last_verified => '2014-12-23',
+        information_last_verified => '2017-10-04',
     }
 %]
 
@@ -31,6 +31,42 @@
 
 [% PROCESS version_view os_versions => {
     versions => [
+    {
+        os_name => 'Artful Aardvark',
+        os_version => '17.10',
+        perl_version => '5.26.0'
+        os_release => '2017-10-19',
+    },
+    {
+        os_name => 'Zesty Zapus',
+        os_version => '17.04',
+        perl_version => '5.24.1'
+        os_release => '2017-04-13',
+    },
+    {
+        os_name => 'Yakkety Yak',
+        os_version => '16.10',
+        perl_version => '5.22.2'
+        os_release => '2016-10-13',
+    },
+    {
+        os_name => 'Xenial Xerus',
+        os_version => '16.04',
+        perl_version => '5.22.1',
+        os_release => '2016-04-21',
+    },
+    {
+        os_name => 'Wily Werewolf',
+        os_version => '15.10',
+        perl_version => '5.20.2',
+        os_release => '2015-10-22',
+    },
+    {
+        os_name => 'Vivid Vervet',
+        os_version => '15.04',
+        perl_version => '5.20.2',
+        os_release => '2015-04-23',
+    },
     {
         os_name => 'Utopic Unicorn',
         os_version => '14.10',
