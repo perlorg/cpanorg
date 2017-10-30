@@ -5,7 +5,7 @@
         url => 'http://fedoraproject.org/',
         vendor => '',
         kernel => 'linux',
-        information_last_verified => '2014-12-23',
+        information_last_verified => '2017-10-30',
     }
 %]
 
@@ -25,10 +25,45 @@
 [% PROCESS version_view os_versions => {
     versions => [
     {
-    os_name => 'Rawhide',
-    os_version => '',
-    os_release => '',
-    perl_version  => '5.20.1',
+    os_name => '',
+    os_version => '27',
+    os_release => '2017-11-07',
+    perl_version  => '5.26.1',
+    },
+
+    {
+    os_name => '',
+    os_version => '26',
+    os_release => '2017-07-11',
+    perl_version  => '5.24.3',
+    },
+
+    {
+    os_name => '',
+    os_version => '25',
+    os_release => '2016-11-22',
+    perl_version  => '5.24.0',
+    },
+
+    {
+    os_name => '',
+    os_version => '24',
+    os_release => '2016-06-21',
+    perl_version  => '5.22.2',
+    },
+
+    {
+    os_name => '',
+    os_version => '23',
+    os_release => '2015-11-03',
+    perl_version  => '5.22.1',
+    },
+
+    {
+    os_name => '',
+    os_version => '22',
+    os_release => '2015-05-26',
+    perl_version  => '5.20.3',
     },
 
     {
@@ -55,98 +90,98 @@
     {
     os_name => 'Laughlin',
     os_version => '14',
-    os_release => '2010-11-01',
+    os_release => '2010-11-02',
     perl_version  => '5.12.2',
     },
 
     {
     os_name => 'Goddard',
     os_version => '13',
-    os_release => '2010-05-01',
+    os_release => '2010-05-25',
     perl_version  => '5.10.1',
     },
 
     {
     os_name => 'Constantine',
     os_version => '12',
-    os_release => '2009-11-01',
+    os_release => '2009-11-17',
     perl_version  => '5.10.0',
     },
 
     {
     os_name => 'Leonidas',
     os_version => '11',
-    os_release => '2009-06-01',
+    os_release => '2009-06-09',
     perl_version  => '5.10.0',
     },
 
     {
     os_name => 'Cambridge',
     os_version => '10',
-    os_release => '',
+    os_release => '2008-11-25',
     perl_version  => '5.10.0',
     },
 
     {
     os_name => 'Sulphur',
     os_version => '9',
-    os_release => '',
+    os_release => '2008-05-13',
     perl_version  => '5.10.0',
     },
 
     {
     os_name => 'Werewolf',
     os_version => '8',
-    os_release => '',
+    os_release => '2007-11-08',
     perl_version  => '5.8.8',
     },
 
     {
     os_name => 'Moonshine',
     os_version => '7',
-    os_release => '',
+    os_release => '2007-05-31',
     perl_version  => '5.8.8',
     },
 
     {
     os_name => 'Zod',
     os_version => '6',
-    os_release => '',
+    os_release => '2006-10-24',
     perl_version  => '5.8.8',
     },
 
     {
     os_name => 'Bordeaux',
     os_version => '5',
-    os_release => '',
+    os_release => '2006-03-20',
     perl_version  => '5.8.8',
     },
 
     {
     os_name => 'Stentz',
     os_version => '4',
-    os_release => '',
+    os_release => '2005-06-13',
     perl_version  => '5.8.6',
     },
 
     {
     os_name => 'Heidelberg',
     os_version => '3',
-    os_release => '',
+    os_release => '2004-11-08',
     perl_version  => '5.8.5',
     },
 
     {
     os_name => 'Tettnang',
     os_version => '2',
-    os_release => '',
+    os_release => '2004-05-18',
     perl_version  => '5.8.3',
     },
 
     {
     os_name => 'Yarrow',
     os_version => '1',
-    os_release => '',
+    os_release => '2003-11-05',
     perl_version  => '5.8.1',
     },
 
