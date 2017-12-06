@@ -27,6 +27,10 @@ Mac OS X ships with Perl as a standard component.
         name => 'Fink',
         url => 'http://www.finkproject.org/',
     },
+    {
+        name => 'Homebrew',
+        url => 'https://brew.sh/',
+    },
 ]
 %]
 
