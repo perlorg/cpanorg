@@ -147,7 +147,7 @@ sub fetch_perl_version_data {
         my $zip_file = $module->{distvname} . '.tar.gz';
 
         $module->{zip_file} = $zip_file;
-        $module->{url} = "http://www.cpan.org/src/5.0/" . $module->{zip_file};
+        $module->{url} = "https://www.cpan.org/src/5.0/" . $module->{zip_file};
 
         ( $module->{released_date}, $module->{released_time} )
             = split( 'T', $module->{released} );
