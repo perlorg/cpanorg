@@ -173,6 +173,9 @@ img.extlink{
     float: none;
     padding-left: 0.25em;
 }
+img.netactuate {
+    filter: invert(.50);
+}
 #footer{
 	background: white url(../images/bg_gradient.jpg) repeat-x left top;
 	padding:.8em;
