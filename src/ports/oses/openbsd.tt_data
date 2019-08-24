@@ -33,6 +33,18 @@
     versions => [
     {
     os_name => '',
+    os_version => '6.5',
+    os_release => '2019-05-01',
+    perl_version => '5.28.1',
+    },
+    {
+    os_name => '',
+    os_version => '6.4',
+    os_release => '2018-10-18',
+    perl_version => '5.24.3',
+    },
+    {
+    os_name => '',
     os_version => '6.3',
     os_release => '2018-04-02',
     perl_version => '5.24.3',
