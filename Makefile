@@ -37,3 +37,5 @@ update-daily:
 install:
 	$(CPANM) Template JSON Template::Plugin::Comma Template::Plugin::JSON XML::RSS local::lib File::Slurp
 
+update-docker:
+	docker run -w /cpan -v $(PWD):/cpan --rm -ti quay.io/perl/cpanorg:5.0.0 make update
