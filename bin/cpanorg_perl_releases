@@ -122,14 +122,20 @@ sub fetch_perl_version_data {
     my @perls;
     my @testing;
     foreach my $module ( @{ $data->{releases} } ) {
-        next unless $module->{authorized} eq 'true';
+        next unless $module->{authorized};
 
         my $version = $module->{version};
 
         $version =~ s/-(?:RC|TRIAL)\d+$//;
         $module->{version_number} = $version;
 
-        my ( $major, $minor, $iota ) = split( '[\._]', $version );
+        my ( $major, $minor, $iota ) = split( /[\._]/, $version );
+        # If we get a version like 5.010001, we need to split up the decimal
+        # component in groups of 3 digits
+        if ( !defined $iota ) {
+            $minor .= '0'x(6 - length $minor) if length $minor < 6;
+            $iota = substr $minor, 3, 3, '';
+        }
         $module->{version_major} = $major;
         $module->{version_minor} = int($minor);
         $module->{version_iota}  = int( $iota || '0' );
