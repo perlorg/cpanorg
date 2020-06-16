@@ -135,6 +135,7 @@ sub fetch_perl_version_data {
         $module->{version_major} = $major;
         $module->{version_minor} = int($minor);
         $module->{version_iota}  = int( $iota || '0' );
+        $module->{version_normal} = $version_obj->normal;
 
         $module->{type}
             = $module->{status} eq 'testing'

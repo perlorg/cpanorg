@@ -22,7 +22,7 @@
     [% TRY %]
     [% latest_data = INSERT perl_version_latest_stable.json %]
     [% latest = JSON.json_decode(latest_data) %]
-    <li>The latest stable version of Perl is [% latest.version %].
+    <li>The latest stable version of Perl is [% latest.version_normal %].
     </li>
     [% CATCH %]
     [% END %]
