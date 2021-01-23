@@ -15,50 +15,31 @@
     CPAN Mirror Network
 </h1>
 <p>
-    [% cpan_stats.mirrors.count | comma %] registered sites around the world
-    make up the <em>N</em> part of CPAN (the Network), find the full list
-    below.
-</p>
-<p>
-    The master CPAN site is hosted by <a href=
-    "http://www.netactuate.com/">NetActuate</a> in Los Angeles, California.
-</p>
-<p>
-    If you wish to mirror (either privately or publicly) please see <a href=
-    "http://www.cpan.org/misc/how-to-mirror.html">how to mirror CPAN</a>.
-</p>
-
-<h2>Mirror status</h2>
-
-<p>
-<a href="http://mirrors.cpan.org/">http://mirrors.cpan.org/</a> keeps
-track of the status of the mirrors below.
-</p>
-
-<h2 id="hostlist">Registered public CPAN sites</h2>
-
-
-[% TRY %]
-[% INCLUDE "SITES-list.html" %]
-[% CATCH %]
-<h1>
-<strong>The SITES-list.html should be included here</strong>
-</h1>
-[% END %]
-
-<h2 id="feedback">Feedback</h2>
-<p>
-    You can <a href="mailto:cpan@perl.org">send email</a> to the CPAN
-    administrators, <tt>cpan@perl.org</tt>.
+    For many years, CPAN worked because the central respository was mirrored to
+    many sites around the world.  In the times of a slower global Internet,
+    these sites provided most Perl users with fast access to thousands of
+    software distributions.  These days, the CPAN is backed by a CDN that
+    performs the same job, but transparently.  There is no longer a list of
+    registered mirrors, you can just point at <tt>cpan.org</tt> and go.
 </p>
 
 <h2>
     Thank You
 </h2>
 <p>
-    We would like to thank all of the mirrors who, throughout the years and
-    every day, make the CPAN possible and such a valuable resource to the Perl
-    community.
+    We would like to thank all of the mirrors who, throughout the years, made
+    the CPAN possible, and who helped provide this invaluable resource to the
+    Perl community.
+</p>
+<p>
+    The master CPAN site is hosted by <a href=
+    "http://www.netactuate.com/">NetActuate</a> in Los Angeles, California.
+</p>
+
+<h2 id="feedback">Feedback</h2>
+<p>
+    You can <a href="mailto:cpan@perl.org">send email</a> to the CPAN
+    administrators, <tt>cpan@perl.org</tt>.
 </p>
 
 
