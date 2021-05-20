@@ -14,6 +14,6 @@ steps:
     tags: SHA7,${DRONE_SOURCE_BRANCH}
     cache: true
     username:
-      from_secret: harbor_username
+      from_secret: harbor_perlorg_username
     password:
-      from_secret: harbor_password
+      from_secret: harbor_perlorg_password
