@@ -1,0 +1,19 @@
+kind: pipeline
+type: kubernetes
+name: default
+
+steps:
+- name: docker
+  image: harbor.ntppool.org/ntppool/drone-kaniko:latest
+  pull: always
+  settings:
+    pull_image: true
+    repo: perl/cpanorg
+    registry: harbor.ntppool.org
+    auto_tag: true
+    tags: SHA7,${DRONE_SOURCE_BRANCH}
+    cache: true
+    username:
+      from_secret: harbor_username
+    password:
+      from_secret: harbor_password
