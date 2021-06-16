@@ -39,12 +39,12 @@ Mac OS X ships with Perl as a standard component.
     {
         os_name => 'Big Sur',
         os_version => '11',
-        perl_version => '5.18.4, 5.28.2, 5.30.2',
+        perl_version => '5.30.2',
     },
     {
         os_name => 'Catalina',
         os_version => '10.15',
-        perl_version => '5.18.4, 5.28.2',
+        perl_version => '5.28.2',
     },
     {
         os_name => 'Mojave',
@@ -59,27 +59,27 @@ Mac OS X ships with Perl as a standard component.
     {
         os_name => 'Sierra',
         os_version => '10.12',
-        perl_version => '5.16.3, 5.18.2',
+        perl_version => '5.18.2',
     },
     {
         os_name => 'El Capitan',
         os_version => '10.11',
-        perl_version => '5.16.3, 5.18.2',
+        perl_version => '5.18.2',
     },
     {
         os_name => 'Yosemite',
         os_version => '10.10',
-        perl_version => '5.16.3, 5.18.2',
+        perl_version => '5.18.2',
     },
     {
         os_name => 'Mavericks',
         os_version => '10.9',
-        perl_version => '5.12.5, 5.16.2',
+        perl_version => '5.16.2',
     },
     {
         os_name => 'Mountain Lion',
         os_version => '10.8',
-        perl_version => '5.10.1, 5.12.4',
+        perl_version => '5.12.4',
     },
     {
         os_name => 'Lion',
@@ -89,7 +89,7 @@ Mac OS X ships with Perl as a standard component.
     {
         os_name => 'Snow Leopard',
         os_version => '10.6',
-        perl_version => '5.8.9, 5.10.0',
+        perl_version => '5.10.0',
     },
     {
         os_name => 'Leopard',
