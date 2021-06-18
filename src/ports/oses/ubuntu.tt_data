@@ -14,7 +14,7 @@
         kernel => 'linux',
 
         # When was this file last reviewed?
-        information_last_verified => '2017-10-04',
+        information_last_verified => '2021-06-19',
     }
 %]
 
@@ -31,6 +31,48 @@
 
 [% PROCESS version_view os_versions => {
     versions => [
+    {
+        os_name => 'Hirsute Hippo',
+        os_version => '21.04',
+        perl_version => '5.32.1'
+        os_release => '2021-04-22',
+    },
+    {
+        os_name => 'Groovy Gorilla',
+        os_version => '20.10',
+        perl_version => '5.30.3'
+        os_release => '2020-10-22',
+    },
+    {
+        os_name => 'Focal Fossa',
+        os_version => '20.04',
+        perl_version => '5.30.0'
+        os_release => '2020-04-23',
+    },
+    {
+        os_name => 'Eoan Ermine',
+        os_version => '19.10',
+        perl_version => '5.28.1'
+        os_release => '2019-10-17',
+    },
+    {
+        os_name => 'Disco Dingo',
+        os_version => '19.04',
+        perl_version => '5.28.1'
+        os_release => '2019-04-18',
+    },
+    {
+        os_name => 'Cosmic Cuttlefish',
+        os_version => '18.10',
+        perl_version => '5.26.2'
+        os_release => '2018-10-18',
+    },
+    {
+        os_name => 'Bionic Beaver',
+        os_version => '18.04',
+        perl_version => '5.26.1'
+        os_release => '2018-04-26',
+    },
     {
         os_name => 'Artful Aardvark',
         os_version => '17.10',
