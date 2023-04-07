@@ -1,6 +1,4 @@
-FROM harbor.ntppool.org/perlorg/base-os:3.14.1
-
-ENV LAST_UPDATED 2021-08-30
+FROM harbor.ntppool.org/perlorg/base-os:3.17.3
 
 ADD Makefile .
 

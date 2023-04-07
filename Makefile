@@ -23,7 +23,7 @@ rmclean:
 	$(PERL) -MExtUtils::Command -e "rm_rf" -- html
 
 build: data/cpan-stats.json
-	@$(TTREE) "--src=$(SRC)" -f tt.rc
+	$(TTREE) "--src=$(SRC)" -f tt.rc
 
 data/cpan-stats.json: update-data
 
@@ -38,4 +38,4 @@ install:
 	$(CPANM) Template JSON Template::Plugin::Comma Template::Plugin::JSON XML::RSS local::lib File::Slurp
 
 update-docker:
-	docker run -w /cpan -v $(PWD):/cpan --rm -ti quay.io/perl/cpanorg:5.0.0 make update
+	docker run -w /cpan -v $(PWD):/cpan --rm -ti harbor.ntppool.org/perlorg/cpanorg:latest make update
