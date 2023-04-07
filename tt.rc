@@ -7,7 +7,7 @@ ignore = \.swp$
 
 depend_file = dependencies.rc
 
-copy = \.(gif|png|pdf|jpg)$
+copy = \.(gif|png|pdf|jpg|svg)$
 
 #verbose
 
