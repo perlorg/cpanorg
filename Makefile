@@ -23,7 +23,7 @@ rmclean:
 	$(PERL) -MExtUtils::Command -e "rm_rf" -- html
 
 build: data/cpan-stats.json
-	$(TTREE) "--src=$(SRC)" -f tt.rc
+	@$(TTREE) "--src=$(SRC)" -f tt.rc
 
 data/cpan-stats.json: update-data
 
