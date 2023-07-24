@@ -8,6 +8,7 @@
     <link rel="author" href="mailto:cpan+linkrelauthor@perl.org" />
 	<link rel="canonical" href="http://www.cpan.org/[% page.canonical || template.name %]" />
 	<link type="text/css" rel="stylesheet" href="[% page.stub %]misc/css/cpan.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 	[% page.head %]
 </head>
 <body[% ' class="section_' _ page.section _ '"' IF page.section %]>
@@ -17,7 +18,7 @@
         <td id="header">
 
 			<div id="header_left">
-				<a href="[% page.stub %]index.html"><img src="[% page.stub %]misc/images/cpan.svg" id="logo" alt="CPAN" /></a>
+				<a href="[% page.stub %]index.html"><img src="[% page.stub %]misc/images/cpan.svg" id="logo" alt="CPAN" width="250" height="77" /></a>
      		</div>
 
 			<div id="header_right">

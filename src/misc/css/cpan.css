@@ -169,6 +169,14 @@ hr {
     background-color: #006699;
     margin-top: 1em;
 }
+img {
+    max-width: 100%;
+    height: auto;
+}
+img #logo {
+    width: 250px;
+    height: 77px;
+}
 img.extlink{
     float: none;
     padding-left: 0.25em;
