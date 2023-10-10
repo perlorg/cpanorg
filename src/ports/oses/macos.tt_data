@@ -1,16 +1,16 @@
 [%
     # Setup information
     os_config = {
-        name => 'OS X',
-        url => 'http://www.apple.com/osx/',
+        name => 'macOS',
+        url => 'http://www.apple.com/macos/',
         vendor => 'Apple',
-        information_last_verified => '2014-01-04',
+        information_last_verified => '2023-10-09',
     }
 %]
 
 [% BLOCK show_os %]
 <p>
-Mac OS X ships with Perl as a standard component.
+macOS ships with Perl as a standard component.
 </p>
 [% PROCESS binary_view binary_source => [
     {
@@ -36,6 +36,21 @@ Mac OS X ships with Perl as a standard component.
 
 [% PROCESS version_view os_versions => {
     versions => [
+    {
+        os_name => 'Sonoma',
+        os_version => '14',
+        perl_version => '5.30.3',
+    },
+    {
+        os_name => 'Ventura',
+        os_version => '13',
+        perl_version => '5.30.3',
+    },
+    {
+        os_name => 'Monterey',
+        os_version => '12',
+        perl_version => '5.30.3',
+    },
     {
         os_name => 'Big Sur',
         os_version => '11',
@@ -126,14 +141,13 @@ Mac OS X ships with Perl as a standard component.
 
 <p class="from_source">
     To build from source (or build XS modules) you need to install
-    GCC which is available as part of "Command Line Tools for XCode",
+    a compiler which is available as part of "Command Line Tools for XCode",
     this can be installed on it's own, or from within Xcode, both of which are
     available from <a href="https://developer.apple.com/downloads/">
     Apple Developer downloads</a> (free registration required).
     Xcode can also be installed through the
     <a href="http://itunes.apple.com/gb/app/xcode/id497799835?mt=12">Mac App
-    Store</a>. <em>(Note: in 10.3 you should also install the optional BSD
-    SDK, otherwise installing new Perl modules won't work.)</em>
+    Store</a>.
 </p>
 
 
