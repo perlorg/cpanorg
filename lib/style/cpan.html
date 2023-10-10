@@ -10,6 +10,19 @@
 	<link type="text/css" rel="stylesheet" href="[% page.stub %]misc/css/cpan.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	[% page.head %]
+
+<script defer data-domain="cpan.org" src="https://cdn.perl.org/js/script.js"></script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PXE98NKGY2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PXE98NKGY2');
+</script>
+
 </head>
 <body[% ' class="section_' _ page.section _ '"' IF page.section %]>
 
@@ -82,8 +95,6 @@
         </td>
     </tr>
 </table>
-
-<script defer data-domain="cpan.org" src="https://cdn.perl.org/js/script.js"></script>
 
 </body>
 </html>
