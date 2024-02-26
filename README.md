@@ -21,7 +21,7 @@ Cleanups yes; but a new design/layout will wait.
 
 A 'pull request' on GitHub is the best way.
 Sending a patch to the [cpan-workers](mailto:cpan-workers@perl.org) list at the same time will be a good way to get peer review.
-A change with a few "+1" votes from the list are more likely  to be expediently pulled in.
+A change with a few "+1" votes from the list is more likely to be expediently pulled in.
 
 ## How it works
 
