@@ -4,13 +4,16 @@
         name => 'macOS',
         url => 'http://www.apple.com/macos/',
         vendor => 'Apple',
-        information_last_verified => '2023-10-09',
+        information_last_verified => '2024-12-18',
     }
 %]
 
 [% BLOCK show_os %]
 <p>
-macOS ships with Perl as a standard component.
+macOS ships with Perl as a standard component. Since macOS Catalina (10.15),
+Apple has shipped multiple perls in each release. This list shows the 
+default version of perl. For more details, see 
+<a href="https://github.com/briandfoy/mac-perl-versions">https://github.com/briandfoy/mac-perl-versions</a>.
 </p>
 [% PROCESS binary_view binary_source => [
     {
@@ -37,9 +40,14 @@ macOS ships with Perl as a standard component.
 [% PROCESS version_view os_versions => {
     versions => [
     {
+        os_name => 'Sequoia',
+        os_version => '15',
+        perl_version => '5.34.1',
+    },
+    {
         os_name => 'Sonoma',
         os_version => '14',
-        perl_version => '5.30.3',
+        perl_version => '5.34.1',
     },
     {
         os_name => 'Ventura',
