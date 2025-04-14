@@ -1,4 +1,4 @@
-FROM harbor.ntppool.org/perlorg/base-os:3.21.1
+FROM harbor.ntppool.org/perlorg/base-os:3.21.3
 
 USER root
 RUN apk add rsync
