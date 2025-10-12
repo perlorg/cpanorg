@@ -1,7 +1,13 @@
 FROM harbor.ntppool.org/perlorg/base-os:3.22.1-1
 
 USER root
-RUN apk add rsync perl-xml-rss perl-xml-parser
+RUN apk add \
+    findutils \
+    gzip \
+    perl-xml-parser \
+    perl-xml-rss \
+    rsync \
+    # end
 
 # for 'make install'
 ADD Makefile /tmp/
