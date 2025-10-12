@@ -6,6 +6,7 @@ RUN apk add \
     gzip \
     perl-xml-parser \
     perl-xml-rss \
+    rcs \
     rsync # no slash on last item
 
 # for 'make install'
