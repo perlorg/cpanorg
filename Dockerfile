@@ -15,7 +15,7 @@ ADD Makefile /tmp/
 
 RUN cd /tmp && make install \
   && cpanm File::Rsync File::Rsync::Mirror::Recent \
-          Linux::Inotify2 Time::Progress \
+          Linux::Inotify2 Time::Progress JSON Data::Serializer JSON::XS \
   && rm -fr ~/.cpanm && rm /tmp/Makefile
 
 RUN addgroup cpan && adduser -u 1000 -D -G cpan cpan
