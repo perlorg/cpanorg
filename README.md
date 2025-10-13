@@ -49,17 +49,19 @@ Only `.html` files get the "master template" applied automatically.
 
 The build system supports the following configuration variables:
 
-- **DEST**: Output directory for generated files (default: `html`)
+- **WORKDIR**: Working directory for build artifacts (default: `.`)
+  - Build output goes to `$(WORKDIR)/html`
+  - Data files go to `$(WORKDIR)/data`
 - **PRIMARY**: Deployment target directory (default: `../CPAN`)
 
 These can be overridden when running make:
 
 ```bash
-make DEST=/writable/path build              # Build to custom directory
-make DEST=/tmp/html PRIMARY=/deploy/target update-primary  # Custom build and deploy paths
+make WORKDIR=/tmp/cpanorg build                            # Build to /tmp/cpanorg/html with data in /tmp/cpanorg/data
+make WORKDIR=/work PRIMARY=/deploy update-primary          # Custom work and deploy paths
 ```
 
-This is particularly useful for Kubernetes deployments where the default `./html` directory may be read-only.
+This is particularly useful for Kubernetes deployments where the default `./html` and `./data` directories may be read-only.
 
 ## Run under Docker
 

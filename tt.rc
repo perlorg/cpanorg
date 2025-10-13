@@ -16,6 +16,5 @@ recurse
 pre_process = tpl/defaults
 process     = tpl/wrapper
 
-dest = html
 lib  = lib
 lib  = data

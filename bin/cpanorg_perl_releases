@@ -8,7 +8,11 @@ use warnings;
 use JSON ();
 use LWP::Simple qw(get);
 use File::Slurp qw(read_file);
+use File::Path qw(mkpath);
 use version 0.77;
+
+my $data_dir = $ENV{DATA} || 'data';
+mkpath $data_dir, 0755 unless -e $data_dir;
 
 my $json = JSON->new->pretty;
 
@@ -58,8 +62,8 @@ $perl_versions = sort_versions($perl_versions);
 sub print_file {
     my ( $file, $data ) = @_;
 
-    open my $fh, ">:utf8", "data/$file"
-        or die "Could not open data/$file: $!";
+    open my $fh, ">:utf8", "$data_dir/$file"
+        or die "Could not open $data_dir/$file: $!";
     print $fh $data;
     close $fh;
 
@@ -99,8 +103,8 @@ sub fetch_perl_version_data {
 
     # See what we have on disk
     my $disk_json = '';
-    $disk_json = read_file("data/$filename")
-        if -r "data/$filename";
+    $disk_json = read_file("$data_dir/$filename")
+        if -r "$data_dir/$filename";
 
     my $cpan_json = get($perl_dist_url);
     die "Unable to fetch $perl_dist_url" unless $cpan_json;

@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Overview
 
-This repository maintains the content for [cpan.org](https://www.cpan.org) using Perl Template Toolkit. The build system processes templates from `src/` and generates static HTML output to a configurable directory (default: `html/`).
+This repository maintains the content for [cpan.org](https://www.cpan.org) using Perl Template Toolkit. The build system processes templates from `src/` and generates static HTML output to a configurable working directory (default: current directory with `html/` and `data/` subdirectories).
 
 ## Build Commands
 
@@ -20,18 +20,18 @@ make update-data     # Fetch RSS feeds and CPAN stats
 make update-daily    # Fetch Perl release data
 make update          # update-data + build
 make update-primary  # update + rsync to PRIMARY directory
-make clean           # Remove DEST directory and rebuild
+make clean           # Remove WORKDIR/html directory and rebuild
 ```
 
 ### Configuration Variables
 The build system supports customizable paths:
 
 ```bash
-make DEST=/writable/path build              # Build to custom directory (default: html)
-make DEST=/tmp/html PRIMARY=/deploy/target update-primary  # Custom build and deploy paths (PRIMARY default: ../CPAN)
+make WORKDIR=/tmp/cpanorg build                         # Build to /tmp/cpanorg/html with data in /tmp/cpanorg/data
+make WORKDIR=/work PRIMARY=/deploy update-primary       # Custom work and deploy paths (PRIMARY default: ../CPAN)
 ```
 
-This is useful for Kubernetes deployments where `./html` may be read-only.
+This is useful for Kubernetes deployments where `./html` and `./data` may be read-only.
 
 ### Docker Workflow
 ```bash
@@ -51,7 +51,7 @@ docker run --rm -ti \
 2. **Template System**: Uses Template Toolkit's `ttree` command (configured via `tt.rc`)
 3. **Pre-processing**: `lib/tpl/defaults` is processed first for all files
 4. **Wrapper**: `lib/tpl/wrapper` wraps `.html` files with style templates
-5. **Output**: Generated files written to `DEST` directory (default: `html/`)
+5. **Output**: Generated files written to `$(WORKDIR)/html` directory (default: `./html/`)
 
 ### Key Configuration Files
 
@@ -84,16 +84,17 @@ docker run --rm -ti \
 
 ### Data Files
 
-Data files in `data/` are fetched by scripts in `bin/`:
+Data files in `$(WORKDIR)/data` (default: `./data/`) are fetched by scripts in `bin/`:
 
-- **bin/cpanorg_rss_fetch**: Fetches MetaCPAN recent releases RSS, outputs `data/recent.json`
-- **bin/update_data**: Fetches CPAN statistics from cpan.org, outputs `data/cpan-stats.json`
+- **bin/cpanorg_rss_fetch**: Fetches MetaCPAN recent releases RSS, outputs `$(DATA)/recent.json`
+- **bin/update_data**: Fetches CPAN statistics from cpan.org, outputs `$(DATA)/cpan-stats.json`
 - **bin/cpanorg_perl_releases**: Fetches Perl version data, outputs:
-  - `data/perl_versions_earliest.json`
-  - `data/perl_versions_latest.json`
-  - `data/perl_version_latest_stable.json`
+  - `$(DATA)/perl_versions_earliest.json`
+  - `$(DATA)/perl_versions_latest.json`
+  - `$(DATA)/perl_version_latest_stable.json`
 
 These JSON files are consumed by templates via Template Toolkit's `INSERT` and JSON plugin.
+Scripts use the `DATA` environment variable to determine output location.
 
 ### Source File Structure
 

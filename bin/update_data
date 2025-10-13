@@ -2,8 +2,12 @@
 use strict;
 use warnings;
 use LWP::Simple qw(mirror);
+use File::Path qw(mkpath);
 
-mirror("http://www.cpan.org/indices/cpan-stats.json", "data/cpan-stats.json");
+my $data_dir = $ENV{DATA} || 'data';
+mkpath $data_dir, 0755 unless -e $data_dir;
+
+mirror("http://www.cpan.org/indices/cpan-stats.json", "$data_dir/cpan-stats.json");
 
 
 

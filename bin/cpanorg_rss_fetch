@@ -11,10 +11,11 @@ use JSON;
 use LWP::Simple qw(mirror RC_OK);
 use File::Path qw(mkpath);
 
-mkpath 'data', 0755 unless -e 'data';
+my $data_dir = $ENV{DATA} || 'data';
+mkpath $data_dir, 0755 unless -e $data_dir;
 
 process_rss(
-    {   out => 'data/recent.json',
+    {   out => "$data_dir/recent.json",
         url => "https://metacpan.org/recent.rss",
     }
 );

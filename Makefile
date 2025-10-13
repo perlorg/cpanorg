@@ -7,7 +7,9 @@ TTREE=ttree$(EXT_BAT)
 RSYNC=rsync$(EXT_EXE)
 
 SRC=src
-DEST?=html
+WORKDIR?=.
+DEST=$(WORKDIR)/html
+DATA=$(WORKDIR)/data
 PRIMARY?=../CPAN
 
 all: build
@@ -24,17 +26,17 @@ buildclean: rmclean build
 rmclean:
 	$(PERL) -MExtUtils::Command -e "rm_rf" -- $(DEST)
 
-build: data/cpan-stats.json
-	@$(TTREE) "--src=$(SRC)" "--dest=$(DEST)" -f tt.rc
+build: $(DATA)/cpan-stats.json
+	@$(TTREE) "--src=$(SRC)" "--dest=$(DEST)" "--lib=$(DATA)" -f tt.rc
 
-data/cpan-stats.json: update-data
+$(DATA)/cpan-stats.json: update-data
 
 update-data:
-	@$(PERL) ./bin/cpanorg_rss_fetch
-	@$(PERL) ./bin/update_data
+	@DATA=$(DATA) $(PERL) ./bin/cpanorg_rss_fetch
+	@DATA=$(DATA) $(PERL) ./bin/update_data
 
 update-daily:
-	@$(PERL) ./bin/cpanorg_perl_releases
+	@DATA=$(DATA) $(PERL) ./bin/cpanorg_perl_releases
 
 install:
 	$(CPANM) Template JSON Template::Plugin::Comma Template::Plugin::JSON XML::RSS local::lib File::Slurp
