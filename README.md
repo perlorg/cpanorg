@@ -45,6 +45,22 @@ Everything else is processed through
 
 Only `.html` files get the "master template" applied automatically.
 
+## Configuration Variables
+
+The build system supports the following configuration variables:
+
+- **DEST**: Output directory for generated files (default: `html`)
+- **PRIMARY**: Deployment target directory (default: `../CPAN`)
+
+These can be overridden when running make:
+
+```bash
+make DEST=/writable/path build              # Build to custom directory
+make DEST=/tmp/html PRIMARY=/deploy/target update-primary  # Custom build and deploy paths
+```
+
+This is particularly useful for Kubernetes deployments where the default `./html` directory may be read-only.
+
 ## Run under Docker
 
 Experimental, you can build the content from those templates with:
@@ -54,4 +70,4 @@ Experimental, you can build the content from those templates with:
       -v `pwd`:/cpan/content -v `pwd`/root:/cpan \
       -w /cpan/content \
       quay.io/perl/cpanorg:master \
-        make build update-data update-master
+        make build update-data update-primary

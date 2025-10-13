@@ -7,6 +7,8 @@ TTREE=ttree$(EXT_BAT)
 RSYNC=rsync$(EXT_EXE)
 
 SRC=src
+DEST?=html
+PRIMARY?=../CPAN
 
 all: build
 
@@ -14,16 +16,16 @@ clean: buildclean
 
 update: update-data build
 
-update-master: update
-	@$(RSYNC) --temp-dir=/cpan/tmp -a html/ ../CPAN/
+update-primary: update
+	@$(RSYNC) --temp-dir=/cpan/tmp -a $(DEST)/ $(PRIMARY)/
 
 buildclean: rmclean build
 
 rmclean:
-	$(PERL) -MExtUtils::Command -e "rm_rf" -- html
+	$(PERL) -MExtUtils::Command -e "rm_rf" -- $(DEST)
 
 build: data/cpan-stats.json
-	@$(TTREE) "--src=$(SRC)" -f tt.rc
+	@$(TTREE) "--src=$(SRC)" "--dest=$(DEST)" -f tt.rc
 
 data/cpan-stats.json: update-data
 
