@@ -52,13 +52,16 @@ The build system supports the following configuration variables:
 - **WORKDIR**: Working directory for build artifacts (default: `.`)
   - Build output goes to `$(WORKDIR)/html`
   - Data files go to `$(WORKDIR)/data`
+  - Rsync temp files go to `$(WORKDIR)/tmp`
 - **PRIMARY**: Deployment target directory (default: `../CPAN`)
+- **RSYNC_TEMP_DIR**: Temporary directory for rsync operations (default: `$(WORKDIR)/tmp`)
 
 These can be overridden when running make:
 
 ```bash
 make WORKDIR=/tmp/cpanorg build                            # Build to /tmp/cpanorg/html with data in /tmp/cpanorg/data
 make WORKDIR=/work PRIMARY=/deploy update-primary          # Custom work and deploy paths
+make RSYNC_TEMP_DIR=/cpan/tmp update-primary               # Specify rsync temp directory (useful for Docker)
 ```
 
 This is particularly useful for Kubernetes deployments where the default `./html` and `./data` directories may be read-only.
@@ -72,4 +75,4 @@ Experimental, you can build the content from those templates with:
       -v `pwd`:/cpan/content -v `pwd`/root:/cpan \
       -w /cpan/content \
       quay.io/perl/cpanorg:master \
-        make build update-data update-primary
+        make RSYNC_TEMP_DIR=/cpan/tmp build update-data update-primary

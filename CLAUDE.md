@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Overview
 
-This repository maintains the content for [cpan.org](https://www.cpan.org) using Perl Template Toolkit. The build system processes templates from `src/` and generates static HTML output to a configurable working directory (default: current directory with `html/` and `data/` subdirectories).
+This repository maintains the content for [cpan.org](https://www.cpan.org) using Perl Template Toolkit. The build system processes templates from `src/` and generates static HTML output to a configurable working directory (default: current directory with `html/`, `data/`, and `tmp/` subdirectories).
 
 ## Build Commands
 
@@ -29,6 +29,7 @@ The build system supports customizable paths:
 ```bash
 make WORKDIR=/tmp/cpanorg build                         # Build to /tmp/cpanorg/html with data in /tmp/cpanorg/data
 make WORKDIR=/work PRIMARY=/deploy update-primary       # Custom work and deploy paths (PRIMARY default: ../CPAN)
+make RSYNC_TEMP_DIR=/cpan/tmp update-primary            # Specify rsync temp directory (useful for Docker)
 ```
 
 This is useful for Kubernetes deployments where `./html` and `./data` may be read-only.
@@ -40,7 +41,7 @@ docker run --rm -ti \
   -v `pwd`:/cpan/content -v `pwd`/root:/cpan \
   -w /cpan/content \
   quay.io/perl/cpanorg:master \
-    make build update-data update-primary
+    make RSYNC_TEMP_DIR=/cpan/tmp build update-data update-primary
 ```
 
 ## Architecture

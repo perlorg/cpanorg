@@ -1,6 +1,7 @@
 *~
 /html/
 /data/
+/tmp/
 
 # for development with docker
 /root/

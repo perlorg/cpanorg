@@ -11,6 +11,7 @@ WORKDIR?=.
 DEST=$(WORKDIR)/html
 DATA=$(WORKDIR)/data
 PRIMARY?=../CPAN
+RSYNC_TEMP_DIR?=$(WORKDIR)/tmp
 
 all: build
 
@@ -19,7 +20,8 @@ clean: buildclean
 update: update-data build
 
 update-primary: update
-	@$(RSYNC) --temp-dir=/cpan/tmp -a $(DEST)/ $(PRIMARY)/
+	@mkdir -p $(RSYNC_TEMP_DIR)
+	@$(RSYNC) --temp-dir=$(RSYNC_TEMP_DIR) -a $(DEST)/ $(PRIMARY)/
 
 buildclean: rmclean build
 
