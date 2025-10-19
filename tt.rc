@@ -3,7 +3,9 @@ ignore = ^#
 ignore = ~$
 ignore = .DS_Store
 ignore = \.tt$
+ignore = \.tt_data$
 ignore = \.swp$
+ignore = ports/oses/list\.html$
 
 depend_file = dependencies.rc
 
