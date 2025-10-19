@@ -1,4 +1,4 @@
-FROM harbor.ntppool.org/dev/ticker:v0.2.0 AS ticker
+FROM harbor.ntppool.org/dev/ticker:v0.2.1 AS ticker
 
 FROM harbor.ntppool.org/perlorg/base-os:3.22.2
 
