@@ -21,7 +21,7 @@ update: update-data build
 
 update-primary: update
 	@mkdir -p $(RSYNC_TEMP_DIR)
-	@$(RSYNC) --temp-dir=$(RSYNC_TEMP_DIR) -a $(DEST)/ $(PRIMARY)/
+	@$(RSYNC) --temp-dir=$(RSYNC_TEMP_DIR) -ac $(DEST)/ $(PRIMARY)/
 
 buildclean: rmclean build
 
