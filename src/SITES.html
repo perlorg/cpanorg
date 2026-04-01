@@ -22,7 +22,11 @@
     CDN that performs the same job, but transparently.  There is no longer a
     list of registered mirrors, you can just point at <tt>www.cpan.org</tt> and go.
 </p>
-
+<p>To reconfigure the cpan client to remove old mirrors:</p>
+<pre>
+    o conf urllist www.cpan.org
+    o conf commit
+</pre>
 <h2>
     Thank You
 </h2>
