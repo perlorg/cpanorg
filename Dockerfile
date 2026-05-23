@@ -17,8 +17,9 @@ ADD Makefile /tmp/
 COPY --from=ticker /app/ticker /usr/bin/ticker
 
 RUN cd /tmp && make install \
-  && cpanm File::Rsync File::Rsync::Mirror::Recent \
+  && cpanm File::Rsync \
           Linux::Inotify2 Time::Progress JSON Data::Serializer JSON::XS \
+          https://github.com/abh/rersyncrecent.git@fix/rmirror-interval-propagation \
   && rm -fr ~/.cpanm && rm /tmp/Makefile
 
 RUN addgroup cpan && adduser -u 1000 -D -G cpan cpan
