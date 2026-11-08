@@ -1,6 +1,6 @@
-FROM harbor.ntppool.org/dev/ticker:v0.2.2 AS ticker
+FROM harbor.ntppool.org/dev/ticker:0.2.3 AS ticker
 
-FROM harbor.ntppool.org/perlorg/base-os:3.23.3-2
+FROM harbor.ntppool.org/perlorg/base-os:3.24.4
 
 USER root
 RUN apk add \
